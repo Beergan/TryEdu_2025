@@ -1,0 +1,201 @@
+﻿@page "/admin"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+<PageTitle>Dashboard</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="pa-4">
+    <!-- Welcome Section -->
+    <MudPaper Class="pa-6 mb-6" Style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <MudGrid>
+            <MudItem xs="12" md="8">
+                <MudText Typo="Typo.h3" Class="mb-2">Hệ thống quản lý thi thử trực tuyến</MudText>
+            </MudItem>
+            <MudItem xs="12" md="4" Class="d-flex justify-center align-center">
+                <MudIcon Icon="@Icons.Material.Filled.School" Size="Size.Large" Style="opacity: 0.3; font-size: 4rem;" />
+            </MudItem>
+        </MudGrid>
+    </MudPaper>
+
+    <!-- Statistics Cards -->
+    <MudGrid Class="mb-6">
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Class="pa-4" Style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <MudGrid>
+                    <MudItem xs="8">
+                        <MudText Typo="Typo.caption" Class="mb-1">Tổng học viên</MudText>
+                        @*                         <MudText Typo="Typo.h3" Class="mb-0">@(students?.Count ?? 0)</MudText> *@
+                        <MudText Typo="Typo.caption" Class="mb-0">Tài khoản hoạt động</MudText>
+                    </MudItem>
+                    <MudItem xs="4" Class="d-flex justify-center align-center">
+                        <MudIcon Icon="@Icons.Material.Filled.People" Size="Size.Large" />
+                    </MudItem>
+                </MudGrid>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Class="pa-4" Style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
+                <MudGrid>
+                    <MudItem xs="8">
+                        <MudText Typo="Typo.caption" Class="mb-1">Tổng đề thi</MudText>
+                        <MudText Typo="Typo.h3" Class="mb-0">@(exams?.Count ?? 0)</MudText>
+                        <MudText Typo="Typo.caption" Class="mb-0">Đề thi có sẵn</MudText>
+                    </MudItem>
+                    <MudItem xs="4" Class="d-flex justify-center align-center">
+                        <MudIcon Icon="@Icons.Material.Filled.Quiz" Size="Size.Large" />
+                    </MudItem>
+                </MudGrid>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Class="pa-4" Style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white;">
+                <MudGrid>
+                    <MudItem xs="8">
+                        <MudText Typo="Typo.caption" Class="mb-1">Lần thi hôm nay</MudText>
+                        <MudText Typo="Typo.h3" Class="mb-0">@(examAttempts?.Count ?? 0)</MudText>
+                        <MudText Typo="Typo.caption" Class="mb-0">Đã hoàn thành</MudText>
+                    </MudItem>
+                    <MudItem xs="4" Class="d-flex justify-center align-center">
+                        <MudIcon Icon="@Icons.Material.Filled.Assignment" Size="Size.Large" />
+                    </MudItem>
+                </MudGrid>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Class="pa-4" Style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white;">
+                <MudGrid>
+                    <MudItem xs="8">
+                        <MudText Typo="Typo.caption" Class="mb-1">Điểm trung bình</MudText>
+                        <MudText Typo="Typo.h3" Class="mb-0">@(averageScore?.ToString("F1") ?? "0.0")</MudText>
+                        <MudText Typo="Typo.caption" Class="mb-0">Tháng này</MudText>
+                    </MudItem>
+                    <MudItem xs="4" Class="d-flex justify-center align-center">
+                        <MudIcon Icon="@Icons.Material.Filled.TrendingUp" Size="Size.Large" />
+                    </MudItem>
+                </MudGrid>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+
+    <!-- Quick Actions -->
+    <MudPaper Class="pa-4 mb-6">
+        <MudText Typo="Typo.h5" Class="mb-4">
+            <MudIcon Icon="@Icons.Material.Filled.FlashOn" Class="mr-2" />
+            Thao tác nhanh
+        </MudText>
+        <MudGrid>
+            <MudItem xs="12" sm="6" md="3">
+                <MudButton Variant="Variant.Outlined"
+                           FullWidth="true"
+                           Class="pa-6"
+                           Style="height: 100px; flex-direction: column;"
+                           OnClick="@(() => Navigation.NavigateTo("/student/list"))">
+                    <MudIcon Icon="@Icons.Material.Filled.People" Size="Size.Large" Class="mb-2" />
+                    <MudText>Quản lý học viên</MudText>
+                </MudButton>
+            </MudItem>
+            <MudItem xs="12" sm="6" md="3">
+                <MudButton Variant="Variant.Outlined"
+                           FullWidth="true"
+                           Class="pa-6"
+                           Style="height: 100px; flex-direction: column;"
+                           OnClick="@(() => Navigation.NavigateTo("/exam/schedule"))">
+                    <MudIcon Icon="@Icons.Material.Filled.Schedule" Size="Size.Large" Class="mb-2" />
+                    <MudText>Lịch thi</MudText>
+                </MudButton>
+            </MudItem>
+            <MudItem xs="12" sm="6" md="3">
+                <MudButton Variant="Variant.Outlined"
+                           FullWidth="true"
+                           Class="pa-6"
+                           Style="height: 100px; flex-direction: column;"
+                           OnClick="@(() => Navigation.NavigateTo("/exam/tests"))">
+                    <MudIcon Icon="@Icons.Material.Filled.Quiz" Size="Size.Large" Class="mb-2" />
+                    <MudText>Quản lý đề thi</MudText>
+                </MudButton>
+            </MudItem>
+            <MudItem xs="12" sm="6" md="3">
+                <MudButton Variant="Variant.Outlined"
+                           FullWidth="true"
+                           Class="pa-6"
+                           Style="height: 100px; flex-direction: column;"
+                           OnClick="@(() => Navigation.NavigateTo("/reports/exam-results"))">
+                    <MudIcon Icon="@Icons.Material.Filled.Analytics" Size="Size.Large" Class="mb-2" />
+                    <MudText>Báo cáo kết quả</MudText>
+                </MudButton>
+            </MudItem>
+        </MudGrid>
+    </MudPaper>
+
+    <!-- Recent Activity & Notifications -->
+    <MudGrid>
+        <MudItem xs="12" md="8">
+            <MudPaper Class="pa-4">
+                <MudText Typo="Typo.h5" Class="mb-4">
+                    <MudIcon Icon="@Icons.Material.Filled.Timeline" Class="mr-2" />
+                    Hoạt động gần đây
+                </MudText>
+                <MudList T="object">
+                    <MudListItem>
+                        <MudAvatar Color="Color.Success" Class="mr-3">
+                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" />
+                        </MudAvatar>
+                        <MudText Typo="Typo.body1">Học viên hoàn thành bài thi</MudText>
+                        <MudText Typo="Typo.caption" Color="Color.Secondary">Nguyễn Văn A - 2 phút trước</MudText>
+                    </MudListItem>
+                    <MudListItem>
+                        <MudAvatar Color="Color.Info" Class="mr-3">
+                            <MudIcon Icon="@Icons.Material.Filled.PersonAdd" />
+                        </MudAvatar>
+                        <MudText Typo="Typo.body1">Học viên mới đăng ký</MudText>
+                        <MudText Typo="Typo.caption" Color="Color.Secondary">Trần Thị B - 15 phút trước</MudText>
+                    </MudListItem>
+                    <MudListItem>
+                        <MudAvatar Color="Color.Warning" Class="mr-3">
+                            <MudIcon Icon="@Icons.Material.Filled.Inventory2" />
+                        </MudAvatar>
+                        <MudText Typo="Typo.body1">Cảnh báo đề thi sắp hết hạn</MudText>
+                        <MudText Typo="Typo.caption" Color="Color.Secondary">Toán học cơ bản - 1 giờ trước</MudText>
+                    </MudListItem>
+                </MudList>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" md="4">
+            <MudPaper Class="pa-4">
+                <MudText Typo="Typo.h5" Class="mb-4">
+                    <MudIcon Icon="@Icons.Material.Filled.Notifications" Class="mr-2" />
+                    Thông báo
+                </MudText>
+                <MudList T="object">
+                    <MudListItem>
+                        <MudIcon Icon="@Icons.Material.Filled.Circle" Color="Color.Success" Class="mr-2" />
+                        <MudText>Hệ thống hoạt động bình thường</MudText>
+                    </MudListItem>
+                    <MudListItem>
+                        <MudIcon Icon="@Icons.Material.Filled.Circle" Color="Color.Warning" Class="mr-2" />
+                        <MudText>3 đề thi sắp hết hạn</MudText>
+                    </MudListItem>
+                    <MudListItem>
+                        <MudIcon Icon="@Icons.Material.Filled.Circle" Color="Color.Info" Class="mr-2" />
+                        <MudText>5 bài thi đang chờ chấm</MudText>
+                    </MudListItem>
+                </MudList>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+
+</MudContainer>
+
+@code {
+
+    private List<dynamic> exams;
+    private List<dynamic> examAttempts;
+    private decimal? averageScore;
+    private bool isLoading = true;
+
+   
+}
+

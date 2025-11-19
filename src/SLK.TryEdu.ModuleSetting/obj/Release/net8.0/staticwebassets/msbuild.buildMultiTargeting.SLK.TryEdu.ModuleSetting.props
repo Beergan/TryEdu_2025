@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SLK.TryEdu.ModuleSetting.props" />
+</Project>

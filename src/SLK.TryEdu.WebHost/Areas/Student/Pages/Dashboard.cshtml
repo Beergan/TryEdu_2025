@@ -1,0 +1,468 @@
+@page
+@model SLK.TryEdu.WebHost.Areas.Student.Pages.DashboardModel
+@{
+    ViewData["Title"] = "Dashboard - TryEdu";
+    Layout = "~/Pages/Shared/_StudentLayout.cshtml";
+}
+
+<style>
+    .dashboard-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px 0;
+        border-radius: 0 0 30px 30px;
+        margin-bottom: 30px;
+    }
+    .stat-card {
+        background: white;
+        border-radius: 20px;
+        padding: 24px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        transition: all 0.3s ease;
+        border: none;
+        height: 100%;
+    }
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+    .icon-primary { background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); color: #667eea; }
+    .icon-success { background: linear-gradient(135deg, #48bb7815 0%, #38a16915 100%); color: #48bb78; }
+    .icon-warning { background: linear-gradient(135deg, #ed893615 0%, #f5a62315 100%); color: #ed8936; }
+    .icon-info { background: linear-gradient(135deg, #4299e115 0%, #3b82f615 100%); color: #4299e1; }
+    
+    .course-card-sm {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        transition: all 0.3s ease;
+        margin-bottom: 16px;
+    }
+    .course-card-sm:hover {
+        transform: translateX(4px);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .course-thumbnail-sm {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+    .progress-ring {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 700;
+        position: relative;
+    }
+    .activity-item {
+        padding: 16px;
+        border-radius: 12px;
+        background: #f8fafc;
+        margin-bottom: 12px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+    .activity-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+    .section-card {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        margin-bottom: 24px;
+    }
+    .quiz-badge {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .badge-completed { background: #d1fae5; color: #065f46; }
+    .badge-pending { background: #fed7aa; color: #92400e; }
+    .chart-container {
+        position: relative;
+        height: 250px;
+    }
+</style>
+
+<div class="dashboard-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="h2 fw-bold mb-2">👋 Xin chào, Nguyễn Văn A!</h1>
+                <p class="mb-0 opacity-90">Chào mừng bạn quay lại. Hãy tiếp tục hành trình học tập của mình!</p>
+            </div>
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <div class="d-inline-block text-center">
+                    <div class="h3 fw-bold mb-0">Level 5</div>
+                    <div class="small opacity-75">🔥 Streak: 12 ngày</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <!-- Stats Overview -->
+    <div class="row g-4 mb-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-icon icon-primary">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="h3 fw-bold mb-1">12</div>
+                <div class="text-muted">Khóa học đã đăng ký</div>
+                <div class="mt-3">
+                    <small class="text-success">
+                        <i class="fas fa-arrow-up me-1"></i> +2 tháng này
+                    </small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-icon icon-success">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="h3 fw-bold mb-1">8</div>
+                <div class="text-muted">Khóa học hoàn thành</div>
+                <div class="mt-3">
+                    <small class="text-success">
+                        <i class="fas fa-arrow-up me-1"></i> 66% hoàn thành
+                    </small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-icon icon-warning">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="h3 fw-bold mb-1">6</div>
+                <div class="text-muted">Chứng chỉ đạt được</div>
+                <div class="mt-3">
+                    <small class="text-info">
+                        <i class="fas fa-award me-1"></i> 2 mới trong tuần
+                    </small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-icon icon-info">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="h3 fw-bold mb-1">48h</div>
+                <div class="text-muted">Tổng thời gian học</div>
+                <div class="mt-3">
+                    <small class="text-success">
+                        <i class="fas fa-arrow-up me-1"></i> +8h tuần này
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Continue Learning -->
+        <div class="col-lg-8">
+            <div class="section-card">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="fw-bold mb-0">
+                        <i class="fas fa-play-circle me-2" style="color: #667eea;"></i>
+                        Tiếp tục học tập
+                    </h4>
+                    <a href="/student/courses" class="text-decoration-none">
+                        Xem tất cả <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+                
+                <!-- Course 1 -->
+                <div class="course-card-sm">
+                    <div class="d-flex">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=200" class="course-thumbnail-sm" alt="Course">
+                        <div class="flex-grow-1 p-3 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <h6 class="fw-bold mb-1">React & Node.js Full-Stack</h6>
+                                    <p class="small text-muted mb-0">Nguyễn Văn A</p>
+                                </div>
+                                <span class="badge bg-primary">45%</span>
+                            </div>
+                            
+                            <div class="mt-auto">
+                                <div class="progress mb-2" style="height: 6px; border-radius: 10px;">
+                                    <div class="progress-bar" style="width: 45%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">20/45 bài học</small>
+                                    <a href="/student/course/1" class="btn btn-sm btn-primary" style="border-radius: 8px;">
+                                        Tiếp tục <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card-sm">
+                    <div class="d-flex">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=200" class="course-thumbnail-sm" alt="Course">
+                        <div class="flex-grow-1 p-3 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <h6 class="fw-bold mb-1">UI/UX Design Masterclass</h6>
+                                    <p class="small text-muted mb-0">Trần Thị B</p>
+                                </div>
+                                <span class="badge bg-primary">72%</span>
+                            </div>
+                            
+                            <div class="mt-auto">
+                                <div class="progress mb-2" style="height: 6px; border-radius: 10px;">
+                                    <div class="progress-bar" style="width: 72%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">27/38 bài học</small>
+                                    <a href="/student/course/2" class="btn btn-sm btn-primary" style="border-radius: 8px;">
+                                        Tiếp tục <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card-sm">
+                    <div class="d-flex">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200" class="course-thumbnail-sm" alt="Course">
+                        <div class="flex-grow-1 p-3 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <h6 class="fw-bold mb-1">Digital Marketing & SEO</h6>
+                                    <p class="small text-muted mb-0">Lê Văn C</p>
+                                </div>
+                                <span class="badge bg-primary">18%</span>
+                            </div>
+                            
+                            <div class="mt-auto">
+                                <div class="progress mb-2" style="height: 6px; border-radius: 10px;">
+                                    <div class="progress-bar" style="width: 18%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">9/52 bài học</small>
+                                    <a href="/student/course/3" class="btn btn-sm btn-primary" style="border-radius: 8px;">
+                                        Tiếp tục <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="section-card">
+                <h4 class="fw-bold mb-4">
+                    <i class="fas fa-history me-2" style="color: #667eea;"></i>
+                    Hoạt động gần đây
+                </h4>
+                
+                <div class="activity-item">
+                    <div class="activity-icon icon-success">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="fw-600">Hoàn thành bài học: "React Hooks"</div>
+                        <div class="small text-muted">React & Node.js Full-Stack • 2 giờ trước</div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon icon-warning">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="fw-600">Nhận chứng chỉ: "Basic English"</div>
+                        <div class="small text-muted">Tiếng Anh giao tiếp • Hôm qua</div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon icon-info">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="fw-600">Đạt thành tích: "Tuần học tập liên tiếp"</div>
+                        <div class="small text-muted">12 ngày liên tiếp • 3 ngày trước</div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon icon-primary">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="fw-600">Đăng ký khóa học mới: "Python Programming"</div>
+                        <div class="small text-muted">1 tuần trước</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <!-- Upcoming Quizzes -->
+            <div class="section-card">
+                <h5 class="fw-bold mb-3">
+                    <i class="fas fa-tasks me-2" style="color: #667eea;"></i>
+                    Bài kiểm tra sắp tới
+                </h5>
+                
+                <div class="mb-3 p-3" style="background: #f8fafc; border-radius: 12px;">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <div class="fw-600">React Fundamentals Quiz</div>
+                            <div class="small text-muted">20 câu hỏi • 30 phút</div>
+                        </div>
+                        <span class="quiz-badge badge-pending">Chưa làm</span>
+                    </div>
+                    <div class="mt-2">
+                        <a href="/student/quiz/1" class="btn btn-sm btn-primary w-100" style="border-radius: 8px;">
+                            Bắt đầu
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mb-3 p-3" style="background: #f8fafc; border-radius: 12px;">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <div class="fw-600">UI Design Principles</div>
+                            <div class="small text-muted">15 câu hỏi • 20 phút</div>
+                        </div>
+                        <span class="quiz-badge badge-pending">Chưa làm</span>
+                    </div>
+                    <div class="mt-2">
+                        <a href="/student/quiz/2" class="btn btn-sm btn-primary w-100" style="border-radius: 8px;">
+                            Bắt đầu
+                        </a>
+                    </div>
+                </div>
+
+                <div class="p-3" style="background: #f8fafc; border-radius: 12px;">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <div class="fw-600">Grammar Test Level A</div>
+                            <div class="small text-muted">25 câu hỏi • 35 phút</div>
+                        </div>
+                        <span class="quiz-badge badge-completed">Hoàn thành</span>
+                    </div>
+                    <div class="mt-2 d-flex justify-content-between align-items-center">
+                        <div class="text-success fw-600">Điểm: 85/100</div>
+                        <a href="/student/quiz/4/result" class="btn btn-sm btn-outline-secondary" style="border-radius: 8px;">
+                            Xem kết quả
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Streak -->
+            <div class="section-card">
+                <h5 class="fw-bold mb-3">
+                    <i class="fas fa-fire me-2" style="color: #ed8936;"></i>
+                    Chuỗi học tập
+                </h5>
+                
+                <div class="text-center mb-3">
+                    <div class="progress-ring mx-auto" style="background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); color: #667eea;">
+                        <div>
+                            <div style="font-size: 32px;">🔥</div>
+                            <div style="font-size: 24px;">12</div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="fw-bold">12 ngày liên tiếp!</div>
+                        <div class="small text-muted">Tiếp tục phấn đấu!</div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between mb-2">
+                    <div class="text-center flex-grow-1">
+                        <div class="small text-muted">Tuần này</div>
+                        <div class="fw-bold" style="color: #667eea;">7/7</div>
+                    </div>
+                    <div class="text-center flex-grow-1">
+                        <div class="small text-muted">Tháng này</div>
+                        <div class="fw-bold" style="color: #667eea;">18/30</div>
+                    </div>
+                    <div class="text-center flex-grow-1">
+                        <div class="small text-muted">Tổng cộng</div>
+                        <div class="fw-bold" style="color: #667eea;">124</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="section-card">
+                <h5 class="fw-bold mb-3">
+                    <i class="fas fa-trophy me-2" style="color: #f59e0b;"></i>
+                    Thành tựu gần đây
+                </h5>
+                
+                <div class="d-flex gap-3 mb-3">
+                    <div class="text-center flex-grow-1 p-3" style="background: #fef3c7; border-radius: 12px;">
+                        <div style="font-size: 32px;">🏆</div>
+                        <div class="small fw-600 mt-2">Người mới</div>
+                    </div>
+                    <div class="text-center flex-grow-1 p-3" style="background: #dbeafe; border-radius: 12px;">
+                        <div style="font-size: 32px;">📚</div>
+                        <div class="small fw-600 mt-2">Học giỏi</div>
+                    </div>
+                    <div class="text-center flex-grow-1 p-3" style="background: #d1fae5; border-radius: 12px;">
+                        <div style="font-size: 32px;">⭐</div>
+                        <div class="small fw-600 mt-2">Siêu sao</div>
+                    </div>
+                </div>
+
+                <a href="#" class="btn btn-outline-primary w-100" style="border-radius: 12px;">
+                    Xem tất cả thành tựu
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        console.log('Dashboard loaded');
+    </script>
+}
+

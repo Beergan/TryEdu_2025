@@ -1,0 +1,60 @@
+﻿@page "/admin"
+@namespace SLK.TryEdu.WebApp.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Authentication.Cookies
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+  
+
+    if (!Request.Cookies.ContainsKey("AdminAuth"))
+    {
+      Response.Redirect("/admin/login");
+        return;
+    }
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>TryEdu Admin [v@(SLK.TryEdu.WebHost.AutoClass.FullVersion) @SLK.TryEdu.WebHost.AutoClass.BuildName]</title>
+
+    <meta name="description" content="TryEdu Admin - Hệ thống quản lý thi thử trực tuyến" />
+    <meta name="keywords" content="admin, quan ly, thi thu, truc tuyen, tryedu" />
+    <meta property="og:title" content="TryEdu Admin Portal" />
+    <meta property="og:image" content="~/icon.ico" />
+    <meta property="og:description" content="TryEdu Admin - Hệ thống quản lý thi thử trực tuyến" />
+
+    <base href="~/" />
+    <link rel="icon" href="~/icon.ico" />
+    <link rel="mask-icon" href="~/icon.ico" />
+    <link rel="icon" sizes="16x16" href="~/icon.ico" />
+    <link rel="icon" sizes="192x192" href="~/icon.ico" />
+
+    <link rel="stylesheet" href="_content/MudBlazor/MudBlazor.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/4.5.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/font-awesome/5.15.1/css/all.css" />
+    <link rel="stylesheet" href="_content/Syncfusion.Blazor.Themes/bootstrap5.css" />
+    <link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+    <div id="app">
+        <component type="typeof(App)" render-mode="Server" />
+    </div>
+    <script src="_framework/blazor.server.js"></script>
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script src="assets/jquery/jquery-3.5.1.min.js"></script>
+    <script src="assets/bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+    <script src="_content/Syncfusion.Blazor.Core/scripts/syncfusion-blazor.min.js"></script>
+    <script src="_content/Syncfusion.Blazor.WordProcessor/scripts/syncfusion-blazor-documenteditor.min.js"></script>
+    <script src="assets/sweetalert2/sweetalert2.js"></script>
+    <script src="assets/sweetalert2/sweetalert2-blazor.js"></script>
+    <script src="assets/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>

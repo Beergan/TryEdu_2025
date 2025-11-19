@@ -1,0 +1,103 @@
+﻿@inject IBlazorContext _ctx
+@inject IJSRuntime JSRuntime
+
+<li class="nav-item dropdown no-arrow mx-1 thongbao">
+    <a class="nav-link dropdown-toggle" id="alertsDropdown" role="button"
+       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @onmousedown="@ResetThongBao">
+        <i class="fas fa-bell fa-fw" style="font-size: 24px; margin-left: -3px;"></i>
+        @if (thongbao > 0)
+        {
+            <span class="badge badge-danger badge-counter">@thongbao</span>
+        }
+    </a>
+    <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in pt-0 pb-0"
+         aria-labelledby="alertsDropdown" style="min-width: 320px;">
+        <h6 class="dropdown-header">
+            Thông báo
+        </h6>
+        <div class="scroll-menu">
+            @foreach (var notify in _notifies.Items)
+            {
+                <a class="dropdown-item d-flex align-items-center" style="background-color: var(--background-content)" href="@notify.Href">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-primary">
+                            <i class="fas fa-user-alt text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">@notify.NotityTime.ToString("dd-MM-yyyy HH:mm")</div>
+                        <span class="font-weight-bold">@notify.Message</span>
+                    </div>
+                </a>
+            }
+        </div>
+        
+        @if (_notifies.Items.Count() == 0)
+        {
+            <a class="dropdown-item d-flex align-items-center" href="#">
+                <div class="mr-3">
+                    <div class="icon-circle" style="background-color: #2AD360;">
+                        <i class="fas fa-user-alt text-white"></i>
+                    </div>
+                </div>
+                <div>
+                    <div class="small text-gray-500">@DateTime.Now.ToString("dd-MM-yyyy HH:mm")</div>
+                    Hiện tại chưa có thông báo mới nào!
+                </div>
+            </a>
+        }
+        @* <a class="dropdown-item d-flex align-items-center" style="background-color: var(--background-content)" href="#">
+        <div class="mr-3">
+        <div class="icon-circle bg-warning">
+        <i class="fas fa-user-alt text-white"></i>
+        </div>
+        </div>
+        <div>
+        <div class="small text-gray-500">@DateTime.Now.ToString("d")</div>
+        Có 2 tin tức mới
+        </div>
+        </a>
+        <a style="background-color: var(--background-content)" class="dropdown-item text-center small text-gray-500" href="#">Xem tất cả</a> *@
+    </div>
+</li>
+
+@code {
+    private ResultsOf<ModelNotification> _notifies = new();
+    private int thongbao = 0;
+    private bool dropdownOpen = false;
+    protected override async void OnInitialized()
+    {
+        _ctx.OnNotify += ProcessEvent;
+        _notifies = await _ctx.Notifier.GetNotifies();
+        StateHasChanged();
+    }
+
+    private void ResetThongBao()
+    {
+        thongbao = 0;
+        StateHasChanged();
+    }
+
+    private async void ProcessEvent(string evt, params string[] data)
+    {
+        if (evt == "GOT_NEW_NOTIFICATION")
+        {
+            _notifies = await _ctx.Notifier.GetNotifies();
+            await PlayAudio("notification");
+            if (_notifies.Items.Count() > 0 && thongbao < 10)
+            {
+                thongbao++;
+            }
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private async Task PlayAudio(string name)
+    {
+        try
+        {
+            await JSRuntime.InvokeVoidAsync(nameof(PlayAudio), name);
+        }
+        catch { }
+    }
+}

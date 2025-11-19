@@ -1,0 +1,124 @@
+﻿@page 
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model SLK.TryEdu.WebHost.Areas.Student.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Đăng ký - TryEdu AI";
+    Layout = "~/Pages/Shared/_StudentLayout.cshtml";
+
+}
+
+<div class="min-vh-100 d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px 0;">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+                <div class="card shadow-lg border-0" style="border-radius: 20px; overflow: hidden; min-height: 600px;">
+                    <div class="row g-0 h-100">
+                        <div class="col-lg-6 d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative;">
+                            <div class="text-center text-white p-4">
+                                <div class="mb-4">
+                                    <img src="/assets/images/logo-mains.png" alt="TryEdu Logo" class="img-fluid" style="max-width: 200px; filter: brightness(0) invert(1); animation: float 3s ease-in-out infinite;">
+                                </div>
+                                <h1 class="h2 fw-bold mb-3">Chào mừng đến với TryEdu!</h1>
+                                <p class="mb-4 opacity-75">Hệ thống học tập trực tuyến hàng đầu Việt Nam</p>
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <i class="fas fa-graduation-cap fs-5"></i>
+                                        <span>Học tập linh hoạt</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <i class="fas fa-certificate fs-5"></i>
+                                        <span>Chứng chỉ uy tín</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <i class="fas fa-users fs-5"></i>
+                                        <span>Cộng đồng học tập</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center">
+                            <div class="p-4 p-lg-5 w-100">
+                                <div class="text-center mb-4">
+                                    <h2 class="h3 fw-bold text-dark mb-2">Đăng ký tài khoản</h2>
+                                    <p class="text-muted">Tạo tài khoản mới để bắt đầu học tập</p>
+                                </div>
+
+                                @if (TempData["SuccessMessage"] != null)
+                                {
+                                    <div class="alert alert-success d-flex align-items-center mb-4" role="alert">
+                                        <i class="fas fa-check-circle me-2"></i>
+                                        @TempData["SuccessMessage"]
+                                    </div>
+                                }
+
+                                <form method="post">
+                                    @Html.AntiForgeryToken()
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-md-6">
+                                            <input asp-for="RegisterRequest.FirstName" class="form-control form-control-lg" placeholder="Họ" />
+                                            <span asp-validation-for="RegisterRequest.FirstName" class="text-danger small"></span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input asp-for="RegisterRequest.LastName" class="form-control form-control-lg" placeholder="Tên" />
+                                            <span asp-validation-for="RegisterRequest.LastName" class="text-danger small"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <input asp-for="RegisterRequest.Email" type="email" class="form-control form-control-lg" placeholder="Email" />
+                                        <span asp-validation-for="RegisterRequest.Email" class="text-danger small"></span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <input asp-for="RegisterRequest.Password" type="password" class="form-control form-control-lg" placeholder="Mật khẩu" />
+                                        <span asp-validation-for="RegisterRequest.Password" class="text-danger small"></span>
+                                        <div class="small mt-1" id="passwordStrength"></div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <input asp-for="RegisterRequest.ConfirmPassword" type="password" class="form-control form-control-lg" placeholder="Xác nhận mật khẩu" />
+                                        <span asp-validation-for="RegisterRequest.ConfirmPassword" class="text-danger small"></span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <input asp-for="RegisterRequest.Phone" class="form-control form-control-lg" placeholder="Số điện thoại (tùy chọn)" />
+                                        <span asp-validation-for="RegisterRequest.Phone" class="text-danger small"></span>
+                                    </div>
+
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-md-6">
+                                            <input asp-for="RegisterRequest.Country" class="form-control form-control-lg" placeholder="Quốc gia (tùy chọn)" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input asp-for="RegisterRequest.City" class="form-control form-control-lg" placeholder="Thành phố (tùy chọn)" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input asp-for="RegisterRequest.AgreeToTerms" class="form-check-input" type="checkbox" />
+                                        <label asp-for="RegisterRequest.AgreeToTerms" class="form-check-label small">
+                                            Tôi đồng ý với <a href="/terms" target="_blank" class="text-decoration-none">điều khoản sử dụng</a> và <a href="/privacy" target="_blank" class="text-decoration-none">chính sách bảo mật</a>
+                                        </label>
+                                    </div>
+
+                                    <div class="text-danger small mb-3">@Html.ValidationMessage("error")</div>
+
+                                    <button type="submit" class="btn btn-primary btn-lg w-100 mb-3" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">
+                                        <i class="fas fa-user-plus me-2"></i> Đăng ký tài khoản
+                                    </button>
+                                </form>
+                                <div class="text-center">
+                                    <p class="small text-muted">Đã có tài khoản? <a href="/login" class="text-decoration-none fw-medium">Đăng nhập ngay</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/register.js"></script>
+}

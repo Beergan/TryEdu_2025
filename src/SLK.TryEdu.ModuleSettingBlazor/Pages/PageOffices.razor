@@ -1,0 +1,363 @@
+﻿@page "/admin/category/office"
+@attribute [Authorize]
+@* @inject AppState AppState
+@inject IBlazorProvider blazorProvider *@
+@inject ISweetAlertService swal
+@inject ITextTranslator Text
+@inject FieldExtractor<EntityOffice> field
+@inject ISettingOfficeService _svc
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Buttons
+@using System.IO
+@using Syncfusion.Blazor.SplitButtons
+@using Syncfusion.Blazor.DropDowns
+
+<SfDialog Target="#target" class="dialog-office" IsModal="true" ShowCloseIcon="true" @bind-Visible="_modalVisible">
+    <DialogTemplates>
+        <Header><span class="title">@_modalTitle</span></Header>
+        <Content>
+            <EditForm id="editForm" Model="@_model" OnValidSubmit="@OnFormSubmit">
+                <DataAnnotationsValidator />
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label mt-1">@(Text[field[nameof(EntityOffice.Avatar)]])</label>
+                    <div class="col-md-9">
+                        <div class="d-flex flex-row bd-highlight" style="border: 1px #d2d2d2 solid; padding: 8px; border-radius: 4px;">
+                            <div>
+                                <label class="lable-upload" for="fileInput">Upload..</label>
+                                <InputFile id="fileInput" OnChange="OnUploadAvata" accept=".png, .jpg, .jpeg" />
+                            </div>
+                            <div class="ml-2 mt-1" style="font-size:13px; color: #909090;">Định dạng tệp: .png, .jpg, .jpeg, Kích thước tối đa: 5MB</div>
+                        </div>
+                    </div>
+                </div>
+                @if (!string.IsNullOrWhiteSpace(_model.Avatar))
+                {
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label"></label>
+                        <div class="col-md-9">
+                            <img height="50px" src="@_model.Avatar" alt="logo-office" />
+                        </div>
+                    </div>
+                }
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">@(Text[field[nameof(EntityOffice.Name)]])</label>
+                    <div class="col-md-9">
+                        <SfTextBox @bind-Value="_model.Name" />
+                        <CustomValidationMessage style="color: red;" For="@(() => _model.Name)" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">@(Text[field[nameof(EntityOffice.Phone)]])</label>
+                    <div class="col-md-9">
+                        <SfTextBox @bind-Value="_model.Phone" />
+                        <CustomValidationMessage style="color: red;" For="@(() => _model.Phone)" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">@Text[field[nameof(EntityOffice.Email)]]</label>
+                    <div class="col-md-9">
+                        <SfTextBox @bind-Value="_model.Email" />
+                        <CustomValidationMessage style="color: red;" For="@(() => _model.Email)" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">@(Text[field[nameof(EntityOffice.Address)]])</label>
+                    <div class="col-md-9">
+                        <SfTextBox @bind-Value="_model.Address" />
+                        <CustomValidationMessage style="color: red;" For="@(() => _model.Address)" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">@(Text[field[nameof(EntityOffice.Active)]])</label>
+                    <div class="col-md-9">
+                        <SfSwitch @bind-Checked="_model.Active"></SfSwitch>
+                    </div>
+                </div>
+            </EditForm>
+        </Content>
+    </DialogTemplates>
+    <DialogEvents Closed="@OnModalClosed"></DialogEvents>
+    <DialogButtons>
+        <DialogButton form=editForm class="btn-submit" Type="Syncfusion.Blazor.Popups.ButtonType.Submit" IsPrimary="false" Content="Xác nhận"></DialogButton>
+    </DialogButtons>
+</SfDialog>
+
+<div class="app-content-wrapper">
+    @if (active)
+    {
+        <div class="app-content-head" style="height: auto">
+            <div class="row" style="padding: 0 0 0 5px">
+                <div class="col-12">
+                    <ol class="breadcrumb">
+                        <li>Cài đặt</li>
+                        <li style="color: #777">&nbsp; / &nbsp;</li>
+                        <li class="active text-primary">Chi nhánh</li>
+                    </ol>
+                </div>
+                <div class="col-12 text-right">
+                    <div class="btn-group pr-0">
+                        <button class="btn btn-light float-right newplus mr-2" @onclick="Office_Click"><span class="fas fa-plus"></span> Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="app-content-body" id="target">
+            <SfGrid DataSource="@_dataSource" AllowResizing="true" AllowSelection="true" AllowFiltering="true"
+                    EnableVirtualization="true" EnableHover="true" Height="100%" RowHeight="38">
+                <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+                <GridPageSettings PageSize="40"></GridPageSettings>
+                <GridSelectionSettings CheckboxOnly="true" PersistSelection="true" Type="Syncfusion.Blazor.Grids.SelectionType.Single"></GridSelectionSettings>
+                <GridColumns>
+                    <GridColumn HeaderText="@Text[field[nameof(EntityOffice.Avatar)]]" Visible="true" Width="150">
+                        <Template>
+                            @{
+                                var item = (context as EntityOffice);
+                                @if (!string.IsNullOrWhiteSpace(item.Avatar))
+                                {
+                                    <img class="mt-2 mb-2" height="50px" src="@item.Avatar" alt="logo-office" />
+                                }
+                                else
+                                {
+                                    <div>Chưa cập nhật logo</div>
+                                }
+                            }
+                        </Template>
+                    </GridColumn>
+                    <GridColumn Field=@nameof(EntityOffice.Name) HeaderText="@Text[field[nameof(EntityOffice.Name)]]" Visible="true" Width="150"></GridColumn>
+                    <GridColumn HeaderText="Văn phòng" Visible="true" Width="130">
+                        <Template>
+                            @{
+                                var item = (context as EntityOffice);
+                                @(item.IsPrimary ? "Trụ sở chính" : "Chi nhánh")
+                            }
+                        </Template>
+                    </GridColumn>
+                    <GridColumn Field=@nameof(EntityOffice.Phone) HeaderText="@Text[field[nameof(EntityOffice.Phone)]]" Visible="true" Width="150"></GridColumn>
+                    <GridColumn Field=@nameof(EntityOffice.Email) HeaderText="@Text[field[nameof(EntityOffice.Email)]]" Visible="true" Width="150"></GridColumn>
+                    <GridColumn Field=@nameof(EntityOffice.Active) HeaderText="@Text[field[nameof(EntityOffice.Active)]]" Visible="true" Width="130">
+                        <Template>
+                            @{
+                                var item = (context as EntityOffice);
+                                <SfSwitch Disabled="true" @bind-Checked="item.Active" @onclick="(()=>SetToActive(item.Id, item.Active))"></SfSwitch>
+                            }
+                        </Template>
+                    </GridColumn>
+                    <GridColumn Field=@nameof(EntityOffice.Address) HeaderText="@Text[field[nameof(EntityOffice.Address)]]" Visible="true" Width="300"></GridColumn>
+                    <GridColumn HeaderText="Chức năng" Width="100" TextAlign="TextAlign.Right">
+                        <Template>
+                            @{
+                                var item = (context as EntityOffice);
+                                <SfDropDownButton CssClass="e-caret-hide float-right" style="padding-left: 13px;" IconCss="fas fa-ellipsis-v">
+                                    <DropDownMenuItems>
+                                        <DropDownButtonEvents ItemSelected="SelectedTask"></DropDownButtonEvents>
+                                        <DropDownMenuItem Id="@(item.Id.ToString())" Text="Sửa"></DropDownMenuItem>
+                                        <DropDownMenuItem Id="@(item.Id.ToString())" Text="Đặt làm trụ sở chính"></DropDownMenuItem>
+                                    </DropDownMenuItems>
+                                </SfDropDownButton>
+                            }
+                        </Template>
+                    </GridColumn>
+                </GridColumns>
+            </SfGrid>
+        </div>
+    }
+</div>
+
+<style>
+    #fileInput {
+        display: none;
+    }
+
+    .lable-upload {
+        display: block;
+        padding: 3px 5px;
+        background-color: #f3f3f3;
+        border: 1px #cecece solid;
+        border-radius: 5px;
+        font-size: 13px;
+        margin: 0px;
+    }
+
+    .lable-upload:hover {
+        cursor: pointer;
+        background-color: #e6e1e1;
+    }
+</style>
+
+@code {
+    #region vavariables
+    bool active = false;
+    private EntityOffice _model = new();
+    private IEnumerable<EntityOffice> _dataSource;
+    private string _modalTitle;
+    private bool _modalVisible = false;
+    #endregion
+
+    #region events
+    protected override async Task OnInitializedAsync()
+    {
+        // AppState.StateChanged += () => this.StateHasChanged();
+        // AppState.PageTitle = () => "Danh sách chi nhánh";
+        // _svc = blazorProvider.GetService<ISettingOfficeService>();
+        _ = swal.Loading("Nạp thông tin ..");
+
+        await RereshData();
+    }
+
+    private void Office_Click()
+    {
+        _modalTitle = "Thêm chi nhánh mới";
+        _modalVisible = true;
+    }
+
+    private void OnModalClosed(Object args)
+    {
+        _model = new EntityOffice();
+    }
+
+    private async void OnFormSubmit()
+    {
+        this._modalVisible = false;
+        _ = swal.Loading("Lưu thông tin..");
+
+        var rsp = await AppStatic.CallApi(() => _svc.Save(_model));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        await RereshData();
+    }
+    #endregion
+
+    #region methods
+    private async Task RereshData()
+    {
+        var rsp = await AppStatic.CallApi(() => _svc.GetList());
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        active = true;
+
+        _dataSource = rsp.Items;
+
+        await swal.Close();
+
+        StateHasChanged();
+    }
+
+    private async void Modify(int id)
+    {
+        _model = _dataSource.Single(t => t.Id == id);
+
+        _modalTitle = "Hiệu chỉnh chi nhánh";
+        this._modalVisible = true;
+        await Task.CompletedTask;
+    }
+
+    private async void Delete(int id)
+    {
+        this._modalVisible = false;
+
+        var confirm = await swal.ConfirmDelete("Xác nhận xoá thông tin");
+        if (!confirm) return;
+
+        _ = swal.Loading("Đang xóa ..");
+        var rsp = await AppStatic.CallApi(() => _svc.Delete(id));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        await RereshData();
+    }
+
+    private async void SetToActive(int id, bool actived)
+    {
+
+        this._modalVisible = false;
+
+        var confirm = await swal.ConfirmDelete(actived ? "Xác nhận hủy kích hoạt" : "Xác nhận kích hoạt");
+        if (!confirm) return;
+
+        _ = swal.Loading("Đang cập nhật");
+        var rsp = await AppStatic.CallApi(() => _svc.SetToActive(id));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        await RereshData();
+    }
+
+    private async void SetToPrimary(int id)
+    {
+        this._modalVisible = false;
+
+        var confirm = await swal.ConfirmDelete("Xác nhận đặt làm trụ sở chính");
+        if (!confirm) return;
+
+        _ = swal.Loading("Đang cập nhật");
+        var rsp = await AppStatic.CallApi(() => _svc.SetToPrimary(id));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        await RereshData();
+    }
+
+    private async void HeadQuarter(int id)
+    {
+        this._modalVisible = false;
+        var confirm = await swal.ConfirmDelete("Xác nhận trụ sở chính");
+        if (!confirm) return;
+
+        _ = swal.Loading("Đang cập nhật ..");
+        var rsp = await AppStatic.CallApi(() => _svc.SetToPrimary(id));
+
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+        await RereshData();
+    }
+
+    private void SelectedTask(MenuEventArgs e)
+    {
+        string text = e.Item.Text;
+        int id = Convert.ToInt32(e.Item.Id);
+        if (text == "Sửa")
+            Modify(id);
+        else
+            SetToPrimary(id);
+    }
+
+    private async Task OnUploadAvata(InputFileChangeEventArgs args)
+    {
+        var resuft = await UploadHelper.ImageBase64(args.File);
+
+        if (resuft.Item1 == "error")
+        {
+            _ = swal.Error(resuft.Item2, "Lỗi!");
+            return;
+        }
+        else if (resuft.Item1 == "success")
+        {
+            _model.Avatar = resuft.Item2;
+
+            StateHasChanged();
+        }
+    }
+    #endregion
+}

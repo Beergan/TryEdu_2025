@@ -1,0 +1,476 @@
+﻿@page
+@model SLK.TryEdu.WebHost.Areas.Student.Pages.IndexModel
+@{
+    ViewData["Title"] = "Trang chủ - TryEdu AI";
+    Layout = "~/Pages/Shared/_StudentLayout.cshtml";
+}
+
+    <section class="hero-section">
+        <div class="particles" id="particles"></div>
+        <div class="container">
+            <div class="row align-items-center ">
+                <div class="col-lg-6 hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-sparkles me-2"></i>Sắp Ra Mắt 2025
+                    </div>
+                    <h1 class="hero-title">
+                        AI Chấm Bài<br>
+                        <span style="background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Tự Luận Thông Minh</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Hệ thống thi thử trực tuyến đầu tiên tại Việt Nam sử dụng AI để chấm bài tự luận tự động, chính xác và nhanh chóng như giáo viên.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <button class="btn btn-hero btn-hero-primary">
+                            <i class="fas fa-rocket me-2"></i>Dùng Thử Miễn Phí
+                        </button>
+                        <button class="btn btn-hero btn-hero-secondary">
+                            <i class="fas fa-play-circle me-2"></i>Xem Demo
+                        </button>
+                    </div>
+                    <div class="mt-5">
+                        <div class="row g-4">
+                            <div class="col-4">
+                                <div class="text-white">
+                                    <h3 class="fw-bold mb-0">98%</h3>
+                                    <small class="opacity-75">Độ chính xác</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="text-white">
+                                    <h3 class="fw-bold mb-0">&lt;3s</h3>
+                                    <small class="opacity-75">Thời gian chấm</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="text-white">
+                                    <h3 class="fw-bold mb-0">24/7</h3>
+                                    <small class="opacity-75">Hỗ trợ AI</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="dashboard-preview">
+                        <div class="preview-card">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="me-3">
+                                    <i class="fas fa-robot fa-2x" style="color: var(--primary);"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1 fw-bold">AI Đang Chấm Bài...</h5>
+                                    <small class="text-muted">Phân tích câu trả lời tự luận</small>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="small fw-semibold">Phân tích nội dung</span>
+                                    <span class="small text-primary">95%</span>
+                                </div>
+                                <div class="loading-bar">
+                                    <div class="loading-progress" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="small fw-semibold">Kiểm tra ngữ pháp</span>
+                                    <span class="small text-success">88%</span>
+                                </div>
+                                <div class="loading-bar">
+                                    <div class="loading-progress" style="width: 88%; animation-delay: 0.5s;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="small fw-semibold">Đánh giá logic</span>
+                                    <span class="small text-warning">92%</span>
+                                </div>
+                                <div class="loading-bar">
+                                    <div class="loading-progress" style="width: 92%; animation-delay: 1s;"></div>
+                                </div>
+                            </div>
+                            <div class="alert alert-success mb-0">
+                                <i class="fas fa-check-circle me-2"></i>
+                                <strong>Kết quả:</strong> Điểm 9.2/10 - Bài làm xuất sắc!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tính Năng Vượt Trội</h2>
+                <p class="section-subtitle">Giải pháp toàn diện cho học tập và thi thử trực tuyến</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3 class="feature-title">Khóa Học Miễn Phí</h3>
+                        <p class="feature-description">
+                            Truy cập ngay lập tức các khóa học Tiếng Anh chất lượng cao hoàn toàn miễn phí. Không cần thanh toán, chỉ cần đăng ký.
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle text-success"></i> Video HD chất lượng cao</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Tài liệu học tập đầy đủ</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Quiz sau mỗi bài học</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s;">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Bài Thi Thử Chuyên Nghiệp</h3>
+                        <p class="feature-description">
+                            Mua bài thi thử IELTS, TOEIC với giá hợp lý. Chấm điểm tự động bởi AI và giáo viên chuyên nghiệp.
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle text-success"></i> 4 kỹ năng đầy đủ</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Chấm điểm trong 3 giây</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Feedback chi tiết</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s;">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="feature-title">AI Chấm Điểm Tự Động</h3>
+                        <p class="feature-description">
+                            Công nghệ AI tiên tiến phân tích và chấm điểm bài thi Writing/Speaking với độ chính xác 98.5%.
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle text-success"></i> Chấm tức thì</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Phân tích sâu</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Đề xuất cải thiện</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="feature-title">Phân Tích Thông Minh</h3>
+                        <p class="feature-description">
+                            Báo cáo chi tiết về tiến độ học tập, điểm mạnh/yếu và xu hướng cải thiện qua thời gian.
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle text-success"></i> Dashboard trực quan</li>
+                            <li><i class="fas fa-check-circle text-success"></i> So sánh với cộng đồng</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Dự đoán kết quả</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3 class="feature-title">Lộ Trình Cá Nhân</h3>
+                        <p class="feature-description">
+                            AI tạo lộ trình học tập riêng biệt dựa trên năng lực và mục tiêu của từng học viên.
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle text-success"></i> Đề xuất bài tập</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Lịch học tối ưu</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Theo dõi tiến độ</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title">Cộng Đồng Học Tập</h3>
+                        <p class="feature-description">
+                            Tham gia cộng đồng học viên, study groups, forum thảo luận và peer review.
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle text-success"></i> Forum thảo luận</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Study groups</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Peer review</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Section -->
+    <section id="platform" class="platform-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Đa Nền Tảng</h2>
+                <p class="section-subtitle">Học mọi lúc, mọi nơi với mọi thiết bị</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="platform-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="platform-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3 class="feature-title">Web Application</h3>
+                        <p class="feature-description">
+                            Truy cập qua trình duyệt với giao diện Blazor hiện đại, mượt mà và responsive.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="platform-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="platform-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Mobile App</h3>
+                        <p class="feature-description">
+                            Ứng dụng Flutter native cho iOS và Android với hiệu năng vượt trội.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="platform-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="platform-icon">
+                            <i class="fas fa-cloud-download-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Offline Mode</h3>
+                        <p class="feature-description">
+                            Download bài học và học offline, tự động đồng bộ khi có internet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cách Thức Hoạt Động</h2>
+                <p class="section-subtitle">Chỉ 3 bước đơn giản để bắt đầu</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="process-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="process-number">1</div>
+                        <h3 class="process-title">Đăng Ký Miễn Phí</h3>
+                        <p class="process-description">
+                            Tạo tài khoản trong 30 giây. Xác thực email và bắt đầu học ngay lập tức với các khóa học miễn phí.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="process-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="process-number">2</div>
+                        <h3 class="process-title">Học &amp; Thi Thử</h3>
+                        <p class="process-description">
+                            Truy cập khóa học miễn phí hoặc mua bài thi thử. AI chấm điểm tự động và đưa ra feedback chi tiết.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="process-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="process-number">3</div>
+                        <h3 class="process-title">Theo Dõi Tiến Độ</h3>
+                        <p class="process-description">
+                            Xem báo cáo chi tiết, phân tích điểm mạnh/yếu và nhận lộ trình học tập cá nhân hóa từ AI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Bảng Giá Linh Hoạt</h2>
+                <p class="section-subtitle">Chọn gói phù hợp với nhu cầu của bạn</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <h3 class="pricing-title">Miễn Phí</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">0₫</span>
+                            <p class="price-period">/tháng</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle text-success"></i> Tất cả khóa học miễn phí</li>
+                            <li><i class="fas fa-check-circle text-success"></i> 5 bài thi thử/tháng</li>
+                            <li><i class="fas fa-check-circle text-success"></i> AI chấm tự động</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Báo cáo cơ bản</li>
+                            <li><i class="fas fa-times-circle text-muted"></i> Lộ trình cá nhân</li>
+                            <li><i class="fas fa-times-circle text-muted"></i> Trợ lý AI 24/7</li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100 rounded-pill py-3">
+                            Bắt Đầu Miễn Phí
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card featured" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="pricing-badge">Phổ Biến Nhất</div>
+                        <h3 class="pricing-title">Pro</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">199K</span>
+                            <p class="price-period">/tháng</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle text-success"></i> Tất cả khóa học miễn phí</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Không giới hạn bài thi</li>
+                            <li><i class="fas fa-check-circle text-success"></i> AI chấm tự động</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Báo cáo chi tiết</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Lộ trình cá nhân</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Trợ lý AI 24/7</li>
+                        </ul>
+                        <button class="btn btn-primary w-100 rounded-pill py-3">
+                            Chọn Gói Pro
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <h3 class="pricing-title">Enterprise</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount" style="font-size: 2.5rem;">Liên hệ</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle text-success"></i> Tất cả tính năng Pro</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Quản lý đa trường</li>
+                            <li><i class="fas fa-check-circle text-success"></i> API tích hợp</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Hỗ trợ ưu tiên</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Đào tạo miễn phí</li>
+                            <li><i class="fas fa-check-circle text-success"></i> Tùy chỉnh hệ thống</li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100 rounded-pill py-3">
+                            Liên Hệ Sales
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Học Viên Nói Gì?</h2>
+                <p class="section-subtitle">Hơn 50,000 học viên tin tưởng TryEdu AI</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; font-size: 1.8rem; font-weight: bold;">
+                                N
+                            </div>
+                            <div>
+                                <h5 class="mb-1 fw-bold">Nguyễn Văn An</h5>
+                                <small class="text-muted">Học sinh lớp 12</small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="text-muted">
+                            "AI chấm bài tự luận chính xác đến không ngờ! Giúp mình tiết kiệm rất nhiều thời gian và biết được điểm yếu của mình để cải thiện."
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, #10b981, #059669); color: white; font-size: 1.8rem; font-weight: bold;">
+                                T
+                            </div>
+                            <div>
+                                <h5 class="mb-1 fw-bold">Trần Thị Bình</h5>
+                                <small class="text-muted">Giáo viên</small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="text-muted">
+                            "Công cụ tuyệt vời cho giáo viên! AI không chỉ chấm điểm mà còn đưa ra nhận xét chi tiết giúp học sinh hiểu rõ sai lầm của mình."
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; font-size: 1.8rem; font-weight: bold;">
+                                L
+                            </div>
+                            <div>
+                                <h5 class="mb-1 fw-bold">Lê Minh Châu</h5>
+                                <small class="text-muted">Phụ huynh</small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="text-muted">
+                            "Con tôi học tiến bộ rõ rệt sau khi dùng TryEdu AI. Lộ trình học cá nhân hóa rất phù hợp với năng lực của con."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Sẵn Sàng Trải Nghiệm?</h2>
+                <p class="cta-description">
+                    Đăng ký ngay để nhận ưu đãi đặc biệt dành cho 1000 người dùng đầu tiên
+                </p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap mb-4">
+                    <button class="btn btn-light-custom">
+                        <i class="fas fa-rocket me-2"></i>Dùng Thử Miễn Phí
+                    </button>
+                    <button class="btn btn-outline-light btn-lg rounded-pill px-5">
+                        <i class="fas fa-phone me-2"></i>Liên Hệ Ngay
+                    </button>
+                </div>
+                <div class="mt-4">
+                    <p class="text-white mb-0">
+                        <i class="fas fa-check-circle me-2"></i>Không cần thẻ tín dụng
+                        <span class="mx-3">•</span>
+                        <i class="fas fa-check-circle me-2"></i>Hủy bất cứ lúc nào
+                        <span class="mx-3">•</span>
+                        <i class="fas fa-check-circle me-2"></i>Hỗ trợ 24/7
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>

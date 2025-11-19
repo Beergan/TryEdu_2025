@@ -1,0 +1,1 @@
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.ModuleSettingBlazor\obj\Release\net8.0\staticwebassets.build.json

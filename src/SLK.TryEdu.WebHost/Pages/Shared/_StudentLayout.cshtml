@@ -1,0 +1,164 @@
+﻿@using Microsoft.AspNetCore.Http.Extensions
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@(ViewData["Title"] ?? "TryEdu AI - Hệ thống thi thử trực tuyến thông minh")</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="@(ViewData["Description"] ?? "TryEdu AI - Hệ thống thi thử trực tuyến tích hợp AI thông minh, chấm điểm tự động, phân tích kết quả và đề xuất lộ trình học tập cá nhân hóa cho từng học viên.")">
+    <meta name="keywords" content="@(ViewData["Keywords"] ?? "thi thử online, AI giáo dục, học tập thông minh, chấm điểm tự động, lộ trình học tập, TryEdu, giáo dục AI, thi trực tuyến, phân tích kết quả học tập")">
+    <meta name="author" content="TryEdu AI Team">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="@(ViewData["CanonicalUrl"] ?? Context.Request.GetDisplayUrl())" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="@(ViewData["Favicon"] ?? "/favicon.ico")" type="image/x-icon" />
+    <link rel="icon" href="@(ViewData["Favicon"] ?? "/favicon.ico")" sizes="32x32">
+    <link rel="icon" href="@(ViewData["Favicon"] ?? "/favicon.ico")" sizes="192x192">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="@(ViewData["OgTitle"] ?? ViewData["Title"] ?? "TryEdu AI - Hệ thống thi thử trực tuyến thông minh")">
+    <meta property="og:description" content="@(ViewData["OgDescription"] ?? ViewData["Description"] ?? "Hệ thống thi thử trực tuyến tích hợp AI thông minh, chấm điểm tự động và đề xuất lộ trình học tập cá nhân hóa.")">
+    <meta property="og:url" content="@(ViewData["OgUrl"] ?? Context.Request.GetDisplayUrl())">
+    <meta property="og:image" content="@(ViewData["OgImage"] ?? "/images/og-image.jpg")">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="TryEdu AI">
+    <meta property="og:locale" content="vi_VN">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@(ViewData["TwitterTitle"] ?? ViewData["Title"] ?? "TryEdu AI - Hệ thống thi thử trực tuyến thông minh")">
+    <meta name="twitter:description" content="@(ViewData["TwitterDescription"] ?? ViewData["Description"] ?? "Hệ thống thi thử trực tuyến tích hợp AI thông minh, chấm điểm tự động và đề xuất lộ trình học tập cá nhân hóa.")">
+    <meta name="twitter:image" content="@(ViewData["TwitterImage"] ?? "/images/twitter-image.jpg")">
+    <meta name="twitter:site" content="/">
+    <meta name="twitter:creator" content="/">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#007bff">
+    <meta name="msapplication-TileColor" content="#007bff">
+    <meta name="msapplication-TileImage" content="/images/ms-tile-144x144.png">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@@context": "https://schema.org",
+            "@@type": "EducationalOrganization",
+            "name": "TryEdu AI",
+            "alternateName": "TryEdu",
+            "url": "@(ViewData["CanonicalUrl"] ?? Context.Request.GetDisplayUrl())",
+            "logo": {
+                "@@type": "ImageObject",
+                "url": "/images/logo.png",
+                "width": 200,
+                "height": 60
+            },
+            "description": "Hệ thống thi thử trực tuyến tích hợp AI thông minh, chấm điểm tự động và đề xuất lộ trình học tập cá nhân hóa.",
+            "foundingDate": "2024",
+            "address": {
+                "@@type": "PostalAddress",
+                "addressCountry": "VN",
+                "addressLocality": "Hà Nội",
+                "addressRegion": "Hà Nội",
+                "streetAddress": "123 Đường ABC, Quận XYZ"
+            },
+            "contactPoint": {
+                "@@type": "ContactPoint",
+                "telephone": "+84-123-456-789",
+                "email": "support@tryedu.ai",
+                "contactType": "customer service",
+                "availableLanguage": ["Vietnamese", "English"]
+            },
+            "sameAs": [
+                "https://www.facebook.com/tryeduai",
+                "https://www.twitter.com/tryeduai",
+                "https://www.linkedin.com/company/tryeduai",
+                "https://www.youtube.com/c/tryeduai"
+            ],
+            "offers": {
+                "@@type": "Offer",
+                "name": "Hệ thống thi thử AI",
+                "description": "Dịch vụ thi thử trực tuyến tích hợp AI",
+                "price": "0",
+                "priceCurrency": "VND",
+                "availability": "https://schema.org/InStock"
+            },
+            "hasOfferCatalog": {
+                "@@type": "OfferCatalog",
+                "name": "Danh mục môn học",
+                "itemListElement": [
+                    {
+                        "@@type": "Offer",
+                        "itemOffered": {
+                            "@@type": "Course",
+                            "name": "Toán học",
+                            "description": "Khóa học toán học với AI hỗ trợ"
+                        }
+                    },
+                    {
+                        "@@type": "Offer",
+                        "itemOffered": {
+                            "@@type": "Course",
+                            "name": "Vật lý",
+                            "description": "Khóa học vật lý với AI phân tích"
+                        }
+                    },
+                    {
+                        "@@type": "Offer",
+                        "itemOffered": {
+                            "@@type": "Course",
+                            "name": "Hóa học",
+                            "description": "Khóa học hóa học với AI tối ưu"
+                        }
+                    },
+                    {
+                        "@@type": "Offer",
+                        "itemOffered": {
+                            "@@type": "Course",
+                            "name": "Tiếng Anh",
+                            "description": "Khóa học tiếng Anh với AI đánh giá"
+                        }
+                    }
+                ]
+            }
+        }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID', {
+            'page_title': '@(ViewData["Title"] ?? "TryEdu AI")',
+            'page_location': '@Context.Request.GetDisplayUrl()'
+        });
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="~/css/student.css" rel="stylesheet" />
+    <link href="~/css/register.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation -->
+    @await Html.PartialAsync("_Header")
+    <main>
+        @RenderBody()
+    </main>
+    @await Html.PartialAsync("_Footer")
+    <script src="~/assets/jquery/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/student.js"></script>
+    <script>
+       
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

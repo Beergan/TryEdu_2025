@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<DisableImplicitComponentsAnalyzers>true</DisableImplicitComponentsAnalyzers>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<PreserveCompilationContext>true</PreserveCompilationContext>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(RunConfiguration)' == 'WebHost' " />
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.10" />
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.10" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SLK.TryEdu.Abstract\SLK.TryEdu.Abstract.csproj" />
+		<ProjectReference Include="..\SLK.TryEdu.Base\SLK.TryEdu.Base.csproj" />
+		<ProjectReference Include="..\SLK.TryEdu.Db\SLK.TryEdu.Db.csproj" />
+		<ProjectReference Include="..\SLK.TryEdu.ModuleEmployee\SLK.TryEdu.ModuleEmployee.csproj" />
+				<ProjectReference Include="..\SLK.TryEdu.ModuleUser\SLK.TryEdu.ModuleUser.csproj" />
+		<ProjectReference Include="..\SLK.TryEdu.ModuleManagement\SLK.TryEdu.ModuleManagement.csproj" />
+		<ProjectReference Include="..\SLK.TryEdu.ModuleSetting\SLK.TryEdu.ModuleSetting.csproj" />
+		<ProjectReference Include="..\SLK.TryEdu.WebApp\SLK.TryEdu.WebApp.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="AutoVersion.tt">
+			<Generator>TextTemplatingFileGenerator</Generator>
+			<LastGenOutput>AutoVersion.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="AutoVersion.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>AutoVersion.tt</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="$(OutputPath)\SLK.TryEdu.WebHost.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Areas\Student\Controllers\" />
+	  <Folder Include="Areas\Student\Services\" />
+	</ItemGroup>
+
+</Project>

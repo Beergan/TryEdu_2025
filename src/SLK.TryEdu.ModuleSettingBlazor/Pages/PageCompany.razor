@@ -1,0 +1,318 @@
+﻿@page "/admin/category/company"
+@inject IBlazorContext ctx
+@inject ISweetAlertService swal
+@inject ITextTranslator Text
+@inject ISettingCompanyService _svc
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Buttons
+@using System.IO
+@using Syncfusion.Blazor.ProgressBar
+
+<div class="app-content-wrapper">
+    <div class="app-content-head" style="height: auto">
+        <div class="row" style="padding: 0 0 0 5px">
+            <div class="col-12">
+                <ol class="breadcrumb">
+                    <li>Cài đặt</li>
+                    <li style="color: #777">&nbsp; / &nbsp;</li>
+                    <li class="active text-primary">Thông tin công ty</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="app-content-body">
+        @if (_active)
+        {
+            <div class="container-fluid" style="overflow:auto">
+                <div class="container box mb-4 mt-4">
+                    <div class="form-container ">
+                        <EditForm OnValidSubmit="@OnFormSubmit" Model="@_model">
+                            <DataAnnotationsValidator />
+                            <div class="form-group row mb-0">
+                                <div class="col-12 col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>Logo</label>
+                                            <div class="d-flex flex-row bd-highlight" style="border: 1px #d2d2d2 solid; padding: 8px; border-radius: 4px;">
+                                                <div>
+                                                    <label class="lable-upload" for="fileInput">Upload..</label>
+                                                    <InputFile id="fileInput" OnChange="OnUploadImage" accept=".png, .jpg, .jpeg" />
+                                                </div>
+                                                <div class="ml-2 mt-1" style="font-size:13px; color: #909090;">Định dạng tệp: .png, .jpg, .jpeg, Kích thước tối đa: 5MB</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 mt-2 mt-md-0 d-flex d-flex justify-content-center">
+                                    @if (!string.IsNullOrWhiteSpace(_model.CompanyLogo))
+                                    {
+                                        <img class="align-self-center" height="86px" src="@_model.CompanyLogo" alt="logo-company" />
+                                    }
+                                </div>
+                            </div>
+                            <div class="form-group row mb-0">
+                                <div class="col-12 col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>Tên công ty</label>
+                                            <SfTextBox @bind-Value="@_model.CompanyName" Readonly="@_uiLocked"></SfTextBox>
+                                            <CustomValidationMessage For="@(() => _model.CompanyName)" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 mt-2 mt-md-0">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>WebSite</label>
+                                            <SfTextBox @bind-Value="@_model.CompanyWebSite" Readonly="@_uiLocked"></SfTextBox>
+                                            <CustomValidationMessage For="@(() => _model.CompanyWebSite)" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-0">
+                                <div class="col-12 col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>Điện thoại</label>
+                                            <SfTextBox @bind-Value="@_model.CompanyPhone" Readonly="@_uiLocked"></SfTextBox>
+                                            <CustomValidationMessage For="@(() => _model.CompanyPhone)" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 mt-2 mt-md-0">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>Email</label>
+                                            <SfTextBox @bind-Value="@_model.CompanyEmail" Readonly="@_uiLocked"></SfTextBox>
+                                            <CustomValidationMessage For="@(() => _model.CompanyEmail)" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row mt-0">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>Mô tả</label>
+                                            <SfTextBox Multiline=true @bind-Value="@_model.CompanyOverview" CssClass="company-overview" Readonly="@_uiLocked"></SfTextBox>
+                                            <CustomValidationMessage For="@(() => _model.CompanyOverview)" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @if (!_uiLocked)
+                            {
+                                <hr />
+                                <div class="form-group row mb-0">
+                                    <div class="col-12 text-right">
+                                        <SfButton type="submit" IsPrimary="true">@Text["Update", "Lưu thông tin"]</SfButton>
+                                    </div>
+                                </div>
+                            }
+                        </EditForm>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    #fileInput {
+        display: none;
+    }
+
+    .lable-upload {
+        display: block;
+        padding: 3px 5px;
+        background-color: #f3f3f3;
+        border: 1px #cecece solid;
+        border-radius: 5px;
+        font-size: 13px;
+        margin: 0px;
+    }
+
+        .lable-upload:hover {
+            cursor: pointer;
+            background-color: #e6e1e1;
+        }
+
+    .box {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px 1px rgb(55 55 55 / 35%);
+        overflow: hidden;
+        padding: 20px !important;
+        max-width: 900px !important;
+    }
+
+    .breadcrumb {
+        margin-bottom: 10px !important;
+        padding: 8px !important;
+        background-color: #e9ecefb0 !important;
+    }
+
+        .breadcrumb li {
+            font-size: 15px !important;
+        }
+
+
+    .example-label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .bootstrap .ename {
+        font-size: 15px;
+        margin-top: 20px;
+        opacity: .87;
+        padding: 3px 0 20px;
+    }
+
+    .e-bigger.bootstrap .ename {
+        font-size: 15px;
+        padding-bottom: 15px;
+        line-height: 1.063em;
+    }
+
+    .bootstrap .name,
+    .bootstrap4 .name,
+    .bootstrap-dark .name {
+        padding: 7px 42px;
+    }
+
+    .e-bigger.bootstrap .name {
+        padding: 8px 42px;
+    }
+
+    .info {
+        margin-left: 34px;
+    }
+
+    .ename {
+        display: block !important;
+        opacity: .87;
+        font-size: 15px;
+        margin-top: 8px;
+    }
+
+    .name {
+        padding: 5px 42px;
+        opacity: .87;
+    }
+
+    .e-bigger:not(.bootstrap) .name {
+        padding: 8px 42px;
+    }
+
+    .template.e-popup .e-list-item * {
+        display: block;
+        text-indent: 0;
+    }
+
+    .e-bigger:not(.bootstrap) .template .e-dropdownbase .e-list-item {
+        line-height: 42px;
+        height: 80px;
+    }
+
+    .template .e-dropdownbase.e-content {
+        max-height: 200px !important;
+    }
+
+    .e-input-group.e-success:not(.e-disabled):not(:active) .e-input-group-icon:hover, .e-input-group.e-control-wrapper.e-success:not(.e-disabled):not(:active) .e-input-group-icon:hover {
+        color: #495057;
+    }
+
+    .app-content-body div.row {
+        padding: 5px 0;
+    }
+
+    .app-content-body textarea {
+        height: 150px !important;
+    }
+
+    @@media only screen and (max-width: 480px) {
+        .app-content-body div.row {
+            padding: 0px;
+        }
+    }
+</style>
+
+@code {
+
+    #region variables
+    private bool _active = false;
+    private bool _uiLocked = true;
+    private EntityCompany _model = new();
+    #endregion
+
+    #region events
+    protected override async void OnInitialized()
+    {
+        await RereshData();
+
+        StateHasChanged();
+    }
+    #endregion
+
+    #region methods
+    private async Task RereshData()
+    {
+        var rsp = await AppStatic.CallApi(() => _svc.Get());
+
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        _active = true;
+        _uiLocked = _svc.CheckPermission();
+
+        _model = rsp.Item == null ? new EntityCompany() : rsp.Item;
+
+        _ = swal.Close();
+        StateHasChanged();
+    }
+
+    private async void OnFormSubmit()
+    {
+        EntityCompany model = _model.CloneTo<EntityCompany>();
+
+        _ = swal.Loading("Lưu thông tin ..");
+
+        var rsp = await AppStatic.CallApi(() => _svc.Save(model));
+
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        _uiLocked = false;
+
+        await RereshData();
+        _ = swal.Alert("Thành công ", "Save");
+    }
+
+    private async Task OnUploadImage(InputFileChangeEventArgs args)
+    {
+        var resuft = await UploadHelper.ImageBase64(args.File);
+
+        if (resuft.Item1 == "error")
+        {
+            _ = swal.Error(resuft.Item2, "Lỗi!");
+            return;
+        }
+        else if (resuft.Item1 == "success")
+        {
+            _model.CompanyLogo = resuft.Item2;
+
+            StateHasChanged();
+        }
+    }
+    #endregion
+}

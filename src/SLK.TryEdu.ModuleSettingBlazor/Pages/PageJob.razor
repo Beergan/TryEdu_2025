@@ -1,0 +1,198 @@
+﻿@page "/admin/category/job"
+@attribute [Authorize]
+@* @inject AppState AppState
+@inject IBlazorProvider blazorProvider *@
+@inject ISweetAlertService swal
+@inject ITextTranslator Text
+@inject FieldExtractor<EntityJob> field
+@inject ISettingJobService _svc
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Buttons
+@using System.IO
+@using Syncfusion.Blazor.SplitButtons
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Calendars
+
+<SfDialog Target="#target" IsModal="true" ShowCloseIcon="true" class="dialog-job" @bind-Visible="_modalVisible">
+    <DialogTemplates>
+        <Header><span class="title">@_modalTitle</span></Header>
+        <Content>
+            <EditForm id="editForm" OnValidSubmit="@OnFormSubmit" Model="@_model">
+                <DataAnnotationsValidator />
+                <div class="form-group row">
+                    <label class="col-md-12 col-form-label">Tên vị trí công việc</label>
+                    <div class="col-md-12">
+                        <SfTextBox @bind-Value="_model.JobName" />
+                        <CustomValidationMessage For="@(() => _model.JobName)" />
+                    </div>
+                </div>
+            </EditForm>
+        </Content>
+    </DialogTemplates>
+    <DialogButtons>
+        <DialogButton form=editForm class="btn-submit" Type="Syncfusion.Blazor.Popups.ButtonType.Submit" IsPrimary="false" Content="Xác nhận"></DialogButton>
+    </DialogButtons>
+</SfDialog>
+
+<div class="app-content-wrapper">
+    @if (active)
+    {
+        <div class="app-content-head" style="height: auto">
+            <div class="row" style="padding: 0 0 0 5px">
+                <div class="col-12">
+                    <ol class="breadcrumb">
+                        <li>Danh mục</li>
+                        <li style="color: #777">&nbsp; / &nbsp;</li>
+                        <li class="active text-primary">Vị trí công việc</li>
+                    </ol>
+                </div>
+                <div class="col-12 text-right">
+                    <div class="btn-group pr-0">
+                        <button class="btn btn-light float-right newplus mr-2" @onclick="NewJob_Click"><span class="fas fa-plus"></span> Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="app-content-body" id="target">
+            <div class="container-fluid" style="overflow:auto">
+                <SfGrid ID="Grid" AllowResizing="true" DataSource="@_displaySource" Height="100%">
+                    <GridColumns>
+                        <GridColumn Field=@nameof(EntityJob.JobName) HeaderText="@Text[field[nameof(EntityJob.JobName)]]"></GridColumn>
+                        <GridColumn HeaderText="Chức năng" Width="110" TextAlign="TextAlign.Right">
+                            <Template>
+                                @{
+                                    var item = (context as EntityJob);
+                                    <SfDropDownButton CssClass="e-caret-hide float-right" style="padding-left: 13px;" IconCss="fas fa-ellipsis-v">
+                                        <DropDownMenuItems>
+                                            <DropDownButtonEvents ItemSelected="SelectedTask"></DropDownButtonEvents>
+                                            <DropDownMenuItem Id="@(item.Id.ToString())" Text="Sửa"></DropDownMenuItem>
+                                            <DropDownMenuItem style="color: red;" Id="@(item.Id.ToString())" Text="Xoá"></DropDownMenuItem>
+                                        </DropDownMenuItems>
+                                    </SfDropDownButton>
+                                }
+                            </Template>
+                        </GridColumn>
+                    </GridColumns>
+                </SfGrid>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+
+    #region vavariables
+    [Inject] NavigationManager _navManager { get; set; }
+    [Inject] IJSRuntime JSRuntime { get; set; }
+    [Parameter]
+    public Guid guid { get; set; }
+    private bool active = false;
+    private bool _modalVisible;
+    private string _modalTitle;
+    private EntityJob _model = new();
+    private IEnumerable<EntityJob> _dataSource;
+    private List<EntityJob> _displaySource;
+
+    #endregion
+
+    #region events
+    protected override async Task OnInitializedAsync()
+    {
+        _ = swal.Loading("Nạp thông tin ..");
+
+        await RereshData();
+    }
+
+    private void NewJob_Click()
+    {
+        _modalTitle = "Thêm vị trí công việc";
+        _modalVisible = true;
+    }
+
+    private void OnModalClosed(Object args)
+    {
+        _model = new EntityJob();
+    }
+    #endregion
+
+    #region methods
+    private async Task RereshData()
+    {
+        var rsp1 = await AppStatic.CallApi(() => _svc.GetList());
+        if (!rsp1.Success)
+        {
+            _ = swal.Error(rsp1.Message);
+            return;
+        }
+
+        active = true;
+
+        _dataSource = rsp1.Items;
+        _displaySource = _dataSource.ToList();
+
+        await swal.Close();
+        StateHasChanged();
+    }
+
+    private async void OnFormSubmit()
+    {
+        _modalVisible = false;
+        _ = swal.Loading("Lưu thông tin..");
+
+        var rsp = await AppStatic.CallApi(() => _svc.Save(_model));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        _model = new EntityJob();
+
+        await RereshData();
+    }
+
+    private async void Modify(int id)
+    {
+        var item = _dataSource.Single(t => t.Id == id);
+        _model = item;
+        _modalTitle = "Hiệu chỉnh vị trí công việc";
+        _modalVisible = true;
+
+        await Task.CompletedTask;
+    }
+
+    private async void Delete(int id)
+    {
+        var confirm = await swal.ConfirmDelete("Xác nhận xoá thông tin");
+        if (!confirm) return;
+
+        _ = swal.Loading("Đang xóa ..");
+
+        var rsp = await AppStatic.CallApi(() => _svc.Delete(id));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        await RereshData();
+        StateHasChanged();
+    }
+
+    private async void SelectedTask(MenuEventArgs e)
+    {
+        string text = e.Item.Text;
+        int id = Convert.ToInt32(e.Item.Id);
+        if (text == "Sửa")
+        {
+            Modify(id); 
+        }
+        else if (text == "Xoá")
+            Delete(id);
+
+        await InvokeAsync(StateHasChanged);
+    }
+    #endregion
+}

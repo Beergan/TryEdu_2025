@@ -1,0 +1,594 @@
+﻿@page "/admin/management/permission-group"
+@attribute [Authorize]
+@inject IManagementPermissionService _svc;
+@inject IServiceBase _svcBa;
+@inject ISweetAlertService swal
+@inject FieldExtractor<ModelRole> field
+@inject FieldExtractor<ModelPermissionsAccount> field1
+@inject ITextTranslator Text
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Lists
+@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Navigations
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.SplitButtons
+@using System.Diagnostics
+
+<SfDialog Target="#target" class="dialog-group" IsModal="true" ShowCloseIcon="true" @bind-Visible="_modalVisible">
+    <DialogTemplates>
+        <Header><span class="title">@_modalTitle</span></Header>
+        <Content>
+            <EditForm id="editForm" Model="@_model" OnValidSubmit="@OnFormSubmit">                 
+                <DataAnnotationsValidator />                             
+                <div class="form-group row">
+                    <label for="name" class="col-md-12 col-form-label">@Text[field[nameof(ModelRole.Name)]]</label>
+                    <div class="col-md-12">
+                        <InputText id="name" class="form-control" @bind-Value="_model.Name" />
+                        <CustomValidationMessage style="color: red;" For="@(() => _model.Name)" />
+                    </div>
+                </div>                
+            </EditForm>
+        </Content>
+    </DialogTemplates>
+    <DialogEvents Closed="@OnModalClosed"></DialogEvents>
+    <DialogButtons>
+        <DialogButton form=editForm class="btn-submit" Type="Syncfusion.Blazor.Popups.ButtonType.Submit" IsPrimary="false" Content="Xác nhận"></DialogButton>
+    </DialogButtons>
+</SfDialog>
+
+<SfDialog Target="#target" class="dialog-user" IsModal="true" ShowCloseIcon="true" @bind-Visible="_modalVisibleAddUser">
+    <DialogTemplates>
+        <Header><span class="title">@_modalTitle</span></Header>
+        <Content>
+            <EditForm id="editForm2" Model="@_model" OnValidSubmit="@OnFormSubmitAddUser">                 
+                <DataAnnotationsValidator />                             
+                <div class="row">
+                    <SfGrid @ref="_grid" DataSource="@_listRolesActive" AllowTextWrap="true" AllowResizing="true" AllowPaging="true" AllowExcelExport="true" AllowSelection="true" AllowSorting="true" AllowFiltering="true"
+                        Height="400" RowHeight="38">
+                        <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+                        <GridPageSettings PageSize="40"></GridPageSettings>
+                        <GridSelectionSettings CheckboxOnly="true" PersistSelection="true" Type="Syncfusion.Blazor.Grids.SelectionType.Single"></GridSelectionSettings>
+                        <GridColumns>
+                            <GridColumn Type="ColumnType.CheckBox" AllowFiltering="false" AllowSorting="false" Width="60"></GridColumn>
+                            <GridColumn HeaderText="@Text[field1[nameof(ModelPermissionsAccount.FullName)]]" Visible="true" Width=200>
+                                <Template Context="context2">
+                                    @{
+                                        var x = (context2 as ModelPermissionsAccount);
+                                        <div>@Text[x.FirstName + " " + x.LastName, x.LastName + " " + x.FirstName]</div>
+                                    }
+                                </Template>
+                            </GridColumn>
+                            <GridColumn Field=@nameof(ModelPermissionsAccount.UserName) HeaderText="@Text[field1[nameof(ModelPermissionsAccount.UserName)]]" Visible="true" Width=220></GridColumn>
+                            <GridColumn Field=@nameof(ModelPermissionsAccount.Email) HeaderText="@Text[field1[nameof(ModelPermissionsAccount.Email)]]" Visible="true" Width=220></GridColumn>
+                            <GridColumn Field=@nameof(ModelPermissionsAccount.PhoneNumber) HeaderText="@Text[field1[nameof(ModelPermissionsAccount.PhoneNumber)]]" Visible="true" Width=200></GridColumn>                  
+                        </GridColumns>                        
+                    </SfGrid> 
+                </div>
+
+            </EditForm>
+        </Content>
+    </DialogTemplates>
+    <DialogEvents Closed="@OnModalClosed"></DialogEvents>
+    <DialogButtons>
+        <DialogButton form=editForm2 class="btn-submit" Type="Syncfusion.Blazor.Popups.ButtonType.Submit" IsPrimary="false" Content="Xác nhận"></DialogButton>
+    </DialogButtons>
+</SfDialog>
+
+<div id="wrapper" class="app-content-wrapper">
+    <div class="app-content-head" style="padding: 0px; height: 0px">
+
+    </div>
+    <div id="main-content" class="app-content-body container-fluid">
+        @if (_checkPermissionAdmin)
+        {
+            <div class="row no-gutters pb-3">
+                <div class="col-lg-3 pr-lg-3 mt-3 sidebar">
+                    <div class="card">
+                        <div class="card-header">
+                            Nhóm phân quyền
+                            <div class="dropdown float-right">
+                                <button class="btn" type="button" id="dropdownMenu-0" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                        <path
+                                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                        </path>
+                                    </svg>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu-0">
+                                    <button class="dropdown-item" type="button" @onclick="NewPermission_Click">@Text["Add permission", "Thêm nhóm phân quyền"]</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <nav class="nav flex-column">
+                                @foreach (var item in _listRoles.EmptyIfNull())
+                                {
+                                    <div class="d-flex justify-content-between box @(_selectedRoleId == item.Id ? "selected" : "")">
+                                        <div class="nav-link w-100 " @onclick="() => GroupSelected(item.Id)">@item.Name</div>
+                                        @if (item.Id != "fab4fac1-c546-41de-aebc-a14da6895711")
+                                        {
+                                            <div class="d-flex align-items-center mr-2">
+                                                <SfDropDownButton CssClass="e-caret-hide" style="padding-left: 13px;" IconCss="fas fa-ellipsis-v">
+                                                    <DropDownMenuItems>
+                                                        <DropDownButtonEvents ItemSelected="SelectedTaskRoles"></DropDownButtonEvents>
+                                                        <DropDownMenuItem Id="@(item.Id)" Text="@Text["Edit", "Sửa"]"></DropDownMenuItem>
+                                                        <DropDownMenuItem Id="@(item.Id)" class="text-danger" Text="@Text["Delete", "Xóa"]">
+                                                        </DropDownMenuItem>
+                                                    </DropDownMenuItems>
+                                                </SfDropDownButton>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                            </nav>               
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="row pr-3">
+                        <div class="col-12 mt-3 pr-0">
+                            <div class="card">
+                                <div class="card-header">
+                                    @_selectedRoleName
+                                    <div class="dropdown float-right">
+                                        <button class="btn btn-light confirm" type="button" @onclick="UpdatePermission_Click">@Text["Update", "Cập nhật"]</button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <SfTab CssClass="default-tab">
+                                        <TabEvents Selecting="TabSelecting"></TabEvents>
+                                        <TabItems>
+                                            <TabItem>
+                                                <ChildContent>
+                                                    <TabHeader Text="@Text["Permission","Phân quyền"]"></TabHeader>
+                                                </ChildContent>
+                                                <ContentTemplate>
+                                                    <div class="mt-3">
+                                                        @if (!string.IsNullOrEmpty(_selectedRoleId))
+                                                        {
+                                                            @for (int i = 0; i < _listPermissions.Count(); i++)
+                                                            {
+                                                                var idx = i;
+                                                                var item = _listPermissions.ToArray()[i];
+
+                                                                <div class="mt-2">
+                                                                    <span style="font-size: 24px">@Text[item.Key.TextEn, item.Key.TextVi]</span>
+                                                                    @if (_selectedRoleId != "fab4fac1-c546-41de-aebc-a14da6895711")
+                                                                    {
+                                                                        @if (index != idx)
+                                                                        {
+                                                                            <i class="fas fa-tasks float-right" onclick="@(()=>SelectAll(item.Key.Name,idx))" style="font-size: 25px;"></i>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <i class="fas fa-tasks float-right" onclick="@(()=>DeSelectAll(item.Key.Name))" style="font-size: 25px; color: #2AD360"></i>
+                                                                        }
+                                                                    }
+                                                                </div>
+                                                                <div class="d-flex flex-wrap">
+                                                                    @foreach (var x in item.Value)
+                                                                    {
+                                                                        if (_permission.ContainsKey(item.Key.Name))
+                                                                        {
+                                                                            var fdsfs = _permission[item.Key.Name];
+                                                                            <div class="p-2" style="min-width: 33%;">
+                                                                                <SfCheckBox Disabled=@(_selectedRoleId == "fab4fac1-c546-41de-aebc-a14da6895711" ? true : false) TChecked="bool" @bind-Checked="@fdsfs[x.Item1]">@Text[x.Item2, x.Item3]</SfCheckBox>
+                                                                            </div>
+                                                                        }
+                                                                    }
+                                                                </div>
+                                                                <hr /> 
+                                                            }
+                                                        }
+                                                    </div>
+                                                </ContentTemplate>
+                                            </TabItem>
+                                            <TabItem>
+                                                <ChildContent>
+                                                    <TabHeader Text="@Text["Account list","Danh sách tài khoản"]"></TabHeader>
+                                                </ChildContent>
+                                                <ContentTemplate>
+                                                    <div class="mt-2">
+                                                        @if (_selectedRoleId != "fab4fac1-c546-41de-aebc-a14da6895711")
+                                                        {
+                                                            <div class="row mb-2">
+                                                                <div class="col-12 text-right">
+                                                                    <button class="btn btn-light float-right btn-custom" @onclick="NewAccount_Click"><span class="fas fa-plus"></span> @Text["Add account","Thêm tài khoản"]</button>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        <SfGrid DataSource="@_listRolesAccount" AllowTextWrap="true" AllowResizing="true" AllowPaging="true" AllowExcelExport="true" AllowSelection="true" AllowSorting="true" AllowFiltering="true"
+                                                        Height="400" RowHeight="38">
+                                                            <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+                                                            <GridPageSettings PageSize="40"></GridPageSettings>
+                                                            <GridSelectionSettings CheckboxOnly="true" PersistSelection="true" Type="Syncfusion.Blazor.Grids.SelectionType.Single"></GridSelectionSettings>
+                                                            <GridColumns>
+                                                                <GridColumn HeaderText="@Text[field1[nameof(ModelPermissionsAccount.FullName)]]" Visible="true" Width=200>
+                                                                    <Template>
+                                                                        @{
+                                                                            var x = (context as ModelPermissionsAccount);
+                                                                            <div>@Text[x.FirstName + " " + x.LastName, x.LastName + " " + x.FirstName]</div>
+                                                                        }
+                                                                    </Template>
+                                                                </GridColumn>
+                                                                <GridColumn Field=@nameof(ModelPermissionsAccount.UserName) HeaderText="@Text[field1[nameof(ModelPermissionsAccount.UserName)]]" Visible="true" Width=130></GridColumn>
+                                                                <GridColumn Field=@nameof(ModelPermissionsAccount.Email) HeaderText="@Text[field1[nameof(ModelPermissionsAccount.Email)]]" Visible="true" Width=130></GridColumn>
+                                                                <GridColumn Field=@nameof(ModelPermissionsAccount.PhoneNumber) HeaderText="@Text[field1[nameof(ModelPermissionsAccount.PhoneNumber)]]" Visible="true" Width=130></GridColumn>
+                                                                <GridColumn Width="130" Visible="true" HeaderText="@Text["Action","Chức năng"]" TextAlign="TextAlign.Right">
+                                                                    <Template>
+                                                                        @{
+                                                                            var item = (context as ModelPermissionsAccount);
+                                                                            @if (_selectedRoleId == "fab4fac1-c546-41de-aebc-a14da6895711" && item.UserName == "admin")
+                                                                            {
+
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <SfDropDownButton CssClass="e-caret-hide" style="padding-left: 13px;" IconCss="fas fa-ellipsis-v">
+                                                                                    <DropDownMenuItems>
+                                                                                        <DropDownButtonEvents ItemSelected="SelectedTask"></DropDownButtonEvents>
+                                                                                        <DropDownMenuItem Id="@(item.UserId)" class="text-danger" Text="@Text["Delete", "Xóa"]">
+                                                                                        </DropDownMenuItem>
+                                                                                    </DropDownMenuItems>
+                                                                                </SfDropDownButton>
+                                                                            }
+                                                                        }
+                                                                    </Template>
+                                                                </GridColumn>
+                                                            </GridColumns>
+
+                                                        </SfGrid> 
+                                                    </div>
+                                                </ContentTemplate>
+
+                                            </TabItem>
+
+                                        </TabItems>
+                                    </SfTab>
+                                </div>
+                            </div>
+                        </div>      
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="app-content-wrapper wrapper-centered" style="height: calc(100vh - calc(100vh - 100%) - 66px)">
+                <div class="app-loading centered text-center">
+                    <svg id="Capa_1" enable-background="new 0 0 512 512" height="100" viewBox="0 0 512 512" width="100" xmlns="http://www.w3.org/2000/svg"><g><path d="m507.606 145.568-141.174-141.174c-2.813-2.813-6.628-4.394-10.606-4.394h-199.652c-3.978 0-7.793 1.581-10.606 4.394l-141.174 141.174c-2.813 2.813-4.394 6.628-4.394 10.606v199.651c0 3.978 1.581 7.793 4.394 10.606l141.174 141.174c2.813 2.813 6.628 4.394 10.606 4.394h199.651c3.978 0 7.793-1.581 10.606-4.394l141.174-141.174c2.813-2.813 4.394-6.628 4.394-10.606v-199.651c.001-3.978-1.58-7.793-4.393-10.606z" fill="#f25a3c" /><path d="m512 156.17v199.66c0 3.97-1.58 7.79-4.39 10.6l-141.18 141.18c-2.81 2.81-6.63 4.39-10.6 4.39h-99.83v-512h99.83c3.97 0 7.79 1.58 10.6 4.39l141.18 141.18c2.81 2.81 4.39 6.63 4.39 10.6z" fill="#e43539" /><path d="m237.171 106h37.658c8.728 0 15.613 7.422 14.958 16.126l-12.793 170c-.589 7.826-7.11 13.874-14.958 13.874h-12.073c-7.848 0-14.369-6.049-14.958-13.874l-12.792-170c-.654-8.704 6.23-16.126 14.958-16.126z" fill="#e9f3fb" /><path d="m289.79 122.13-12.8 170c-.58 7.82-7.11 13.87-14.95 13.87h-6.04v-200h18.83c8.73 0 15.61 7.42 14.96 16.13z" fill="#d6e9f8" /><path d="m226.05 375.95v.1c0 16.541 13.409 29.95 29.95 29.95 16.541 0 29.95-13.409 29.95-29.95v-.1c0-16.541-13.409-29.95-29.95-29.95-16.541 0-29.95 13.409-29.95 29.95z" fill="#e9f3fb" /><path d="m285.95 375.95v.1c0 8.27-3.35 15.76-8.77 21.18s-12.91 8.77-21.18 8.77v-60c16.54 0 29.95 13.41 29.95 29.95z" fill="#d6e9f8" /></g></svg>
+                    <div class="app-loading-caption mt-2">Lỗi 403!</div>
+                    <div class="app-loading-sm-text mt-2">Bạn không có quyền truy cập!</div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<style>
+    .dialog-group{
+        width:50%!important;
+        height:50%!important;
+    }
+
+    .dialog-user{
+        width:75%!important;
+        height:75%!important;
+    }
+
+
+
+    .e-btn.e-flat, .e-css.e-btn.e-flat, .e-btn.e-flat:hover, .e-css.e-btn.e-flat:hover{
+    background-color: white;
+    border-color: white;
+    box-shadow: none;
+    color: white;
+    }
+    .confirm{ 
+    text-align: center; 
+    padding: 5px 10px!important; 
+    border-radius: 5px; 
+    border: 1px solid #2AD360;
+    color: #2AD360;
+    background-color: white;
+    }
+    .confirm:hover{ color: white; background-color: #2AD360; }
+    .sidebar .card{ height: 100%; }
+    .sidebar .card-body{ padding: 0; }
+    .sidebar nav a {
+    border-left: 3px solid #f0f0f0; 
+    color: #000
+    }
+    .sidebar nav .box:hover { cursor: -webkit-grab; cursor: grab; background-color: #f0f0f0}
+    .sidebar nav .selected{ 
+    border-left: 3px solid #2AD360; 
+    background: rgb(240, 244, 248); 
+    cursor: -webkit-grab; cursor: grab;
+    }
+    .title{ font-size: 20px; color: #2AD360; }
+    .e-btn.e-flat, .e-css.e-btn.e-flat, .e-btn.e-flat:hover, .e-css.e-btn.e-flat:hover{
+    background-color: white;
+    border-color: white;
+    box-shadow: none;
+    color: white;
+    }
+    .confirm{ 
+    text-align: center; 
+    padding: 10px 10px; 
+    border-radius: 5px; 
+    border: 1px solid #2AD360;
+    color: #2AD360;
+    }
+    .confirm:hover{ color: white; background-color: #2AD360; }
+</style>
+@code {
+    private SfGrid<ModelPermissionsAccount> _grid;
+    [Inject] NavigationManager _navManager { get; set; }
+    [Inject] IJSRuntime JSRuntime { get; set; }
+
+    private ModelRole _model = new();
+    private Dictionary<string, MyDictionary<long, bool>> _permission = new();
+    private string _modalTitle;
+    private long index = -1;
+    private bool _modalVisible;
+    private bool _modalVisibleAddUser;
+    private bool _checkPermissionAdmin;
+    private string _selectedRoleId;
+    private string _selectedRoleName;
+    private List<KeyValuePair<FeatureModel, Tuple<long, string, string>[]>> _listPermissions = new();
+    private IEnumerable<ModelRole> _listRoles;
+    private List<ModelPermissionsAccount> _listRolesAccount;
+    private List<ModelPermissionsAccount> _listRolesActive;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _ = swal.Loading("Nạp thông tin ..");
+
+        _checkPermissionAdmin = await _svc.CheckPermissionAdmin();
+
+        if (_checkPermissionAdmin)
+        {
+            _listPermissions = await _svcBa.GetListPermissions();
+            _selectedRoleId = _navManager.Uri.GetAfter("#");
+
+            await RereshData();
+        }
+        else
+        {
+            await swal.Close();
+        }
+    }
+
+    private async void OnFormSubmit()
+    {
+        _modalVisible = false;
+        _ = swal.Loading("Lưu thông tin");
+        var rsp = await AppStatic.CallApi(() => _svc.CreateNewRole(_model));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+        await RereshData();
+    }
+
+    private async void OnFormSubmitAddUser()
+    {
+        _modalVisibleAddUser = false;
+        _ = swal.Loading("Lưu thông tin");
+
+        string[] userIds = (await _grid.GetSelectedRecordsAsync()).Select(x => x.UserId).ToArray();
+
+        var rsp = await AppStatic.CallApi(() => _svc.CreateListUserRole(_selectedRoleId, userIds));
+
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        await RereshData();
+    }
+
+    private void NewAccount_Click()
+    {
+        _modalTitle = "Thêm tài khoản";
+        _modalVisibleAddUser = true;
+    }
+
+    private void NewPermission_Click()
+    {
+        _modalTitle = "Thêm nhóm phân quyền";
+        _modalVisible = true;
+    }
+
+    private async void UpdatePermission_Click()
+    {
+        _ = swal.Loading("Lưu thông tin");
+        var rsp = await _svc.UpdateRoleClaims(_selectedRoleId, Convert(_permission));
+
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+        await RereshData();
+        _ = swal.Alert("Phân quyền đã được lưu, người dùng cần thoát ra và đăng nhập lại để cập nhật quyền mới!");
+
+        // await JSRuntime.InvokeVoidAsync("Logout", "/logout");
+    }
+
+    private async Task RereshData()
+    {
+        var rsp = await AppStatic.CallApi(() => _svc.GetListRoles());
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        _listRoles = rsp.Items;
+        await swal.Close();
+
+        if (_listRoles.Count() > 0)
+        {
+            var check = _listRoles.FirstOrDefault(x => x.Id == _selectedRoleId);
+            if (check == null)
+                GroupSelected(_listRoles.ElementAt(0).Id);
+            else
+                GroupSelected(_selectedRoleId);
+            StateHasChanged();
+        }
+
+        StateHasChanged();
+    }
+
+    private void OnModalClosed(Object args)
+    {
+        _model = new();
+    }
+
+    private async void GroupSelected(string roleId)
+    {
+        var curentUri = _navManager.Uri.GetBefore("#");
+        await JSRuntime.InvokeVoidAsync("update_url", curentUri + "#" + roleId);
+
+        _selectedRoleId = roleId;
+        var role = _listRoles.Single(x => x.Id == roleId);
+        _selectedRoleName = role.Name;
+
+        var lstRoleClaims = await _svc.GetListRoleClaims(roleId);
+        _permission.Clear();
+
+        foreach (var item in _listPermissions)
+        {
+            long xxx = 0;
+            if (lstRoleClaims.ContainsKey(item.Key.Name))
+            {
+                xxx = lstRoleClaims[item.Key.Name];
+            }
+
+            var modulePermission = new MyDictionary<long, bool>();
+
+            foreach (var funcPermission in item.Value)
+            {
+                if ((xxx & funcPermission.Item1) != funcPermission.Item1)
+                    continue;
+
+                modulePermission.Add(funcPermission.Item1, true);
+            }
+
+            _permission.Add(item.Key.Name, modulePermission);
+        }
+
+        _listRolesAccount = await _svc.GetListRoleAccount(roleId);
+
+        _listRolesActive = await _svc.GetListUserActive(roleId);
+
+        StateHasChanged();
+    }
+
+    private Dictionary<string, long> Convert(Dictionary<string, MyDictionary<long, bool>> xxx)
+    {
+        return xxx
+            .ToDictionary(x => x.Key, x => x.Value.Dict
+            .Where(y => y.Value == true).
+            Sum(z => z.Key));
+    }
+
+    private void SelectAll(string key, long i)
+    {
+        MyDictionary<long, bool> dict = _permission[key];
+        foreach (var item in dict.Dict)
+        {
+            dict[item.Key] = true;
+            index = i;
+        }
+        StateHasChanged();
+    }
+
+    private void DeSelectAll(string key)
+    {
+        MyDictionary<long, bool> dict = _permission[key];
+        foreach (var item in dict.Dict)
+        {
+            dict[item.Key] = false;
+            index = -1;
+        }
+        StateHasChanged();
+    }
+
+    private void SelectedTask(MenuEventArgs e)
+    {
+        DeleteUserRole(e.Item.Id);
+    }
+
+    private async void ModifyRoles(string id)
+    {
+        var item = _listRoles.Single(x => x.Id == id);
+        _model.Id = id;
+        _model.Name = item.Name;
+        _modalTitle = @Text["Edit role", "Cập nhật phân quyền"];
+        _modalVisible = true;
+        await Task.CompletedTask;
+    }
+
+    private void SelectedTaskRoles(MenuEventArgs e)
+    {
+        string text = e.Item.Text.ToLower();
+        if (text == "edit" || text == "sửa")
+        {
+            ModifyRoles(e.Item.Id);
+        }
+        else if (text == "delete" || text == "xóa")
+        {
+            DeleteRoles(e.Item.Id);
+        }
+    }
+    private async void DeleteRoles(string id)
+    {
+        var confirm = await swal.ConfirmDelete(Text["Confirm to delete", "Xác nhận xoá thông tin"]);
+        if (!confirm) return;
+
+        _ = swal.Loading(Text["Deleting ..", "Đang xóa .."]);
+        var rsp = await AppStatic.CallApi(() => _svc.DeleteRoles(id));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        await RereshData();
+
+        StateHasChanged();
+    }
+
+    private async void DeleteUserRole(string userId)
+    {
+        var confirm = await swal.ConfirmDelete(Text["Confirm to delete", "Xác nhận xoá thông tin"]);
+        if (!confirm) return;
+
+        _ = swal.Loading(Text["Deleting ..", "Đang xóa .."]);
+        var rsp = await AppStatic.CallApi(() => _svc.DeleteUserRole(_selectedRoleId, userId));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        await RereshData();
+
+        StateHasChanged();
+    }
+
+    private void TabSelecting(SelectingEventArgs args)
+    {
+        // Nếu swipe trái/phải thì hủy
+        if (args.IsSwiped)
+        {
+            args.Cancel = true;
+        }
+    }
+
+}

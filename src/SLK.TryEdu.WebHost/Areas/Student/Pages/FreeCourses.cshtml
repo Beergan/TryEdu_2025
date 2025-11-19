@@ -1,0 +1,556 @@
+@page
+@model SLK.TryEdu.WebHost.Areas.Student.Pages.FreeCoursesModel
+@{
+    ViewData["Title"] = "Khóa học Miễn phí - TryEdu";
+    Layout = "~/Pages/Shared/_StudentLayout.cshtml";
+}
+
+<style>
+    .free-hero {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+        padding: 80px 0 60px;
+        margin-bottom: 50px;
+        border-radius: 0 0 40px 40px;
+        position: relative;
+        overflow: hidden;
+    }
+    .free-hero::before {
+        content: '🎁';
+        position: absolute;
+        font-size: 300px;
+        opacity: 0.1;
+        right: -50px;
+        top: -50px;
+    }
+    .free-course-card {
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        height: 100%;
+        background: white;
+        position: relative;
+    }
+    .free-course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 16px 32px rgba(16, 185, 129, 0.2);
+    }
+    .free-badge {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        background: #10b981;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 25px;
+        font-size: 13px;
+        font-weight: 700;
+        z-index: 1;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    }
+    .course-thumbnail {
+        height: 220px;
+        object-fit: cover;
+        width: 100%;
+    }
+    .category-filter {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 25px;
+        border: 2px solid #e2e8f0;
+        margin: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: white;
+        font-weight: 600;
+    }
+    .category-filter:hover, .category-filter.active {
+        border-color: #10b981;
+        background: #10b981;
+        color: white;
+    }
+    .progress-badge {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        background: rgba(16, 185, 129, 0.95);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        z-index: 1;
+    }
+    .benefit-card {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        height: 100%;
+    }
+    .benefit-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #10b98115 0%, #05966915 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        margin: 0 auto 20px;
+    }
+</style>
+
+<div class="free-hero">
+    <div class="container position-relative" style="z-index: 1;">
+        <div class="text-center">
+            <h1 class="display-4 fw-bold mb-3">🎓 Khóa học Miễn phí</h1>
+            <p class="lead mb-4 opacity-90">Truy cập ngay lập tức - Không cần thanh toán!</p>
+            
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-3 text-center">
+                    <div class="h2 fw-bold mb-1">50+</div>
+                    <div class="opacity-75">Khóa học</div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="h2 fw-bold mb-1">200+</div>
+                    <div class="opacity-75">Bài học</div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="h2 fw-bold mb-1">100%</div>
+                    <div class="opacity-75">Miễn phí</div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="h2 fw-bold mb-1">∞</div>
+                    <div class="opacity-75">Không giới hạn</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <!-- Benefits Section -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-3">
+            <div class="benefit-card">
+                <div class="benefit-icon">🎯</div>
+                <h5 class="fw-bold mb-2">Truy cập ngay</h5>
+                <p class="small text-muted mb-0">Không cần thanh toán, học ngay lập tức</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="benefit-card">
+                <div class="benefit-icon">📚</div>
+                <h5 class="fw-bold mb-2">Chất lượng cao</h5>
+                <p class="small text-muted mb-0">Nội dung được biên soạn bởi chuyên gia</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="benefit-card">
+                <div class="benefit-icon">🏆</div>
+                <h5 class="fw-bold mb-2">Chứng chỉ</h5>
+                <p class="small text-muted mb-0">Nhận chứng chỉ sau khi hoàn thành</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="benefit-card">
+                <div class="benefit-icon">⏰</div>
+                <h5 class="fw-bold mb-2">Linh hoạt</h5>
+                <p class="small text-muted mb-0">Học theo lịch trình của bạn</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="card border-0 shadow-sm mb-5" style="border-radius: 20px;">
+        <div class="card-body p-4 text-center">
+            <h5 class="fw-bold mb-3">Danh mục khóa học</h5>
+            <div>
+                <span class="category-filter active">
+                    <i class="fas fa-th-large me-1"></i> Tất cả
+                </span>
+                <span class="category-filter">
+                    <i class="fas fa-book-reader me-1"></i> Grammar
+                </span>
+                <span class="category-filter">
+                    <i class="fas fa-headphones me-1"></i> Listening
+                </span>
+                <span class="category-filter">
+                    <i class="fas fa-book-open me-1"></i> Reading
+                </span>
+                <span class="category-filter">
+                    <i class="fas fa-pencil-alt me-1"></i> Writing
+                </span>
+                <span class="category-filter">
+                    <i class="fas fa-microphone me-1"></i> Speaking
+                </span>
+                <span class="category-filter">
+                    <i class="fas fa-spell-check me-1"></i> Vocabulary
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Free Courses Grid -->
+    <h3 class="fw-bold mb-4">
+        <i class="fas fa-fire text-success me-2"></i> Khóa học phổ biến
+    </h3>
+    
+    <div class="row g-4 mb-5">
+        <!-- Free Course 1 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card free-course-card">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600" class="course-thumbnail" alt="Course">
+                    <span class="free-badge">
+                        <i class="fas fa-gift me-1"></i> MIỄN PHÍ
+                    </span>
+                    <span class="progress-badge">
+                        Đã học 35%
+                    </span>
+                </div>
+                <div class="card-body p-4">
+                    <span class="badge mb-2" style="background: #d1fae5; color: #065f46; font-weight: 600;">
+                        <i class="fas fa-book-reader me-1"></i> Grammar
+                    </span>
+                    
+                    <h5 class="card-title fw-bold mb-2">
+                        <a href="/student/course/free/1" class="text-decoration-none text-dark">
+                            Basic English Grammar for Beginners
+                        </a>
+                    </h5>
+                    
+                    <p class="card-text text-muted small mb-3">
+                        Học ngữ pháp tiếng Anh cơ bản từ A-Z, phù hợp cho người mới bắt đầu
+                    </p>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://i.pravatar.cc/150?img=1" class="rounded-circle me-2" style="width: 40px; height: 40px;" alt="Instructor">
+                        <div>
+                            <div class="small fw-600">Ms. Sarah Johnson</div>
+                            <div class="small text-muted">English Teacher</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                        <span class="small text-muted">
+                            <i class="fas fa-users me-1"></i> 15.2K học viên
+                        </span>
+                        <span class="small text-muted">
+                            <i class="fas fa-video me-1"></i> 25 bài học
+                        </span>
+                        <span class="small text-muted">
+                            <i class="fas fa-clock me-1"></i> 6h 30p
+                        </span>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="/student/course/free/1" class="btn btn-success flex-grow-1" style="border-radius: 10px;">
+                            <i class="fas fa-play me-1"></i> Tiếp tục học
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Free Course 2 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card free-course-card">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=600" class="course-thumbnail" alt="Course">
+                    <span class="free-badge">
+                        <i class="fas fa-gift me-1"></i> MIỄN PHÍ
+                    </span>
+                </div>
+                <div class="card-body p-4">
+                    <span class="badge mb-2" style="background: #dbeafe; color: #1e40af; font-weight: 600;">
+                        <i class="fas fa-headphones me-1"></i> Listening
+                    </span>
+                    
+                    <h5 class="card-title fw-bold mb-2">
+                        <a href="/student/course/free/2" class="text-decoration-none text-dark">
+                            English Listening Skills Practice
+                        </a>
+                    </h5>
+                    
+                    <p class="card-text text-muted small mb-3">
+                        Rèn luyện kỹ năng nghe tiếng Anh qua các bài tập thực hành đa dạng
+                    </p>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://i.pravatar.cc/150?img=2" class="rounded-circle me-2" style="width: 40px; height: 40px;" alt="Instructor">
+                        <div>
+                            <div class="small fw-600">Mr. David Lee</div>
+                            <div class="small text-muted">IELTS Trainer</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                        <span class="small text-muted">
+                            <i class="fas fa-users me-1"></i> 12.8K học viên
+                        </span>
+                        <span class="small text-muted">
+                            <i class="fas fa-video me-1"></i> 30 bài học
+                        </span>
+                        <span class="small text-muted">
+                            <i class="fas fa-clock me-1"></i> 8h 15p
+                        </span>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="/student/course/free/2" class="btn btn-success flex-grow-1" style="border-radius: 10px;">
+                            <i class="fas fa-play me-1"></i> Bắt đầu học
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Free Course 3 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card free-course-card">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600" class="course-thumbnail" alt="Course">
+                    <span class="free-badge">
+                        <i class="fas fa-gift me-1"></i> MIỄN PHÍ
+                    </span>
+                </div>
+                <div class="card-body p-4">
+                    <span class="badge mb-2" style="background: #fef3c7; color: #92400e; font-weight: 600;">
+                        <i class="fas fa-spell-check me-1"></i> Vocabulary
+                    </span>
+                    
+                    <h5 class="card-title fw-bold mb-2">
+                        <a href="/student/course/free/3" class="text-decoration-none text-dark">
+                            1000 Essential English Words
+                        </a>
+                    </h5>
+                    
+                    <p class="card-text text-muted small mb-3">
+                        Học 1000 từ vựng tiếng Anh cần thiết cho giao tiếp và làm việc
+                    </p>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://i.pravatar.cc/150?img=3" class="rounded-circle me-2" style="width: 40px; height: 40px;" alt="Instructor">
+                        <div>
+                            <div class="small fw-600">Ms. Emily Chen</div>
+                            <div class="small text-muted">Vocabulary Expert</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                        <span class="small text-muted">
+                            <i class="fas fa-users me-1"></i> 20.5K học viên
+                        </span>
+                        <span class="small text-muted">
+                            <i class="fas fa-video me-1"></i> 50 bài học
+                        </span>
+                        <span class="small text-muted">
+                            <i class="fas fa-clock me-1"></i> 12h 0p
+                        </span>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="/student/course/free/3" class="btn btn-success flex-grow-1" style="border-radius: 10px;">
+                            <i class="fas fa-play me-1"></i> Bắt đầu học
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add 3 more courses... -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card free-course-card">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600" class="course-thumbnail" alt="Course">
+                    <span class="free-badge">
+                        <i class="fas fa-gift me-1"></i> MIỄN PHÍ
+                    </span>
+                </div>
+                <div class="card-body p-4">
+                    <span class="badge mb-2" style="background: #fce7f3; color: #9f1239; font-weight: 600;">
+                        <i class="fas fa-book-open me-1"></i> Reading
+                    </span>
+                    
+                    <h5 class="card-title fw-bold mb-2">
+                        <a href="/student/course/free/4" class="text-decoration-none text-dark">
+                            Reading Comprehension Practice
+                        </a>
+                    </h5>
+                    
+                    <p class="card-text text-muted small mb-3">
+                        Nâng cao kỹ năng đọc hiểu tiếng Anh với các bài đọc đa dạng
+                    </p>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://i.pravatar.cc/150?img=4" class="rounded-circle me-2" style="width: 40px; height: 40px;" alt="Instructor">
+                        <div>
+                            <div class="small fw-600">Mr. James Wilson</div>
+                            <div class="small text-muted">Reading Specialist</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                        <span class="small text-muted">
+                            <i class="fas fa-users me-1"></i> 18.3K học viên
+                        </span>
+                        <span class="small text-muted">
+                            <i class="fas fa-video me-1"></i> 35 bài học
+                        </span>
+                        <span class="small text-muted">
+                            <i class="fas fa-clock me-1"></i> 9h 45p
+                        </span>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="/student/course/free/4" class="btn btn-success flex-grow-1" style="border-radius: 10px;">
+                            <i class="fas fa-play me-1"></i> Bắt đầu học
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card free-course-card">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600" class="course-thumbnail" alt="Course">
+                    <span class="free-badge">
+                        <i class="fas fa-gift me-1"></i> MIỄN PHÍ
+                    </span>
+                </div>
+                <div class="card-body p-4">
+                    <span class="badge mb-2" style="background: #e0e7ff; color: #3730a3; font-weight: 600;">
+                        <i class="fas fa-pencil-alt me-1"></i> Writing
+                    </span>
+                    
+                    <h5 class="card-title fw-bold mb-2">
+                        <a href="/student/course/free/5" class="text-decoration-none text-dark">
+                            Basic Writing Skills
+                        </a>
+                    </h5>
+                    
+                    <p class="card-text text-muted small mb-3">
+                        Học cách viết email, thư và văn bản tiếng Anh cơ bản
+                    </p>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://i.pravatar.cc/150?img=5" class="rounded-circle me-2" style="width: 40px; height: 40px;" alt="Instructor">
+                        <div>
+                            <div class="small fw-600">Ms. Anna Martinez</div>
+                            <div class="small text-muted">Writing Coach</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                        <span class="small text-muted">
+                            <i class="fas fa-users me-1"></i> 14.7K học viên
+                        </span>
+                        <span class="small text-muted">
+                            <i class="fas fa-video me-1"></i> 28 bài học
+                        </span>
+                        <span class="small text-muted">
+                            <i class="fas fa-clock me-1"></i> 7h 20p
+                        </span>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="/student/course/free/5" class="btn btn-success flex-grow-1" style="border-radius: 10px;">
+                            <i class="fas fa-play me-1"></i> Bắt đầu học
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card free-course-card">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600" class="course-thumbnail" alt="Course">
+                    <span class="free-badge">
+                        <i class="fas fa-gift me-1"></i> MIỄN PHÍ
+                    </span>
+                </div>
+                <div class="card-body p-4">
+                    <span class="badge mb-2" style="background: #ffedd5; color: #9a3412; font-weight: 600;">
+                        <i class="fas fa-microphone me-1"></i> Speaking
+                    </span>
+                    
+                    <h5 class="card-title fw-bold mb-2">
+                        <a href="/student/course/free/6" class="text-decoration-none text-dark">
+                            Everyday English Conversation
+                        </a>
+                    </h5>
+                    
+                    <p class="card-text text-muted small mb-3">
+                        Luyện phát âm và giao tiếp tiếng Anh hàng ngày tự tin
+                    </p>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://i.pravatar.cc/150?img=6" class="rounded-circle me-2" style="width: 40px; height: 40px;" alt="Instructor">
+                        <div>
+                            <div class="small fw-600">Mr. Michael Brown</div>
+                            <div class="small text-muted">Speaking Coach</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                        <span class="small text-muted">
+                            <i class="fas fa-users me-1"></i> 22.1K học viên
+                        </span>
+                        <span class="small text-muted">
+                            <i class="fas fa-video me-1"></i> 40 bài học
+                        </span>
+                        <span class="small text-muted">
+                            <i class="fas fa-clock me-1"></i> 10h 30p
+                        </span>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="/student/course/free/6" class="btn btn-success flex-grow-1" style="border-radius: 10px;">
+                            <i class="fas fa-play me-1"></i> Bắt đầu học
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="card border-0 shadow-lg mb-5" style="border-radius: 30px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white;">
+        <div class="card-body p-5 text-center">
+            <h3 class="fw-bold mb-3">🎉 Tất cả đều MIỄN PHÍ!</h3>
+            <p class="lead mb-4">Không cần thanh toán, không cần coin. Truy cập ngay và học tập không giới hạn!</p>
+            <div class="row g-3 justify-content-center">
+                <div class="col-auto">
+                    <button class="btn btn-light btn-lg" style="border-radius: 12px; padding: 14px 32px; font-weight: 600;">
+                        <i class="fas fa-play me-2"></i> Bắt đầu học ngay
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <a href="/student/courses" class="btn btn-outline-light btn-lg" style="border-radius: 12px; padding: 14px 32px; font-weight: 600; border: 2px solid white;">
+                        <i class="fas fa-crown me-2"></i> Xem khóa học Premium
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Category filter
+        document.querySelectorAll('.category-filter').forEach(filter => {
+            filter.addEventListener('click', function() {
+                document.querySelectorAll('.category-filter').forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+}
+

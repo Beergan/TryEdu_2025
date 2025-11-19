@@ -1,0 +1,811 @@
+﻿@page "/admin/employee/profile/{guid:guid}"
+@using System.Text.RegularExpressions;
+@attribute [Authorize]
+@* @inject AppState AppState
+@inject IBlazorProvider blazorProvider *@
+@inject ISweetAlertService swal
+@inject ITextTranslator Text
+@inject FieldExtractor<EntityEmployee> field
+@inject Microsoft.JSInterop.IJSRuntime jSRuntime
+@inject IEmployeeService _svc
+@inject IJSRuntime JS
+@using Syncfusion.Blazor.Data
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Calendars
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Navigations
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.SplitButtons
+@using Syncfusion.Blazor.Buttons
+@using System.IO
+@using System.Text
+@using System.Text.Json
+
+<SfDialog Target="#target" class="dialog-document" IsModal="true" ShowCloseIcon="true" @bind-Visible="_modalVisibleDocument">
+    <DialogTemplates>
+        <Header><span class="title">@Text["Document","Document"]</span></Header>
+        <Content>
+            <div class="row">
+                <div class="col-12">
+                    <label class="mt-2 font-weight-bold">@Text["Folder name","Tên thư mục"]</label>
+                    <SfTextBox Placeholder="@Text["Folder name","Tên thư mục"]" @bind-Value="_folderName"></SfTextBox>
+                    @{
+                        if(_folderName == string.Empty)
+                        {
+                            <small class="text-danger">@Text["Folder name can not be empty!","Tên thư mục không được để trống!"]</small>
+                        }
+                    }
+                </div>
+                <div class="col-12 mt-2">
+                    <SfUploader MinFileSize="1" MaxFileSize="10000000" ShowFileList="true" ID="UploadFiles" @ref="_uploaderDocument" AutoUpload=true AllowMultiple="false" @bind-Value="fileDocument">
+                        <UploaderAsyncSettings SaveUrl="api/Upload/SaveDocument" RemoveUrl="api/Upload/Remove" ChunkSize="500000000000"></UploaderAsyncSettings>
+                        <UploaderEvents Success="@OnUploadDocument"></UploaderEvents>
+                    </SfUploader>
+                    @{
+                        if(_nameFile == string.Empty)
+                        {
+                            <small class="text-danger">@Text["You have not selected the file!","Bạn chưa chọn tệp!"]</small>
+                        }
+                    }
+                </div>  
+                @if(_folderName != string.Empty && _nameFile != string.Empty)
+                {
+                    <div class="col-12 mt-3 text-center">
+                        <button @onclick="SubmitDocument" class="btn btn-success">@Text["Confirm","Xác nhận"]</button>
+                    </div>
+                }
+            </div>
+        </Content>
+    </DialogTemplates>
+    <DialogEvents Closed="@DocumentClose"></DialogEvents>
+</SfDialog>
+
+<div class="app-content-wrapper">
+    <div class="app-content-head" style="height: auto">
+        <disv class="row" style="padding: 0 0 0 5px">
+            <div class="col-12">
+                <ol class="breadcrumb">
+                    <li>Nhân sự</li>
+                    <li style="color: #777">&nbsp; / &nbsp;</li>
+                    <li>Danh sách nhân sự</li>
+                    <li style="color: #777">&nbsp; / &nbsp;</li>
+                    <li class="active text-primary">Thông tin</li>
+                </ol>
+            </div>
+        </disv>
+    </div>
+    <div class="app-content-body container" style="overflow:auto" id="target">
+        <div class="row mt-2 mb-4">
+            <div class="col-xl-3 col-md-5 col-12 text-center text-sm-left pr-2 pl-2">
+                <div class="card-custom">
+                    <div class="image" >
+                        <div style="background-image:url(/assets/images/background-employee.jpg);width: 100%; background-size: cover; height: 110px; border-radius: 5px;">
+                            @if (_model.Avatar == null)
+                            {
+                                <img id="avatar" alt="default" src="/assets/images/employee-avata-default.jpg">
+                            }
+                            else
+                            {
+                                <img id="avatar" alt="avatar" src="@_model.Avatar">
+                            }
+                        </div>
+                        <label class="lable-upload" for="fileInput">Upload..</label>
+                        <InputFile id="fileInput" OnChange="OnUploadAvata" accept=".png, .jpg, .jpeg" />
+                        <div style="font-size:13px">Định dạng tệp: .png, .jpg, .jpeg, Kích thước tối đa: 5MB</div>    
+                    </div>    
+                    <hr>                
+                    <h5 class="mt-3 text-center">
+                        @_model.FullName
+                    </h5>
+                    <hr>                
+                    <div class="row">
+                        <div class="col-xl-12 mt-1 mb-1">
+                            <strong>ID</strong>: @_model.Id
+                        </div>       
+                        <div class="col-xl-12 mt-1 mb-1">
+                            <strong>Trạng thái</strong>: 
+                            <span>
+                                <SfSwitch Disabled="true" @bind-Checked="_model.Active" @onclick="(()=>SetToActiveEmployee(_model.Id, _model.Active))"></SfSwitch>
+                            </span>
+                        </div>                     
+                    </div>
+                </div>
+            </div>            
+            <div class="col-xl-9 col-md-7 col-12 mt-4 mt-md-0 pr-2 pl-2">
+                <div class="card-custom">
+                    <SfTab @bind-SelectedItem="@_indexTab">
+                        <TabEvents Selected="OnTabSelected" Selecting="OnSelecting"></TabEvents>
+                        <TabItems>
+                            <TabItem>
+                                <ChildContent>
+                                    <TabHeader Text="THÔNG TIN CƠ BẢN"></TabHeader>
+                                </ChildContent>
+                                <ContentTemplate>
+                                    <EditForm Model="@_model">
+                                        <div class="ml-1">
+                                            <div class="row mt-4">
+                                                <div class="col-xl-6 col-lg-6 col-md-7 col-sm-6 col-7">
+                                                    <h5><i class="fas fa-address-card" style="color: #28a745;"></i>&nbsp;&nbsp;&nbsp;Thông tin cơ bản</h5>
+                                                </div>                                        
+                                                <div class="col-xl-6 col-lg-6 col-md-5 col-sm-6 col-5 mt-2">
+                                                    @if (_modalVisibleBasicInformation)
+                                                    {
+                                                        <i class="fas fa-save float-right" style="color: #8861bb; font-size: 17px" @onclick="OnFormSubmitBasicInformation"></i>                                                    
+                                                        <i class="fas fa-undo float-right" style="color: #8861bb; font-size: 17px; padding: 0 15px 0 0" @onclick="UndoUpdateEmployee"></i>
+                                                    }
+                                                    else
+                                                    {
+                                                        <i class="fas fa-user-edit float-right" style="color: #8861bb; font-size: 17px" @onclick="UpdateEmployee"></i>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">                                    
+                                                <div class="col-4 col-lg-2 information">@Text[field[nameof(EntityEmployee.FirstName)]]:</div>
+                                                <div class="col-8 col-lg-4 information">
+                                                    @if (_modalVisibleBasicInformation)
+                                                    {
+                                                        <SfTextBox Placeholder="@Text[field[nameof(EntityEmployee.FirstName)]]" @bind-Value="_model.FirstName" />
+                                                    }
+                                                    else
+                                                    {
+                                                        @_model.FirstName
+                                                    }
+                                                </div>
+
+                                                <div class="col-4 col-lg-2 information">@Text[field[nameof(EntityEmployee.LastName)]]:</div>
+                                                <div class="col-8 col-lg-4 information">
+                                                    @if (_modalVisibleBasicInformation)
+                                                    {
+                                                        <SfTextBox Placeholder="@Text[field[nameof(EntityEmployee.LastName)]]" @bind-Value="_model.LastName" />
+                                                    }
+                                                    else
+                                                    {
+                                                        @_model.LastName
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">                                    
+                                                <div class="col-4 col-lg-2 information">@Text[field[nameof(EntityEmployee.Phone)]]:</div>
+                                                <div class="col-8 col-lg-4 information">
+                                                    @if (_modalVisibleBasicInformation)
+                                                    {
+                                                        <SfTextBox Placeholder="Điện thoại" @bind-Value="_model.Phone" />
+                                                    }
+                                                    else
+                                                    {
+                                                        @_model.Phone
+                                                    }
+                                                </div>
+                                                <div class="col-4 col-lg-2 information">@Text[field[nameof(EntityEmployee.CitizenID)]]:</div>
+                                                <div class="col-8 col-lg-4 information">
+                                                    @if (_modalVisibleBasicInformation)
+                                                    {
+                                                        <SfTextBox Placeholder="@Text[field[nameof(EntityEmployee.CitizenID)]]" @bind-Value="_model.CitizenID" />
+                                                    }
+                                                    else
+                                                    {
+                                                        @(_model.CitizenID != null ? _model.CitizenID : Text["CCCD/CMND not updated", "Chưa cập nhật CCCD/CMND!"])
+                                                    }    
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-4 col-lg-2 information">@Text[field[nameof(EntityEmployee.DateOfBirth)]]:</div>
+                                                <div class="col-8 col-lg-4 information">
+                                                    @if (_modalVisibleBasicInformation)
+                                                    {
+                                                        <SfDatePicker TValue="DateTime?" ShowClearButton="true" Format="@Text["MMM/dd/yyyy", "dd/MM/yyyy"]" @bind-Value="@_model.DateOfBirth"></SfDatePicker>
+                                                    }
+                                                    else
+                                                    {
+                                                        @(_model.DateOfBirth != null ? Text[_model.DateOfBirth.Value.ToString("MM/dd/yyyy"), _model.DateOfBirth.Value.ToString("dd/MM/yyyy")] : Text["Date of birth not updated!", "Chưa cập nhật ngày sinh!"])
+                                                    }
+                                                </div>
+                                                <div class="col-4 col-lg-2 information">@Text[field[nameof(EntityEmployee.Gender)]]:</div>
+                                                <div class="col-8 col-lg-4 information">
+                                                    @if (_modalVisibleBasicInformation)
+                                                    {
+                                                        <SfComboBox TItem="OptionDual<string>" TValue="string" PopupHeight="230px"
+                                                        @bind-Value="@_model.Gender" DataSource="@BasicCodes.GenderOptions">
+                                                            <ComboBoxFieldSettings Text="@Text["TextEn", "TextVi"]" Value="Value" />
+                                                            <DropDownListEvents TItem="OptionDual<string>" TValue="string" />
+                                                        </SfComboBox>
+                                                    }
+                                                    else
+                                                    {
+                                                        @(_model.Gender != null ? Text[BasicCodes.GenderOptions[_model.Gender].TextEn, BasicCodes.GenderOptions[_model.Gender].TextVi] : Text["Gender not updated!", "Chưa cập nhật giới tính!"])
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">                                           
+                                                <div class="col-4 col-lg-2 information">@Text[field[nameof(EntityEmployee.JobGuid)]]:</div>
+                                                <div class="col-8 col-lg-4 information">
+                                                    @if (_modalVisibleBasicInformation)
+                                                    {
+                                                        <SfDropDownList TItem="OptionItem<Guid>" TValue="Guid" PopupHeight="230px"
+                                                        DataSource="_optJob" Placeholder="Chọn vị trí công việc" @bind-Value="_model.JobGuid">
+                                                            <DropDownListEvents TItem="OptionItem<Guid>" TValue="Guid"/>
+                                                            <DropDownListFieldSettings Text="Text" Value="Value" />
+                                                        </SfDropDownList>
+                                                    }
+                                                    else
+                                                    {
+                                                        @_model.JobName
+                                                    }    
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row mt-3">
+                                                <div class="col-xl-6 col-lg-6 col-md-7 col-sm-6 col-7"><h5><i class="fas fa-book-open" style="color: #28a745;"></i>&nbsp;&nbsp;&nbsp;@Text["Professional information","Thông tin chuyên môn"]</h5></div>
+                                                <div class="col-xl-6 col-lg-6 col-md-5 col-sm-6 col-5 mt-2">
+                                                    @if (_modalVisibleRelativeInformation)
+                                                    {
+                                                        <i class="fas fa-save float-right" style="color: #8861bb; font-size: 17px" @onclick="OnFormSubmitProfessionalInformation"></i>
+                                                        <i class="fas fa-undo float-right" style="color: #8861bb; font-size: 17px; padding: 0 15px 0 0" @onclick="Professional_UndoUpdateEmployee"></i>
+                                                    }
+                                                    else
+                                                    {
+                                                        <i class="fas fa-user-edit float-right" style="color: #8861bb; font-size: 17px" @onclick="Professional_UpdateEmployee"></i>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-4 col-lg-2 information">@Text[field[nameof(EntityEmployee.Education_Level)]]:</div>
+                                                <div class="col-8 col-lg-4 information">
+                                                    @if (_modalVisibleRelativeInformation)
+                                                    {
+                                                        <SfTextBox Placeholder="@Text[field[nameof(EntityEmployee.Education_Level)]]" @bind-Value="_model.Education_Level" />
+                                                    }
+                                                    else
+                                                    {
+                                                        @(_model.Education_Level != null ? _model.Education_Level : Text["Education not updated!", "Chưa cập nhật học vấn!"])
+                                                    }
+                                                </div>
+
+                                                <div class="col-4 col-lg-2 information">@Text[field[nameof(EntityEmployee.ProfessionalQualification)]]:</div>
+                                                <div class="col-8 col-lg-4 information">
+                                                    @if (_modalVisibleRelativeInformation)
+                                                    {
+                                                        <SfTextBox Placeholder="@Text[field[nameof(EntityEmployee.ProfessionalQualification)]]" @bind-Value="_model.ProfessionalQualification" />
+                                                    }
+                                                    else
+                                                    {
+                                                        @(_model.ProfessionalQualification != null ? _model.ProfessionalQualification : Text["Qualification not updated!", "Chưa cập nhật chuyên môn!"])
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>    
+                                    </EditForm>                            
+                                </ContentTemplate>                            
+                            </TabItem>
+                                <TabItem>
+                                    <ChildContent>
+                                        <TabHeader Text="TÀI LIỆU"></TabHeader>
+                                    </ChildContent>
+                                    <ContentTemplate>
+                                        <div class="row">
+                                            <div class="col-12" style="padding-left: 30px;">
+                                                <div class="row mt-3 pr-3"> 
+                                                    @if(_dataSourceDocument.Count == 0)
+                                                    {
+                                                        <div class="col-10">
+                                                            <h6 style="color: #777;">Bạn chưa có tài liệu.</h6>
+                                                        </div>
+                                                        <div class="col-2 pr-0 mb-2 document text-right">
+                                                            <button class="btn btn-success" type="button" @onclick="(() => _modalVisibleDocument = true)">@Text["Upload", "Upload"]</button>                                                        
+                                                        </div>
+                                                    }else{
+                                                        @foreach (var item in _dataSourceDocument.EmptyIfNull().Select((x,y) => new {x,y}))
+                                                        {
+                                                            if(item.y == 0)
+                                                            {
+                                                                tamp = item.x.FolderName;
+                                                                <div class="col-10 textother">
+                                                                    <small class="aa"><span>@item.x.FolderName</span></small>
+                                                                    <hr style="margin-top: 30px; background-color: #2AD360;">
+                                                                </div>
+                                                                <div class="col-2 pr-0 mb-2 document text-right">
+                                                                    <button class="btn btn-success" type="button" @onclick="(() => {_modalVisibleDocument = true; _folderName = item.x.FolderName;})" >@Text["Upload", "Upload"]</button>                                                        
+                                                                </div>
+                                                            }
+                                                            else
+                                                            {
+                                                                if(tamp != item.x.FolderName)
+                                                                {
+                                                                    <div class="col-10 textother">
+                                                                        <small class="aa"><span>@item.x.FolderName</span></small>
+                                                                        <hr style="margin-top: 30px; background-color: #2AD360;">
+                                                                    </div>
+                                                                    <div class="col-2 pr-0 mb-2 document text-right">
+                                                                        <button class="btn btn-success" type="button" @onclick="(() => {_modalVisibleDocument = true; _folderName = item.x.FolderName;})" >@Text["Upload", "Upload"]</button>                                                        
+                                                                    </div>
+                                                                }
+                                                            }
+                                                            <div class="col-10 mb-3">
+                                                                <div class="row">
+                                                                    <div class="col-2 col-md-2 col-lg-1">
+                                                                        @if(item.x.TypeFile == "jpg" || item.x.TypeFile == "png" || item.x.TypeFile == "jpeg"){
+                                                                            <i style="font-size: 50px; color: rgb(0, 119, 255)" class="fas fa-file-image"></i>
+                                                                        }
+                                                                        @if(item.x.TypeFile == "pdf"){
+                                                                            <i style="font-size: 50px; color: red" class="fas fa-file-pdf"></i>
+                                                                        }
+                                                                    </div>
+                                                                    <div class="col-10 col-md-10 col-lg-11">
+                                                                        <h5>
+                                                                            @item.x.NameFile.GetAfterLast("/").Trim()                                                                
+                                                                        </h5>
+                                                                        <h6>
+                                                                            @{
+                                                                                var emp = _displaySourse.SingleOrDefault(x => x.Guid == item.x.GuidEmployeePost);
+                                                                                <span>@Text["Upload by: ","Tải lên bởi: "] @Text[emp.FirstName + " " + emp.LastName,emp.LastName + " " + emp.FirstName] @(emp.Email != "" ? $" - {emp.Email} " : "")</span>
+                                                                            }
+                                                                        </h6>
+                                                                        <h6 style="color: #777; font-size: 14px;">@TimeAgo(item.x.DateCreated)</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-2 mb-3 text-right">
+                                                                <SfDropDownButton CssClass="e-caret-hide" style="padding-left: 13px;" IconCss="fas fa-ellipsis-v">
+                                                                    <DropDownMenuItems> 
+                                                                        <DropDownButtonEvents ItemSelected="SelectedTaskDocument"></DropDownButtonEvents>   
+                                                                        <DropDownMenuItem Id="@item.x.NameFile" Text="@Text["View","Xem"]"></DropDownMenuItem>    
+                                                                        <DropDownMenuItem Id="@item.x.NameFile" Text="@Text["Download","Tải xuống"]"></DropDownMenuItem>  
+                                                                        <DropDownMenuItem Id="@item.x.Id.ToString()" style="color: red" Text="@Text["Delete","Xóa"]"></DropDownMenuItem>    
+                                                                    </DropDownMenuItems>
+                                                                </SfDropDownButton> 
+                                                            </div>
+                                                        }
+                                                    }                                                               
+                                                </div>                                        
+                                            </div>
+                                        </div>                               
+                                    </ContentTemplate>
+                                </TabItem>
+                        </TabItems>                    
+                    </SfTab>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .dialog-document{
+        width:50%!important;
+        height:50%!important;
+    }
+
+    .card-custom{
+    padding : 15px;
+    border: 1px #cecece solid;
+    border-radius:10px;
+    box-shadow: 0 3px 7px #ddd, 0 -3px 4px #eee;
+    height:100%;
+    }
+
+
+    #fileInput{
+        display:none;
+    }
+    
+    .lable-upload{
+        display:block;
+        padding:3px 5px;
+        background-color: #f3f3f3;
+        border: 1px #cecece solid;
+        border-radius: 5px;
+        font-size:13px;
+        margin: 35px auto 5px auto;
+        width:80px;
+        text-align:center;
+    }
+    .lable-upload:hover{
+        cursor: pointer;
+        background-color: #e6e1e1;
+    }
+
+
+
+    img#avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        border : 2px #ffffff solid;
+    }
+
+    #iconPerson { padding-left: 35px; }
+
+    .click:hover { cursor: pointer; }
+
+    .style { margin-bottom: 112px; }
+
+    .undo { border-radius: 4px; border: 1px solid #8861bb; color: #8861bb }
+
+    .undo:hover, .iconreject { border-radius: 4px; border: 1px solid #8861bb; background-color: #8861bb; color: white; }
+
+    .iconreject { color: #8861bb; }
+
+    .source { margin-right: 15px; background-color: #8861bb; font-size: 14px; color: white; border-radius: 10px; padding: 6px 10px; }
+
+    .viewprofile a { color: #F4A460; }
+
+    .viewprofile a { text-decoration: none; }
+
+    .information { font-size: 17px; color: #777; }
+
+    .image { text-align: center; }
+
+    .image .e-upload .e-control-wrapper .e-control-container .e-lib .e-keyboard { border: none; }
+
+    .image .e-file-select-wrap { padding: 15px 0 !important; }
+
+    .image .e-upload { border: none; }
+
+    .e-file-drop { display: none; }
+
+    .e-upload .e-file-select-wrap .e-btn, .e-upload .e-upload-actions .e-btn, .e-bigger.e-small .e-upload .e-file-select-wrap .e-btn, .e-bigger.e-small .e-upload .e-upload-actions .e-btn {
+    background-color: #8861bb;
+    color: white;
+    border: none;
+    }
+
+    .e-tab .e-tab-header .e-toolbar-item.e-active.e-ileft .e-tab-text { color: #8861bb; }
+
+    .e-tab .e-tab-header .e-toolbar-item.e-active.e-ileft .e-tab-text:hover { color: #8861bb; }
+
+    .e-tab .e-tab-header .e-toolbar-item .e-tab-wrap { color: #777; }
+
+    .card-title { border-radius: 5px; }
+
+    .radius { border: 1px solid #dee2e6; border-radius: 5px; }
+
+    .e-richtexteditor.e-rte-tb-expand .e-rte-content, .e-richtexteditor.e-rte-tb-expand .e-source-content { border: 0; }
+
+    .e-rte-quick-popup { border: 0; }
+
+    .e-richtexteditor .e-rte-content, .e-richtexteditor .e-source-content { background: none; }
+
+    .e-richtexteditor.e-rte-tb-expand { border: 0; }
+
+    .to { border-bottom: 1px solid #dee2e6; padding: 7px; color: rgb(95, 125, 149); background-color: #d4dfe7; border-radius: 60%; }
+
+    .e-btn.e-flat, .e-css.e-btn.e-flat { background-color: white; border: 0; padding-left: 0; }
+
+    .e-btn.e-flat:hover, .e-css.e-btn.e-flat:hover { background-color: white; border-color: 0; box-shadow: none; color: white; }
+
+    .textother .aa { margin: 0; float: left; padding: 0 10px; background: #2AD360; color: #fff; font-size: 16px; line-height: 30px; white-space: nowrap; text-transform: uppercase; position: relative; }
+
+    .textother .aa:after { position: absolute; height: 0; width: 0; border-bottom: 0; border-right: 0; border-left: 30px solid #2AD360; border-top: 30px solid transparent; content: ""; top: 0; right: -30px; }
+</style>
+
+@code {
+
+
+
+    #region vavariables
+    [Inject] NavigationManager _navManager { get; set; }
+    [Inject] IJSRuntime JSRuntime { get; set; }
+    [Parameter]
+    public Guid guid { get; set; }
+    private bool _modalVisibleBasicInformation = false;
+    private bool _modalVisibleRelativeInformation = false;
+    private bool _modalVisibleDocument = false;
+    private bool activeDocument; 
+    private string _folderName = string.Empty;
+    private string _typeFile = string.Empty;
+    private string _nameFile = string.Empty;
+    private string fileDocument = string.Empty;
+    private string tamp;
+    private int _indexTab = 0;
+    private EntityEmployee _model = new();
+    private SfUploader _uploader;
+    private SfUploader _uploaderDocument;
+    private IEnumerable<EntityEmployee> _dataSourse;
+    private List<EntityEmployee> _displaySourse = new();
+    private List<ModelEmployeeDocument> _dataSourceDocument = new();
+    private List<OptionItem<Guid>> _optOffices = new();
+    private List<OptionItem<Guid>> _optEmployees = new();
+    private List<OptionItem<Guid>> _optCars = new();
+    private List<OptionItem<Guid>> _optJob = new();
+    private List<OptionItem<Guid>> _optPlace = new();
+    #endregion
+
+    #region events
+    protected override async Task OnInitializedAsync()
+    {
+        // AppState.StateChanged += () => this.StateHasChanged();
+        // AppState.PageTitle = () => "Hồ sơ nhân sự";
+        // _svc = blazorProvider.GetService<IEmployeeService>();
+        _ = swal.Loading("Nạp thông tin ..");
+
+        // _optOffices = await _svc.GetOptionOffices();
+        // _optJob = await _svc.GetOptionJob();
+
+        var curentTab = _navManager.Uri.GetAfter("#");
+        switch (curentTab)
+        {
+            case "thong-tin-co-ban":
+                _indexTab = 0;
+                break;
+            case "document":
+                _indexTab = 1;
+                break;
+        }
+        activeDocument = await _svc.CheckDocument();
+
+        await RereshData();
+    }
+
+    private void UpdateEmployee()
+    {
+        _modalVisibleBasicInformation = true;
+    }
+
+    private void UndoUpdateEmployee()
+    {
+        _modalVisibleBasicInformation = false;
+    }
+
+    private void Professional_UpdateEmployee()
+    {
+        _modalVisibleRelativeInformation = true;
+    }
+
+    private void Professional_UndoUpdateEmployee()
+    {
+        _modalVisibleRelativeInformation = false;
+    }
+
+    private void DocumentClose()
+    {
+        _modalVisibleDocument = false;
+        fileDocument = string.Empty;
+        _folderName = string.Empty;
+        _nameFile = string.Empty;
+    }
+    #endregion
+
+    #region methods
+    private async Task RereshData()
+    {
+        var rsp = await AppStatic.CallApi(() => _svc.Get(guid));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        _model = rsp.Item;
+
+        var rsp1 = await AppStatic.CallApi(() => _svc.GetList());
+        if (!rsp1.Success)
+        {
+            _ = swal.Error(rsp1.Message);
+            return;
+        }
+
+        _dataSourse = rsp1.Items;
+        _displaySourse = _dataSourse.ToList();
+
+        var rsp2 = await AppStatic.CallApi(() => _svc.GetListDocument());  
+        if (!rsp2.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+        var temp = rsp2.Items.ToList();
+        _dataSourceDocument = temp.Where(x => x.GuidEmployee == guid).ToList(); 
+
+        await swal.Close();
+        StateHasChanged();
+    }
+
+    private async Task OnUploadAvata(InputFileChangeEventArgs args)
+    {
+        var resuft = await UploadHelper.ImageBase64(args.File);
+
+        if (resuft.Item1 == "error")
+        {
+            _ = swal.Error(resuft.Item2, "Lỗi!");
+            return;
+        }else if (resuft.Item1 == "success")
+        {
+            _model.Avatar = resuft.Item2;
+
+            _ = swal.Loading("Lưu thông tin ..");
+
+            var rsp = await AppStatic.CallApi(() => _svc.Save(_model));
+
+            if (!rsp.Success)
+            {
+                _ = swal.Error(rsp.Message, "Lỗi!");
+                return;
+            }
+
+            _ = swal.Alert("Thông tin đã được lưu!");
+            StateHasChanged();
+        }
+    }
+
+    private void OnUploadDocument(SuccessEventArgs args)
+    {
+        var customHeader = new string[] { };
+        customHeader = args.Response.Headers.Split("\r\n".ToCharArray(), options: StringSplitOptions.RemoveEmptyEntries); // Để tách các giá trị tiêu đề phản hồi
+        for (var i = 0; i < customHeader.Length; i++)
+        {
+            var key = customHeader[i].GetBefore(":");
+            var value = customHeader[i].GetAfter(":").Trim();
+            if (key == "relativepath")
+            {
+                _typeFile = value.GetAfterLast(".");
+                _nameFile = value;
+            }
+        }
+        StateHasChanged();
+    }
+
+    private async void OnFormSubmitBasicInformation()
+    {
+        _modalVisibleBasicInformation = false;
+
+        var rsp = await AppStatic.CallApi(() => _svc.Save(_model));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+        await RereshData();
+
+        _ = swal.Alert(Text["Saved", "Thông tin đã được cập nhật "]);
+    }
+
+    private async void OnFormSubmitProfessionalInformation()
+    {
+        _modalVisibleRelativeInformation = false;
+
+        var rsp = await AppStatic.CallApi(() => _svc.Save(_model));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+        await RereshData();
+
+        _ = swal.Alert(Text["Saved", "Thông tin đã được cập nhật "]);
+    }
+
+    private async void SubmitDocument()
+    {
+        _modalVisibleDocument = false;
+        var model = new ModelEmployeeDocument();
+        model.GuidEmployee = guid;
+        model.TypeFile = _typeFile;
+        model.NameFile = _nameFile;  
+        model.FolderName = _folderName;
+
+        var rsp = await AppStatic.CallApi(() => _svc.SaveDocument(model));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+
+        StateHasChanged();
+        await OnInitializedAsync();
+
+        _ = swal.Alert(Text["Saved!", "Thông tin đã được lưu!"]);
+    }
+
+    private async void SetToActiveEmployee(int id, bool active)
+    {
+        bool confirm;
+        if (!_model.Active)
+        {
+            confirm = await swal.ConfirmDelete(Text["Confirm activated", "Xác nhận kích hoạt"]);
+            if (!confirm) return;
+        }
+        else
+        {
+            confirm = await swal.ConfirmDelete(Text["Confirm deactivation ", "Xác nhận hủy kích hoạt"]);
+            if (!confirm) return;
+        }
+
+        _ = swal.Loading(Text["Updating ..", "Đang cập nhật"]);
+        var rsp = await AppStatic.CallApi(() => _svc.SetToActiveEmployee(id, guid));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+        await RereshData();
+    }
+
+    public async void OnTabSelected()
+    {
+        var curentUri = _navManager.Uri.GetBefore("#");
+        switch (_indexTab)
+        {
+            case 0:
+                curentUri += "#thong-tin-co-ban";
+                break;
+            case 1:
+                curentUri += "#document";
+                break;
+        }
+        await JSRuntime.InvokeVoidAsync("update_url", curentUri);
+    }
+
+    private void OnSelecting(SelectingEventArgs args)
+    {
+        // Nếu swipe trái/phải thì hủy
+        if (args.IsSwiped)
+        {
+            args.Cancel = true;
+        }
+    }
+
+    private void OpenFileNewTab(string file)
+    {
+        jSRuntime.InvokeVoidAsync("OpenFileNewTab", file);
+    }
+
+    private async Task DownloadDocument(string fileName)
+    {
+        var rsp = await _svc.DownloadDocument(fileName);
+        await JS.InvokeVoidAsync("triggerFileDownload", rsp.Message.GetAfterLast("/"), rsp.Message);
+    }
+
+    private async void DeleteDocument(int id)
+    {
+        var confirm = await swal.ConfirmDelete(Text["Confirm to delete", "Xác nhận xoá thông tin"]);
+        if (!confirm) return;
+
+        _ = swal.Loading(Text["Deleting ..", "Đang xóa .."]);
+        var rsp = await AppStatic.CallApi(() => _svc.DeleteDocument(id));
+        if (!rsp.Success)
+        {
+            _ = swal.Error(rsp.Message);
+            return;
+        }
+        await OnInitializedAsync();
+    }
+
+    private async void SelectedTaskDocument(MenuEventArgs e)
+    {
+        string text = e.Item.Text.ToLower();
+       
+        if(text == "view" || text == "xem"){
+            OpenFileNewTab(e.Item.Id);
+        }else if(text == "download" || text == "tải xuống"){
+            await DownloadDocument(e.Item.Id.GetAfterLast("/").Trim());
+        }else if(text == "delete" || text == "xóa"){
+            DeleteDocument(Convert.ToInt32(e.Item.Id));
+        }        
+    }
+
+    private string TimeAgo(DateTime date)
+    {
+        TimeSpan timeSince = DateTime.Now.Subtract(date);
+        if (timeSince.TotalMinutes < 1) return Text["Just now","Ngay bây giờ"];
+        if (timeSince.TotalMinutes < 2) return Text["1 minute ago","1 phút trước"];
+        if (timeSince.TotalMinutes < 60) return string.Format("{0} " + Text["minutes ago", "phút trước"], timeSince.Minutes) ;
+        if (timeSince.TotalMinutes < 120) return Text["1 hour ago","1 giờ trước"];
+        if (timeSince.TotalHours < 24) return string.Format("{0} " + Text["hours ago", "giờ trước"], timeSince.Hours);
+        if (timeSince.TotalDays < 2) return Text["Yesterday","Hôm qua"];
+        if (timeSince.TotalDays < 7) return string.Format("{0}" + Text["days ago", "ngày trước"], timeSince.Days); 
+        if (timeSince.TotalDays < 14) return Text["Last week","Tuần trước"];
+        if (timeSince.TotalDays < 21) return Text["2 last week","2 tuần trước"];
+        if (timeSince.TotalDays < 28) return Text["3 last week","3 tuần trước"];
+        if (timeSince.TotalDays < 60) return Text["Last month","Tháng trước"];
+        if (timeSince.TotalDays < 365) return string.Format("{0} " + Text["months ago","tháng trước"], Math.Round(timeSince.TotalDays / 30));
+        if (timeSince.TotalDays < 730) return Text["Last year","Năm trước"]; //last but not least...
+        return string.Format("{0} " + Text["years ago", "năm trước"], Math.Round(timeSince.TotalDays / 365));
+    }
+    #endregion
+}

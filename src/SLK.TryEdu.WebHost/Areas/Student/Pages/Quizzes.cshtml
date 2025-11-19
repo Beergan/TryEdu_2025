@@ -1,0 +1,429 @@
+@page
+@model SLK.TryEdu.WebHost.Areas.Student.Pages.QuizzesModel
+@{
+    ViewData["Title"] = "Danh sách Trắc nghiệm - TryEdu";
+    Layout = "~/Pages/Shared/_StudentLayout.cshtml";
+}
+
+<style>
+    .quiz-card {
+        transition: all 0.3s ease;
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        height: 100%;
+    }
+    .quiz-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 28px rgba(102, 126, 234, 0.25);
+    }
+    .quiz-thumbnail {
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+    }
+    .quiz-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        backdrop-filter: blur(10px);
+    }
+    .difficulty-easy { background: rgba(72, 187, 120, 0.9); color: white; }
+    .difficulty-medium { background: rgba(237, 137, 54, 0.9); color: white; }
+    .difficulty-hard { background: rgba(245, 101, 101, 0.9); color: white; }
+    
+    .search-box {
+        border-radius: 30px;
+        border: 2px solid #e2e8f0;
+        padding: 12px 24px;
+        transition: all 0.3s ease;
+    }
+    .search-box:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    }
+    .filter-btn {
+        border-radius: 20px;
+        padding: 8px 20px;
+        border: 2px solid #e2e8f0;
+        background: white;
+        transition: all 0.3s ease;
+    }
+    .filter-btn:hover, .filter-btn.active {
+        border-color: #667eea;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+    .stats-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+    }
+    .page-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 60px 0 40px;
+        margin-bottom: 40px;
+        border-radius: 0 0 30px 30px;
+    }
+</style>
+
+<div class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-5 fw-bold mb-3">📝 Danh sách Trắc nghiệm</h1>
+                <p class="lead mb-0 opacity-90">Khám phá và làm các bài trắc nghiệm để kiểm tra kiến thức của bạn</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                <div class="d-flex gap-3 justify-content-lg-end">
+                    <div class="text-center">
+                        <div class="h2 fw-bold mb-0">48</div>
+                        <small class="opacity-75">Bài kiểm tra</small>
+                    </div>
+                    <div class="text-center">
+                        <div class="h2 fw-bold mb-0">12</div>
+                        <small class="opacity-75">Đã hoàn thành</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <!-- Search and Filter -->
+    <div class="card border-0 shadow-sm mb-4" style="border-radius: 20px;">
+        <div class="card-body p-4">
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0" style="border-radius: 30px 0 0 30px; border: 2px solid #e2e8f0; border-right: none;">
+                            <i class="fas fa-search text-muted"></i>
+                        </span>
+                        <input type="text" class="form-control border-start-0 search-box" placeholder="Tìm kiếm trắc nghiệm..." style="border-left: none; padding-left: 0;">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button class="filter-btn active">
+                            <i class="fas fa-th-large me-1"></i> Tất cả
+                        </button>
+                        <button class="filter-btn">
+                            <i class="fas fa-leaf me-1"></i> Dễ
+                        </button>
+                        <button class="filter-btn">
+                            <i class="fas fa-fire me-1"></i> Trung bình
+                        </button>
+                        <button class="filter-btn">
+                            <i class="fas fa-bomb me-1"></i> Khó
+                        </button>
+                        <button class="filter-btn">
+                            <i class="fas fa-check-circle me-1"></i> Đã làm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Grid -->
+    <div class="row g-4" id="quizGrid">
+        <!-- Quiz Card 1 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card quiz-card">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600" class="quiz-thumbnail" alt="Quiz">
+                    <span class="quiz-badge difficulty-easy">
+                        <i class="fas fa-leaf me-1"></i> Dễ
+                    </span>
+                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                        <span class="badge bg-white text-dark">
+                            <i class="fas fa-book-open me-1"></i> Toán học
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold mb-2">Đại số cơ bản</h5>
+                    <p class="card-text text-muted small mb-3">Kiểm tra kiến thức về phương trình và bất phương trình cơ bản</p>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex gap-3">
+                            <span class="small text-muted">
+                                <i class="fas fa-question-circle me-1"></i> 20 câu
+                            </span>
+                            <span class="small text-muted">
+                                <i class="fas fa-clock me-1"></i> 30 phút
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="/quiz/1" class="btn btn-primary flex-grow-1" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 10px;">
+                            <i class="fas fa-play me-1"></i> Bắt đầu
+                        </a>
+                        <button class="btn btn-outline-secondary" style="border-radius: 10px;">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Card 2 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card quiz-card">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600" class="quiz-thumbnail" alt="Quiz">
+                    <span class="quiz-badge difficulty-medium">
+                        <i class="fas fa-fire me-1"></i> Trung bình
+                    </span>
+                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                        <span class="badge bg-white text-dark">
+                            <i class="fas fa-flask me-1"></i> Hóa học
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold mb-2">Hóa học hữu cơ</h5>
+                    <p class="card-text text-muted small mb-3">Các phản ứng và cấu trúc phân tử hữu cơ cơ bản</p>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex gap-3">
+                            <span class="small text-muted">
+                                <i class="fas fa-question-circle me-1"></i> 25 câu
+                            </span>
+                            <span class="small text-muted">
+                                <i class="fas fa-clock me-1"></i> 45 phút
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="/quiz/2" class="btn btn-primary flex-grow-1" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 10px;">
+                            <i class="fas fa-play me-1"></i> Bắt đầu
+                        </a>
+                        <button class="btn btn-outline-secondary" style="border-radius: 10px;">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Card 3 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card quiz-card">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600" class="quiz-thumbnail" alt="Quiz">
+                    <span class="quiz-badge difficulty-hard">
+                        <i class="fas fa-bomb me-1"></i> Khó
+                    </span>
+                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                        <span class="badge bg-white text-dark">
+                            <i class="fas fa-atom me-1"></i> Vật lý
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold mb-2">Cơ học chất điểm</h5>
+                    <p class="card-text text-muted small mb-3">Các bài toán nâng cao về động lực học và chuyển động</p>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex gap-3">
+                            <span class="small text-muted">
+                                <i class="fas fa-question-circle me-1"></i> 30 câu
+                            </span>
+                            <span class="small text-muted">
+                                <i class="fas fa-clock me-1"></i> 60 phút
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="/quiz/3" class="btn btn-primary flex-grow-1" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 10px;">
+                            <i class="fas fa-play me-1"></i> Bắt đầu
+                        </a>
+                        <button class="btn btn-outline-secondary" style="border-radius: 10px;">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Card 4 (Completed) -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card quiz-card" style="opacity: 0.9;">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600" class="quiz-thumbnail" alt="Quiz">
+                    <span class="quiz-badge" style="background: rgba(72, 187, 120, 0.9);">
+                        <i class="fas fa-check-circle me-1"></i> Đã hoàn thành
+                    </span>
+                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                        <span class="badge bg-white text-dark">
+                            <i class="fas fa-language me-1"></i> Tiếng Anh
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold mb-2">Grammar Test Level A</h5>
+                    <p class="card-text text-muted small mb-3">Kiểm tra ngữ pháp tiếng Anh cơ bản</p>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="small text-muted">Điểm số của bạn</span>
+                            <span class="small fw-bold text-success">85/100</span>
+                        </div>
+                        <div class="progress" style="height: 8px; border-radius: 10px;">
+                            <div class="progress-bar bg-success" style="width: 85%; border-radius: 10px;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="/quiz/4/result" class="btn btn-outline-primary flex-grow-1" style="border-radius: 10px;">
+                            <i class="fas fa-chart-line me-1"></i> Xem kết quả
+                        </a>
+                        <button class="btn btn-outline-secondary" style="border-radius: 10px;">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Card 5 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card quiz-card">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600" class="quiz-thumbnail" alt="Quiz">
+                    <span class="quiz-badge difficulty-easy">
+                        <i class="fas fa-leaf me-1"></i> Dễ
+                    </span>
+                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                        <span class="badge bg-white text-dark">
+                            <i class="fas fa-globe me-1"></i> Địa lý
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold mb-2">Địa lý Việt Nam</h5>
+                    <p class="card-text text-muted small mb-3">Kiến thức về địa lý tự nhiên và kinh tế Việt Nam</p>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex gap-3">
+                            <span class="small text-muted">
+                                <i class="fas fa-question-circle me-1"></i> 15 câu
+                            </span>
+                            <span class="small text-muted">
+                                <i class="fas fa-clock me-1"></i> 20 phút
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="/quiz/5" class="btn btn-primary flex-grow-1" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 10px;">
+                            <i class="fas fa-play me-1"></i> Bắt đầu
+                        </a>
+                        <button class="btn btn-outline-secondary" style="border-radius: 10px;">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Card 6 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card quiz-card">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600" class="quiz-thumbnail" alt="Quiz">
+                    <span class="quiz-badge difficulty-medium">
+                        <i class="fas fa-fire me-1"></i> Trung bình
+                    </span>
+                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                        <span class="badge bg-white text-dark">
+                            <i class="fas fa-landmark me-1"></i> Lịch sử
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold mb-2">Lịch sử thế giới</h5>
+                    <p class="card-text text-muted small mb-3">Các sự kiện lịch sử quan trọng thế kỷ 20</p>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex gap-3">
+                            <span class="small text-muted">
+                                <i class="fas fa-question-circle me-1"></i> 22 câu
+                            </span>
+                            <span class="small text-muted">
+                                <i class="fas fa-clock me-1"></i> 35 phút
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="/quiz/6" class="btn btn-primary flex-grow-1" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 10px;">
+                            <i class="fas fa-play me-1"></i> Bắt đầu
+                        </a>
+                        <button class="btn btn-outline-secondary" style="border-radius: 10px;">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="d-flex justify-content-center mt-5">
+        <nav>
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" style="border-radius: 10px 0 0 10px;">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                </li>
+                <li class="page-item active">
+                    <a class="page-link" href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" style="border-radius: 0 10px 10px 0;">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Search functionality
+        document.querySelector('.search-box').addEventListener('input', function(e) {
+            console.log('Searching for:', e.target.value);
+            // TODO: Implement search logic
+        });
+    </script>
+}
+

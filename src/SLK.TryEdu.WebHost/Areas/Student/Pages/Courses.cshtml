@@ -1,0 +1,559 @@
+@page
+@model SLK.TryEdu.WebHost.Areas.Student.Pages.CoursesModel
+@{
+    ViewData["Title"] = "Danh sách Khóa học - TryEdu";
+    Layout = "~/Pages/Shared/_StudentLayout.cshtml";
+}
+
+<style>
+    .course-card {
+        transition: all 0.3s ease;
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        height: 100%;
+        background: white;
+    }
+    .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 16px 32px rgba(102, 126, 234, 0.2);
+    }
+    .course-thumbnail {
+        height: 220px;
+        object-fit: cover;
+        width: 100%;
+        position: relative;
+    }
+    .course-badge {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        padding: 8px 16px;
+        border-radius: 25px;
+        font-size: 13px;
+        font-weight: 700;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .badge-bestseller { background: rgba(245, 101, 101, 0.95); color: white; }
+    .badge-new { background: rgba(72, 187, 120, 0.95); color: white; }
+    .badge-trending { background: rgba(237, 137, 54, 0.95); color: white; }
+    
+    .instructor-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .price-tag {
+        font-size: 24px;
+        font-weight: 800;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .rating-stars {
+        color: #fbbf24;
+    }
+    .category-chip {
+        display: inline-block;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        border: 2px solid #e2e8f0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        background: white;
+    }
+    .category-chip:hover, .category-chip.active {
+        border-color: #667eea;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+    .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 80px 0 60px;
+        margin-bottom: 50px;
+        border-radius: 0 0 40px 40px;
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        top: -100px;
+        right: -100px;
+    }
+    .hero-section::after {
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        bottom: -50px;
+        left: -50px;
+    }
+    .search-bar-container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .search-bar {
+        border-radius: 50px;
+        border: none;
+        padding: 18px 28px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        font-size: 16px;
+    }
+    .course-stats {
+        display: flex;
+        gap: 20px;
+        padding: 15px 0;
+        border-top: 1px solid #e2e8f0;
+    }
+    .course-stats-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        color: #64748b;
+    }
+    .featured-badge {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: rgba(245, 158, 11, 0.95);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        backdrop-filter: blur(10px);
+    }
+</style>
+
+<div class="hero-section">
+    <div class="container position-relative" style="z-index: 1;">
+        <div class="text-center mb-4">
+            <h1 class="display-4 fw-bold mb-3">🎓 Khám phá Khóa học</h1>
+            <p class="lead mb-5 opacity-90">Học tập không giới hạn với hàng trăm khóa học chất lượng cao</p>
+            
+            <div class="search-bar-container">
+                <div class="input-group">
+                    <input type="text" class="form-control search-bar" placeholder="Tìm kiếm khóa học, giảng viên, chủ đề...">
+                    <button class="btn btn-light" style="border-radius: 0 50px 50px 0; padding: 0 32px; font-weight: 600;">
+                        <i class="fas fa-search me-2"></i> Tìm kiếm
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row text-center mt-5">
+            <div class="col-md-3">
+                <div class="h2 fw-bold mb-1">500+</div>
+                <div class="opacity-75">Khóa học</div>
+            </div>
+            <div class="col-md-3">
+                <div class="h2 fw-bold mb-1">50K+</div>
+                <div class="opacity-75">Học viên</div>
+            </div>
+            <div class="col-md-3">
+                <div class="h2 fw-bold mb-1">100+</div>
+                <div class="opacity-75">Giảng viên</div>
+            </div>
+            <div class="col-md-3">
+                <div class="h2 fw-bold mb-1">4.8/5</div>
+                <div class="opacity-75">Đánh giá</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <!-- Categories Filter -->
+    <div class="card border-0 shadow-sm mb-5" style="border-radius: 20px;">
+        <div class="card-body p-4">
+            <h5 class="fw-bold mb-3">
+                <i class="fas fa-filter me-2"></i> Danh mục
+            </h5>
+            <div class="d-flex gap-2 flex-wrap">
+                <span class="category-chip active">
+                    <i class="fas fa-th-large me-1"></i> Tất cả
+                </span>
+                <span class="category-chip">
+                    <i class="fas fa-code me-1"></i> Lập trình
+                </span>
+                <span class="category-chip">
+                    <i class="fas fa-palette me-1"></i> Thiết kế
+                </span>
+                <span class="category-chip">
+                    <i class="fas fa-chart-line me-1"></i> Kinh doanh
+                </span>
+                <span class="category-chip">
+                    <i class="fas fa-bullhorn me-1"></i> Marketing
+                </span>
+                <span class="category-chip">
+                    <i class="fas fa-graduation-cap me-1"></i> Học thuật
+                </span>
+                <span class="category-chip">
+                    <i class="fas fa-language me-1"></i> Ngoại ngữ
+                </span>
+                <span class="category-chip">
+                    <i class="fas fa-music me-1"></i> Nghệ thuật
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Courses -->
+    <div class="mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-bold mb-0">
+                <i class="fas fa-star text-warning me-2"></i> Khóa học nổi bật
+            </h3>
+            <a href="#" class="text-decoration-none fw-600">
+                Xem tất cả <i class="fas fa-arrow-right ms-1"></i>
+            </a>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Course Card 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600" class="course-thumbnail" alt="Course">
+                        <span class="course-badge badge-bestseller">
+                            <i class="fas fa-fire me-1"></i> BESTSELLER
+                        </span>
+                        <span class="featured-badge">
+                            <i class="fas fa-crown"></i> Nổi bật
+                        </span>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <span class="badge" style="background: #dbeafe; color: #1e40af; font-weight: 600;">
+                                <i class="fas fa-code me-1"></i> Lập trình
+                            </span>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-muted ms-1" style="font-size: 14px;">(4.5)</span>
+                            </div>
+                        </div>
+                        
+                        <h5 class="card-title fw-bold mb-2">
+                            <a href="/student/course/1" class="text-decoration-none text-dark">
+                                Lập trình Web Full-Stack với React & Node.js
+                            </a>
+                        </h5>
+                        
+                        <p class="card-text text-muted small mb-3">
+                            Khóa học toàn diện từ cơ bản đến nâng cao, xây dựng ứng dụng web hiện đại
+                        </p>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://i.pravatar.cc/150?img=1" class="instructor-avatar me-2" alt="Instructor">
+                            <div>
+                                <div class="small fw-600">Nguyễn Văn A</div>
+                                <div class="small text-muted">Senior Developer</div>
+                            </div>
+                        </div>
+                        
+                        <div class="course-stats">
+                            <div class="course-stats-item">
+                                <i class="fas fa-users"></i>
+                                <span>2.5K học viên</span>
+                            </div>
+                            <div class="course-stats-item">
+                                <i class="fas fa-video"></i>
+                                <span>45 bài học</span>
+                            </div>
+                            <div class="course-stats-item">
+                                <i class="fas fa-clock"></i>
+                                <span>12h 30p</span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-tag">3.499.000đ</div>
+                            <a href="/student/course/1" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 12px; padding: 10px 24px;">
+                                Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600" class="course-thumbnail" alt="Course">
+                        <span class="course-badge badge-new">
+                            <i class="fas fa-star me-1"></i> MỚI
+                        </span>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <span class="badge" style="background: #fef3c7; color: #92400e; font-weight: 600;">
+                                <i class="fas fa-palette me-1"></i> Thiết kế
+                            </span>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-muted ms-1" style="font-size: 14px;">(5.0)</span>
+                            </div>
+                        </div>
+                        
+                        <h5 class="card-title fw-bold mb-2">
+                            <a href="/student/course/2" class="text-decoration-none text-dark">
+                                UI/UX Design Masterclass - Figma
+                            </a>
+                        </h5>
+                        
+                        <p class="card-text text-muted small mb-3">
+                            Thiết kế giao diện người dùng chuyên nghiệp với Figma từ A-Z
+                        </p>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://i.pravatar.cc/150?img=2" class="instructor-avatar me-2" alt="Instructor">
+                            <div>
+                                <div class="small fw-600">Trần Thị B</div>
+                                <div class="small text-muted">UX Designer</div>
+                            </div>
+                        </div>
+                        
+                        <div class="course-stats">
+                            <div class="course-stats-item">
+                                <i class="fas fa-users"></i>
+                                <span>1.2K học viên</span>
+                            </div>
+                            <div class="course-stats-item">
+                                <i class="fas fa-video"></i>
+                                <span>38 bài học</span>
+                            </div>
+                            <div class="course-stats-item">
+                                <i class="fas fa-clock"></i>
+                                <span>10h 15p</span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-tag">2.999.000đ</div>
+                            <a href="/student/course/2" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 12px; padding: 10px 24px;">
+                                Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" class="course-thumbnail" alt="Course">
+                        <span class="course-badge badge-trending">
+                            <i class="fas fa-chart-line me-1"></i> TRENDING
+                        </span>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <span class="badge" style="background: #d1fae5; color: #065f46; font-weight: 600;">
+                                <i class="fas fa-chart-line me-1"></i> Kinh doanh
+                            </span>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="text-muted ms-1" style="font-size: 14px;">(4.0)</span>
+                            </div>
+                        </div>
+                        
+                        <h5 class="card-title fw-bold mb-2">
+                            <a href="/student/course/3" class="text-decoration-none text-dark">
+                                Digital Marketing & SEO Complete Course
+                            </a>
+                        </h5>
+                        
+                        <p class="card-text text-muted small mb-3">
+                            Chiến lược marketing số và tối ưu hóa công cụ tìm kiếm hiệu quả
+                        </p>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://i.pravatar.cc/150?img=3" class="instructor-avatar me-2" alt="Instructor">
+                            <div>
+                                <div class="small fw-600">Lê Văn C</div>
+                                <div class="small text-muted">Marketing Expert</div>
+                            </div>
+                        </div>
+                        
+                        <div class="course-stats">
+                            <div class="course-stats-item">
+                                <i class="fas fa-users"></i>
+                                <span>3.1K học viên</span>
+                            </div>
+                            <div class="course-stats-item">
+                                <i class="fas fa-video"></i>
+                                <span>52 bài học</span>
+                            </div>
+                            <div class="course-stats-item">
+                                <i class="fas fa-clock"></i>
+                                <span>15h 45p</span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-tag">1.999.000đ</div>
+                            <a href="/student/course/3" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 12px; padding: 10px 24px;">
+                                Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- All Courses -->
+    <div class="mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-bold mb-0">
+                <i class="fas fa-book-open me-2"></i> Tất cả khóa học
+            </h3>
+            <select class="form-select" style="width: auto; border-radius: 12px;">
+                <option>Mới nhất</option>
+                <option>Phổ biến nhất</option>
+                <option>Đánh giá cao</option>
+                <option>Giá thấp đến cao</option>
+                <option>Giá cao đến thấp</option>
+            </select>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Additional courses here (repeat course card structure) -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card course-card">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600" class="course-thumbnail" alt="Course">
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <span class="badge" style="background: #fce7f3; color: #9f1239; font-weight: 600;">
+                                <i class="fas fa-language me-1"></i> Ngoại ngữ
+                            </span>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-muted ms-1" style="font-size: 14px;">(4.6)</span>
+                            </div>
+                        </div>
+                        
+                        <h5 class="card-title fw-bold mb-2">
+                            <a href="/student/course/4" class="text-decoration-none text-dark">
+                                Tiếng Anh giao tiếp cơ bản
+                            </a>
+                        </h5>
+                        
+                        <p class="card-text text-muted small mb-3">
+                            Nâng cao kỹ năng giao tiếp tiếng Anh trong cuộc sống hàng ngày
+                        </p>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://i.pravatar.cc/150?img=4" class="instructor-avatar me-2" alt="Instructor">
+                            <div>
+                                <div class="small fw-600">Phạm Thị D</div>
+                                <div class="small text-muted">English Teacher</div>
+                            </div>
+                        </div>
+                        
+                        <div class="course-stats">
+                            <div class="course-stats-item">
+                                <i class="fas fa-users"></i>
+                                <span>4.2K học viên</span>
+                            </div>
+                            <div class="course-stats-item">
+                                <i class="fas fa-video"></i>
+                                <span>30 bài học</span>
+                            </div>
+                            <div class="course-stats-item">
+                                <i class="fas fa-clock"></i>
+                                <span>8h 20p</span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="price-tag">899.000đ</div>
+                            <a href="/student/course/4" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 12px; padding: 10px 24px;">
+                                Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more course cards as needed -->
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="d-flex justify-content-center mt-5">
+        <nav>
+            <ul class="pagination pagination-lg">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" style="border-radius: 12px 0 0 12px;">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                </li>
+                <li class="page-item active">
+                    <a class="page-link" href="#" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" style="border-radius: 0 12px 12px 0;">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Category filter
+        document.querySelectorAll('.category-chip').forEach(chip => {
+            chip.addEventListener('click', function() {
+                document.querySelectorAll('.category-chip').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+}
+

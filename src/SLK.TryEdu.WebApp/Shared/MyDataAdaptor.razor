@@ -1,0 +1,28 @@
+﻿@using Syncfusion.Blazor;
+@using Syncfusion.Blazor.Data;
+@using Newtonsoft.Json
+@using System.Collections;
+@using System.Collections.Generic;
+
+@inherits DataAdaptor
+@typeparam TValue
+
+<CascadingValue Value="@this">
+    @ChildContent
+</CascadingValue>
+
+@code {
+
+    [Parameter]
+    public Func<DataManagerRequest, Task<PagedResultsOf<TValue>>> GetDataMethod { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    public override async Task<object> ReadAsync(DataManagerRequest request, string additionalParam = null)
+    {
+        var rsp = await GetDataMethod(request);
+
+        return request.RequiresCounts ? new DataResult() { Result = rsp.Items, Count = rsp.TotalCount } : (object)rsp.Items;
+    }
+}

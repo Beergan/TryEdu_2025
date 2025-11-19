@@ -1,0 +1,16 @@
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\bin\Release\net8.0\SLK.TryEdu.Db.deps.json
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\bin\Release\net8.0\SLK.TryEdu.Db.runtimeconfig.json
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\bin\Release\net8.0\SLK.TryEdu.Db.dll
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\bin\Release\net8.0\SLK.TryEdu.Abstract.dll
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\bin\Release\net8.0\SLK.TryEdu.Base.dll
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\bin\Release\net8.0\SLK.TryEdu.Abstract.xml
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\obj\Release\net8.0\SLK.TryEdu.Db.csproj.AssemblyReference.cache
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\obj\Release\net8.0\SLK.TryEdu.Db.GeneratedMSBuildEditorConfig.editorconfig
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\obj\Release\net8.0\SLK.TryEdu.Db.AssemblyInfoInputs.cache
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\obj\Release\net8.0\SLK.TryEdu.Db.AssemblyInfo.cs
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\obj\Release\net8.0\SLK.TryEdu.Db.csproj.CoreCompileInputs.cache
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\obj\Release\net8.0\SLK.TryE.4A8967FB.Up2Date
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\obj\Release\net8.0\SLK.TryEdu.Db.dll
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\obj\Release\net8.0\refint\SLK.TryEdu.Db.dll
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\obj\Release\net8.0\SLK.TryEdu.Db.genruntimeconfig.cache
+C:\SLK\tryedu_SLK\src\SLK.TryEdu.Db\obj\Release\net8.0\ref\SLK.TryEdu.Db.dll
