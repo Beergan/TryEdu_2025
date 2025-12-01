@@ -1,0 +1,257 @@
+✓,Task ID,Task Name,Module,Assigned To,Priority,Status,Start Date,End Date,Estimated Hours,Actual Hours,Progress %,Dependencies,Notes,Week
+☐,T001,Review cấu trúc module hiện tại,Foundation,Phong,P0,Not Started,27/11/2025,27/11/2025,4,0,0%,-,-,W1
+☐,T002,Thiết kế kiến trúc mở rộng V2.0,Foundation,Phong,P0,Not Started,27/11/2025,28/11/2025,8,0,0%,T001,-,W1
+☐,T003,Tạo ModuleCoin structure,Foundation,Phong,P0,Not Started,27/11/2025,28/11/2025,2,0,0%,T001,-,W1
+☐,T004,Tạo ModulePartner structure,Foundation,Phong,P0,Not Started,27/11/2025,28/11/2025,2,0,0%,T001,-,W1
+☐,T005,Tạo ModuleContent structure,Foundation,Phong,P0,Not Started,27/11/2025,28/11/2025,2,0,0%,T001,-,W1
+☐,T006,Tạo ModuleLearning structure,Foundation,Phong,P0,Not Started,27/11/2025,28/11/2025,2,0,0%,T001,-,W1
+☐,T007,Document architecture decisions,Foundation,Phong,P0,Not Started,28/11/2025,28/11/2025,2,0,0%,T002,-,W1
+☐,T008,Clone repository và setup local,Foundation,Kiên,P0,Not Started,27/11/2025,27/11/2025,1,0,0%,-,-,W1
+☐,T009,Review EntityBase pattern,Foundation,Kiên,P0,Not Started,27/11/2025,27/11/2025,2,0,0%,T008,-,W1
+☐,T010,Review MyServiceBase pattern,Foundation,Kiên,P0,Not Started,27/11/2025,27/11/2025,2,0,0%,T008,-,W1
+☐,T011,Setup PostgreSQL local instance,Foundation,Kiên,P0,Not Started,27/11/2025,27/11/2025,2,0,0%,T008,-,W1
+☐,T012,Setup MongoDB local instance,Foundation,Kiên,P0,Not Started,27/11/2025,27/11/2025,2,0,0%,T008,-,W1
+☐,T013,Test connection strings,Foundation,Kiên,P0,Not Started,27/11/2025,27/11/2025,1,0,0%,T011;T012,-,W1
+☐,T014,Review Blazor structure,Foundation,Cường,P0,Not Started,27/11/2025,27/11/2025,2,0,0%,-,-,W1
+☐,T015,Setup UI framework (MudBlazor),Foundation,Cường,P0,Not Started,27/11/2025,28/11/2025,4,0,0%,T014,-,W1
+☐,T016,Tạo base layouts Partner Portal,Foundation,Cường,P0,Not Started,28/11/2025,28/11/2025,4,0,0%,T015,-,W1
+☐,T017,Setup shared components,Foundation,Cường,P0,Not Started,28/11/2025,28/11/2025,2,0,0%,T015,-,W1
+☐,T018,Review PRD document,Foundation,Nguyên,P0,Not Started,27/11/2025,27/11/2025,2,0,0%,-,-,W1
+☐,T019,Prioritize features cho DEMO,Foundation,Nguyên,P0,Not Started,27/11/2025,27/11/2025,2,0,0%,T018,-,W1
+☐,T020,Prepare user stories chi tiết,Foundation,Nguyên,P0,Not Started,27/11/2025,28/11/2025,4,0,0%,T019,-,W1
+☐,T021,Define acceptance criteria,Foundation,Nguyên,P0,Not Started,28/11/2025,28/11/2025,2,0,0%,T020,-,W1
+☐,T022,Tạo EntityCoinTransaction.cs,Database,Kiên,P0,Not Started,29/11/2025,29/11/2025,2,0,0%,T011,-,W1
+☐,T023,Tạo EntityCoinBalance.cs,Database,Kiên,P0,Not Started,29/11/2025,29/11/2025,2,0,0%,T011,-,W1
+☐,T024,Tạo EntityPartnerCenter.cs,Database,Kiên,P0,Not Started,29/11/2025,29/11/2025,2,0,0%,T011,-,W1
+☐,T025,Tạo EntityReferralCode.cs,Database,Kiên,P0,Not Started,29/11/2025,29/11/2025,2,0,0%,T011,-,W1
+☐,T026,Tạo EntityCommissionTransaction.cs,Database,Kiên,P0,Not Started,29/11/2025,29/11/2025,2,0,0%,T011,-,W1
+☐,T027,Tạo EntityCourse.cs,Database,Kiên,P0,Not Started,30/11/2025,30/11/2025,2,0,0%,T011,-,W1
+☐,T028,Tạo EntityExam.cs,Database,Kiên,P0,Not Started,30/11/2025,30/11/2025,2,0,0%,T011,-,W1
+☐,T029,Tạo EntityEnrollment.cs,Database,Kiên,P0,Not Started,30/11/2025,30/11/2025,2,0,0%,T011,-,W1
+☐,T030,Tạo EntityExamSubmission.cs,Database,Kiên,P0,Not Started,30/11/2025,30/11/2025,2,0,0%,T011,-,W1
+☐,T031,Tạo EntityUserRole.cs,Database,Kiên,P0,Not Started,01/12/2025,01/12/2025,2,0,0%,T011,-,W1
+☐,T032,Update ModelBuilderExt.cs,Database,Kiên,P0,Not Started,01/12/2025,01/12/2025,2,0,0%,T022-T031,-,W1
+☐,T033,Configure unique constraints,Database,Kiên,P0,Not Started,01/12/2025,01/12/2025,2,0,0%,T032,-,W1
+☐,T034,Review tất cả entities,Database,Phong,P0,Not Started,29/11/2025,01/12/2025,4,0,0%,T022-T031,-,W1
+☐,T035,Validate relationships,Database,Phong,P0,Not Started,01/12/2025,01/12/2025,2,0,0%,T034,-,W1
+☐,T036,Document database schema,Database,Phong,P0,Not Started,01/12/2025,01/12/2025,2,0,0%,T035,-,W1
+☐,T037,Design indexes strategy,Database,Phong,P0,Not Started,01/12/2025,01/12/2025,2,0,0%,T035,-,W1
+☐,T038,Tạo DTOs cho API responses,Database,Cường,P0,Not Started,29/11/2025,01/12/2025,4,0,0%,T022-T031,-,W1
+☐,T039,Design wireframes Coin management,Database,Cường,P0,Not Started,29/11/2025,01/12/2025,4,0,0%,T015,-,W1
+☐,T040,Design wireframes Partner Portal,Database,Cường,P0,Not Started,29/11/2025,01/12/2025,4,0,0%,T015,-,W1
+☐,T041,Tạo EF Core migrations,Migrations,Kiên,P0,Not Started,02/12/2025,02/12/2025,4,0,0%,T032,-,W1
+☐,T042,Test migrations trên PostgreSQL,Migrations,Kiên,P0,Not Started,02/12/2025,02/12/2025,2,0,0%,T041,-,W1
+☐,T043,Tạo SeedData.cs,Migrations,Kiên,P0,Not Started,03/12/2025,03/12/2025,2,0,0%,T042,-,W1
+☐,T044,Seed default coin exchange rate,Migrations,Kiên,P0,Not Started,03/12/2025,03/12/2025,1,0,0%,T043,-,W1
+☐,T045,Seed bronze tier commission,Migrations,Kiên,P0,Not Started,03/12/2025,03/12/2025,1,0,0%,T043,-,W1
+☐,T046,Seed sample courses,Migrations,Kiên,P0,Not Started,03/12/2025,03/12/2025,1,0,0%,T043,-,W1
+☐,T047,Seed sample exams,Migrations,Kiên,P0,Not Started,03/12/2025,03/12/2025,1,0,0%,T043,-,W1
+☐,T048,Document migration process,Migrations,Kiên,P0,Not Started,03/12/2025,03/12/2025,1,0,0%,T041-T047,-,W1
+☐,T049,Tạo EntityUserRole.cs,Authentication,Kiên,P0,Not Started,04/12/2025,04/12/2025,2,0,0%,T048,-,W2
+☐,T050,Tạo AuthService.cs Register,Authentication,Kiên,P0,Not Started,04/12/2025,05/12/2025,4,0,0%,T049,-,W2
+☐,T051,Tạo AuthService.cs Login,Authentication,Kiên,P0,Not Started,05/12/2025,05/12/2025,3,0,0%,T050,-,W2
+☐,T052,Implement HashPassword method,Authentication,Kiên,P0,Not Started,05/12/2025,05/12/2025,1,0,0%,T050,-,W2
+☐,T053,Implement VerifyPassword method,Authentication,Kiên,P0,Not Started,05/12/2025,05/12/2025,1,0,0%,T051,-,W2
+☐,T054,Implement GenerateJwtToken,Authentication,Kiên,P0,Not Started,05/12/2025,06/12/2025,3,0,0%,T051,-,W2
+☐,T055,Tạo RegisterDto.cs,Authentication,Kiên,P0,Not Started,04/12/2025,04/12/2025,1,0,0%,T049,-,W2
+☐,T056,Tạo LoginDto.cs,Authentication,Kiên,P0,Not Started,04/12/2025,04/12/2025,1,0,0%,T049,-,W2
+☐,T057,Tạo AuthResponseDto.cs,Authentication,Kiên,P0,Not Started,04/12/2025,04/12/2025,1,0,0%,T049,-,W2
+☐,T058,Auto-create CoinBalance for Student,Authentication,Kiên,P0,Not Started,06/12/2025,06/12/2025,2,0,0%,T050,-,W2
+☐,T059,Update last login timestamp,Authentication,Kiên,P0,Not Started,06/12/2025,06/12/2025,1,0,0%,T051,-,W2
+☐,T060,Tạo Login UI component,Authentication,Cường,P0,Not Started,04/12/2025,05/12/2025,4,0,0%,T016,-,W2
+☐,T061,Tạo Register UI component,Authentication,Cường,P0,Not Started,05/12/2025,05/12/2025,4,0,0%,T060,-,W2
+☐,T062,Implement form validation,Authentication,Cường,P0,Not Started,05/12/2025,06/12/2025,3,0,0%,T060;T061,-,W2
+☐,T063,Integrate với AuthService API,Authentication,Cường,P0,Not Started,06/12/2025,06/12/2025,3,0,0%,T051,-,W2
+☐,T064,Setup JWT token storage,Authentication,Cường,P0,Not Started,06/12/2025,06/12/2025,2,0,0%,T054,-,W2
+☐,T065,Implement authentication guard,Authentication,Cường,P0,Not Started,06/12/2025,06/12/2025,2,0,0%,T064,-,W2
+☐,T066,Tạo PartnerService.cs,Partner,Kiên,P0,Not Started,07/12/2025,07/12/2025,2,0,0%,T048,-,W2
+☐,T067,Implement RegisterPartner method,Partner,Kiên,P0,Not Started,07/12/2025,07/12/2025,3,0,0%,T066,-,W2
+☐,T068,Implement ApprovePartner method,Partner,Kiên,P0,Not Started,07/12/2025,08/12/2025,3,0,0%,T066,-,W2
+☐,T069,Implement RejectPartner method,Partner,Kiên,P0,Not Started,08/12/2025,08/12/2025,2,0,0%,T066,-,W2
+☐,T070,Implement GenerateDefaultCode,Partner,Kiên,P0,Not Started,08/12/2025,08/12/2025,2,0,0%,T068,-,W2
+☐,T071,Tạo PartnerRegistrationDto.cs,Partner,Kiên,P0,Not Started,07/12/2025,07/12/2025,1,0,0%,T066,-,W2
+☐,T072,Email notification admin,Partner,Kiên,P1,Not Started,08/12/2025,08/12/2025,2,0,0%,T067,-,W2
+☐,T073,Email confirmation partner,Partner,Kiên,P1,Not Started,08/12/2025,08/12/2025,2,0,0%,T067,-,W2
+☐,T074,Email approval notification,Partner,Kiên,P1,Not Started,08/12/2025,08/12/2025,2,0,0%,T068,-,W2
+☐,T075,Tạo Partner Registration form,Partner,Cường,P0,Not Started,07/12/2025,07/12/2025,4,0,0%,T040,-,W2
+☐,T076,Implement file upload logo,Partner,Cường,P0,Not Started,07/12/2025,08/12/2025,3,0,0%,T075,-,W2
+☐,T077,Implement file upload license,Partner,Cường,P0,Not Started,07/12/2025,08/12/2025,3,0,0%,T075,-,W2
+☐,T078,Tạo Admin approval interface,Partner,Cường,P0,Not Started,08/12/2025,08/12/2025,4,0,0%,T068,-,W2
+☐,T079,Partner dashboard layout,Partner,Cường,P0,Not Started,08/12/2025,08/12/2025,4,0,0%,T040,-,W2
+☐,T080,Partner profile page,Partner,Cường,P0,Not Started,08/12/2025,08/12/2025,3,0,0%,T079,-,W2
+☐,T081,Test auth flows Student,Testing,All,P0,Not Started,09/12/2025,09/12/2025,2,0,0%,T065,-,W2
+☐,T082,Test auth flows Teacher,Testing,All,P0,Not Started,09/12/2025,09/12/2025,2,0,0%,T065,-,W2
+☐,T083,Test auth flows Admin,Testing,All,P0,Not Started,09/12/2025,09/12/2025,2,0,0%,T065,-,W2
+☐,T084,Test auth flows Partner,Testing,All,P0,Not Started,09/12/2025,09/12/2025,2,0,0%,T065,-,W2
+☐,T085,Test partner registration flow,Testing,All,P0,Not Started,09/12/2025,10/12/2025,3,0,0%,T067,-,W2
+☐,T086,Test admin approval workflow,Testing,All,P0,Not Started,10/12/2025,10/12/2025,2,0,0%,T068,-,W2
+☐,T087,Fix bugs discovered Week 1-2,Testing,All,P0,Not Started,10/12/2025,10/12/2025,4,0,0%,T081-T086,-,W2
+☐,T088,Code review session Week 1-2,Testing,All,P0,Not Started,10/12/2025,10/12/2025,2,0,0%,T087,-,W2
+☐,T089,Update documentation Week 1-2,Testing,All,P0,Not Started,10/12/2025,10/12/2025,2,0,0%,T088,-,W2
+☐,T090,Sprint 1 retrospective,Testing,All,P0,Not Started,10/12/2025,10/12/2025,1,0,0%,T089,-,W2
+☐,T091,Tạo CoinService.cs,Coin,Kiên,P0,Not Started,11/12/2025,11/12/2025,2,0,0%,T048,-,W3
+☐,T092,Implement PurchaseCoins method,Coin,Kiên,P0,Not Started,11/12/2025,12/12/2025,4,0,0%,T091,-,W3
+☐,T093,Implement GetBalance method,Coin,Kiên,P0,Not Started,12/12/2025,12/12/2025,2,0,0%,T091,-,W3
+☐,T094,Implement UseCoins method,Coin,Kiên,P0,Not Started,12/12/2025,12/12/2025,3,0,0%,T091,-,W3
+☐,T095,Implement ValidateReferralCode,Coin,Kiên,P0,Not Started,12/12/2025,13/12/2025,3,0,0%,T091,-,W3
+☐,T096,Implement CalculateCommission,Coin,Kiên,P0,Not Started,13/12/2025,13/12/2025,3,0,0%,T091,-,W3
+☐,T097,Tạo CoinPurchaseDto.cs,Coin,Kiên,P0,Not Started,11/12/2025,11/12/2025,1,0,0%,T091,-,W3
+☐,T098,Tạo CoinPurchaseResponseDto.cs,Coin,Kiên,P0,Not Started,11/12/2025,11/12/2025,1,0,0%,T091,-,W3
+☐,T099,Tạo CoinBalanceDto.cs,Coin,Kiên,P0,Not Started,11/12/2025,11/12/2025,1,0,0%,T091,-,W3
+☐,T100,Tạo UseCoinDto.cs,Coin,Kiên,P0,Not Started,11/12/2025,11/12/2025,1,0,0%,T091,-,W3
+☐,T101,Auto-update CoinBalance purchase,Coin,Kiên,P0,Not Started,13/12/2025,13/12/2025,2,0,0%,T092,-,W3
+☐,T102,Auto-update CoinBalance use,Coin,Kiên,P0,Not Started,13/12/2025,13/12/2025,2,0,0%,T094,-,W3
+☐,T103,Transaction logging đầy đủ,Coin,Kiên,P0,Not Started,13/12/2025,13/12/2025,2,0,0%,T092;T094,-,W3
+☐,T104,Tạo Coin purchase UI,Coin,Cường,P0,Not Started,11/12/2025,12/12/2025,4,0,0%,T039,-,W3
+☐,T105,Coin balance display widget,Coin,Cường,P0,Not Started,11/12/2025,12/12/2025,3,0,0%,T039,-,W3
+☐,T106,Transaction history table,Coin,Cường,P0,Not Started,12/12/2025,13/12/2025,4,0,0%,T104,-,W3
+☐,T107,Referral code input field,Coin,Cường,P0,Not Started,12/12/2025,12/12/2025,2,0,0%,T104,-,W3
+☐,T108,Payment method selection,Coin,Cường,P0,Not Started,12/12/2025,13/12/2025,3,0,0%,T104,-,W3
+☐,T109,Purchase confirmation dialog,Coin,Cường,P0,Not Started,13/12/2025,13/12/2025,2,0,0%,T104,-,W3
+☐,T110,Success/Error notifications,Coin,Cường,P0,Not Started,13/12/2025,13/12/2025,2,0,0%,T104,-,W3
+☐,T111,Tạo ReferralCodeService.cs,Referral,Kiên,P0,Not Started,14/12/2025,14/12/2025,2,0,0%,T048,-,W3
+☐,T112,Implement CreateCode method,Referral,Kiên,P0,Not Started,14/12/2025,14/12/2025,3,0,0%,T111,-,W3
+☐,T113,Implement GetPartnerCodes method,Referral,Kiên,P0,Not Started,14/12/2025,14/12/2025,2,0,0%,T111,-,W3
+☐,T114,Implement UpdateCode method,Referral,Kiên,P0,Not Started,14/12/2025,15/12/2025,2,0,0%,T111,-,W3
+☐,T115,Implement ToggleCodeStatus,Referral,Kiên,P0,Not Started,15/12/2025,15/12/2025,2,0,0%,T111,-,W3
+☐,T116,Implement DeleteCode method,Referral,Kiên,P0,Not Started,15/12/2025,15/12/2025,2,0,0%,T111,-,W3
+☐,T117,Tạo CreateReferralCodeDto.cs,Referral,Kiên,P0,Not Started,14/12/2025,14/12/2025,1,0,0%,T111,-,W3
+☐,T118,Tạo ReferralCodeDto.cs,Referral,Kiên,P0,Not Started,14/12/2025,14/12/2025,1,0,0%,T111,-,W3
+☐,T119,Validate code uniqueness,Referral,Kiên,P0,Not Started,14/12/2025,14/12/2025,1,0,0%,T112,-,W3
+☐,T120,Check expiry date,Referral,Kiên,P0,Not Started,14/12/2025,14/12/2025,1,0,0%,T095,-,W3
+☐,T121,Check usage limits,Referral,Kiên,P0,Not Started,14/12/2025,14/12/2025,1,0,0%,T095,-,W3
+☐,T122,Create referral code form,Referral,Cường,P0,Not Started,14/12/2025,14/12/2025,3,0,0%,T079,-,W3
+☐,T123,Referral code list table,Referral,Cường,P0,Not Started,14/12/2025,15/12/2025,4,0,0%,T122,-,W3
+☐,T124,Code statistics display,Referral,Cường,P0,Not Started,15/12/2025,15/12/2025,3,0,0%,T123,-,W3
+☐,T125,Toggle active/inactive button,Referral,Cường,P0,Not Started,15/12/2025,15/12/2025,2,0,0%,T123,-,W3
+☐,T126,Edit code functionality,Referral,Cường,P0,Not Started,15/12/2025,15/12/2025,2,0,0%,T123,-,W3
+☐,T127,Delete confirmation dialog,Referral,Cường,P0,Not Started,15/12/2025,15/12/2025,2,0,0%,T123,-,W3
+☐,T128,Copy code to clipboard button,Referral,Cường,P0,Not Started,15/12/2025,15/12/2025,1,0,0%,T123,-,W3
+☐,T129,Tạo CommissionService.cs,Commission,Kiên,P0,Not Started,16/12/2025,16/12/2025,2,0,0%,T048,-,W3
+☐,T130,Implement GetPartnerDashboard,Commission,Kiên,P0,Not Started,16/12/2025,16/12/2025,3,0,0%,T129,-,W3
+☐,T131,Implement GetCommissionHistory,Commission,Kiên,P0,Not Started,16/12/2025,17/12/2025,3,0,0%,T129,-,W3
+☐,T132,Implement GetCommissionSummary,Commission,Kiên,P0,Not Started,17/12/2025,17/12/2025,2,0,0%,T129,-,W3
+☐,T133,Calculate total commission,Commission,Kiên,P0,Not Started,16/12/2025,16/12/2025,2,0,0%,T130,-,W3
+☐,T134,Calculate this month commission,Commission,Kiên,P0,Not Started,16/12/2025,16/12/2025,2,0,0%,T130,-,W3
+☐,T135,Count total students referred,Commission,Kiên,P0,Not Started,16/12/2025,16/12/2025,1,0,0%,T130,-,W3
+☐,T136,Count active students (30 days),Commission,Kiên,P0,Not Started,16/12/2025,16/12/2025,2,0,0%,T130,-,W3
+☐,T137,Tạo PartnerDashboardDto.cs,Commission,Kiên,P0,Not Started,16/12/2025,16/12/2025,1,0,0%,T129,-,W3
+☐,T138,Tạo CommissionTransactionDto.cs,Commission,Kiên,P0,Not Started,16/12/2025,16/12/2025,1,0,0%,T129,-,W3
+☐,T139,Support date range filtering,Commission,Kiên,P0,Not Started,17/12/2025,17/12/2025,2,0,0%,T131,-,W3
+☐,T140,Partner dashboard với KPI cards,Commission,Cường,P0,Not Started,16/12/2025,16/12/2025,4,0,0%,T079,-,W3
+☐,T141,Total commission display,Commission,Cường,P0,Not Started,16/12/2025,16/12/2025,2,0,0%,T140,-,W3
+☐,T142,This month commission display,Commission,Cường,P0,Not Started,16/12/2025,16/12/2025,2,0,0%,T140,-,W3
+☐,T143,Students count display,Commission,Cường,P0,Not Started,16/12/2025,16/12/2025,2,0,0%,T140,-,W3
+☐,T144,Commission history table,Commission,Cường,P0,Not Started,16/12/2025,17/12/2025,4,0,0%,T140,-,W3
+☐,T145,Date range filter component,Commission,Cường,P0,Not Started,17/12/2025,17/12/2025,3,0,0%,T144,-,W3
+☐,T146,Charts (commission over time),Commission,Cường,P1,Not Started,17/12/2025,17/12/2025,4,0,0%,T144,-,W3
+☐,T147,Export commission report button,Commission,Cường,P1,Not Started,17/12/2025,17/12/2025,2,0,0%,T144,-,W3
+☐,T148,Tạo CourseService.cs,Content,Kiên,P0,Not Started,18/12/2025,18/12/2025,2,0,0%,T048,-,W4
+☐,T149,Implement CreateCourse method,Content,Kiên,P0,Not Started,18/12/2025,18/12/2025,3,0,0%,T148,-,W4
+☐,T150,Implement GetCourses method,Content,Kiên,P0,Not Started,18/12/2025,19/12/2025,3,0,0%,T148,-,W4
+☐,T151,Implement GetCourseById method,Content,Kiên,P0,Not Started,19/12/2025,19/12/2025,2,0,0%,T148,-,W4
+☐,T152,Implement UpdateCourse method,Content,Kiên,P0,Not Started,19/12/2025,19/12/2025,2,0,0%,T148,-,W4
+☐,T153,Implement PublishCourse method,Content,Kiên,P0,Not Started,19/12/2025,20/12/2025,2,0,0%,T148,-,W4
+☐,T154,Implement GenerateSlug method,Content,Kiên,P0,Not Started,19/12/2025,19/12/2025,1,0,0%,T149,-,W4
+☐,T155,Tạo CreateCourseDto.cs,Content,Kiên,P0,Not Started,18/12/2025,18/12/2025,1,0,0%,T148,-,W4
+☐,T156,Tạo CourseDto.cs,Content,Kiên,P0,Not Started,18/12/2025,18/12/2025,1,0,0%,T148,-,W4
+☐,T157,Tạo UpdateCourseDto.cs,Content,Kiên,P0,Not Started,18/12/2025,18/12/2025,1,0,0%,T148,-,W4
+☐,T158,Permission checking CONTENT_CREATE,Content,Kiên,P0,Not Started,18/12/2025,18/12/2025,1,0,0%,T149,-,W4
+☐,T159,Support free/premium course types,Content,Kiên,P0,Not Started,20/12/2025,20/12/2025,2,0,0%,T149,-,W4
+☐,T160,Course creation form,Content,Cường,P0,Not Started,18/12/2025,19/12/2025,4,0,0%,T017,-,W4
+☐,T161,Course list view grid layout,Content,Cường,P0,Not Started,19/12/2025,19/12/2025,3,0,0%,T160,-,W4
+☐,T162,Course list view list layout,Content,Cường,P0,Not Started,19/12/2025,19/12/2025,2,0,0%,T160,-,W4
+☐,T163,Course detail page,Content,Cường,P0,Not Started,19/12/2025,20/12/2025,4,0,0%,T160,-,W4
+☐,T164,Student course catalog,Content,Cường,P0,Not Started,20/12/2025,20/12/2025,4,0,0%,T163,-,W4
+☐,T165,Course filter (type/level/category),Content,Cường,P0,Not Started,20/12/2025,20/12/2025,3,0,0%,T164,-,W4
+☐,T166,Course search functionality,Content,Cường,P0,Not Started,20/12/2025,20/12/2025,3,0,0%,T164,-,W4
+☐,T167,Course thumbnail upload,Content,Cường,P0,Not Started,20/12/2025,20/12/2025,2,0,0%,T160,-,W4
+☐,T168,Tạo ExamService.cs,Exam,Kiên,P0,Not Started,21/12/2025,21/12/2025,2,0,0%,T048,-,W4
+☐,T169,Implement CreateExam method,Exam,Kiên,P0,Not Started,21/12/2025,21/12/2025,3,0,0%,T168,-,W4
+☐,T170,Implement GetExams method,Exam,Kiên,P0,Not Started,21/12/2025,21/12/2025,2,0,0%,T168,-,W4
+☐,T171,Implement PurchaseExam method,Exam,Kiên,P0,Not Started,21/12/2025,22/12/2025,4,0,0%,T168,-,W4
+☐,T172,Implement GetPurchasedExams,Exam,Kiên,P0,Not Started,22/12/2025,22/12/2025,2,0,0%,T168,-,W4
+☐,T173,Calculate price với referral code,Exam,Kiên,P0,Not Started,21/12/2025,22/12/2025,3,0,0%,T171,-,W4
+☐,T174,Integrate với CoinService.UseCoins,Exam,Kiên,P0,Not Started,22/12/2025,22/12/2025,2,0,0%,T094;T171,-,W4
+☐,T175,Create ExamSubmission record,Exam,Kiên,P0,Not Started,22/12/2025,22/12/2025,2,0,0%,T171,-,W4
+☐,T176,Calculate commission cho partner,Exam,Kiên,P0,Not Started,22/12/2025,22/12/2025,3,0,0%,T096;T171,-,W4
+☐,T177,Update referral code usage count,Exam,Kiên,P0,Not Started,22/12/2025,22/12/2025,1,0,0%,T171,-,W4
+☐,T178,Tạo PurchaseExamDto.cs,Exam,Kiên,P0,Not Started,21/12/2025,21/12/2025,1,0,0%,T168,-,W4
+☐,T179,Tạo ExamDto.cs,Exam,Kiên,P0,Not Started,21/12/2025,21/12/2025,1,0,0%,T168,-,W4
+☐,T180,Prevent duplicate purchase,Exam,Kiên,P0,Not Started,22/12/2025,22/12/2025,2,0,0%,T171,-,W4
+☐,T181,Exam list view,Exam,Cường,P0,Not Started,21/12/2025,21/12/2025,3,0,0%,T017,-,W4
+☐,T182,Exam detail page,Exam,Cường,P0,Not Started,21/12/2025,22/12/2025,4,0,0%,T181,-,W4
+☐,T183,Exam purchase flow,Exam,Cường,P0,Not Started,22/12/2025,22/12/2025,4,0,0%,T182,-,W4
+☐,T184,Referral code input during purchase,Exam,Cường,P0,Not Started,22/12/2025,22/12/2025,2,0,0%,T183,-,W4
+☐,T185,Price calculation display,Exam,Cường,P0,Not Started,22/12/2025,22/12/2025,3,0,0%,T183,-,W4
+☐,T186,Purchase confirmation dialog,Exam,Cường,P0,Not Started,22/12/2025,22/12/2025,2,0,0%,T183,-,W4
+☐,T187,My exams page (purchased),Exam,Cường,P0,Not Started,22/12/2025,22/12/2025,3,0,0%,T183,-,W4
+☐,T188,Exam attempt button,Exam,Cường,P0,Not Started,22/12/2025,22/12/2025,2,0,0%,T187,-,W4
+☐,T189,Test Register→Login→Purchase Coin,Testing,All,P0,Not Started,23/12/2025,23/12/2025,3,0,0%,T092,-,W4
+☐,T190,Test Purchase Coin→Buy Exam flow,Testing,All,P0,Not Started,23/12/2025,23/12/2025,3,0,0%,T171,-,W4
+☐,T191,Test referral code coin purchase,Testing,All,P0,Not Started,23/12/2025,23/12/2025,2,0,0%,T092;T095,-,W4
+☐,T192,Test commission calculation coin,Testing,All,P0,Not Started,23/12/2025,23/12/2025,2,0,0%,T096,-,W4
+☐,T193,Test referral code exam purchase,Testing,All,P0,Not Started,23/12/2025,24/12/2025,2,0,0%,T171;T173,-,W4
+☐,T194,Test commission calculation exam,Testing,All,P0,Not Started,24/12/2025,24/12/2025,2,0,0%,T176,-,W4
+☐,T195,Test partner dashboard updates,Testing,All,P0,Not Started,24/12/2025,24/12/2025,2,0,0%,T130,-,W4
+☐,T196,Test coin balance updates,Testing,All,P0,Not Started,24/12/2025,24/12/2025,2,0,0%,T101;T102,-,W4
+☐,T197,Test permission system,Testing,All,P0,Not Started,24/12/2025,24/12/2025,2,0,0%,T158,-,W4
+☐,T198,Test error handling,Testing,All,P0,Not Started,24/12/2025,24/12/2025,2,0,0%,-,-,W4
+☐,T199,Performance testing (response time),Testing,All,P0,Not Started,24/12/2025,24/12/2025,3,0,0%,-,-,W4
+☐,T200,Security review (SQL injection),Testing,All,P0,Not Started,24/12/2025,24/12/2025,2,0,0%,-,-,W4
+☐,T201,Fix critical bugs,Testing,All,P0,Not Started,24/12/2025,24/12/2025,4,0,0%,T189-T200,-,W4
+☐,T202,Code review session Week 3-4,Testing,All,P0,Not Started,24/12/2025,24/12/2025,2,0,0%,T201,-,W4
+☐,T203,Polish all UI components,UI/UX,Cường,P0,Not Started,25/12/2025,26/12/2025,6,0,0%,-,-,W5
+☐,T204,Add loading states all API calls,UI/UX,Cường,P0,Not Started,25/12/2025,26/12/2025,4,0,0%,-,-,W5
+☐,T205,Add error handling messages,UI/UX,Cường,P0,Not Started,25/12/2025,26/12/2025,4,0,0%,-,-,W5
+☐,T206,Responsive design fixes mobile,UI/UX,Cường,P0,Not Started,26/12/2025,27/12/2025,4,0,0%,-,-,W5
+☐,T207,Responsive design fixes tablet,UI/UX,Cường,P0,Not Started,26/12/2025,27/12/2025,3,0,0%,-,-,W5
+☐,T208,Cross-browser testing Chrome,UI/UX,Cường,P0,Not Started,27/12/2025,27/12/2025,2,0,0%,T203-T207,-,W5
+☐,T209,Cross-browser testing Firefox,UI/UX,Cường,P0,Not Started,27/12/2025,27/12/2025,2,0,0%,T203-T207,-,W5
+☐,T210,Cross-browser testing Edge,UI/UX,Cường,P0,Not Started,27/12/2025,27/12/2025,2,0,0%,T203-T207,-,W5
+☐,T211,Add success notifications,UI/UX,Cường,P0,Not Started,26/12/2025,26/12/2025,2,0,0%,-,-,W5
+☐,T212,Add empty states,UI/UX,Cường,P0,Not Started,26/12/2025,26/12/2025,2,0,0%,-,-,W5
+☐,T213,Add skeleton loaders,UI/UX,Cường,P0,Not Started,26/12/2025,27/12/2025,3,0,0%,-,-,W5
+☐,T214,Improve form validation messages,UI/UX,Cường,P0,Not Started,27/12/2025,27/12/2025,2,0,0%,-,-,W5
+☐,T215,Add tooltips và help text,UI/UX,Cường,P0,Not Started,27/12/2025,27/12/2025,2,0,0%,-,-,W5
+☐,T216,API documentation (Swagger),Backend,Kiên,P0,Not Started,25/12/2025,26/12/2025,4,0,0%,-,-,W5
+☐,T217,Error handling improvements,Backend,Kiên,P0,Not Started,25/12/2025,26/12/2025,3,0,0%,-,-,W5
+☐,T218,Logging enhancements structured,Backend,Kiên,P0,Not Started,26/12/2025,26/12/2025,3,0,0%,-,-,W5
+☐,T219,Performance optimization queries,Backend,Kiên,P0,Not Started,26/12/2025,27/12/2025,4,0,0%,-,-,W5
+☐,T220,Add API rate limiting,Backend,Kiên,P0,Not Started,27/12/2025,27/12/2025,3,0,0%,-,-,W5
+☐,T221,Security headers configuration,Backend,Kiên,P0,Not Started,27/12/2025,27/12/2025,2,0,0%,-,-,W5
+☐,T222,CORS configuration,Backend,Kiên,P0,Not Started,27/12/2025,27/12/2025,2,0,0%,-,-,W5
+☐,T223,Health check endpoint,Backend,Kiên,P0,Not Started,27/12/2025,27/12/2025,1,0,0%,-,-,W5
+☐,T224,Version endpoint,Backend,Kiên,P0,Not Started,27/12/2025,27/12/2025,1,0,0%,-,-,W5
+☐,T225,Architecture review,Review,Phong,P0,Not Started,25/12/2025,26/12/2025,4,0,0%,-,-,W5
+☐,T226,Security audit,Review,Phong,P0,Not Started,26/12/2025,26/12/2025,4,0,0%,-,-,W5
+☐,T227,Performance review,Review,Phong,P0,Not Started,26/12/2025,27/12/2025,3,0,0%,-,-,W5
+☐,T228,Code quality review,Review,Phong,P0,Not Started,27/12/2025,27/12/2025,3,0,0%,-,-,W5
+☐,T229,Documentation review,Review,Phong,P0,Not Started,27/12/2025,27/12/2025,2,0,0%,-,-,W5
+☐,T230,Prepare demo environment,Demo,All,P0,Not Started,28/12/2025,28/12/2025,2,0,0%,T201,-,W5
+☐,T231,Seed demo data users,Demo,All,P0,Not Started,28/12/2025,28/12/2025,1,0,0%,T230,-,W5
+☐,T232,Seed demo data courses,Demo,All,P0,Not Started,28/12/2025,28/12/2025,1,0,0%,T230,-,W5
+☐,T233,Seed demo data exams,Demo,All,P0,Not Started,28/12/2025,28/12/2025,1,0,0%,T230,-,W5
+☐,T234,Create demo account Student,Demo,All,P0,Not Started,28/12/2025,28/12/2025,0.5,0,0%,T231,-,W5
+☐,T235,Create demo account Teacher,Demo,All,P0,Not Started,28/12/2025,28/12/2025,0.5,0,0%,T231,-,W5
+☐,T236,Create demo account Admin,Demo,All,P0,Not Started,28/12/2025,28/12/2025,0.5,0,0%,T231,-,W5
+☐,T237,Create demo account Partner,Demo,All,P0,Not Started,28/12/2025,28/12/2025,0.5,0,0%,T231,-,W5
+☐,T238,Create sample referral codes,Demo,All,P0,Not Started,28/12/2025,28/12/2025,1,0,0%,T112,-,W5
+☐,T239,Prepare demo script document,Demo,All,P0,Not Started,28/12/2025,28/12/2025,2,0,0%,T230,-,W5
+☐,T240,Test demo flow end-to-end (1),Demo,All,P0,Not Started,28/12/2025,28/12/2025,1,0,0%,T239,-,W5
+☐,T241,Test demo flow end-to-end (2),Demo,All,P0,Not Started,28/12/2025,28/12/2025,1,0,0%,T240,-,W5
+☐,T242,Test demo flow end-to-end (3),Demo,All,P0,Not Started,28/12/2025,28/12/2025,1,0,0%,T241,-,W5
+☐,T243,Deploy to demo environment,Demo,All,P0,Not Started,28/12/2025,28/12/2025,2,0,0%,T242,-,W5
+☐,T244,Smoke testing on demo server,Demo,All,P0,Not Started,28/12/2025,28/12/2025,2,0,0%,T243,-,W5
+☐,T245,Prepare presentation slides,Demo,Nguyên,P0,Not Started,28/12/2025,28/12/2025,3,0,0%,T239,-,W5
+☐,T246,Record backup demo video,Demo,All,P1,Not Started,28/12/2025,28/12/2025,2,0,0%,T242,-,W5
+☐,T247,DEMO DAY - Final check 8AM,Demo,All,P0,Not Started,29/12/2025,29/12/2025,1,0,0%,T244,-,W5
+☐,T248,DEMO DAY - Run through script,Demo,All,P0,Not Started,29/12/2025,29/12/2025,0.5,0,0%,T247,-,W5
+☐,T249,DEMO DAY - Verify environment,Demo,All,P0,Not Started,29/12/2025,29/12/2025,0.5,0,0%,T247,-,W5
+☐,T250,DEMO DAY - Setup presentation,Demo,All,P0,Not Started,29/12/2025,29/12/2025,0.5,0,0%,T249,-,W5
+☐,T251,DEMO DAY - Presentation 10AM,Demo,All,P0,Not Started,29/12/2025,29/12/2025,3,0,0%,T250,-,W5
+☐,T252,DEMO DAY - Feedback collection,Demo,All,P0,Not Started,29/12/2025,29/12/2025,1,0,0%,T251,-,W5
+☐,T253,DEMO DAY - Retrospective 2PM,Demo,All,P0,Not Started,29/12/2025,29/12/2025,1,0,0%,T252,-,W5
+☐,T254,DEMO DAY - Phase 2 planning,Demo,All,P0,Not Started,29/12/2025,29/12/2025,1,0,0%,T253,-,W5
+☐,T255,DEMO DAY - Team celebration,Demo,All,P0,Not Started,29/12/2025,29/12/2025,1,0,0%,T254,-,W5
+

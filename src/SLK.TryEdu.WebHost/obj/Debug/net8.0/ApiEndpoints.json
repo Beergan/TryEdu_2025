@@ -20,6 +20,204 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SLK.TryEdu.Base.MyServiceBase",
+    "Method": "GetInfoEmployee",
+    "RelativePath": "api/CoinBalance/GetInfoEmployee",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guid",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SLK.TryEdu.Abstract.ModelInfoEmployee",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SLK.TryEdu.Base.MyServiceBase",
+    "Method": "GetInforCustomer",
+    "RelativePath": "api/CoinBalance/GetInforCustomer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guid",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SLK.TryEdu.Abstract.ModelListCustomer",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SLK.TryEdu.Base.MyServiceBase",
+    "Method": "GetlistCustomer",
+    "RelativePath": "api/CoinBalance/GetlistCustomer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SLK.TryEdu.Abstract.ModelListCustomer, SLK.TryEdu.Abstract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SLK.TryEdu.Base.MyServiceBase",
+    "Method": "GetListPermissions",
+    "RelativePath": "api/CoinBalance/GetListPermissions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[System.Collections.Generic.KeyValuePair\u00602[[SLK.TryEdu.Abstract.FeatureModel, SLK.TryEdu.Abstract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Tuple\u00603[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SLK.TryEdu.Base.MyServiceBase",
+    "Method": "GetListService",
+    "RelativePath": "api/CoinBalance/GetListService",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SLK.TryEdu.Abstract.ModelService, SLK.TryEdu.Abstract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SLK.TryEdu.Base.MyServiceBase",
+    "Method": "GetOptionCompany",
+    "RelativePath": "api/CoinBalance/GetOptionCompany",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "SLK.TryEdu.Abstract.OptionItem\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SLK.TryEdu.Base.MyServiceBase",
+    "Method": "GetOptionJob",
+    "RelativePath": "api/CoinBalance/GetOptionJob",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SLK.TryEdu.Abstract.OptionItem\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], SLK.TryEdu.Abstract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SLK.TryEdu.Base.MyServiceBase",
+    "Method": "GetOptionOffices",
+    "RelativePath": "api/CoinBalance/GetOptionOffices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SLK.TryEdu.Abstract.OptionItem\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], SLK.TryEdu.Abstract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SLK.TryEdu.ModuleCoin.CoinBalanceService",
+    "Method": "Save",
+    "RelativePath": "api/CoinBalance/Save",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "info",
+        "Type": "SLK.TryEdu.ModuleCoinCore.EntityCoinBalance",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SLK.TryEdu.Abstract.Result",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "SLK.TryEdu.ModuleEmployee.EmployeeService",
     "Method": "CheckDocument",
     "RelativePath": "api/Employee/CheckDocument",

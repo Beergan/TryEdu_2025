@@ -1,4 +1,0 @@
-wwwroot\service-worker.js
-wwwroot\service-worker.published.js
-wwwroot\appsettings.Development.json
-wwwroot\appsettings.json

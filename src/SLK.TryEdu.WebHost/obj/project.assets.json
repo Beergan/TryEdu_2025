@@ -4766,6 +4766,102 @@
           "bin/placeholder/SLK.TryEdu.Db.dll": {}
         }
       },
+      "SLK.TryEdu.ModuleCoin/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.10",
+          "SLK.TryEdu.Base": "1.0.0",
+          "SLK.TryEdu.ModuleCoinBlazor": "1.0.0",
+          "SLK.TryEdu.ModuleCoinCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleCoin.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleCoin.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "SLK.TryEdu.ModuleCoinBlazor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
+          "SLK.TryEdu.Abstract": "1.0.0",
+          "SLK.TryEdu.ModuleCoinCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleCoinBlazor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleCoinBlazor.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleCoinCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "SLK.TryEdu.Abstract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleCoinCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleCoinCore.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleContent/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.10",
+          "SLK.TryEdu.Base": "1.0.0",
+          "SLK.TryEdu.ModuleContentBlazor": "1.0.0",
+          "SLK.TryEdu.ModuleContentCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleContent.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleContent.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "SLK.TryEdu.ModuleContentBlazor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
+          "SLK.TryEdu.Abstract": "1.0.0",
+          "SLK.TryEdu.ModuleContentCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleContentBlazor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleContentBlazor.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleContentCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "SLK.TryEdu.Abstract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleContentCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleContentCore.dll": {}
+        }
+      },
       "SLK.TryEdu.ModuleEmployee/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -4860,6 +4956,54 @@
         },
         "runtime": {
           "bin/placeholder/SLK.TryEdu.ModuleManagementCore.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModulePartner/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.10",
+          "SLK.TryEdu.Base": "1.0.0",
+          "SLK.TryEdu.ModulePartnerBlazor": "1.0.0",
+          "SLK.TryEdu.ModulePartnerCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModulePartner.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModulePartner.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "SLK.TryEdu.ModulePartnerBlazor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
+          "SLK.TryEdu.Abstract": "1.0.0",
+          "SLK.TryEdu.ModulePartnerCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModulePartnerBlazor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModulePartnerBlazor.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModulePartnerCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "SLK.TryEdu.Abstract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModulePartnerCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModulePartnerCore.dll": {}
         }
       },
       "SLK.TryEdu.ModuleSetting/1.0.0": {
@@ -4965,8 +5109,11 @@
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "8.0.10",
           "Microsoft.Extensions.Http": "8.0.1",
+          "SLK.TryEdu.ModuleCoinBlazor": "1.0.0",
+          "SLK.TryEdu.ModuleContentBlazor": "1.0.0",
           "SLK.TryEdu.ModuleEmployeeBlazor": "1.0.0",
           "SLK.TryEdu.ModuleManagementBlazor": "1.0.0",
+          "SLK.TryEdu.ModulePartnerBlazor": "1.0.0",
           "SLK.TryEdu.ModuleSettingBlazor": "1.0.0",
           "SLK.TryEdu.ModuleUserBlazor": "1.0.0"
         },
@@ -11812,6 +11959,36 @@
       "path": "../SLK.TryEdu.Db/SLK.TryEdu.Db.csproj",
       "msbuildProject": "../SLK.TryEdu.Db/SLK.TryEdu.Db.csproj"
     },
+    "SLK.TryEdu.ModuleCoin/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleCoin/SLK.TryEdu.ModuleCoin.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleCoin/SLK.TryEdu.ModuleCoin.csproj"
+    },
+    "SLK.TryEdu.ModuleCoinBlazor/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleCoinBlazor/SLK.TryEdu.ModuleCoinBlazor.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleCoinBlazor/SLK.TryEdu.ModuleCoinBlazor.csproj"
+    },
+    "SLK.TryEdu.ModuleCoinCore/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleCoinCore/SLK.TryEdu.ModuleCoinCore.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleCoinCore/SLK.TryEdu.ModuleCoinCore.csproj"
+    },
+    "SLK.TryEdu.ModuleContent/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleContent/SLK.TryEdu.ModuleContent.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleContent/SLK.TryEdu.ModuleContent.csproj"
+    },
+    "SLK.TryEdu.ModuleContentBlazor/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleContentBlazor/SLK.TryEdu.ModuleContentBlazor.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleContentBlazor/SLK.TryEdu.ModuleContentBlazor.csproj"
+    },
+    "SLK.TryEdu.ModuleContentCore/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleContentCore/SLK.TryEdu.ModuleContentCore.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleContentCore/SLK.TryEdu.ModuleContentCore.csproj"
+    },
     "SLK.TryEdu.ModuleEmployee/1.0.0": {
       "type": "project",
       "path": "../SLK.TryEdu.ModuleEmployee/SLK.TryEdu.ModuleEmployee.csproj",
@@ -11841,6 +12018,21 @@
       "type": "project",
       "path": "../SLK.TryEdu.ModuleManagementCore/SLK.TryEdu.ModuleManagementCore.csproj",
       "msbuildProject": "../SLK.TryEdu.ModuleManagementCore/SLK.TryEdu.ModuleManagementCore.csproj"
+    },
+    "SLK.TryEdu.ModulePartner/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModulePartner/SLK.TryEdu.ModulePartner.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModulePartner/SLK.TryEdu.ModulePartner.csproj"
+    },
+    "SLK.TryEdu.ModulePartnerBlazor/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModulePartnerBlazor/SLK.TryEdu.ModulePartnerBlazor.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModulePartnerBlazor/SLK.TryEdu.ModulePartnerBlazor.csproj"
+    },
+    "SLK.TryEdu.ModulePartnerCore/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModulePartnerCore/SLK.TryEdu.ModulePartnerCore.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModulePartnerCore/SLK.TryEdu.ModulePartnerCore.csproj"
     },
     "SLK.TryEdu.ModuleSetting/1.0.0": {
       "type": "project",
@@ -11888,8 +12080,11 @@
       "SLK.TryEdu.Abstract >= 1.0.0",
       "SLK.TryEdu.Base >= 1.0.0",
       "SLK.TryEdu.Db >= 1.0.0",
+      "SLK.TryEdu.ModuleCoin >= 1.0.0",
+      "SLK.TryEdu.ModuleContent >= 1.0.0",
       "SLK.TryEdu.ModuleEmployee >= 1.0.0",
       "SLK.TryEdu.ModuleManagement >= 1.0.0",
+      "SLK.TryEdu.ModulePartner >= 1.0.0",
       "SLK.TryEdu.ModuleSetting >= 1.0.0",
       "SLK.TryEdu.ModuleUser >= 1.0.0",
       "SLK.TryEdu.WebApp >= 1.0.0"
@@ -11902,11 +12097,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
+      "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
       "projectName": "SLK.TryEdu.WebHost",
-      "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
+      "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
       "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-      "outputPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.WebHost\\obj\\",
+      "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -11928,29 +12123,38 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
             },
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
             },
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj"
             },
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\SLK.TryEdu.ModuleCoin.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\SLK.TryEdu.ModuleCoin.csproj"
             },
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\SLK.TryEdu.ModuleContent.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\SLK.TryEdu.ModuleContent.csproj"
             },
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj"
             },
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj"
             },
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj"
+            },
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj"
+            },
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj"
+            },
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj"
             }
           }
         }

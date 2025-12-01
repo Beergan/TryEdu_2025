@@ -5896,11 +5896,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj",
+      "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj",
       "projectName": "SLK.TryEdu.ModuleSettingBlazor",
-      "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj",
+      "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj",
       "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-      "outputPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingBlazor\\obj\\",
+      "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5922,11 +5922,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
             },
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj"
             }
           }
         }

@@ -396,6 +396,248 @@ namespace SLK.TryEdu.Db.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("SLK.TryEdu.ModuleCoinCore.EntityCoinBalance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("decimal(12,2)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<decimal>("TotalEarned")
+                        .HasColumnType("decimal(12,2)");
+
+                    b.Property<decimal>("TotalSpent")
+                        .HasColumnType("decimal(12,2)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("UserGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.ToTable("COIN_BALANCES");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleCoinCore.EntityCoinExchangeRate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Currency")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("EffectiveDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("ExpiryDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<decimal>("Rate")
+                        .HasColumnType("decimal(12,2)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.ToTable("COIN_EXCHANGERATE");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleCoinCore.EntityCoinTransaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(12,2)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<Guid>("ReferralCodeGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("RelatedTransactionGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("TransactionType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("UserGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.ToTable("COIN_TRANSACTION");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleContentCore.EntityCourse", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Category")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("CourseData")
+                        .HasColumnType("jsonb");
+
+                    b.Property<string>("CourseType")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<int>("CreatedByUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
+
+                    b.Property<Guid>("EmployeeCre")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<string>("Level")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<decimal>("PriceCoins")
+                        .HasColumnType("decimal(12,2)");
+
+                    b.Property<DateTime?>("PublishedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Slug")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("ThumbnailUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.ToTable("COURSE");
+                });
+
             modelBuilder.Entity("SLK.TryEdu.ModuleEmployeeCore.EntityEmployee", b =>
                 {
                     b.Property<int>("Id")
@@ -524,6 +766,231 @@ namespace SLK.TryEdu.Db.Migrations
                     b.HasAlternateKey("Guid");
 
                     b.ToTable("EMPLOYEE_DOCUMENT");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModulePartnerCore.EntityCommissionTransaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("CommissionAmount")
+                        .HasColumnType("decimal(12,2)");
+
+                    b.Property<decimal>("CommissionRate")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<DateTime?>("PaidAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("PartnerCenterId")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("PartnerGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<decimal>("TransactionAmount")
+                        .HasColumnType("decimal(12,2)");
+
+                    b.Property<string>("TransactionType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("UserGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.HasIndex("PartnerCenterId");
+
+                    b.ToTable("COMMISSION_TRANSACTION");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModulePartnerCore.EntityPartnerCenter", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<DateTime?>("ApprovedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("ApprovedByEmployeeGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CenterName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("CetnterCode")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("City")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<decimal>("CommissionRate")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<string>("Country")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<string>("LicenseUrl")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LogoUrl")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("RejectionReason")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("Tier")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.ToTable("PARTNER_CENTER");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModulePartnerCore.EntityReferralCode", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<decimal>("DisscountPercent")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<DateTime?>("ExpiryDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("LastUsedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("MaxUsage")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("PartnerCenterId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UsedCount")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.HasIndex("PartnerCenterId");
+
+                    b.ToTable("REFERRAL_CODE");
                 });
 
             modelBuilder.Entity("SLK.TryEdu.ModuleSettingCore.EntityCompany", b =>
@@ -762,6 +1229,33 @@ namespace SLK.TryEdu.Db.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModulePartnerCore.EntityCommissionTransaction", b =>
+                {
+                    b.HasOne("SLK.TryEdu.ModulePartnerCore.EntityPartnerCenter", "PartnerCenter")
+                        .WithMany()
+                        .HasForeignKey("PartnerCenterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PartnerCenter");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModulePartnerCore.EntityReferralCode", b =>
+                {
+                    b.HasOne("SLK.TryEdu.ModulePartnerCore.EntityPartnerCenter", "PartnerCenter")
+                        .WithMany("ReferralCodes")
+                        .HasForeignKey("PartnerCenterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PartnerCenter");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModulePartnerCore.EntityPartnerCenter", b =>
+                {
+                    b.Navigation("ReferralCodes");
                 });
 #pragma warning restore 612, 618
         }

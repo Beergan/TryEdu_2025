@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K/cEmg2DiQQ=",
+  "dgSpecHash": "bjqk4kUwwcY=",
   "success": true,
-  "projectFilePath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj",
+  "projectFilePath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dh519\\.nuget\\packages\\bitmiracle.libtiff.net\\2.4.649\\bitmiracle.libtiff.net.2.4.649.nupkg.sha512",
     "C:\\Users\\dh519\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",

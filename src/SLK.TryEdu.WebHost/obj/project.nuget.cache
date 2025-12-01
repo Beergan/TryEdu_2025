@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eJg9YpqjTx8=",
+  "dgSpecHash": "SKvqPBM+SYA=",
   "success": true,
-  "projectFilePath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
+  "projectFilePath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dh519\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\dh519\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

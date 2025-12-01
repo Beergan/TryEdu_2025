@@ -30,8 +30,11 @@
 		<ProjectReference Include="..\SLK.TryEdu.Abstract\SLK.TryEdu.Abstract.csproj" />
 		<ProjectReference Include="..\SLK.TryEdu.Base\SLK.TryEdu.Base.csproj" />
 		<ProjectReference Include="..\SLK.TryEdu.Db\SLK.TryEdu.Db.csproj" />
+		<ProjectReference Include="..\SLK.TryEdu.ModuleCoin\SLK.TryEdu.ModuleCoin.csproj" />
+		<ProjectReference Include="..\SLK.TryEdu.ModuleContent\SLK.TryEdu.ModuleContent.csproj" />
 		<ProjectReference Include="..\SLK.TryEdu.ModuleEmployee\SLK.TryEdu.ModuleEmployee.csproj" />
-				<ProjectReference Include="..\SLK.TryEdu.ModuleUser\SLK.TryEdu.ModuleUser.csproj" />
+		<ProjectReference Include="..\SLK.TryEdu.ModulePartner\SLK.TryEdu.ModulePartner.csproj" />
+		<ProjectReference Include="..\SLK.TryEdu.ModuleUser\SLK.TryEdu.ModuleUser.csproj" />
 		<ProjectReference Include="..\SLK.TryEdu.ModuleManagement\SLK.TryEdu.ModuleManagement.csproj" />
 		<ProjectReference Include="..\SLK.TryEdu.ModuleSetting\SLK.TryEdu.ModuleSetting.csproj" />
 		<ProjectReference Include="..\SLK.TryEdu.WebApp\SLK.TryEdu.WebApp.csproj" />

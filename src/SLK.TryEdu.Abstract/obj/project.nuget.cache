@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "54tv3Xpqcgs=",
+  "dgSpecHash": "btdsNXQ9UXE=",
   "success": true,
-  "projectFilePath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj",
+  "projectFilePath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dh519\\.nuget\\packages\\bitmiracle.libtiff.net\\2.4.649\\bitmiracle.libtiff.net.2.4.649.nupkg.sha512",
     "C:\\Users\\dh519\\.nuget\\packages\\harfbuzzsharp\\7.3.0\\harfbuzzsharp.7.3.0.nupkg.sha512",

@@ -8351,11 +8351,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj",
+      "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj",
       "projectName": "SLK.TryEdu.ModuleSetting",
-      "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj",
+      "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj",
       "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-      "outputPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSetting\\obj\\",
+      "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8377,14 +8377,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
             },
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj"
             },
-            "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {
-              "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj"
             }
           }
         }

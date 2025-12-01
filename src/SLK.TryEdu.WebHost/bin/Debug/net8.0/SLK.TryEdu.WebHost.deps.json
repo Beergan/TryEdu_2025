@@ -44,8 +44,11 @@
           "SLK.TryEdu.Abstract": "1.0.0",
           "SLK.TryEdu.Base": "1.0.0",
           "SLK.TryEdu.Db": "1.0.0",
+          "SLK.TryEdu.ModuleCoin": "1.0.0",
+          "SLK.TryEdu.ModuleContent": "1.0.0",
           "SLK.TryEdu.ModuleEmployee": "1.0.0",
           "SLK.TryEdu.ModuleManagement": "1.0.0",
+          "SLK.TryEdu.ModulePartner": "1.0.0",
           "SLK.TryEdu.ModuleSetting": "1.0.0",
           "SLK.TryEdu.ModuleUser": "1.0.0",
           "SLK.TryEdu.WebApp": "1.0.0",
@@ -3581,6 +3584,102 @@
           "SLK.TryEdu.Db.dll": {}
         }
       },
+      "SLK.TryEdu.ModuleCoin/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.10",
+          "SLK.TryEdu.Base": "1.0.0",
+          "SLK.TryEdu.ModuleCoinBlazor": "1.0.0",
+          "SLK.TryEdu.ModuleCoinCore": "1.0.0"
+        },
+        "runtime": {
+          "SLK.TryEdu.ModuleCoin.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "SLK.TryEdu.ModuleCoin.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleCoinBlazor/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
+          "SLK.TryEdu.Abstract": "1.0.0",
+          "SLK.TryEdu.ModuleCoinCore": "1.0.0"
+        },
+        "runtime": {
+          "SLK.TryEdu.ModuleCoinBlazor.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "SLK.TryEdu.ModuleCoinBlazor.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleCoinCore/1.0.0": {
+        "dependencies": {
+          "SLK.TryEdu.Abstract": "1.0.0"
+        },
+        "runtime": {
+          "SLK.TryEdu.ModuleCoinCore.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "SLK.TryEdu.ModuleCoinCore.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleContent/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.10",
+          "SLK.TryEdu.Base": "1.0.0",
+          "SLK.TryEdu.ModuleContentBlazor": "1.0.0",
+          "SLK.TryEdu.ModuleContentCore": "1.0.0"
+        },
+        "runtime": {
+          "SLK.TryEdu.ModuleContent.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "SLK.TryEdu.ModuleContent.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleContentBlazor/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
+          "SLK.TryEdu.Abstract": "1.0.0",
+          "SLK.TryEdu.ModuleContentCore": "1.0.0"
+        },
+        "runtime": {
+          "SLK.TryEdu.ModuleContentBlazor.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "SLK.TryEdu.ModuleContentBlazor.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleContentCore/1.0.0": {
+        "dependencies": {
+          "SLK.TryEdu.Abstract": "1.0.0"
+        },
+        "runtime": {
+          "SLK.TryEdu.ModuleContentCore.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "SLK.TryEdu.ModuleContentCore.dll": {}
+        }
+      },
       "SLK.TryEdu.ModuleEmployee/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.10",
@@ -3675,6 +3774,54 @@
         },
         "compile": {
           "SLK.TryEdu.ModuleManagementCore.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModulePartner/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.10",
+          "SLK.TryEdu.Base": "1.0.0",
+          "SLK.TryEdu.ModulePartnerBlazor": "1.0.0",
+          "SLK.TryEdu.ModulePartnerCore": "1.0.0"
+        },
+        "runtime": {
+          "SLK.TryEdu.ModulePartner.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "SLK.TryEdu.ModulePartner.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModulePartnerBlazor/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
+          "SLK.TryEdu.Abstract": "1.0.0",
+          "SLK.TryEdu.ModulePartnerCore": "1.0.0"
+        },
+        "runtime": {
+          "SLK.TryEdu.ModulePartnerBlazor.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "SLK.TryEdu.ModulePartnerBlazor.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModulePartnerCore/1.0.0": {
+        "dependencies": {
+          "SLK.TryEdu.Abstract": "1.0.0"
+        },
+        "runtime": {
+          "SLK.TryEdu.ModulePartnerCore.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "SLK.TryEdu.ModulePartnerCore.dll": {}
         }
       },
       "SLK.TryEdu.ModuleSetting/1.0.0": {
@@ -3778,8 +3925,11 @@
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "8.0.10",
           "Microsoft.Extensions.Http": "8.0.1",
+          "SLK.TryEdu.ModuleCoinBlazor": "1.0.0",
+          "SLK.TryEdu.ModuleContentBlazor": "1.0.0",
           "SLK.TryEdu.ModuleEmployeeBlazor": "1.0.0",
           "SLK.TryEdu.ModuleManagementBlazor": "1.0.0",
+          "SLK.TryEdu.ModulePartnerBlazor": "1.0.0",
           "SLK.TryEdu.ModuleSettingBlazor": "1.0.0",
           "SLK.TryEdu.ModuleUserBlazor": "1.0.0"
         },
@@ -7201,6 +7351,36 @@
       "serviceable": false,
       "sha512": ""
     },
+    "SLK.TryEdu.ModuleCoin/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SLK.TryEdu.ModuleCoinBlazor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SLK.TryEdu.ModuleCoinCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SLK.TryEdu.ModuleContent/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SLK.TryEdu.ModuleContentBlazor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SLK.TryEdu.ModuleContentCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "SLK.TryEdu.ModuleEmployee/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -7227,6 +7407,21 @@
       "sha512": ""
     },
     "SLK.TryEdu.ModuleManagementCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SLK.TryEdu.ModulePartner/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SLK.TryEdu.ModulePartnerBlazor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SLK.TryEdu.ModulePartnerCore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

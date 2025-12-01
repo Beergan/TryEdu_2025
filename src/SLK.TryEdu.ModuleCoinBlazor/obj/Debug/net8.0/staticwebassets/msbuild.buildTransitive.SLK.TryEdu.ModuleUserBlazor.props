@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\SLK.TryEdu.ModuleUserBlazor.props" />
+</Project>

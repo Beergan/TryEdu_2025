@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {}
+    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {}
   },
   "projects": {
-    "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj",
+        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj",
         "projectName": "SLK.TryEdu.Abstract",
-        "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj",
+        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj",
         "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Abstract\\obj\\",
+        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -312,14 +312,14 @@
         }
       }
     },
-    "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {
+    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj",
+        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj",
         "projectName": "SLK.TryEdu.ModuleSettingCore",
-        "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj",
+        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj",
         "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.ModuleSettingCore\\obj\\",
+        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -341,8 +341,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\tryedu_SLK\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               }
             }
           }
