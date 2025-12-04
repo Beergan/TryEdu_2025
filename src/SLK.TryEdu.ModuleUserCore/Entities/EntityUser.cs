@@ -35,6 +35,8 @@ public class EntityUser : EntityBase
 
     [Display(Name = "Địa chỉ")]
     public string Address { get; set; }
+    [Display(Name = "Năm sinh")]
+    public DateTime HBD { get; set; }
 
     [Display(Name = "Quốc gia")]
     public string Country { get; set; }
@@ -42,6 +44,8 @@ public class EntityUser : EntityBase
     [Display(Name = "Thành phố")]
     public string City { get; set; }
 
+    [Display(Name = "Phường")]
+    public string Ward  { get; set; }
     [Display(Name = "Trạng thái hoạt động")]
     public bool IsActive { get; set; } = true;
 

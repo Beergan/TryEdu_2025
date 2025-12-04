@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>disable</Nullable>
+		<DebugType>embedded</DebugType>
+		<NoWarn>1591;1998;BL0005;</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup>
+		<BlazorLinkOnBuild Condition="'$(Configuration)'!='Release'">false</BlazorLinkOnBuild>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.10" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.10" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\SLK.TryEdu.Abstract\SLK.TryEdu.Abstract.csproj" />
+	  <ProjectReference Include="..\SLK.TryEdu.ModuleExamCore\SLK.TryEdu.ModuleExamCore.csproj" />
+	</ItemGroup>
+</Project>

@@ -1010,7 +1010,12 @@ namespace SLK.TryEdu.ModuleContentCore.Entities
 
 ### 🔧 Bước 1: Tạo Entity Models
 
+**⚠️ LƯU Ý QUAN TRỌNG: Thứ tự tạo entities phải đúng logic:**
+1. **ExamTemplate** (blueprint) → 2. **Exam** (instance từ template)
+
 #### 1.1. `EntityExamTemplate.cs`
+
+**File:** `src/SLK.TryEdu.ModuleExamCore/Entities/EntityExamTemplate.cs`
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
@@ -1063,6 +1068,10 @@ public class EntityExamTemplate : EntityBase
 
 #### 1.2. `EntityExamTemplateSection.cs`
 
+**File:** `src/SLK.TryEdu.ModuleExamCore/Entities/EntityExamTemplateSection.cs`
+
+> **⚠️ LƯU Ý:** Entity này có foreign key `ExamTemplateId`, nên cần `EntityExamTemplate` tồn tại trước.
+
 ```csharp
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -1100,6 +1109,10 @@ public class EntityExamTemplateSection : EntityBase
 ```
 
 #### 1.3. `EntityExamQuestion.cs`
+
+**File:** `src/SLK.TryEdu.ModuleExamCore/Entities/EntityExamQuestion.cs`
+
+> **⚠️ LƯU Ý:** Entity này không có dependencies, có thể tạo song song với ExamTemplate.
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
@@ -1152,6 +1165,10 @@ public class EntityExamQuestion : EntityBase
 
 #### 1.4. `EntityQuestionOption.cs`
 
+**File:** `src/SLK.TryEdu.ModuleExamCore/Entities/EntityQuestionOption.cs`
+
+> **⚠️ LƯU Ý:** Entity này có foreign key `ExamQuestionId`, nên cần `EntityExamQuestion` tồn tại trước.
+
 ```csharp
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -1184,6 +1201,10 @@ public class EntityQuestionOption : EntityBase
 ```
 
 #### 1.5. `EntityExamTemplateQuestion.cs`
+
+**File:** `src/SLK.TryEdu.ModuleExamCore/Entities/EntityExamTemplateQuestion.cs`
+
+> **⚠️ LƯU Ý:** Entity này có foreign keys `ExamTemplateSectionId` và `ExamQuestionId`, nên cần cả 2 entities tồn tại trước.
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
@@ -1220,17 +1241,28 @@ public class EntityExamTemplateQuestion : EntityBase
 
 #### 1.6. `EntityExam.cs` (Published Exam Snapshot)
 
-> Khi publish template → tạo bản snapshot (EntityExam) để bán. Có thể reuse code hiện tại, nhưng thêm `ExamTemplateId` và `SnapshotData`.
+> **⚠️ LƯU Ý:** `EntityExam` là **snapshot/instance** được generate từ `EntityExamTemplate`. Vì có foreign key `ExamTemplateId` (required), nên **PHẢI** tạo `EntityExamTemplate` trước `EntityExam`.
+
+**File:** `src/SLK.TryEdu.ModuleExamCore/Entities/EntityExam.cs`
 
 ```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using SLK.TryEdu.Abstract;
+
+namespace SLK.TryEdu.ModuleExamCore.Entities;
+
 [Table("exams")]
 public class EntityExam : EntityBase
 {
     [Required]
-    public int ExamTemplateId { get; set; }
+    public int ExamTemplateId { get; set; } // ⚠️ Foreign key → cần ExamTemplate tồn tại trước
 
     [Required, MaxLength(255)]
     public string Title { get; set; } = string.Empty;
+
+    [MaxLength(500)]
+    public string Slug { get; set; } = string.Empty; // URL-friendly
 
     [Column(TypeName = "decimal(12,2)")]
     public decimal PriceCoins { get; set; } = 200;
@@ -1240,6 +1272,12 @@ public class EntityExam : EntityBase
     [Column(TypeName = "jsonb")]
     public string SnapshotData { get; set; } = string.Empty; // sections + questions snapshot
 
+    [Required]
+    [MaxLength(20)]
+    public string Status { get; set; } = "Draft"; // Draft, Published, Archived
+
+    public DateTime? PublishedAt { get; set; }
+
     [ForeignKey(nameof(ExamTemplateId))]
     public virtual EntityExamTemplate Template { get; set; } = null!;
 }
@@ -1248,6 +1286,8 @@ public class EntityExam : EntityBase
 #### 1.7. `EntityExamSubmission.cs`
 
 **File:** `src/SLK.TryEdu.ModuleExamCore/Entities/EntityExamSubmission.cs`
+
+> **⚠️ LƯU Ý:** Entity này có foreign key `ExamId`, nên cần `EntityExam` tồn tại trước.
 
 ```csharp
 [Table("exam_submissions")]
@@ -1290,17 +1330,25 @@ public class EntityExamSubmission : EntityBase
 
 #### 1.8. `EntityExamAttemptQuestion.cs`
 
-Giữ entity submission (như trên) và thêm bảng chi tiết câu hỏi:
+**File:** `src/SLK.TryEdu.ModuleExamCore/Entities/EntityExamAttemptQuestion.cs`
+
+> **⚠️ LƯU Ý:** Entity này có foreign keys đến `EntityExamSubmission` và `EntityExamQuestion`, nên cần cả 2 entities tồn tại trước.
 
 ```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using SLK.TryEdu.Abstract;
+
+namespace SLK.TryEdu.ModuleExamCore.Entities;
+
 [Table("exam_attempt_questions")]
 public class EntityExamAttemptQuestion : EntityBase
 {
     [Required]
-    public int ExamSubmissionId { get; set; }
+    public int ExamSubmissionId { get; set; } // ⚠️ Foreign key → cần ExamSubmission tồn tại trước
 
     [Required]
-    public int ExamQuestionId { get; set; }
+    public int ExamQuestionId { get; set; } // ⚠️ Foreign key → cần ExamQuestion tồn tại trước
 
     public int? QuestionOptionId { get; set; } // nếu MCQ
 
@@ -1314,6 +1362,9 @@ public class EntityExamAttemptQuestion : EntityBase
 
     [ForeignKey(nameof(ExamSubmissionId))]
     public virtual EntityExamSubmission Submission { get; set; } = null!;
+
+    [ForeignKey(nameof(ExamQuestionId))]
+    public virtual EntityExamQuestion Question { get; set; } = null!;
 }
 ```
 
@@ -1354,6 +1405,99 @@ public class EntityExamQuestionGroup : EntityBase
 
 Sau đó thêm `GroupId` foreign key trong `EntityExamQuestion` (đã có trường `GroupId`).
 
+#### 1.11. `EntityLanguage.cs` (Multi-language support)
+
+**File:** `src/SLK.TryEdu.ModuleExamCore/Entities/EntityLanguage.cs`
+
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using SLK.TryEdu.Abstract;
+
+namespace SLK.TryEdu.ModuleExamCore.Entities;
+
+[Table("languages")]
+public class EntityLanguage : EntityBase
+{
+    [Required]
+    [MaxLength(10)]
+    public string LanguageCode { get; set; } = string.Empty; // en, vi, ja, etc.
+
+    [Required]
+    [MaxLength(100)]
+    public string LanguageName { get; set; } = string.Empty; // English, Tiếng Việt, etc.
+
+    [Required]
+    [MaxLength(100)]
+    public string NativeName { get; set; } = string.Empty; // English, Tiếng Việt, etc.
+
+    [MaxLength(500)]
+    public string? FlagIconUrl { get; set; }
+
+    [Required]
+    public bool IsActive { get; set; } = true;
+
+    [Required]
+    public int DisplayOrder { get; set; } = 0;
+}
+```
+
+#### 1.12. `EntityExamCategory.cs` (Exam categories)
+
+**File:** `src/SLK.TryEdu.ModuleExamCore/Entities/EntityExamCategory.cs`
+
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using SLK.TryEdu.Abstract;
+
+namespace SLK.TryEdu.ModuleExamCore.Entities;
+
+[Table("exam_categories")]
+public class EntityExamCategory : EntityBase
+{
+    [Required]
+    public int LanguageId { get; set; } // Foreign key to EntityLanguage
+
+    [Required]
+    [MaxLength(50)]
+    public string CategoryCode { get; set; } = string.Empty; // IELTS, TOEFL, etc.
+
+    [Required]
+    [MaxLength(255)]
+    public string CategoryName { get; set; } = string.Empty;
+
+    [MaxLength(1000)]
+    public string? Description { get; set; }
+
+    [MaxLength(500)]
+    public string? IconUrl { get; set; }
+
+    [Required]
+    public int DisplayOrder { get; set; } = 0;
+
+    [Required]
+    public bool IsActive { get; set; } = true;
+
+    [ForeignKey(nameof(LanguageId))]
+    public virtual EntityLanguage Language { get; set; } = null!;
+}
+```
+
+> **Giải thích thứ tự logic tổng hợp:**
+> 1. **EntityExamTemplate** (blueprint) - không có dependencies
+> 2. **EntityExamTemplateSection** - có FK `ExamTemplateId` → cần ExamTemplate trước
+> 3. **EntityExamQuestion** (question bank) - không có dependencies
+> 4. **EntityQuestionOption** - có FK `ExamQuestionId` → cần ExamQuestion trước
+> 5. **EntityExamTemplateQuestion** - có FK `ExamTemplateSectionId` và `ExamQuestionId` → cần cả 2 trước
+> 6. **EntityLanguage** - không có dependencies
+> 7. **EntityExamCategory** - có FK `LanguageId` → cần Language trước
+> 8. **EntityExamQuestionGroup** - không có dependencies (optional)
+> 9. **EntityExam** - có FK `ExamTemplateId` → cần ExamTemplate trước
+> 10. **EntityExamSubmission** - có FK `ExamId` → cần Exam trước
+> 11. **EntityExamAttemptQuestion** - có FK `ExamSubmissionId` và `ExamQuestionId` → cần cả 2 trước
+> 12. **EntityExamPurchase** - có FK `ExamId` → cần Exam trước
+
 ### 🔧 Bước 2: EntityRegister cho ModuleExam
 
 **File:** `src/SLK.TryEdu.ModuleExam/Classes/EntityRegister.cs`
@@ -1380,12 +1524,19 @@ public static class EntityRegister
             entity.HasAlternateKey(e => e.Guid);
             entity.HasIndex(e => new { e.ExamTemplateId, e.Order }).IsUnique();
             entity.Property(e => e.WeightPercentage).HasPrecision(5, 2);
+            
+            // Foreign key relationship
+            entity.HasOne(e => e.ExamTemplate)
+                .WithMany(t => t.Sections)
+                .HasForeignKey(e => e.ExamTemplateId)
+                .OnDelete(DeleteBehavior.Cascade);
         });
 
         builder.Entity<EntityExamQuestion>(entity =>
         {
             entity.HasAlternateKey(e => e.Guid);
             entity.HasIndex(e => new { e.QuestionType, e.Skill, e.Level, e.IsActive });
+            entity.HasIndex(e => e.GroupId); // Index for optional GroupId
             entity.Property(e => e.DefaultPoint).HasPrecision(5, 2);
         });
 
@@ -1393,6 +1544,12 @@ public static class EntityRegister
         {
             entity.HasAlternateKey(e => e.Guid);
             entity.HasIndex(e => e.ExamQuestionId);
+            
+            // Foreign key relationship
+            entity.HasOne(e => e.Question)
+                .WithMany(q => q.Options)
+                .HasForeignKey(e => e.ExamQuestionId)
+                .OnDelete(DeleteBehavior.Cascade);
         });
 
         builder.Entity<EntityExamTemplateQuestion>(entity =>
@@ -1400,13 +1557,31 @@ public static class EntityRegister
             entity.HasAlternateKey(e => e.Guid);
             entity.HasIndex(e => new { e.ExamTemplateSectionId, e.Order }).IsUnique();
             entity.Property(e => e.OverridePoint).HasPrecision(5, 2);
+            
+            // Foreign key relationships
+            entity.HasOne(e => e.Section)
+                .WithMany(s => s.TemplateQuestions)
+                .HasForeignKey(e => e.ExamTemplateSectionId)
+                .OnDelete(DeleteBehavior.Cascade);
+                
+            entity.HasOne(e => e.Question)
+                .WithMany()
+                .HasForeignKey(e => e.ExamQuestionId)
+                .OnDelete(DeleteBehavior.Restrict);
         });
 
         builder.Entity<EntityExam>(entity =>
         {
             entity.HasAlternateKey(e => e.Guid);
             entity.HasIndex(e => e.Slug).IsUnique();
+            entity.HasIndex(e => e.ExamTemplateId);
             entity.Property(e => e.PriceCoins).HasPrecision(12, 2);
+            
+            // Foreign key relationship
+            entity.HasOne(e => e.Template)
+                .WithMany()
+                .HasForeignKey(e => e.ExamTemplateId)
+                .OnDelete(DeleteBehavior.Restrict);
         });
 
         builder.Entity<EntityExamSubmission>(entity =>
@@ -1415,13 +1590,36 @@ public static class EntityRegister
             entity.HasIndex(e => new { e.ExamId, e.UserId });
             entity.Property(e => e.Score).HasPrecision(5, 2);
             entity.Property(e => e.Percentage).HasPrecision(5, 2);
+            
+            // Foreign key relationships
+            entity.HasOne(e => e.Exam)
+                .WithMany()
+                .HasForeignKey(e => e.ExamId)
+                .OnDelete(DeleteBehavior.Restrict);
+                
+            entity.HasOne(e => e.User)
+                .WithMany()
+                .HasForeignKey(e => e.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
         });
 
         builder.Entity<EntityExamAttemptQuestion>(entity =>
         {
             entity.HasAlternateKey(e => e.Guid);
             entity.HasIndex(e => e.ExamSubmissionId);
+            entity.HasIndex(e => e.ExamQuestionId);
             entity.Property(e => e.Score).HasPrecision(5, 2);
+            
+            // Foreign key relationships
+            entity.HasOne(e => e.Submission)
+                .WithMany(s => s.AttemptQuestions)
+                .HasForeignKey(e => e.ExamSubmissionId)
+                .OnDelete(DeleteBehavior.Cascade);
+                
+            entity.HasOne(e => e.Question)
+                .WithMany()
+                .HasForeignKey(e => e.ExamQuestionId)
+                .OnDelete(DeleteBehavior.Restrict);
         });
 
         builder.Entity<EntityExamPurchase>(entity =>
@@ -1431,6 +1629,17 @@ public static class EntityRegister
             entity.HasIndex(e => e.UserId);
             entity.Property(e => e.PricePaid).HasPrecision(12, 2);
             entity.Property(e => e.DiscountAmount).HasPrecision(12, 2);
+            
+            // Foreign key relationships
+            entity.HasOne(e => e.Exam)
+                .WithMany()
+                .HasForeignKey(e => e.ExamId)
+                .OnDelete(DeleteBehavior.Restrict);
+                
+            entity.HasOne(e => e.User)
+                .WithMany()
+                .HasForeignKey(e => e.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
         });
 
         builder.Entity<EntityExamQuestionGroup>(entity =>
@@ -1443,13 +1652,37 @@ public static class EntityRegister
         {
             entity.HasAlternateKey(e => e.Guid);
             entity.HasIndex(e => e.LanguageCode).IsUnique();
+            entity.HasIndex(e => e.DisplayOrder);
         });
 
         builder.Entity<EntityExamCategory>(entity =>
         {
             entity.HasAlternateKey(e => e.Guid);
-            entity.HasIndex(e => e.CategoryCode).IsUnique();
+            entity.HasIndex(e => new { e.CategoryCode, e.LanguageId }).IsUnique();
             entity.HasIndex(e => e.LanguageId);
+            
+            // Foreign key relationship
+            entity.HasOne(e => e.Language)
+                .WithMany()
+                .HasForeignKey(e => e.LanguageId)
+                .OnDelete(DeleteBehavior.Restrict);
+        });
+        
+        builder.Entity<EntityExamQuestionGroup>(entity =>
+        {
+            entity.HasAlternateKey(e => e.Guid);
+            entity.HasIndex(e => new { e.Skill, e.Level });
+        });
+        
+        // Cập nhật lại EntityExamQuestion để thêm foreign key đến Group (sau khi đã register Group)
+        // Note: Phải configure lại sau khi EntityExamQuestionGroup đã được register
+        builder.Entity<EntityExamQuestion>(entity =>
+        {
+            // Optional foreign key to Group
+            entity.HasOne<EntityExamQuestionGroup>()
+                .WithMany(g => g.Questions)
+                .HasForeignKey(e => e.GroupId)
+                .OnDelete(DeleteBehavior.SetNull);
         });
     }
 }
@@ -1487,6 +1720,8 @@ dotnet ef migrations add AddExamQuestionBank --startup-project ../SLK.TryEdu.Web
 #### 1.9. `EntityExamPurchase.cs` (Mua bài thi bằng coin)
 
 **File:** `src/SLK.TryEdu.ModuleExamCore/Entities/EntityExamPurchase.cs`
+
+> **⚠️ LƯU Ý:** Entity này có foreign key `ExamId`, nên cần `EntityExam` tồn tại trước.
 
 ```csharp
 [Table("exam_purchases")]
@@ -1533,18 +1768,27 @@ public class EntityExamPurchase : EntityBase
 
 ### ✅ MODULEEXAM - ACCEPTANCE CRITERIA
 
-- [ ] `EntityExamTemplate`, `EntityExamTemplateSection`, `EntityExamQuestion`, `EntityQuestionOption`, `EntityExamTemplateQuestion`, `EntityExam`, `EntityExamSubmission`, `EntityExamAttemptQuestion`, `EntityExamPurchase` đã tạo.
-- [ ] (Optional) `EntityExamQuestionGroup` nếu sử dụng passage/audio chung.
-- [ ] `EntityLanguage` đã tạo (multi-language support).
-- [ ] `EntityExamCategory` đã tạo (exam categories).
-- [ ] EntityRegister cấu hình indexes/precision đầy đủ.
-- [ ] Migration `AddExamQuestionBank` chạy thành công.
-- [ ] Seed data mẫu tạo được template + câu hỏi + languages + categories.
+- [ ] `EntityExamTemplate` đã tạo (1.1) - **PHẢI TẠO TRƯỚC**
+- [ ] `EntityExamTemplateSection` đã tạo (1.2) - có FK ExamTemplateId
+- [ ] `EntityExamQuestion` đã tạo (1.3) - question bank
+- [ ] `EntityQuestionOption` đã tạo (1.4) - có FK ExamQuestionId
+- [ ] `EntityExamTemplateQuestion` đã tạo (1.5) - có FK ExamTemplateSectionId và ExamQuestionId
+- [ ] `EntityLanguage` đã tạo (1.11) - multi-language support
+- [ ] `EntityExamCategory` đã tạo (1.12) - có FK LanguageId
+- [ ] `EntityExamQuestionGroup` đã tạo (1.10) - optional, cho Reading/Listening passages
+- [ ] `EntityExam` đã tạo (1.6) - **CÓ FK ExamTemplateId** → cần ExamTemplate trước
+- [ ] `EntityExamSubmission` đã tạo (1.7) - có FK ExamId
+- [ ] `EntityExamAttemptQuestion` đã tạo (1.8) - có FK ExamSubmissionId và ExamQuestionId
+- [ ] `EntityExamPurchase` đã tạo (1.9) - có FK ExamId
+- [ ] EntityRegister cấu hình indexes/precision đầy đủ
+- [ ] EntityRegister cấu hình foreign keys đầy đủ
+- [ ] Migration `AddExamQuestionBank` chạy thành công
+- [ ] Seed data mẫu tạo được template + câu hỏi + languages + categories
 - [ ] API (hoặc Repo) có thể:
-  - Tạo template → thêm section → gán câu hỏi.
-  - Publish template → tạo `exams`.
-  - Mua exam → tạo `exam_purchases`.
-  - Sinh attempt → lưu câu trả lời & chấm điểm.
+  - Tạo template → thêm section → gán câu hỏi
+  - Publish template → tạo `exams`
+  - Mua exam → tạo `exam_purchases`
+  - Sinh attempt → lưu câu trả lời & chấm điểm
 
 ---
 

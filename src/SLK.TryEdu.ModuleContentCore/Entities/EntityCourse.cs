@@ -11,47 +11,66 @@ namespace SLK.TryEdu.ModuleContentCore;
 public class EntityCourse : EntityBase
 {
 
-    [Required]
-    [MaxLength(255)]
-    public string Title { get; set; } = string.Empty;
 
+    [Display(Name = "Tiêu đề")]
+    [Required(ErrorMessage = "Tiêu đề không được để trống!")]
     [MaxLength(500)]
-    public string Slug { get; set; } = string.Empty; 
+    public string Title { get; set; }
 
+    [Display(Name = "Slug")]
+    [MaxLength(500)]
+    public string Slug { get; set; }
+
+    [Display(Name = "Mô tả ngắn")]
     [MaxLength(1000)]
-    public string Description { get; set; } = string.Empty;
+    public string Description { get; set; }
 
+    [Display(Name = "Mô tả chi tiết")]
+    [Column(TypeName = "text")]
+    public string FullDescription { get; set; }
+
+    [Display(Name = "Ảnh thumbnail")]
     [MaxLength(500)]
-    public string ThumbnailUrl { get; set; } = string.Empty;
+    public string ThumbnailUrl { get; set; }
 
-    [Required]
-    [MaxLength(20)]
-    public string CourseType { get; set; } = "Free"; 
+    [Display(Name = "Level")]
+    [MaxLength(50)]
+    public string Level { get; set; } // A1, A2, B1, B2, C1, C2
 
-    [Required]
-    [Column(TypeName = "decimal(12,2)")]
-    public decimal PriceCoins { get; set; } = 0; 
-
-    [Required]
-    [MaxLength(20)]
-    public string Level { get; set; } = "Beginner"; 
+    [Display(Name = "Category")]
     [MaxLength(100)]
-    public string Category { get; set; } = string.Empty;
+    public string Category { get; set; } // IELTS, TOEFL, General English
 
-    [Required]
-    public int CreatedByUserId { get; set; }
-
-    [Required]
+    [Display(Name = "Loại khóa học")]
     [MaxLength(20)]
-    public string Status { get; set; } = "Draft"; 
+    public string CourseType { get; set; } = "Free"; // Free, Premium
 
+    [Display(Name = "Giá (coin)")]
+    public int? Price { get; set; }
+
+    [Display(Name = "Thời lượng (phút)")]
+    public int? Duration { get; set; }
+
+    [Display(Name = "Số học viên")]
+    public int StudentCount { get; set; } = 0;
+
+    [Display(Name = "Rating trung bình")]
+    [Column(TypeName = "decimal(3,2)")]
+    public decimal? AverageRating { get; set; }
+
+    [Display(Name = "Trạng thái")]
+    [MaxLength(20)]
+    public string Status { get; set; } = "Draft"; // Draft, Published, Archived
+
+    [Display(Name = "Ngày xuất bản")]
     public DateTime? PublishedAt { get; set; }
 
-    [Column(TypeName = "jsonb")]
-    public string CourseData { get; set; } 
+    [Display(Name = "Tags")]
+    [MaxLength(500)]
+    public string Tags { get; set; } // JSON array or comma-separated
 
-    public Guid EmployeeCre { get; set; }
-
-  
+    [Display(Name = "MongoDB Course ID")]
+    [MaxLength(50)]
+    public string MongoDbCourseId { get; set; } // Reference to MongoDB document
 
 }

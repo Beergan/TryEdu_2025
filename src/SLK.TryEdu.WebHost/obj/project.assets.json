@@ -46,6 +46,19 @@
           }
         }
       },
+      "BCrypt.Net-Next/4.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "BitMiracle.LibTiff.NET/2.4.649": {
         "type": "package",
         "compile": {
@@ -4725,6 +4738,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "BCrypt.Net-Next": "4.0.3",
           "Hangfire": "1.8.14",
           "Hangfire.MemoryStorage": "1.8.1.1",
           "MailKit": "4.8.0",
@@ -4910,6 +4924,102 @@
           "bin/placeholder/SLK.TryEdu.ModuleEmployeeCore.dll": {}
         }
       },
+      "SLK.TryEdu.ModuleExam/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.10",
+          "SLK.TryEdu.Base": "1.0.0",
+          "SLK.TryEdu.ModuleExamBlazor": "1.0.0",
+          "SLK.TryEdu.ModuleExamCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleExam.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleExam.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "SLK.TryEdu.ModuleExamBlazor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
+          "SLK.TryEdu.Abstract": "1.0.0",
+          "SLK.TryEdu.ModuleExamCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleExamBlazor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleExamBlazor.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleExamCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "SLK.TryEdu.Abstract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleExamCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleExamCore.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleLearning/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.10",
+          "SLK.TryEdu.Base": "1.0.0",
+          "SLK.TryEdu.ModuleLearningBlazor": "1.0.0",
+          "SLK.TryEdu.ModuleLearningCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearning.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearning.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "SLK.TryEdu.ModuleLearningBlazor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
+          "SLK.TryEdu.Abstract": "1.0.0",
+          "SLK.TryEdu.ModuleLearningCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearningBlazor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearningBlazor.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleLearningCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "SLK.TryEdu.Abstract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearningCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearningCore.dll": {}
+        }
+      },
       "SLK.TryEdu.ModuleManagement/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -5058,6 +5168,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "BCrypt.Net-Next": "4.0.3",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.10",
           "SLK.TryEdu.Base": "1.0.0",
           "SLK.TryEdu.ModuleUserBlazor": "1.0.0",
@@ -5112,6 +5223,8 @@
           "SLK.TryEdu.ModuleCoinBlazor": "1.0.0",
           "SLK.TryEdu.ModuleContentBlazor": "1.0.0",
           "SLK.TryEdu.ModuleEmployeeBlazor": "1.0.0",
+          "SLK.TryEdu.ModuleExamBlazor": "1.0.0",
+          "SLK.TryEdu.ModuleLearningBlazor": "1.0.0",
           "SLK.TryEdu.ModuleManagementBlazor": "1.0.0",
           "SLK.TryEdu.ModulePartnerBlazor": "1.0.0",
           "SLK.TryEdu.ModuleSettingBlazor": "1.0.0",
@@ -5167,6 +5280,37 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "BCrypt.Net-Next/4.0.3": {
+      "sha512": "W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "type": "package",
+      "path": "bcrypt.net-next/4.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcrypt.net-next.4.0.3.nupkg.sha512",
+        "bcrypt.net-next.nuspec",
+        "ico.png",
+        "lib/net20/BCrypt.Net-Next.dll",
+        "lib/net20/BCrypt.Net-Next.xml",
+        "lib/net35/BCrypt.Net-Next.dll",
+        "lib/net35/BCrypt.Net-Next.xml",
+        "lib/net462/BCrypt.Net-Next.dll",
+        "lib/net462/BCrypt.Net-Next.xml",
+        "lib/net472/BCrypt.Net-Next.dll",
+        "lib/net472/BCrypt.Net-Next.xml",
+        "lib/net48/BCrypt.Net-Next.dll",
+        "lib/net48/BCrypt.Net-Next.xml",
+        "lib/net5.0/BCrypt.Net-Next.dll",
+        "lib/net5.0/BCrypt.Net-Next.xml",
+        "lib/net6.0/BCrypt.Net-Next.dll",
+        "lib/net6.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.0/BCrypt.Net-Next.dll",
+        "lib/netstandard2.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.1/BCrypt.Net-Next.dll",
+        "lib/netstandard2.1/BCrypt.Net-Next.xml",
+        "readme.md"
       ]
     },
     "BitMiracle.LibTiff.NET/2.4.649": {
@@ -12004,6 +12148,36 @@
       "path": "../SLK.TryEdu.ModuleEmployeeCore/SLK.TryEdu.ModuleEmployeeCore.csproj",
       "msbuildProject": "../SLK.TryEdu.ModuleEmployeeCore/SLK.TryEdu.ModuleEmployeeCore.csproj"
     },
+    "SLK.TryEdu.ModuleExam/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleExam/SLK.TryEdu.ModuleExam.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleExam/SLK.TryEdu.ModuleExam.csproj"
+    },
+    "SLK.TryEdu.ModuleExamBlazor/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleExamBlazor/SLK.TryEdu.ModuleExamBlazor.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleExamBlazor/SLK.TryEdu.ModuleExamBlazor.csproj"
+    },
+    "SLK.TryEdu.ModuleExamCore/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleExamCore/SLK.TryEdu.ModuleExamCore.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleExamCore/SLK.TryEdu.ModuleExamCore.csproj"
+    },
+    "SLK.TryEdu.ModuleLearning/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleLearning/SLK.TryEdu.ModuleLearning.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleLearning/SLK.TryEdu.ModuleLearning.csproj"
+    },
+    "SLK.TryEdu.ModuleLearningBlazor/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleLearningBlazor/SLK.TryEdu.ModuleLearningBlazor.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleLearningBlazor/SLK.TryEdu.ModuleLearningBlazor.csproj"
+    },
+    "SLK.TryEdu.ModuleLearningCore/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleLearningCore/SLK.TryEdu.ModuleLearningCore.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleLearningCore/SLK.TryEdu.ModuleLearningCore.csproj"
+    },
     "SLK.TryEdu.ModuleManagement/1.0.0": {
       "type": "project",
       "path": "../SLK.TryEdu.ModuleManagement/SLK.TryEdu.ModuleManagement.csproj",
@@ -12083,6 +12257,8 @@
       "SLK.TryEdu.ModuleCoin >= 1.0.0",
       "SLK.TryEdu.ModuleContent >= 1.0.0",
       "SLK.TryEdu.ModuleEmployee >= 1.0.0",
+      "SLK.TryEdu.ModuleExam >= 1.0.0",
+      "SLK.TryEdu.ModuleLearning >= 1.0.0",
       "SLK.TryEdu.ModuleManagement >= 1.0.0",
       "SLK.TryEdu.ModulePartner >= 1.0.0",
       "SLK.TryEdu.ModuleSetting >= 1.0.0",
@@ -12140,6 +12316,12 @@
             },
             "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj": {
               "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj"
+            },
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj"
+            },
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\SLK.TryEdu.ModuleLearning.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\SLK.TryEdu.ModuleLearning.csproj"
             },
             "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj": {
               "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj"

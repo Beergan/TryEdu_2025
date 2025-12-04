@@ -37,6 +37,7 @@ public class CourseService : MyServiceBase, ICourseService
     Task<ResultsOf<EntityCourse>> ICourseService.GetList()
     {
         throw new NotImplementedException();
+
     }
 
     public Task<Result> Save([Body] EntityCourse info)

@@ -78,3 +78,4 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\SLK.TryEdu.ModuleU
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleUser.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\SLK.TryEdu.ModuleUser.xml
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\ref\SLK.TryEdu.ModuleUser.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

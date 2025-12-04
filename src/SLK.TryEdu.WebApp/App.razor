@@ -1,5 +1,7 @@
-﻿<CascadingAuthenticationState>
-    <Router AppAssembly="@typeof(Routes).Assembly"
+﻿@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(App).Assembly"
             AdditionalAssemblies="@GetAdditionalAssemblies()">
         <Found Context="routeData">
             <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(SLK.TryEdu.WebApp.Components.Layout.AppShellLayout)">

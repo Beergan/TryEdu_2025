@@ -563,20 +563,16 @@ namespace SLK.TryEdu.Db.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<decimal?>("AverageRating")
+                        .HasColumnType("decimal(3,2)");
+
                     b.Property<string>("Category")
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<string>("CourseData")
-                        .HasColumnType("jsonb");
-
                     b.Property<string>("CourseType")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
-
-                    b.Property<int>("CreatedByUserId")
-                        .HasColumnType("integer");
 
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("timestamp with time zone");
@@ -588,8 +584,11 @@ namespace SLK.TryEdu.Db.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("character varying(1000)");
 
-                    b.Property<Guid>("EmployeeCre")
-                        .HasColumnType("uuid");
+                    b.Property<int?>("Duration")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("FullDescription")
+                        .HasColumnType("text");
 
                     b.Property<Guid>("Guid")
                         .ValueGeneratedOnAdd()
@@ -597,12 +596,15 @@ namespace SLK.TryEdu.Db.Migrations
                         .HasColumnOrder(2);
 
                     b.Property<string>("Level")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
-                    b.Property<decimal>("PriceCoins")
-                        .HasColumnType("decimal(12,2)");
+                    b.Property<string>("MongoDbCourseId")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<int?>("Price")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("PublishedAt")
                         .HasColumnType("timestamp with time zone");
@@ -612,9 +614,15 @@ namespace SLK.TryEdu.Db.Migrations
                         .HasColumnType("character varying(500)");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
+
+                    b.Property<int>("StudentCount")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Tags")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
 
                     b.Property<string>("ThumbnailUrl")
                         .HasMaxLength(500)
@@ -622,8 +630,8 @@ namespace SLK.TryEdu.Db.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)");
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
 
                     b.Property<string>("UserCreated")
                         .HasColumnType("text");
@@ -766,6 +774,613 @@ namespace SLK.TryEdu.Db.Migrations
                     b.HasAlternateKey("Guid");
 
                     b.ToTable("EMPLOYEE_DOCUMENT");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityExam", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("DurationMinutes")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ExamTemplateId")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<decimal>("PriceCoins")
+                        .HasColumnType("decimal(12,2)");
+
+                    b.Property<DateTime?>("PublishedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Slug")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<string>("SnapshotData")
+                        .HasColumnType("jsonb");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.HasIndex("ExamTemplateId");
+
+                    b.ToTable("EXAM");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityExamAttemptQuestion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("ExamQuestionId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ExamSubmissionId")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<bool>("IsCorrect")
+                        .HasColumnType("boolean");
+
+                    b.Property<int?>("QuestionOptionId")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal?>("Score")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<string>("UserAnswer")
+                        .HasColumnType("jsonb");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.HasIndex("ExamQuestionId");
+
+                    b.HasIndex("ExamSubmissionId");
+
+                    b.ToTable("EXAM_ATTEMPT_QUESTION");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityExamQuestion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AnswerSchema")
+                        .HasColumnType("jsonb");
+
+                    b.Property<string>("Category")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("DefaultPoint")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<string>("Difficulty")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<Guid>("GroupId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Prompt")
+                        .HasColumnType("text");
+
+                    b.Property<string>("QuestionType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("RichContent")
+                        .HasColumnType("jsonb");
+
+                    b.Property<string>("Skill")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.ToTable("EXAM_QUESTION");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityExamSubmission", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AIGradingResult")
+                        .HasColumnType("jsonb");
+
+                    b.Property<string>("Answers")
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("ExamId")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<decimal?>("Percentage")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<decimal?>("Score")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<DateTime?>("StartedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<DateTime?>("SubmittedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("UserGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.HasIndex("ExamId");
+
+                    b.ToTable("EXAM_SUBMISSION");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityExamTemplate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CreatedByUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
+
+                    b.Property<int>("DurationMinutes")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ExamType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<string>("Level")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("Metadata")
+                        .HasColumnType("jsonb");
+
+                    b.Property<decimal>("PassingScore")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<string>("Slug")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.ToTable("EXAM_TEMPLATE");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityExamTemplateQuestion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Constraints")
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("ExamQuestionId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ExamTemplateSectionId")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<int>("Order")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal?>("OverridePoint")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.HasIndex("ExamQuestionId");
+
+                    b.HasIndex("ExamTemplateSectionId");
+
+                    b.ToTable("EXAM_TEMPLATE_QUESTION");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityExamTemplateSection", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Config")
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("ExamTemplateId")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<int>("Order")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("QuestionCount")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("SectionName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("WeightPercentage")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.HasIndex("ExamTemplateId");
+
+                    b.ToTable("EXAM_TEMPLATE_SECTION");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityQuestionOption", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ExamQuestionId")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<bool>("IsCorrect")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Label")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.HasIndex("ExamQuestionId");
+
+                    b.ToTable("EXAM_QUESTION_OPTION");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleLearningCore.EntityEnrollment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("CompletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("CourseGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("EnrolledAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<DateTime?>("LastAccessedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("Progress")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("UserGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.ToTable("LEARNING_ENROLLMENT");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleLearningCore.EntityLearningNote", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("CourseGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CourseLessonGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(2);
+
+                    b.Property<string>("Tags")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("UserCreated")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("UserGuid")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("Guid");
+
+                    b.ToTable("LEARNING_NOTE");
                 });
 
             modelBuilder.Entity("SLK.TryEdu.ModulePartnerCore.EntityCommissionTransaction", b =>
@@ -1147,6 +1762,9 @@ namespace SLK.TryEdu.Db.Migrations
                         .HasColumnType("uuid")
                         .HasColumnOrder(2);
 
+                    b.Property<DateTime>("HBD")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
@@ -1171,6 +1789,9 @@ namespace SLK.TryEdu.Db.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("UserModified")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Ward")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -1229,6 +1850,88 @@ namespace SLK.TryEdu.Db.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityExam", b =>
+                {
+                    b.HasOne("SLK.TryEdu.ModuleExamCore.EntityExamTemplate", "Template")
+                        .WithMany()
+                        .HasForeignKey("ExamTemplateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Template");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityExamAttemptQuestion", b =>
+                {
+                    b.HasOne("SLK.TryEdu.ModuleExamCore.EntityExamQuestion", "Question")
+                        .WithMany()
+                        .HasForeignKey("ExamQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SLK.TryEdu.ModuleExamCore.EntityExamSubmission", "Submission")
+                        .WithMany()
+                        .HasForeignKey("ExamSubmissionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Question");
+
+                    b.Navigation("Submission");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityExamSubmission", b =>
+                {
+                    b.HasOne("SLK.TryEdu.ModuleExamCore.EntityExam", "Exam")
+                        .WithMany()
+                        .HasForeignKey("ExamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Exam");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityExamTemplateQuestion", b =>
+                {
+                    b.HasOne("SLK.TryEdu.ModuleExamCore.EntityExamQuestion", "Question")
+                        .WithMany()
+                        .HasForeignKey("ExamQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SLK.TryEdu.ModuleExamCore.EntityExamTemplateSection", "Section")
+                        .WithMany()
+                        .HasForeignKey("ExamTemplateSectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Question");
+
+                    b.Navigation("Section");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityExamTemplateSection", b =>
+                {
+                    b.HasOne("SLK.TryEdu.ModuleExamCore.EntityExamTemplate", "ExamTemplate")
+                        .WithMany()
+                        .HasForeignKey("ExamTemplateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ExamTemplate");
+                });
+
+            modelBuilder.Entity("SLK.TryEdu.ModuleExamCore.EntityQuestionOption", b =>
+                {
+                    b.HasOne("SLK.TryEdu.ModuleExamCore.EntityExamQuestion", "Question")
+                        .WithMany()
+                        .HasForeignKey("ExamQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Question");
                 });
 
             modelBuilder.Entity("SLK.TryEdu.ModulePartnerCore.EntityCommissionTransaction", b =>

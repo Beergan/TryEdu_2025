@@ -18,6 +18,8 @@
 	  <ProjectReference Include="..\SLK.TryEdu.ModuleCoinBlazor\SLK.TryEdu.ModuleCoinBlazor.csproj" />
 	  <ProjectReference Include="..\SLK.TryEdu.ModuleContentBlazor\SLK.TryEdu.ModuleContentBlazor.csproj" />
 	  <ProjectReference Include="..\SLK.TryEdu.ModuleEmployeeBlazor\SLK.TryEdu.ModuleEmployeeBlazor.csproj" />
+	  <ProjectReference Include="..\SLK.TryEdu.ModuleExamBlazor\SLK.TryEdu.ModuleExamBlazor.csproj" />
+	  <ProjectReference Include="..\SLK.TryEdu.ModuleLearningBlazor\SLK.TryEdu.ModuleLearningBlazor.csproj" />
 	  <ProjectReference Include="..\SLK.TryEdu.ModulePartnerBlazor\SLK.TryEdu.ModulePartnerBlazor.csproj" />
 	   <ProjectReference Include="..\SLK.TryEdu.ModuleUserBlazor\SLK.TryEdu.ModuleUserBlazor.csproj" />
 	  <ProjectReference Include="..\SLK.TryEdu.ModuleManagementBlazor\SLK.TryEdu.ModuleManagementBlazor.csproj" />

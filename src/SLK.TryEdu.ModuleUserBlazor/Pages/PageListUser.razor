@@ -63,7 +63,34 @@
                                 <CustomValidationMessage style="color: red;" For="@(() => _model.Phone)" />
                             </div>
                         </div>
-                    </div>                    
+                    </div>    
+                    <div class="col-md-12 mt-0 mt-xl-0">
+                        <div class="row">
+                            <label for="name" class="col-md-12 col-form-label">Mật khẩu</label>
+                            <div class="col-md-12">
+                                <SfTextBox Placeholder="Mật khẩu" @bind-Value="_model.PasswordHash" />
+                                <CustomValidationMessage style="color: red;" For="@(() => _model.PasswordHash)" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-0 mt-xl-0">
+                        <div class="row">
+                            <label for="name" class="col-md-12 col-form-label">Địa chỉ</label>
+                            <div class="col-md-12">
+                                <SfTextBox Placeholder="Địa chỉ" @bind-Value="_model.Address" />
+                                <CustomValidationMessage style="color: red;" For="@(() => _model.Address)" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-0 mt-xl-0">
+                        <div class="row">
+                            <label for="name" class="col-md-12 col-form-label">Kích hoạt</label>
+                            <div class="col-md-12">
+                                <SfCheckBox @bind-Checked="@_model.IsActive">Kích hoạt: @_model.IsActive</SfCheckBox>
+                                <CustomValidationMessage style="color: red;" For="@(() => _model.IsActive)" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </EditForm>
         </Content>
@@ -103,39 +130,22 @@
         </div>
         <div class="app-content-body" style="overflow:auto" id="target">
             <div class="container-fluid" style="overflow:auto">
-                <SfGrid AllowTextWrap="true" ID="Grid" @ref="_grid" EnableHover="true" AllowResizing="true" DataSource="@_displaySource" AllowPaging="true" AllowFiltering="true" AllowSorting="true"
-                EnableAdaptiveUI="false" AllowExcelExport="true" AllowPdfExport="true" ShowColumnChooser="true" EnableVirtualization="false" Height="100%">
-                    <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>                
-                    <GridTextWrapSettings WrapMode="WrapMode.Content"></GridTextWrapSettings>
-                    <GridPageSettings PageSize="50"></GridPageSettings>
-                    <GridColumns>
-                        <GridColumn Field=@nameof(EntityUser.FullName) HeaderText="@Text[field[nameof(EntityUser.FullName)]]" Width="160">
-                            <Template>
-                                @{
-                                    var item = (context as EntityUser);
-                                    <a href="admin/employee/profile/@item.Guid" class="fullname">
-                                        @item.FullName
-                                    </a>
-                                }
-                            </Template>
-                        </GridColumn>
-                        <GridColumn Field=@nameof(EntityUser.Phone) HeaderText="@Text[field[nameof(EntityUser.Phone)]]" Width="160"></GridColumn>
-                        <GridColumn Field=@nameof(EntityUser.Email) HeaderText="@Text[field[nameof(EntityUser.Email)]]" Width="160"></GridColumn>
-                        <GridColumn HeaderText="@Text["Functions","Chức năng"]" Width="110" TextAlign="TextAlign.Right">
-                            <Template>
-                                @{
-                                    var item = (context as EntityUser);
-                                    <SfDropDownButton CssClass="e-caret-hide float-right" style="padding-left: 13px;" IconCss="fas fa-ellipsis-v">
-                                        <DropDownMenuItems>
-                                            <DropDownButtonEvents ItemSelected="SelectedTask"></DropDownButtonEvents>
-                                            <DropDownMenuItem Id="@(item.Id.ToString())" Text="Sửa"></DropDownMenuItem>
-                                        </DropDownMenuItems>
-                                    </SfDropDownButton>
-                                }
-                            </Template>
-                        </GridColumn>
-                    </GridColumns>
-                </SfGrid>
+                <Component.CustomTable TItem="EntityUser"
+                 DataSource="@_users"
+                 ExcludeProperties="@(new[] { "Id", "Guid", "CreatedDate" })"
+                 PageSize="50"
+                 AllowPaging="true"
+                 AllowFiltering="true"
+                 AllowSorting="true">
+        <Actions>
+            @{
+                var user = context;
+                <button class="btn btn-sm btn-primary" @onclick="() => EditUser(user.Id)">
+                    Sửa
+                </button>
+            }
+        </Actions>
+    </Component.CustomTable>
             </div>
         </div>
     }
@@ -145,12 +155,13 @@
     #region vavariables
     [Parameter]
     public string str { get; set; }
-    private SfGrid<EntityUser> _grid;
+    private List<EntityUser> _users = new();
+    [Parameter]
+    public RenderFragment<EntityUser> Actions { get; set; }
     private IEnumerable<EntityUser> _dataSource = new List<EntityUser>();
     private List<EntityUser> _displaySource = new();
     private List<OptionItem<Guid>> _optOffices = new();
     private List<OptionItem<Guid>> _optJob = new();
-
     private EntityUser _model = new();
     private bool active = false;
     private bool _modalVisible = false;
@@ -195,6 +206,7 @@
 
         active = true;
         _dataSource = rsp.Items;
+        _users = _dataSource.ToList();
 
         _displaySource = _dataSource.OrderByDescending(x => x.Id).ToList();
 
@@ -226,8 +238,7 @@
         _displaySource = query.OrderByDescending(o => o.Id).ToList();
         StateHasChanged();
     }
-
-    private async void Modify(int id)
+    private async void EditUser(int id)
     {
         var item = _dataSource.Single(t => t.Id == id);
         _model = item;
@@ -238,12 +249,14 @@
         await Task.CompletedTask;
     }
 
-    private void SelectedTask(MenuEventArgs e)
+    private void DeleteUser(int id)
     {
-        string text = e.Item.Text.ToLower();
-        int id = Convert.ToInt32(e.Item.Id);
-        if (text == "sửa")
-            Modify(id);
+        var user = _users.FirstOrDefault(u => u.Id == id);
+        if (user != null)
+        {
+            _users.Remove(user);
+            StateHasChanged();
+        }
     }
     #endregion
 }

@@ -17,6 +17,14 @@
           "SLK.TryEdu.ModuleEmployee.dll": {}
         }
       },
+      "BCrypt.Net-Next/4.0.3": {
+        "runtime": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.0.3.0"
+          }
+        }
+      },
       "BitMiracle.LibTiff.NET/2.4.649": {
         "runtime": {
           "lib/netstandard2.0/BitMiracle.LibTiff.NET.dll": {
@@ -2048,6 +2056,7 @@
       },
       "SLK.TryEdu.Base/1.0.0": {
         "dependencies": {
+          "BCrypt.Net-Next": "4.0.3",
           "Hangfire": "1.8.14",
           "Hangfire.MemoryStorage": "1.8.1.1",
           "MailKit": "4.8.0",
@@ -2100,6 +2109,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "BCrypt.Net-Next/4.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "path": "bcrypt.net-next/4.0.3",
+      "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
     },
     "BitMiracle.LibTiff.NET/2.4.649": {
       "type": "package",

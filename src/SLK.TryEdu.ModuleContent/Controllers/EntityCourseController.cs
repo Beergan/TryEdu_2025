@@ -9,7 +9,7 @@ using System;
 namespace SLK.TryEdu.ModuleContent.Controllers;   
 
 [Authorize]
-[Route("api/PartnerCenter/[action]")]
+[Route("api/Course/[action]")]
 [ApiController]
 public class EntityCourseController : CourseService, ICourseService
 {

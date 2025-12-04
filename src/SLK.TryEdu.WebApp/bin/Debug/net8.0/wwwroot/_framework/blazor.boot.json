@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "SLK.TryEdu.WebApp",
   "resources": {
-    "hash": "sha256-CkKlQiURGB6KyqkF6FRL4ZeDPdYJUUPgh3p6EAXSK1I=",
+    "hash": "sha256-+fhsByA3TMmEAPs1D/MrZ+7pubiqdwuk7xTqE0GMNyM=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-vtotCeXt2UD6oc459laJT32vBgigZ+eLoUmdeFkvYDk="
     },
@@ -303,32 +303,36 @@
       "mscorlib.wasm": "sha256-K9gNrsN9UmPqLs6J/FrkiKpmkVGnHjjqUsc7YGvesCY=",
       "netstandard.wasm": "sha256-4emjlXLM9qW3t2tlII20SDylBgG4ueI0wy9nh5FMd8g=",
       "System.Private.CoreLib.wasm": "sha256-2DN4v7I/tabltDEPdIO8sDBB0tY8zOm+0CvHbMssXW4=",
-      "SLK.TryEdu.Abstract.wasm": "sha256-FqhJZaTeRQsYGabTqEt9AGQrK7L4MHF11JZwMkYUD20=",
-      "SLK.TryEdu.ModuleCoinBlazor.wasm": "sha256-RowBXpBlg61gcW6S1qiUZo5ZNCE2xCpSI4G6CLOtq5g=",
-      "SLK.TryEdu.ModuleCoinCore.wasm": "sha256-NFyoFetlFDcq3gW8I+UJQhXcjaHWXCy69Do//GIKzoY=",
-      "SLK.TryEdu.ModuleContentBlazor.wasm": "sha256-28CtPSuyG5WPNi5rUZwcbVakWrXpfztYWcOGnPL3of0=",
-      "SLK.TryEdu.ModuleContentCore.wasm": "sha256-xtMo3DdTV7PCa/h8CjaiVlQ7D+u2AIUrQ0Mnn77xJeU=",
-      "SLK.TryEdu.ModuleEmployeeBlazor.wasm": "sha256-dEMQY6dLbUxNgJd+ORfsByVYXKJCjry3Gy+3ShqSzCg=",
-      "SLK.TryEdu.ModuleEmployeeCore.wasm": "sha256-iOQFmmUCdkdqIV4orAZCGaTFpl5bdu0zSTPvA5kvtqc=",
-      "SLK.TryEdu.ModuleManagementBlazor.wasm": "sha256-Px6/Krolaoz7+5Q1Jj/jZZkmpB2rtE5NTb0xjry4l/Q=",
-      "SLK.TryEdu.ModuleManagementCore.wasm": "sha256-gluLZl7AYce6/t4JN/Px/+WAoilgY47LsSX7z8wAYRw=",
-      "SLK.TryEdu.ModulePartnerBlazor.wasm": "sha256-PafZvFBS7B9LRKjoRSvsRIyPVSKg+RBIreRD+mWCQkE=",
-      "SLK.TryEdu.ModulePartnerCore.wasm": "sha256-lsiDn4m598qYjJ9vamCbB16wXxMj3Y6VNE6/astidMs=",
-      "SLK.TryEdu.ModuleSettingBlazor.wasm": "sha256-gm7lCXq3lJT6NpNhyXhe2Zgn4n5jXrLG1uQ7PxU2BoA=",
-      "SLK.TryEdu.ModuleSettingCore.wasm": "sha256-Wp+nmI2Bd5EBlM1QC0lCphQdw1Fqk67rEdZ7T/j5K1c=",
-      "SLK.TryEdu.ModuleUserBlazor.wasm": "sha256-Wid60ML4g9CS+EFP/eqWVFAy3PBV/+GNQS0bup20WmE=",
-      "SLK.TryEdu.ModuleUserCore.wasm": "sha256-kcqfN9s8E25UeQy8PC4X07S6rFfOzj/+oOEROaHgB4Y=",
-      "SLK.TryEdu.WebApp.wasm": "sha256-qkrbhRaEYorULgi86oj1piFq2Yj+Qzu9RzWPgzmPyR8="
+      "SLK.TryEdu.Abstract.wasm": "sha256-dvd4UPKs7CsUeBC4fVUeaDFzZ2/59naAKdxYvZnyFYs=",
+      "SLK.TryEdu.ModuleCoinBlazor.wasm": "sha256-yR3PHgxYVMfamLkJpsmtYUBRT8TNzm0WHbWPoWeCOT4=",
+      "SLK.TryEdu.ModuleCoinCore.wasm": "sha256-4sCYVepozAP3t9TnibwMLmbd61sUJ8rMzPLccFZ1DXw=",
+      "SLK.TryEdu.ModuleContentBlazor.wasm": "sha256-YEDmOkanMg39qggvF4fVHGgiwNyQGma9MRJP1hHJoO4=",
+      "SLK.TryEdu.ModuleContentCore.wasm": "sha256-sgtXuh6KIwbhKgBR6OQF/CohMA2YP39lVIeqSGcsZ/Q=",
+      "SLK.TryEdu.ModuleEmployeeBlazor.wasm": "sha256-4tRliyv5Vwmsg1uj3XgXIiIE2IlpRKrLSJZ9JxKwH00=",
+      "SLK.TryEdu.ModuleEmployeeCore.wasm": "sha256-UZK/RcOsPhkSDNCLMm4B4VOpUmzFTWPR622cOg7Z03A=",
+      "SLK.TryEdu.ModuleExamBlazor.wasm": "sha256-ev1Rz3FhHy/E1ajvKCh5IrYfezl9N1c0e5AAKnwhtv4=",
+      "SLK.TryEdu.ModuleExamCore.wasm": "sha256-E69suYoin7jKSOZ1t+jtlx06XniEshVQaAbmog2r3O8=",
+      "SLK.TryEdu.ModuleLearningBlazor.wasm": "sha256-OsGU4f2VrUBlZzuTu2QZyKMYBX1UsZIn9XFU5r42T1M=",
+      "SLK.TryEdu.ModuleLearningCore.wasm": "sha256-V9k0KRn/lnvYwPIObT88y4y0fwTFFqibFA3YeqKCk0g=",
+      "SLK.TryEdu.ModuleManagementBlazor.wasm": "sha256-4FfI8tY6brvvU1xIxV47/+8fF1O7IDNJ32ZrbUQ0C+Y=",
+      "SLK.TryEdu.ModuleManagementCore.wasm": "sha256-FCqxbtJYJIef9/ckAziu4UP6GdhQNUibuSqHD4zQ/tY=",
+      "SLK.TryEdu.ModulePartnerBlazor.wasm": "sha256-RRfP24LS9E+/alu5gIP0O9wEPdR93KPr0QbRIgViH+U=",
+      "SLK.TryEdu.ModulePartnerCore.wasm": "sha256-XDspvqWSlKB4PjOMx1DMQ9OmhaHf78vpWugiMQnD3do=",
+      "SLK.TryEdu.ModuleSettingBlazor.wasm": "sha256-i2Bs1unlF9emDOy0i8wKP/fc/O0eDCMGwZwFMlVkbD8=",
+      "SLK.TryEdu.ModuleSettingCore.wasm": "sha256-W2d/NL2xozgkFsRFSr2bpzfD01LCfqcPGymCP2rvu00=",
+      "SLK.TryEdu.ModuleUserBlazor.wasm": "sha256-j5kNtW6hgOTQycPrmbJkA/k5bXO8Sp3xCYd0VBq4cM8=",
+      "SLK.TryEdu.ModuleUserCore.wasm": "sha256-QqQ7ZnZkrTaISYEmytqEtRXbie8581ur9u8ofh8ardo=",
+      "SLK.TryEdu.WebApp.wasm": "sha256-g/z5JZPSNBSZlFYNiLMWpaoIZBOInOBvjdbH1gI/c+g="
     },
     "pdb": {
-      "SLK.TryEdu.WebApp.pdb": "sha256-JdsGbWrWE5UCkfO06dpF/fwoQYNM4UcjZQr6Q8wlUvk="
+      "SLK.TryEdu.WebApp.pdb": "sha256-xCgM3LRy997+ZvoyUVh2ZpQ7bsIvIVBiy7AvPmXuNyU="
     }
   },
   "cacheBootResources": true,
   "debugLevel": -1,
   "appsettings": [
-    "../appsettings.json",
-    "../appsettings.Development.json"
+    "../appsettings.Development.json",
+    "../appsettings.json"
   ],
   "globalizationMode": "sharded",
   "extensions": {

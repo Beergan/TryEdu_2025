@@ -2845,6 +2845,64 @@
           "bin/placeholder/SLK.TryEdu.ModuleEmployeeCore.dll": {}
         }
       },
+      "SLK.TryEdu.ModuleExamBlazor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
+          "SLK.TryEdu.Abstract": "1.0.0",
+          "SLK.TryEdu.ModuleExamCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleExamBlazor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleExamBlazor.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleExamCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "SLK.TryEdu.Abstract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleExamCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleExamCore.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleLearningBlazor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
+          "SLK.TryEdu.Abstract": "1.0.0",
+          "SLK.TryEdu.ModuleLearningCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearningBlazor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearningBlazor.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleLearningCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "SLK.TryEdu.Abstract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearningCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearningCore.dll": {}
+        }
+      },
       "SLK.TryEdu.ModuleManagementBlazor/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -5704,6 +5762,64 @@
         },
         "runtime": {
           "bin/placeholder/SLK.TryEdu.ModuleEmployeeCore.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleExamBlazor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
+          "SLK.TryEdu.Abstract": "1.0.0",
+          "SLK.TryEdu.ModuleExamCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleExamBlazor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleExamBlazor.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleExamCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "SLK.TryEdu.Abstract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleExamCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleExamCore.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleLearningBlazor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
+          "SLK.TryEdu.Abstract": "1.0.0",
+          "SLK.TryEdu.ModuleLearningCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearningBlazor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearningBlazor.dll": {}
+        }
+      },
+      "SLK.TryEdu.ModuleLearningCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "SLK.TryEdu.Abstract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearningCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.ModuleLearningCore.dll": {}
         }
       },
       "SLK.TryEdu.ModuleManagementBlazor/1.0.0": {
@@ -9311,6 +9427,26 @@
       "path": "../SLK.TryEdu.ModuleEmployeeCore/SLK.TryEdu.ModuleEmployeeCore.csproj",
       "msbuildProject": "../SLK.TryEdu.ModuleEmployeeCore/SLK.TryEdu.ModuleEmployeeCore.csproj"
     },
+    "SLK.TryEdu.ModuleExamBlazor/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleExamBlazor/SLK.TryEdu.ModuleExamBlazor.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleExamBlazor/SLK.TryEdu.ModuleExamBlazor.csproj"
+    },
+    "SLK.TryEdu.ModuleExamCore/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleExamCore/SLK.TryEdu.ModuleExamCore.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleExamCore/SLK.TryEdu.ModuleExamCore.csproj"
+    },
+    "SLK.TryEdu.ModuleLearningBlazor/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleLearningBlazor/SLK.TryEdu.ModuleLearningBlazor.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleLearningBlazor/SLK.TryEdu.ModuleLearningBlazor.csproj"
+    },
+    "SLK.TryEdu.ModuleLearningCore/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.ModuleLearningCore/SLK.TryEdu.ModuleLearningCore.csproj",
+      "msbuildProject": "../SLK.TryEdu.ModuleLearningCore/SLK.TryEdu.ModuleLearningCore.csproj"
+    },
     "SLK.TryEdu.ModuleManagementBlazor/1.0.0": {
       "type": "project",
       "path": "../SLK.TryEdu.ModuleManagementBlazor/SLK.TryEdu.ModuleManagementBlazor.csproj",
@@ -9362,6 +9498,8 @@
       "SLK.TryEdu.ModuleCoinBlazor >= 1.0.0",
       "SLK.TryEdu.ModuleContentBlazor >= 1.0.0",
       "SLK.TryEdu.ModuleEmployeeBlazor >= 1.0.0",
+      "SLK.TryEdu.ModuleExamBlazor >= 1.0.0",
+      "SLK.TryEdu.ModuleLearningBlazor >= 1.0.0",
       "SLK.TryEdu.ModuleManagementBlazor >= 1.0.0",
       "SLK.TryEdu.ModulePartnerBlazor >= 1.0.0",
       "SLK.TryEdu.ModuleSettingBlazor >= 1.0.0",
@@ -9409,6 +9547,12 @@
             },
             "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj": {
               "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj"
+            },
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj"
+            },
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj"
             },
             "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj": {
               "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj"

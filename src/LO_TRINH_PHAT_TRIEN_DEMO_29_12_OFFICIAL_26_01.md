@@ -25,6 +25,7 @@
 - [ ] Tạo solution structure cho ModuleCoin (Core, Main, Blazor)
 - [ ] Tạo solution structure cho ModulePartner (Core, Main, Blazor)
 - [ ] Tạo solution structure cho ModuleContent (Core, Main, Blazor)
+- [ ] Tạo solution structure cho ModuleExam (Core, Main, Blazor) ⚠️ **QUAN TRỌNG: Tách riêng Exam khỏi Content**
 - [ ] Tạo solution structure cho ModuleLearning (Core, Main, Blazor)
 - [ ] Document architecture decisions
 
@@ -32,7 +33,7 @@
 - [ ] Clone repository và setup local environment
 - [ ] Review EntityBase và MyServiceBase patterns
 - [ ] Setup PostgreSQL local instance
-- [ ] Setup MongoDB local instance
+- [ ] **Lưu ý:** Chỉ sử dụng PostgreSQL, không dùng MongoDB
 - [ ] Test connection strings và migrations
 
 **Cường (Frontend Developer):**
@@ -57,11 +58,24 @@
 - [ ] Tạo EntityReferralCode.cs
 - [ ] Tạo EntityCommissionTransaction.cs
 - [ ] Tạo EntityCourse.cs
-- [ ] Tạo EntityExam.cs
+- [ ] **Tạo Exam System Entities (theo thứ tự logic):**
+  - [ ] Tạo EntityExamTemplate.cs (template/blueprint trước)
+  - [ ] Tạo EntityExamTemplateSection.cs
+  - [ ] Tạo EntityExamQuestion.cs (question bank)
+  - [ ] Tạo EntityQuestionOption.cs
+  - [ ] Tạo EntityExamTemplateQuestion.cs
+  - [ ] Tạo EntityExam.cs (instance từ template - có foreign key ExamTemplateId)
+  - [ ] Tạo EntityExamSubmission.cs
+  - [ ] Tạo EntityExamAttemptQuestion.cs
 - [ ] Tạo EntityEnrollment.cs
-- [ ] Tạo EntityExamSubmission.cs
 - [ ] Tạo EntityUserRole.cs
-- [ ] Update ModelBuilderExt.cs với RegisterV2Entities()
+- [ ] **Tạo ModuleExam projects (nếu chưa tạo trong Ngày 1-2):**
+  - [ ] Tạo SLK.TryEdu.ModuleExamCore.csproj
+  - [ ] Tạo SLK.TryEdu.ModuleExam.csproj
+  - [ ] Tạo SLK.TryEdu.ModuleExamBlazor.csproj
+  - [ ] Setup project references (ModuleExam → ModuleExamCore)
+  - [ ] Setup project references (ModuleExamBlazor → ModuleExam)
+- [ ] **Update EntityRegister cho từng module** (mỗi module đã có EntityRegister class riêng - chỉ cần thêm entities mới vào)
 - [ ] Configure unique constraints và indexes
 
 **Phong (System Architect):**
@@ -193,11 +207,11 @@
 - [ ] Email approval cho partner khi được phê duyệt
 
 **Cường (Frontend Developer):**
-- [ ] Tạo Partner Registration form
+- [ ] **Admin UI:** Tạo form Admin tạo tài khoản Partner (AspNetUsers + EntityPartnerCenter)
 - [ ] Implement file upload cho logo
 - [ ] Implement file upload cho business license
-- [ ] Tạo Admin approval interface
-- [ ] Partner dashboard layout
+- [ ] **Partner Portal UI:** Giao diện riêng cho Partner login (dùng AspNetUsers authentication)
+- [ ] Partner dashboard layout (sau khi Partner login vào Partner Portal)
 - [ ] Partner profile page
 
 ---
@@ -233,6 +247,8 @@
 - [ ] Transaction logging đầy đủ
 
 **Cường (Frontend Developer) - Student Coin UI (US9.1, US9.2):**
+> **Lưu ý:** Student (học viên) dùng EntityUser, vào trang web để tham gia thi thử
+
 - [ ] **Student Dashboard/Homepage:**
   - [ ] Welcome section với user info
   - [ ] Quick stats (coin balance, enrolled courses, purchased exams)
@@ -532,7 +548,13 @@
 
 ##### **Ngày 25-26 (21-22/12): Exam Purchase with Coin + Question Bank**
 **Kiên (Backend Developer):**
-- [ ] Tạo ExamService.cs
+- [ ] **Tạo ModuleExam projects (nếu chưa tạo trong Ngày 1-2):**
+  - [ ] Tạo SLK.TryEdu.ModuleExamCore.csproj
+  - [ ] Tạo SLK.TryEdu.ModuleExam.csproj
+  - [ ] Tạo SLK.TryEdu.ModuleExamBlazor.csproj
+  - [ ] Setup project references (ModuleExam → ModuleExamCore)
+  - [ ] Setup project references (ModuleExamBlazor → ModuleExam)
+- [ ] Tạo ExamService.cs trong ModuleExam (không phải ModuleContent)
 - [ ] Implement CreateExam method
 - [ ] Implement GetExams method
 - [ ] Implement PurchaseExam method
@@ -1289,6 +1311,38 @@
   - [ ] Làm bài thi: timer, auto-save, submit, xem kết quả (US3.2)
   - [ ] Dashboard học tập: tiến độ, lịch sử, achievements (US3.3)
 
+- [ ] **Voucher Management (US5.2) - Phase 2**
+  - [ ] Create, edit, delete vouchers (Admin)
+  - [ ] Apply vouchers when purchasing (Student)
+  - [ ] Voucher usage analytics
+  - [ ] Voucher validation
+
+- [ ] **Support Ticket Management (US6.2) - Phase 2**
+  - [ ] Create support tickets (Student)
+  - [ ] Manage tickets (Admin/Support)
+  - [ ] Ticket messaging system
+  - [ ] Ticket assignment & priority
+  - [ ] Support analytics
+
+- [ ] **Community Features (US6.3) - Phase 2**
+  - [ ] Forum system (posts, replies, likes)
+  - [ ] Study groups (create, join, manage)
+  - [ ] Community moderation
+  - [ ] Search forum posts
+
+- [ ] **Security Audit (US7.3) - Phase 2**
+  - [ ] Security event logging
+  - [ ] Audit log viewing (Admin)
+  - [ ] Login attempts tracking
+  - [ ] Security monitoring dashboard
+  - [ ] Suspicious activities detection
+
+- [ ] **Compliance Management (US7.4) - Phase 2**
+  - [ ] Compliance records management
+  - [ ] GDPR data privacy requests
+  - [ ] Data export/deletion
+  - [ ] Compliance verification
+
 - [ ] **Admin Features**
   - [ ] Approve/reject partner registration
   - [ ] View system dashboard với KPIs (US7.1)
@@ -1539,7 +1593,7 @@ Xây dựng hệ thống giáo dục trực tuyến B2B2C với 5 vai trò:
 ### Tech Stack Hiện Tại
 - **Backend**: .NET Core 8 + ASP.NET Core Web API
 - **Frontend**: Blazor Server/WebAssembly
-- **Database**: PostgreSQL (transactional) + MongoDB (documents)
+- **Database**: PostgreSQL (tất cả dữ liệu - transactional và document data đều dùng PostgreSQL với JSONB)
 - **Cache**: Redis
 - **Message Queue**: RabbitMQ
 - **Architecture**: Module-based (Core, User, Employee, Management, Setting)
@@ -1570,9 +1624,13 @@ SLK.TryEdu.ModulePartner/     → Partner center management
 SLK.TryEdu.ModulePartnerCore/ → Partner entities & interfaces
 SLK.TryEdu.ModulePartnerBlazor/ → Partner Portal UI
 
-SLK.TryEdu.ModuleContent/     → Course & Exam management
+SLK.TryEdu.ModuleContent/     → Course management
 SLK.TryEdu.ModuleContentCore/ → Content entities & interfaces
 SLK.TryEdu.ModuleContentBlazor/ → Content management UI
+
+SLK.TryEdu.ModuleExam/        → Exam management (tách riêng khỏi Content)
+SLK.TryEdu.ModuleExamCore/    → Exam entities & interfaces
+SLK.TryEdu.ModuleExamBlazor/  → Exam management UI
 
 SLK.TryEdu.ModuleLearning/    → Learning progress, exam taking
 SLK.TryEdu.ModuleLearningCore/ → Learning entities & interfaces
@@ -1606,6 +1664,7 @@ Hoàn thành **MVP** với các chức năng cốt lõi:
   - ModuleCoin (Core, Main, Blazor)
   - ModulePartner (Core, Main, Blazor)
   - ModuleContent (Core, Main, Blazor)
+  - ModuleExam (Core, Main, Blazor) ⚠️ **QUAN TRỌNG: Tách riêng Exam khỏi Content**
   - ModuleLearning (Core, Main, Blazor)
 - [ ] Document architecture decisions
 
@@ -1613,7 +1672,7 @@ Hoàn thành **MVP** với các chức năng cốt lõi:
 - [ ] Clone repository và setup local environment
 - [ ] Review EntityBase và MyServiceBase patterns
 - [ ] Setup PostgreSQL local instance
-- [ ] Setup MongoDB local instance
+- [ ] **Lưu ý:** Chỉ sử dụng PostgreSQL, không dùng MongoDB
 - [ ] Test connection strings và migrations
 
 **Cường (Frontend Developer):**
@@ -1743,6 +1802,10 @@ namespace SLK.TryEdu.ModulePartnerCore;
 [Table("PARTNER_CENTERS")]
 public class EntityPartnerCenter : EntityBase
 {
+    [Display(Name = "AspNetUsers ID")]
+    [MaxLength(450)] // Identity User ID length
+    public string AspNetUserId { get; set; } // Link với SA_USER (AspNetUsers) - Admin tạo tài khoản cho Partner
+    
     [Display(Name = "Tên trung tâm")]
     [Required(ErrorMessage = "Tên trung tâm không được để trống!")]
     [MaxLength(255)]
@@ -1917,7 +1980,331 @@ public class EntityCommissionTransaction : EntityBase
 }
 ```
 
-##### 3. Tạo Entities cho Content System
+##### 3. Tạo Entities cho Exam System (PHẢI TẠO TRƯỚC Content System vì Exam có thể reference Course)
+
+**⚠️ LƯU Ý QUAN TRỌNG: Thứ tự tạo entities phải đúng logic:**
+1. **ExamTemplate** (blueprint) → 2. **Exam** (instance từ template)
+
+**File: `SLK.TryEdu.ModuleExamCore/Entities/EntityExamTemplate.cs`**
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using SLK.TryEdu.Abstract;
+
+namespace SLK.TryEdu.ModuleExamCore.Entities;
+
+[Table("exam_templates")]
+public class EntityExamTemplate : EntityBase
+{
+    [Required, MaxLength(255)]
+    public string Title { get; set; } = string.Empty;
+
+    [MaxLength(500)]
+    public string Slug { get; set; } = string.Empty;
+
+    [MaxLength(1000)]
+    public string Description { get; set; } = string.Empty;
+
+    [Required]
+    [MaxLength(20)]
+    public string Level { get; set; } = "B1";
+
+    [Required]
+    [MaxLength(50)]
+    public string ExamType { get; set; } = "IELTS";
+
+    [Required]
+    public int DurationMinutes { get; set; } = 120;
+
+    [Required]
+    [Column(TypeName = "decimal(5,2)")]
+    public decimal PassingScore { get; set; } = 60m;
+
+    [Required]
+    public int CreatedByUserId { get; set; }
+
+    [Required]
+    [MaxLength(20)]
+    public string Status { get; set; } = "Draft"; // Draft, Published, Archived
+
+    [Column(TypeName = "jsonb")]
+    public string? Metadata { get; set; }
+}
+```
+
+**File: `SLK.TryEdu.ModuleExamCore/Entities/EntityExamTemplateSection.cs`**
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using SLK.TryEdu.Abstract;
+
+namespace SLK.TryEdu.ModuleExamCore.Entities;
+
+[Table("exam_template_sections")]
+public class EntityExamTemplateSection : EntityBase
+{
+    [Required]
+    public int ExamTemplateId { get; set; }
+
+    [Required, MaxLength(100)]
+    public string SectionName { get; set; } = string.Empty; // Reading, Listening,...
+
+    [Required]
+    public int Order { get; set; }
+
+    [Required]
+    public int QuestionCount { get; set; }
+
+    [Required]
+    [Column(TypeName = "decimal(5,2)")]
+    public decimal WeightPercentage { get; set; } = 25m;
+
+    [Column(TypeName = "jsonb")]
+    public string? Config { get; set; } // time limit, audio source, etc.
+
+    [ForeignKey(nameof(ExamTemplateId))]
+    public virtual EntityExamTemplate ExamTemplate { get; set; } = null!;
+}
+```
+
+**File: `SLK.TryEdu.ModuleExamCore/Entities/EntityExamQuestion.cs`**
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using SLK.TryEdu.Abstract;
+
+namespace SLK.TryEdu.ModuleExamCore.Entities;
+
+[Table("exam_questions")]
+public class EntityExamQuestion : EntityBase
+{
+    [Required, MaxLength(50)]
+    public string QuestionType { get; set; } = "MultipleChoice"; // MCQ, Essay, DragDrop...
+
+    [Required, MaxLength(500)]
+    public string Title { get; set; } = string.Empty;
+
+    [Column(TypeName = "text")]
+    public string? Prompt { get; set; } // question text / passage
+
+    [Column(TypeName = "jsonb")]
+    public string? RichContent { get; set; } // store structured content (audio url, image, etc.)
+
+    [Required]
+    [Column(TypeName = "decimal(5,2)")]
+    public decimal DefaultPoint { get; set; } = 1m;
+
+    [MaxLength(20)]
+    public string Difficulty { get; set; } = "Medium";
+
+    [MaxLength(50)]
+    public string Skill { get; set; } = "Reading";
+
+    [MaxLength(100)]
+    public string Category { get; set; } = string.Empty;
+
+    [Required]
+    public bool IsActive { get; set; } = true;
+
+    public int? GroupId { get; set; } // group passage/audio (optional)
+
+    [Column(TypeName = "jsonb")]
+    public string? AnswerSchema { get; set; }
+}
+```
+
+**File: `SLK.TryEdu.ModuleExamCore/Entities/EntityQuestionOption.cs`**
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using SLK.TryEdu.Abstract;
+
+namespace SLK.TryEdu.ModuleExamCore.Entities;
+
+[Table("question_options")]
+public class EntityQuestionOption : EntityBase
+{
+    [Required]
+    public int ExamQuestionId { get; set; }
+
+    [Required, MaxLength(200)]
+    public string Label { get; set; } = string.Empty; // e.g. "A", "B"
+
+    [Required, Column(TypeName = "text")]
+    public string Content { get; set; } = string.Empty;
+
+    [Required]
+    public bool IsCorrect { get; set; } = false;
+
+    public int DisplayOrder { get; set; }
+
+    [ForeignKey(nameof(ExamQuestionId))]
+    public virtual EntityExamQuestion Question { get; set; } = null!;
+}
+```
+
+**File: `SLK.TryEdu.ModuleExamCore/Entities/EntityExamTemplateQuestion.cs`**
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using SLK.TryEdu.Abstract;
+
+namespace SLK.TryEdu.ModuleExamCore.Entities;
+
+[Table("exam_template_questions")]
+public class EntityExamTemplateQuestion : EntityBase
+{
+    [Required]
+    public int ExamTemplateSectionId { get; set; }
+
+    [Required]
+    public int ExamQuestionId { get; set; }
+
+    [Required]
+    public int Order { get; set; }
+
+    [Column(TypeName = "decimal(5,2)")]
+    public decimal? OverridePoint { get; set; }
+
+    [Column(TypeName = "jsonb")]
+    public string? Constraints { get; set; } // time limit per question, shuffle flag...
+
+    [ForeignKey(nameof(ExamTemplateSectionId))]
+    public virtual EntityExamTemplateSection Section { get; set; } = null!;
+
+    [ForeignKey(nameof(ExamQuestionId))]
+    public virtual EntityExamQuestion Question { get; set; } = null!;
+}
+```
+
+**File: `SLK.TryEdu.ModuleExamCore/Entities/EntityExam.cs`**
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using SLK.TryEdu.Abstract;
+
+namespace SLK.TryEdu.ModuleExamCore.Entities;
+
+[Table("exams")]
+public class EntityExam : EntityBase
+{
+    [Required]
+    public int ExamTemplateId { get; set; } // ⚠️ Foreign key → cần ExamTemplate tồn tại trước
+
+    [Required, MaxLength(255)]
+    public string Title { get; set; } = string.Empty;
+
+    [MaxLength(500)]
+    public string Slug { get; set; } = string.Empty;
+
+    [Column(TypeName = "decimal(12,2)")]
+    public decimal PriceCoins { get; set; } = 200;
+
+    public int DurationMinutes { get; set; }
+
+    [Column(TypeName = "jsonb")]
+    public string SnapshotData { get; set; } = string.Empty; // sections + questions snapshot
+
+    [Required]
+    [MaxLength(20)]
+    public string Status { get; set; } = "Draft"; // Draft, Published, Archived
+
+    public DateTime? PublishedAt { get; set; }
+
+    [ForeignKey(nameof(ExamTemplateId))]
+    public virtual EntityExamTemplate Template { get; set; } = null!;
+}
+```
+
+**File: `SLK.TryEdu.ModuleExamCore/Entities/EntityExamSubmission.cs`**
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using SLK.TryEdu.Abstract;
+
+namespace SLK.TryEdu.ModuleExamCore.Entities;
+
+[Table("exam_submissions")]
+public class EntityExamSubmission : EntityBase
+{
+    [Required]
+    public int ExamId { get; set; } // ⚠️ Foreign key → cần Exam tồn tại trước
+
+    [Required]
+    public int UserId { get; set; }
+
+    [Required, MaxLength(20)]
+    public string Status { get; set; } = "InProgress"; // InProgress, Submitted, Graded
+
+    public DateTime? StartedAt { get; set; }
+    public DateTime? SubmittedAt { get; set; }
+
+    [Column(TypeName = "decimal(5,2)")]
+    public decimal? Score { get; set; }
+
+    [Column(TypeName = "decimal(5,2)")]
+    public decimal? Percentage { get; set; }
+
+    [Column(TypeName = "jsonb")]
+    public string? Answers { get; set; } // All answers snapshot
+
+    [Column(TypeName = "jsonb")]
+    public string? AIGradingResult { get; set; } // AI grading results
+
+    [ForeignKey(nameof(ExamId))]
+    public virtual EntityExam Exam { get; set; } = null!;
+
+    [ForeignKey(nameof(UserId))]
+    public virtual EntityUser User { get; set; } = null!;
+}
+```
+
+**File: `SLK.TryEdu.ModuleExamCore/Entities/EntityExamAttemptQuestion.cs`**
+```csharp
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using SLK.TryEdu.Abstract;
+
+namespace SLK.TryEdu.ModuleExamCore.Entities;
+
+[Table("exam_attempt_questions")]
+public class EntityExamAttemptQuestion : EntityBase
+{
+    [Required]
+    public int ExamSubmissionId { get; set; } // ⚠️ Foreign key → cần ExamSubmission tồn tại trước
+
+    [Required]
+    public int ExamQuestionId { get; set; } // ⚠️ Foreign key → cần ExamQuestion tồn tại trước
+
+    public int? QuestionOptionId { get; set; } // nếu MCQ
+
+    [Column(TypeName = "jsonb")]
+    public string? UserAnswer { get; set; } // essay / fill-in answers
+
+    [Column(TypeName = "decimal(5,2)")]
+    public decimal? Score { get; set; }
+
+    public bool IsCorrect { get; set; }
+
+    [ForeignKey(nameof(ExamSubmissionId))]
+    public virtual EntityExamSubmission Submission { get; set; } = null!;
+
+    [ForeignKey(nameof(ExamQuestionId))]
+    public virtual EntityExamQuestion Question { get; set; } = null!;
+}
+```
+
+> **Giải thích thứ tự logic:**
+> 1. **EntityExamTemplate** (blueprint) - không có dependencies
+> 2. **EntityExamTemplateSection** - có FK `ExamTemplateId` → cần ExamTemplate trước
+> 3. **EntityExamQuestion** (question bank) - không có dependencies
+> 4. **EntityQuestionOption** - có FK `ExamQuestionId` → cần ExamQuestion trước
+> 5. **EntityExamTemplateQuestion** - có FK `ExamTemplateSectionId` và `ExamQuestionId` → cần cả 2 trước
+> 6. **EntityExam** - có FK `ExamTemplateId` → cần ExamTemplate trước
+> 7. **EntityExamSubmission** - có FK `ExamId` → cần Exam trước
+> 8. **EntityExamAttemptQuestion** - có FK `ExamSubmissionId` và `ExamQuestionId` → cần cả 2 trước
+
+##### 4. Tạo Entities cho Content System
 **File: `SLK.TryEdu.ModuleContentCore/Entities/EntityCourse.cs`**
 ```csharp
 using System;
@@ -1987,84 +2374,15 @@ public class EntityCourse : EntityBase
     [MaxLength(500)]
     public string Tags { get; set; } // JSON array or comma-separated
     
-    [Display(Name = "MongoDB Course ID")]
-    [MaxLength(50)]
-    public string MongoDbCourseId { get; set; } // Reference to MongoDB document
+    // Lưu ý: Tất cả dữ liệu course content được lưu trực tiếp trong PostgreSQL
+    // Có thể sử dụng JSONB column nếu cần lưu trữ dữ liệu linh hoạt
+    // [Display(Name = "Course Content JSON")]
+    // [Column(TypeName = "jsonb")]
+    // public string CourseContentJson { get; set; } // Optional: Nếu cần lưu detailed content
 }
 ```
 
-**File: `SLK.TryEdu.ModuleContentCore/Entities/EntityExam.cs`**
-```csharp
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using SLK.TryEdu.Abstract;
-
-namespace SLK.TryEdu.ModuleContentCore;
-
-[Table("EXAMS")]
-public class EntityExam : EntityBase
-{
-    [Display(Name = "Tiêu đề")]
-    [Required(ErrorMessage = "Tiêu đề không được để trống!")]
-    [MaxLength(500)]
-    public string Title { get; set; }
-    
-    [Display(Name = "Slug")]
-    [MaxLength(500)]
-    public string Slug { get; set; }
-    
-    [Display(Name = "Mô tả")]
-    [MaxLength(2000)]
-    public string Description { get; set; }
-    
-    [Display(Name = "Loại bài thi")]
-    [MaxLength(50)]
-    public string ExamType { get; set; } // IELTS, TOEFL, Practice Test
-    
-    [Display(Name = "Level")]
-    [MaxLength(50)]
-    public string Level { get; set; }
-    
-    [Display(Name = "Giá (coin)")]
-    [Required]
-    public int Price { get; set; }
-    
-    [Display(Name = "Thời lượng (phút)")]
-    [Required]
-    public int Duration { get; set; }
-    
-    [Display(Name = "Số lượng câu hỏi")]
-    public int? QuestionCount { get; set; }
-    
-    [Display(Name = "Điểm tối đa")]
-    [Column(TypeName = "decimal(5,2)")]
-    public decimal? MaxScore { get; set; }
-    
-    [Display(Name = "Passing Score")]
-    [Column(TypeName = "decimal(5,2)")]
-    public decimal? PassingScore { get; set; }
-    
-    [Display(Name = "Trạng thái")]
-    [MaxLength(20)]
-    public string Status { get; set; } = "Draft"; // Draft, Published, Archived
-    
-    [Display(Name = "Ngày xuất bản")]
-    public DateTime? PublishedAt { get; set; }
-    
-    [Display(Name = "MongoDB Exam ID")]
-    [MaxLength(50)]
-    public string MongoDbExamId { get; set; } // Reference to MongoDB document with questions
-    
-    [Display(Name = "Có chấm tự động")]
-    public bool HasAutoGrading { get; set; } = true;
-    
-    [Display(Name = "Cần chấm thủ công")]
-    public bool RequiresManualGrading { get; set; } = true;
-}
-```
-
-##### 4. Tạo Entities cho Learning System
+##### 5. Tạo Entities cho Learning System
 **File: `SLK.TryEdu.ModuleLearningCore/Entities/EntityEnrollment.cs`**
 ```csharp
 using System;
@@ -2102,9 +2420,9 @@ public class EntityEnrollment : EntityBase
     [Display(Name = "Lần truy cập cuối")]
     public DateTime? LastAccessedAt { get; set; }
     
-    [Display(Name = "MongoDB Progress ID")]
-    [MaxLength(50)]
-    public string MongoDbProgressId { get; set; } // Reference to detailed progress in MongoDB
+    // Lưu ý: Tất cả dữ liệu progress được lưu trực tiếp trong PostgreSQL
+    // Chi tiết progress được lưu trong bảng lesson_progress và video_progress
+    // Không cần MongoDB reference
     
     // Navigation properties
     [ForeignKey("UserId")]
@@ -2115,115 +2433,163 @@ public class EntityEnrollment : EntityBase
 }
 ```
 
-**File: `SLK.TryEdu.ModuleLearningCore/Entities/EntityExamSubmission.cs`**
+
+##### 6. Update EntityRegister cho từng Module (Các module đã có EntityRegister - chỉ cần thêm entities mới)
+
+> **✅ LƯU Ý:** Codebase **ĐÃ CÓ** pattern **IEntityRegister** - mỗi module đã có class `EntityRegister` riêng. Chỉ cần **UPDATE** các EntityRegister hiện có, **KHÔNG cần tạo mới**.
+
+**File: `SLK.TryEdu.ModuleCoin/Classes/EntityRegister.cs`** (Update existing - thêm entities mới)
 ```csharp
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using SLK.TryEdu.Abstract;
+using Microsoft.EntityFrameworkCore;
+using SLK.TryEdu.Base;
+using SLK.TryEdu.ModuleCoinCore;
 
-namespace SLK.TryEdu.ModuleLearningCore;
+namespace SLK.TryEdu.ModuleCoin;
 
-[Table("EXAM_SUBMISSIONS")]
-public class EntityExamSubmission : EntityBase
+public class EntityRegister : IEntityRegister
 {
-    [Display(Name = "User ID")]
-    [Required]
-    public int UserId { get; set; }
-    
-    [Display(Name = "Exam ID")]
-    [Required]
-    public int ExamId { get; set; }
-    
-    [Display(Name = "Ngày làm bài")]
-    public DateTime SubmittedAt { get; set; } = DateTime.UtcNow;
-    
-    [Display(Name = "Thời gian làm bài (giây)")]
-    public int TimeSpent { get; set; }
-    
-    [Display(Name = "Điểm số")]
-    [Column(TypeName = "decimal(5,2)")]
-    public decimal? Score { get; set; }
-    
-    [Display(Name = "Điểm AI")]
-    [Column(TypeName = "decimal(5,2)")]
-    public decimal? AIScore { get; set; }
-    
-    [Display(Name = "Điểm giáo viên")]
-    [Column(TypeName = "decimal(5,2)")]
-    public decimal? TeacherScore { get; set; }
-    
-    [Display(Name = "Trạng thái")]
-    [MaxLength(20)]
-    public string Status { get; set; } = "Submitted"; // Submitted, Grading, Graded
-    
-    [Display(Name = "Ngày chấm xong")]
-    public DateTime? GradedAt { get; set; }
-    
-    [Display(Name = "Giáo viên chấm")]
-    public int? GradedBy { get; set; }
-    
-    [Display(Name = "Feedback")]
-    [Column(TypeName = "text")]
-    public string Feedback { get; set; }
-    
-    [Display(Name = "MongoDB Submission ID")]
-    [MaxLength(50)]
-    public string MongoDbSubmissionId { get; set; } // Reference to detailed answers in MongoDB
-    
-    // Navigation properties
-    [ForeignKey("UserId")]
-    public virtual EntityUser User { get; set; }
-    
-    [ForeignKey("ExamId")]
-    public virtual EntityExam Exam { get; set; }
-    
-    [ForeignKey("GradedBy")]
-    public virtual EntityUser GradingTeacher { get; set; }
-}
-```
-
-##### 5. Tạo DbContext Registration
-**File: `SLK.TryEdu.Db/ModelBuilderExt.cs`** (Update existing)
-```csharp
-// Add to existing ModelBuilderExt.cs
-
-public static class EntityRegisterV2
-{
-    public static void RegisterV2Entities(this ModelBuilder builder)
+    public void RegisterEntities(ModelBuilder modelBuilder)
     {
         // Coin System
-        builder.Entity<EntityCoinTransaction>();
-        builder.Entity<EntityCoinBalance>();
-        
-        // Partner System
-        builder.Entity<EntityPartnerCenter>();
-        builder.Entity<EntityReferralCode>();
-        builder.Entity<EntityCommissionTransaction>();
-        
-        // Content System
-        builder.Entity<EntityCourse>();
-        builder.Entity<EntityExam>();
-        
-        // Learning System
-        builder.Entity<EntityEnrollment>();
-        builder.Entity<EntityExamSubmission>();
+        modelBuilder.Entity<EntityCoinTransaction>();
+        modelBuilder.Entity<EntityCoinBalance>();
         
         // Configure unique constraints
-        builder.Entity<EntityReferralCode>()
-            .HasIndex(r => r.Code)
-            .IsUnique();
-            
-        builder.Entity<EntityPartnerCenter>()
-            .HasIndex(p => p.Email)
-            .IsUnique();
-            
-        builder.Entity<EntityCoinBalance>()
+        modelBuilder.Entity<EntityCoinBalance>()
             .HasIndex(c => c.UserId)
             .IsUnique();
     }
+    
+    public void Seed(IDbContext db)
+    {
+        // Seed data nếu cần
+    }
 }
 ```
+
+**File: `SLK.TryEdu.ModulePartner/Classes/EntityRegister.cs`** (Update existing - thêm entities mới)
+```csharp
+using Microsoft.EntityFrameworkCore;
+using SLK.TryEdu.Base;
+using SLK.TryEdu.ModulePartnerCore;
+
+namespace SLK.TryEdu.ModulePartner;
+
+public class EntityRegister : IEntityRegister
+{
+    public void RegisterEntities(ModelBuilder modelBuilder)
+    {
+        // Partner System
+        modelBuilder.Entity<EntityPartnerCenter>();
+        modelBuilder.Entity<EntityReferralCode>();
+        modelBuilder.Entity<EntityCommissionTransaction>();
+        
+        // Configure unique constraints
+        modelBuilder.Entity<EntityReferralCode>()
+            .HasIndex(r => r.Code)
+            .IsUnique();
+            
+        modelBuilder.Entity<EntityPartnerCenter>()
+            .HasIndex(p => p.Email)
+            .IsUnique();
+    }
+    
+    public void Seed(IDbContext db)
+    {
+        // Seed data nếu cần
+    }
+}
+```
+
+**File: `SLK.TryEdu.ModuleExam/Classes/EntityRegister.cs`** (Update existing - thêm Exam entities)
+```csharp
+using Microsoft.EntityFrameworkCore;
+using SLK.TryEdu.Base;
+using SLK.TryEdu.ModuleExamCore.Entities;
+
+namespace SLK.TryEdu.ModuleExam;
+
+public class EntityRegister : IEntityRegister
+{
+    public void RegisterEntities(ModelBuilder modelBuilder)
+    {
+        // Exam System (PHẢI đăng ký theo thứ tự: Template → Exam)
+        modelBuilder.Entity<EntityExamTemplate>(); // 1. Template trước
+        modelBuilder.Entity<EntityExamTemplateSection>();
+        modelBuilder.Entity<EntityExamQuestion>();
+        modelBuilder.Entity<EntityQuestionOption>();
+        modelBuilder.Entity<EntityExamTemplateQuestion>();
+        modelBuilder.Entity<EntityExam>(); // 2. Exam sau (có foreign key ExamTemplateId)
+        modelBuilder.Entity<EntityExamSubmission>();
+        modelBuilder.Entity<EntityExamAttemptQuestion>();
+        
+        // Configure indexes và constraints
+        modelBuilder.Entity<EntityExam>()
+            .HasIndex(e => e.Slug)
+            .IsUnique();
+    }
+    
+    public void Seed(IDbContext db)
+    {
+        // Seed data nếu cần
+    }
+}
+```
+
+**File: `SLK.TryEdu.ModuleContent/Classes/EntityRegister.cs`** (Update existing)
+```csharp
+using Microsoft.EntityFrameworkCore;
+using SLK.TryEdu.Base;
+using SLK.TryEdu.ModuleContentCore;
+
+namespace SLK.TryEdu.ModuleContent;
+
+public class EntityRegister : IEntityRegister
+{
+    public void RegisterEntities(ModelBuilder modelBuilder)
+    {
+        // Content System
+        modelBuilder.Entity<EntityCourse>()
+            .HasAlternateKey(k => k.Guid);
+    }
+    
+    public void Seed(IDbContext db)
+    {
+        // Seed data nếu cần
+    }
+}
+```
+
+**File: `SLK.TryEdu.ModuleLearning/Classes/EntityRegister.cs`** (Update existing)
+```csharp
+using Microsoft.EntityFrameworkCore;
+using SLK.TryEdu.Base;
+using SLK.TryEdu.ModuleLearningCore;
+
+namespace SLK.TryEdu.ModuleLearning;
+
+public class EntityRegister : IEntityRegister
+{
+    public void RegisterEntities(ModelBuilder modelBuilder)
+    {
+        // Learning System
+        modelBuilder.Entity<EntityEnrollment>();
+    }
+    
+    public void Seed(IDbContext db)
+    {
+        // Seed data nếu cần
+    }
+}
+```
+
+> **✅ LƯU Ý:** 
+> - Các module **ĐÃ CÓ** EntityRegister class rồi (đã được đăng ký trong Program.cs/Startup.cs)
+> - Chỉ cần **UPDATE** method `RegisterEntities()` trong các EntityRegister hiện có
+> - **KHÔNG cần** tạo EntityRegisterV2 hay extension method mới
+> - **KHÔNG cần** đăng ký lại trong Program.cs (đã có rồi)
+
+> **📚 Xem thêm:** File `GIAI_THICH_ENTITY_REGISTER.md` để hiểu rõ tại sao cần register entities.
 
 **Phong (System Architect):**
 - [ ] Review tất cả entities
@@ -2271,9 +2637,29 @@ public static class SeedDataV2
 
 #### Ngày 8-10 (04-06/12): User Authentication Extension
 
+> **⚠️ LƯU Ý QUAN TRỌNG về Authentication:**
+> - **Admin & Partner:** Dùng chung **AspNetUsers** (SA_USER extends IdentityUser) - đã có trong DbPostgresContext
+> - **Student (Học viên):** Dùng **EntityUser** (bảng USERS) - đã có trong ModuleUserCore
+> - **Partner:** Được Admin cấp tài khoản từ AspNetUsers, sau đó xem giao diện riêng (Partner Portal)
+> - **Student:** Tự đăng ký tạo EntityUser, vào trang web để tham gia thi thử
+
 **Kiên (Backend Developer) - Priority Task:**
 
-##### 1. Extend User Entity với Roles
+##### 1. Student Authentication (EntityUser - đã có, chỉ cần update)
+**File: `SLK.TryEdu.ModuleUserCore/Entities/EntityUser.cs`** (ĐÃ CÓ - chỉ cần kiểm tra)
+
+> **Lưu ý:** EntityUser đã có sẵn trong codebase. Chỉ cần đảm bảo:
+> - EntityUser dùng cho Student (học viên)
+> - Student tự đăng ký tạo EntityUser
+> - Student login vào trang web để tham gia thi thử
+
+##### 2. Admin & Partner Authentication (AspNetUsers - đã có)
+> **Lưu ý:** AspNetUsers (SA_USER) đã có sẵn trong DbPostgresContext
+> - Admin: Dùng AspNetUsers với role "Admin"
+> - Partner: Được Admin cấp tài khoản AspNetUsers với role "Partner"
+> - Partner sau khi được cấp tài khoản sẽ login vào Partner Portal
+
+##### 3. EntityUserRole (Chỉ dùng cho EntityUser - Student)
 **File: `SLK.TryEdu.ModuleUserCore/Entities/EntityUserRole.cs`**
 ```csharp
 using System.ComponentModel.DataAnnotations;
@@ -2292,7 +2678,9 @@ public class EntityUserRole : EntityBase
     [Display(Name = "Role")]
     [Required]
     [MaxLength(50)]
-    public string Role { get; set; } // Student, Teacher, Admin, Accountant, Partner
+    public string Role { get; set; } // Student, Teacher (chỉ dùng cho EntityUser)
+    
+    // Lưu ý: Admin và Partner dùng AspNetUsers (SA_USER) với Identity roles, không dùng EntityUserRole
     
     [Display(Name = "Kích hoạt")]
     public bool IsActive { get; set; } = true;
@@ -2303,8 +2691,10 @@ public class EntityUserRole : EntityBase
 }
 ```
 
-##### 2. Authentication Service
-**File: `SLK.TryEdu.ModuleUser/Services/AuthService.cs`**
+##### 4. Student Authentication Service (EntityUser)
+**File: `SLK.TryEdu.ModuleUser/Services/AuthService.cs`** (Update existing hoặc tạo mới)
+
+> **Lưu ý:** Service này chỉ xử lý authentication cho **Student (EntityUser)**, không xử lý Admin/Partner
 ```csharp
 using System;
 using System.Threading.Tasks;
@@ -2353,17 +2743,17 @@ public class AuthService : MyServiceBase, IAuthService
             
             await _ctx.Repo<EntityUser>().Insert(user);
 
-            // Create role
+            // Create role (chỉ Student và Teacher dùng EntityUserRole)
             var userRole = new EntityUserRole
             {
                 UserId = user.Id,
-                Role = dto.Role ?? "Student", // Default to Student
+                Role = dto.Role ?? "Student", // Default to Student (chỉ Student/Teacher)
                 IsActive = true
             };
             
             await _ctx.Repo<EntityUserRole>().Insert(userRole);
 
-            // Create coin balance for students
+            // Create coin balance for students (tự động tạo khi đăng ký Student)
             if (userRole.Role == "Student")
             {
                 var coinBalance = new EntityCoinBalance
@@ -2516,18 +2906,126 @@ public class AuthResponseDto
 }
 ```
 
-**Cường (Frontend Developer):**
-- [ ] Tạo Login/Register UI components
+**Cường (Frontend Developer) - Student UI (EntityUser):**
+- [ ] Tạo **Student Login/Register UI** components (cho EntityUser - học viên)
 - [ ] Implement form validation
-- [ ] Integrate với AuthService API
+- [ ] Integrate với AuthService API (EntityUser)
 - [ ] Setup JWT token storage (localStorage)
+- [ ] **Student Dashboard** - trang chủ cho học viên vào thi thử
 
 ---
 
-#### Ngày 11-12 (07-08/12): Partner Registration Flow
+#### Ngày 11-12 (07-08/12): Partner Management (Admin tạo tài khoản cho Partner)
+
+> **⚠️ LƯU Ý:** Partner **KHÔNG tự đăng ký**. Flow như sau:
+> 1. **Admin** tạo tài khoản **AspNetUsers (SA_USER)** cho Partner với role "Partner"
+> 2. **Admin** tạo **EntityPartnerCenter** record
+> 3. **Partner** nhận thông tin đăng nhập từ Admin
+> 4. **Partner** login vào **Partner Portal** (giao diện riêng) bằng AspNetUsers
 
 **Kiên (Backend Developer):**
 
+##### 1. Admin Service - Tạo tài khoản Partner
+**File: `SLK.TryEdu.ModuleManagement/Services/AdminPartnerService.cs`** (Tạo mới)
+```csharp
+using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
+using SLK.TryEdu.Abstract;
+using SLK.TryEdu.Base;
+using SLK.TryEdu.ModulePartnerCore;
+using Microsoft.EntityFrameworkCore;
+
+namespace SLK.TryEdu.ModuleManagement;
+
+public class AdminPartnerService : MyServiceBase
+{
+    private readonly UserManager<SA_USER> _userManager;
+    private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly ILogger<AdminPartnerService> _log;
+
+    public AdminPartnerService(
+        IMyContext ctx, 
+        UserManager<SA_USER> userManager,
+        RoleManager<IdentityRole> roleManager,
+        ILogger<AdminPartnerService> logger) : base(ctx)
+    {
+        _userManager = userManager;
+        _roleManager = roleManager;
+        _log = logger;
+    }
+
+    public async Task<ResultOf<CreatePartnerAccountResponse>> CreatePartnerAccount(CreatePartnerAccountDto dto)
+    {
+        try
+        {
+            // 1. Tạo tài khoản AspNetUsers (SA_USER) cho Partner
+            var partnerUser = new SA_USER
+            {
+                UserName = dto.Email,
+                Email = dto.Email,
+                FirstName = dto.ContactPerson,
+                LastName = "",
+                Active = true,
+                EmailConfirmed = true
+            };
+
+            var createUserResult = await _userManager.CreateAsync(partnerUser, dto.Password);
+            if (!createUserResult.Succeeded)
+            {
+                return ResultOf<CreatePartnerAccountResponse>.Error(
+                    string.Join(", ", createUserResult.Errors.Select(e => e.Description))
+                );
+            }
+
+            // 2. Gán role "Partner" cho user
+            if (!await _roleManager.RoleExistsAsync("Partner"))
+            {
+                await _roleManager.CreateAsync(new IdentityRole("Partner"));
+            }
+            await _userManager.AddToRoleAsync(partnerUser, "Partner");
+
+            // 3. Tạo EntityPartnerCenter
+            var partnerCenter = new EntityPartnerCenter
+            {
+                Name = dto.Name,
+                ContactPerson = dto.ContactPerson,
+                Email = dto.Email,
+                Phone = dto.Phone,
+                Address = dto.Address,
+                LogoUrl = dto.LogoUrl,
+                BusinessLicenseUrl = dto.BusinessLicenseUrl,
+                Description = dto.Description,
+                CommissionRate = dto.CommissionRate ?? 5.00M, // Default Bronze
+                Tier = dto.Tier ?? "Bronze",
+                Status = "Active",
+                AspNetUserId = partnerUser.Id // Link với AspNetUsers
+            };
+            
+            await _ctx.Repo<EntityPartnerCenter>().Insert(partnerCenter);
+
+            // 4. Gửi email thông báo cho Partner
+            // TODO: Implement email service
+
+            return ResultOf<CreatePartnerAccountResponse>.Ok(new CreatePartnerAccountResponse
+            {
+                PartnerId = partnerCenter.Id,
+                AspNetUserId = partnerUser.Id,
+                Email = partnerUser.Email,
+                Message = "Tài khoản Partner đã được tạo thành công!"
+            });
+        }
+        catch (Exception ex)
+        {
+            _log.LogError($"Create partner account error: {ex.Message}");
+            return ResultOf<CreatePartnerAccountResponse>.Error("Đã có lỗi xảy ra!");
+        }
+    }
+}
+```
+
+##### 2. Partner Service (Update existing)
 **File: `SLK.TryEdu.ModulePartner/Services/PartnerService.cs`**
 ```csharp
 using System;
@@ -2549,45 +3047,36 @@ public class PartnerService : MyServiceBase, IPartnerService
         _log = logger;
     }
 
-    public async Task<Result> RegisterPartner(PartnerRegistrationDto dto)
+    // Lưu ý: Partner KHÔNG tự đăng ký. Admin tạo tài khoản cho Partner.
+    // Service này chỉ dùng để Partner xem thông tin của mình sau khi được Admin cấp tài khoản.
+    
+    public async Task<ResultOf<PartnerInfoDto>> GetPartnerInfo(string aspNetUserId)
     {
         try
         {
-            // Check if email exists
-            var existingPartner = await _ctx.Repo<EntityPartnerCenter>()
-                .Query(p => p.Email == dto.Email)
+            var partner = await _ctx.Repo<EntityPartnerCenter>()
+                .Query(p => p.AspNetUserId == aspNetUserId)
                 .FirstOrDefaultAsync();
                 
-            if (existingPartner != null)
-                return Result.Error("Email đã được sử dụng!");
+            if (partner == null)
+                return ResultOf<PartnerInfoDto>.Error("Không tìm thấy thông tin Partner!");
 
-            // Create partner center
-            var partner = new EntityPartnerCenter
+            return ResultOf<PartnerInfoDto>.Ok(new PartnerInfoDto
             {
-                Name = dto.Name,
-                ContactPerson = dto.ContactPerson,
-                Email = dto.Email,
-                Phone = dto.Phone,
-                Address = dto.Address,
-                LogoUrl = dto.LogoUrl,
-                BusinessLicenseUrl = dto.BusinessLicenseUrl,
-                Description = dto.Description,
-                CommissionRate = 5.00M, // Default Bronze
-                Tier = "Bronze",
-                Status = "Pending"
-            };
-            
-            await _ctx.Repo<EntityPartnerCenter>().Insert(partner);
-
-            // TODO: Send email notification to admin
-            // TODO: Send confirmation email to partner
-
-            return Result.Ok("Đăng ký thành công! Vui lòng chờ admin phê duyệt.");
+                Id = partner.Id,
+                Name = partner.Name,
+                ContactPerson = partner.ContactPerson,
+                Email = partner.Email,
+                Phone = partner.Phone,
+                CommissionRate = partner.CommissionRate,
+                Tier = partner.Tier,
+                Status = partner.Status
+            });
         }
         catch (Exception ex)
         {
-            _log.LogError($"Register partner error: {ex.Message}");
-            return Result.Error("Đã có lỗi xảy ra!");
+            _log.LogError($"Get partner info error: {ex.Message}");
+            return ResultOf<PartnerInfoDto>.Error("Đã có lỗi xảy ra!");
         }
     }
 
@@ -2646,18 +3135,20 @@ public class PartnerService : MyServiceBase, IPartnerService
 ```
 
 **Cường (Frontend Developer):**
-- [ ] Tạo Partner Registration form
+- [ ] **Admin UI:** Tạo form Admin tạo tài khoản Partner (AspNetUsers + EntityPartnerCenter)
 - [ ] Implement file upload (logo, business license)
-- [ ] Tạo Admin approval interface
-- [ ] Partner dashboard layout
+- [ ] **Partner Portal UI:** Giao diện riêng cho Partner login (dùng AspNetUsers authentication)
+- [ ] Partner dashboard layout (sau khi Partner login vào Partner Portal)
 
 ---
 
 #### Ngày 13-14 (09-10/12): Testing & Bug Fixes
 
 **Toàn bộ team:**
-- [ ] Test authentication flows
-- [ ] Test partner registration
+- [ ] Test **Student authentication** (EntityUser - học viên đăng ký/đăng nhập)
+- [ ] Test **Admin authentication** (AspNetUsers - admin login)
+- [ ] Test **Partner authentication** (AspNetUsers - Partner login vào Partner Portal)
+- [ ] Test **Admin tạo tài khoản Partner** flow
 - [ ] Fix bugs
 - [ ] Code review
 - [ ] Update documentation
@@ -3300,7 +3791,11 @@ public class CourseService : MyServiceBase, ICourseService
             
             await _ctx.Repo<EntityCourse>().Insert(course);
 
-            // TODO: Create MongoDB document for detailed course content
+            // Lưu ý: Tất cả course content được lưu trong PostgreSQL
+            // Detailed content (lessons, videos) được lưu trong các bảng:
+            // - course_lessons
+            // - lesson_contents
+            // Không cần tạo MongoDB document
 
             var response = new CourseDto
             {
@@ -3391,19 +3886,20 @@ public class CourseService : MyServiceBase, ICourseService
 
 **Kiên (Backend Developer):**
 
-**File: `SLK.TryEdu.ModuleContent/Services/ExamService.cs`**
+> **⚠️ LƯU Ý:** ExamService được đặt trong ModuleExam, không phải ModuleContent. ModuleExam là module riêng biệt để quản lý Exam System.
+
+**File: `SLK.TryEdu.ModuleExam/Services/ExamService.cs`**
 ```csharp
 using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using SLK.TryEdu.Abstract;
 using SLK.TryEdu.Base;
-using SLK.TryEdu.ModuleContentCore;
+using SLK.TryEdu.ModuleExamCore;
 using SLK.TryEdu.ModuleCoinCore;
-using SLK.TryEdu.ModuleLearningCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace SLK.TryEdu.ModuleContent;
+namespace SLK.TryEdu.ModuleExam;
 
 public class ExamService : MyServiceBase, IExamService
 {
@@ -3599,17 +4095,521 @@ public class ExamService : MyServiceBase, IExamService
 
 ---
 
-## 📊 PHASE 2: OFFICIAL RELEASE (30/12 - 26/01) - 28 NGÀY
+## 📊 PHASE 2: OFFICIAL RELEASE (30/12 - 26/01) - 28 NGÀY LÀM VIỆC
+
+> **Lưu ý:** Timeline chỉ tính ngày làm việc (Thứ 2 - Thứ 6), không tính Thứ 7 và Chủ Nhật
 
 ### Objectives
-- Advanced features implementation
+- Advanced features implementation (US5.2, US6.2, US6.3, US7.3, US7.4)
 - AI integration
 - Mobile app (Flutter)
 - Performance optimization
 - Security hardening
 - Production deployment
 
-*(Chi tiết sẽ được cập nhật sau DEMO)*
+---
+
+### 📅 **TUẦN 1: VOUCHER & SUPPORT SYSTEM (30/12 - 05/01) - 5 NGÀY**
+
+#### **Ngày 34-35 (30-31/12): Voucher Management System (US5.2)**
+
+**Kiên (Backend Developer) - Voucher Management (US5.2):**
+- [ ] Tạo VoucherService.cs
+- [ ] Implement CreateVoucher method (tạo voucher code)
+- [ ] Implement GetVouchers method (với filters: active, expired, by category)
+- [ ] Implement UpdateVoucher method
+- [ ] Implement DeleteVoucher method
+- [ ] Implement ValidateVoucher method (kiểm tra code, expiry, usage limit)
+- [ ] Implement ApplyVoucher method (áp dụng voucher khi mua)
+- [ ] Implement GetVoucherUsage method (thống kê sử dụng)
+- [ ] Implement GetVoucherAnalytics method (conversion rate, ROI)
+- [ ] Tạo VoucherDto.cs, CreateVoucherDto.cs, VoucherUsageDto.cs
+
+**Cường (Frontend Developer) - Voucher Management UI (US5.2):**
+- [ ] **Admin Voucher Management Page:**
+  - [ ] Voucher list với filters (active, expired, all)
+  - [ ] Create voucher form:
+    - [ ] Voucher code input (auto-generate hoặc manual)
+    - [ ] Discount type selection (Percentage, FixedAmount)
+    - [ ] Discount value input
+    - [ ] Minimum purchase amount
+    - [ ] Max usage limit
+    - [ ] Start date & expiry date pickers
+    - [ ] Description field
+    - [ ] IsActive toggle
+  - [ ] Edit voucher dialog
+  - [ ] Delete voucher confirmation
+  - [ ] Voucher usage statistics display
+  - [ ] Voucher analytics dashboard (conversion rate, ROI)
+  - [ ] Export voucher usage report
+
+- [ ] **Student Apply Voucher UI:**
+  - [ ] Voucher code input field (trong purchase flow)
+  - [ ] Validate voucher real-time
+  - [ ] Display discount amount
+  - [ ] Apply voucher button
+  - [ ] Remove voucher button
+  - [ ] Voucher applied confirmation
+
+---
+
+#### **Ngày 36-37 (02-03/01): Support Ticket Management (US6.2)**
+
+**Kiên (Backend Developer) - Support Ticket Management (US6.2):**
+- [ ] Tạo SupportTicketService.cs
+- [ ] Implement CreateTicket method (Student tạo ticket)
+- [ ] Implement GetTickets method (với filters: status, priority, assignedTo)
+- [ ] Implement GetTicketById method
+- [ ] Implement AssignTicket method (assign cho support staff)
+- [ ] Implement UpdateTicketStatus method (Open, InProgress, Resolved, Closed)
+- [ ] Implement UpdateTicketPriority method (Low, Medium, High, Urgent)
+- [ ] Implement GetMyTickets method (cho Student)
+- [ ] Implement GetAssignedTickets method (cho Support staff)
+- [ ] Tạo SupportTicketMessageService.cs
+- [ ] Implement AddMessage method (thêm message vào ticket)
+- [ ] Implement GetTicketMessages method
+- [ ] Implement UploadAttachment method (file đính kèm)
+- [ ] Tạo SupportTicketDto.cs, CreateTicketDto.cs, TicketMessageDto.cs
+
+**Cường (Frontend Developer) - Support Ticket Management UI (US6.2):**
+- [ ] **Student Create Ticket Page:**
+  - [ ] Ticket creation form:
+    - [ ] Subject input
+    - [ ] Category dropdown
+    - [ ] Priority selection
+    - [ ] Description textarea
+    - [ ] File upload (attachments)
+  - [ ] My tickets list page
+  - [ ] Ticket detail page với messages
+  - [ ] Add message form
+  - [ ] Upload attachment button
+  - [ ] Ticket status display
+
+- [ ] **Admin Support Management Page:**
+  - [ ] All tickets list với filters:
+    - [ ] Filter by status (Open, InProgress, Resolved, Closed)
+    - [ ] Filter by priority (Low, Medium, High, Urgent)
+    - [ ] Filter by category
+    - [ ] Filter by assigned staff
+    - [ ] Search by subject/user
+  - [ ] Ticket detail view:
+    - [ ] Ticket information display
+    - [ ] Messages thread
+    - [ ] Assign ticket dropdown
+    - [ ] Change status buttons
+    - [ ] Change priority dropdown
+    - [ ] Add response form
+    - [ ] Upload attachment
+  - [ ] Support staff dashboard:
+    - [ ] Assigned tickets count
+    - [ ] Pending tickets
+    - [ ] Resolved tickets today
+  - [ ] Support analytics:
+    - [ ] Average response time
+    - [ ] Tickets by category
+    - [ ] Resolution rate
+    - [ ] Support staff performance
+
+---
+
+#### **Ngày 38 (04/01): Integration & Testing**
+
+**Toàn bộ team:**
+- [ ] Integration testing: Voucher system
+- [ ] Integration testing: Support ticket system
+- [ ] Bug fixes
+- [ ] Code review
+
+---
+
+### 📅 **TUẦN 2: COMMUNITY SYSTEM (06/01 - 12/01) - 5 NGÀY**
+
+#### **Ngày 39-41 (06-08/01): Forum System (US6.3)**
+
+**Kiên (Backend Developer) - Forum System (US6.3):**
+- [ ] Tạo ForumService.cs
+- [ ] Implement GetForumCategories method
+- [ ] Implement CreateCategory method (Admin)
+- [ ] Implement GetPosts method (với filters: category, status, date)
+- [ ] Implement GetPostById method
+- [ ] Implement CreatePost method (Student tạo post)
+- [ ] Implement UpdatePost method
+- [ ] Implement DeletePost method
+- [ ] Implement LikePost method
+- [ ] Implement GetReplies method (lấy replies của post)
+- [ ] Implement CreateReply method (Student reply)
+- [ ] Implement UpdateReply method
+- [ ] Implement DeleteReply method
+- [ ] Implement LikeReply method
+- [ ] Implement SearchPosts method (search trong forum)
+- [ ] Tạo ForumPostDto.cs, CreatePostDto.cs, ForumReplyDto.cs
+
+**Cường (Frontend Developer) - Forum UI (US6.3):**
+- [ ] **Forum Home Page:**
+  - [ ] Forum categories list
+  - [ ] Recent posts display
+  - [ ] Popular posts section
+  - [ ] Search posts input
+  - [ ] Create new post button
+
+- [ ] **Forum Category Page:**
+  - [ ] Posts list trong category
+  - [ ] Filter posts (latest, popular, unanswered)
+  - [ ] Pagination
+  - [ ] Create post button
+
+- [ ] **Post Detail Page:**
+  - [ ] Post content display
+  - [ ] Post author info
+  - [ ] Like button & count
+  - [ ] Replies list
+  - [ ] Reply form
+  - [ ] Edit/Delete post buttons (nếu là author)
+  - [ ] Report post button
+
+- [ ] **Create Post Page:**
+  - [ ] Category selection
+  - [ ] Title input
+  - [ ] Content rich text editor
+  - [ ] Tags input
+  - [ ] Preview button
+  - [ ] Submit button
+
+- [ ] **Admin Forum Management:**
+  - [ ] Manage categories
+  - [ ] Moderate posts (approve/reject/delete)
+  - [ ] View reported posts
+  - [ ] Forum analytics
+
+---
+
+#### **Ngày 42-43 (09-10/01): Study Groups System (US6.3)**
+
+**Kiên (Backend Developer) - Study Groups System (US6.3):**
+- [ ] Tạo StudyGroupService.cs
+- [ ] Implement GetStudyGroups method (với filters)
+- [ ] Implement GetStudyGroupById method
+- [ ] Implement CreateStudyGroup method (Student tạo group)
+- [ ] Implement UpdateStudyGroup method
+- [ ] Implement DeleteStudyGroup method
+- [ ] Implement JoinGroup method (Student join group)
+- [ ] Implement LeaveGroup method
+- [ ] Implement GetGroupMembers method
+- [ ] Implement InviteMember method (invite bạn bè)
+- [ ] Implement RemoveMember method (group owner)
+- [ ] Implement GetMyGroups method (groups của user)
+- [ ] Implement SearchGroups method
+- [ ] Tạo StudyGroupDto.cs, CreateGroupDto.cs, GroupMemberDto.cs
+
+**Cường (Frontend Developer) - Study Groups UI (US6.3):**
+- [ ] **Study Groups List Page:**
+  - [ ] Groups grid/list view
+  - [ ] Filter groups (by course, by level, open/closed)
+  - [ ] Search groups
+  - [ ] Create group button
+  - [ ] My groups section
+
+- [ ] **Study Group Detail Page:**
+  - [ ] Group information display
+  - [ ] Members list
+  - [ ] Join/Leave group button
+  - [ ] Invite members button
+  - [ ] Group settings (nếu là owner)
+  - [ ] Group activities feed
+
+- [ ] **Create Study Group Page:**
+  - [ ] Group name input
+  - [ ] Description textarea
+  - [ ] Course selection (optional)
+  - [ ] Max members input
+  - [ ] Privacy settings (Public/Private)
+  - [ ] Create button
+
+- [ ] **My Study Groups Page:**
+  - [ ] Groups I own
+  - [ ] Groups I joined
+  - [ ] Group activities
+  - [ ] Leave group button
+
+---
+
+#### **Ngày 44 (11/01): Integration & Testing**
+
+**Toàn bộ team:**
+- [ ] Integration testing: Forum system
+- [ ] Integration testing: Study groups system
+- [ ] Bug fixes
+- [ ] Code review
+
+---
+
+### 📅 **TUẦN 3: SECURITY & COMPLIANCE (13/01 - 19/01) - 5 NGÀY**
+
+#### **Ngày 45-47 (13-15/01): Security Audit System (US7.3)**
+
+**Kiên (Backend Developer) - Security Audit System (US7.3):**
+- [ ] Tạo SecurityAuditService.cs
+- [ ] Implement LogSecurityEvent method (tự động log events)
+- [ ] Implement GetAuditLogs method (với filters: eventType, userId, dateRange)
+- [ ] Implement GetSecurityEvents method (security incidents)
+- [ ] Implement GetLoginAttempts method (failed/successful logins)
+- [ ] Implement GetSecurityStatistics method
+- [ ] Implement GetSuspiciousActivities method (fraud detection)
+- [ ] Implement ExportAuditLogs method (export CSV/Excel)
+- [ ] Tạo SecurityAuditLogDto.cs, SecurityEventDto.cs, LoginAttemptDto.cs
+- [ ] Tích hợp audit logging vào các services quan trọng:
+  - [ ] User authentication events
+  - [ ] Permission changes
+  - [ ] Data access events
+  - [ ] Coin transactions
+  - [ ] Admin actions
+
+**Cường (Frontend Developer) - Security Audit UI (US7.3):**
+- [ ] **Security Audit Logs Page:**
+  - [ ] Audit logs table với filters:
+    - [ ] Filter by event type
+    - [ ] Filter by user
+    - [ ] Filter by date range
+    - [ ] Filter by severity
+    - [ ] Search by IP address
+  - [ ] Log detail view:
+    - [ ] Event details
+    - [ ] User information
+    - [ ] IP address & User Agent
+    - [ ] Request path & method
+    - [ ] Status code
+  - [ ] Export logs button (CSV/Excel)
+  - [ ] Real-time log updates
+
+- [ ] **Security Events Dashboard:**
+  - [ ] Security events summary cards
+  - [ ] Failed login attempts chart
+  - [ ] Suspicious activities alerts
+  - [ ] Security events timeline
+  - [ ] Top security events by type
+
+- [ ] **Login Attempts Page:**
+  - [ ] Login attempts table
+  - [ ] Filter by status (Success, Failed, Blocked)
+  - [ ] Filter by email/IP
+  - [ ] View attempt details
+  - [ ] Block IP address button (nếu cần)
+
+---
+
+#### **Ngày 48-49 (16-17/01): Compliance Management (US7.4)**
+
+**Kiên (Backend Developer) - Compliance Management (US7.4):**
+- [ ] Tạo ComplianceService.cs
+- [ ] Implement CreateComplianceRecord method
+- [ ] Implement GetComplianceRecords method (với filters)
+- [ ] Implement UpdateComplianceStatus method
+- [ ] Implement VerifyCompliance method
+- [ ] Implement GetComplianceStatistics method
+- [ ] Tạo DataPrivacyService.cs
+- [ ] Implement CreatePrivacyRequest method (GDPR requests)
+- [ ] Implement GetPrivacyRequests method
+- [ ] Implement ProcessPrivacyRequest method (export data, delete data)
+- [ ] Implement ExportUserData method (GDPR data export)
+- [ ] Implement DeleteUserData method (GDPR right to be forgotten)
+- [ ] Tạo ComplianceRecordDto.cs, PrivacyRequestDto.cs
+
+**Cường (Frontend Developer) - Compliance Management UI (US7.4):**
+- [ ] **Compliance Records Page:**
+  - [ ] Compliance records list với filters:
+    - [ ] Filter by compliance type (GDPR, DataRetention, SecurityPolicy)
+    - [ ] Filter by status (Pending, Completed, Failed)
+    - [ ] Filter by date range
+  - [ ] Create compliance record form
+  - [ ] Record detail view
+  - [ ] Verify compliance button
+  - [ ] Compliance statistics dashboard
+
+- [ ] **Data Privacy Requests Page:**
+  - [ ] Privacy requests list
+  - [ ] Filter by request type (DataExport, DataDeletion, ConsentChange)
+  - [ ] Filter by status
+  - [ ] Request detail view:
+    - [ ] User information
+    - [ ] Request type & description
+    - [ ] Process request button
+    - [ ] Download exported data link (nếu đã export)
+  - [ ] Process request dialog:
+    - [ ] Verify user identity
+    - [ ] Export data / Delete data
+    - [ ] Rejection reason (nếu reject)
+
+---
+
+#### **Ngày 50 (18/01): Integration & Testing**
+
+**Toàn bộ team:**
+- [ ] Integration testing: Security audit system
+- [ ] Integration testing: Compliance management
+- [ ] Security audit review
+- [ ] Bug fixes
+- [ ] Code review
+
+---
+
+### 📅 **TUẦN 4: FINAL TESTING & OPTIMIZATION (20/01 - 26/01) - 5 NGÀY**
+
+#### **Ngày 51-52 (20-21/01): Performance Optimization**
+
+**Kiên (Backend Developer):**
+- [ ] Database query optimization
+- [ ] Add caching cho frequently accessed data
+- [ ] API response time optimization
+- [ ] Load testing
+- [ ] Performance monitoring setup
+
+**Cường (Frontend Developer):**
+- [ ] UI performance optimization
+- [ ] Lazy loading components
+- [ ] Image optimization
+- [ ] Bundle size optimization
+- [ ] Mobile responsive improvements
+
+**Phong (System Architect):**
+- [ ] Architecture review
+- [ ] Performance bottlenecks identification
+- [ ] Scalability assessment
+
+---
+
+#### **Ngày 53-54 (22-23/01): Security Hardening & Final Testing**
+
+**Kiên (Backend Developer):**
+- [ ] Security audit final review
+- [ ] Penetration testing
+- [ ] SQL injection prevention review
+- [ ] XSS prevention review
+- [ ] API rate limiting implementation
+- [ ] Security headers configuration
+
+**Cường (Frontend Developer):**
+- [ ] XSS prevention review
+- [ ] CSRF protection
+- [ ] Input validation review
+- [ ] Security testing
+
+**Toàn bộ team:**
+- [ ] End-to-end testing tất cả features
+- [ ] Regression testing
+- [ ] User acceptance testing
+- [ ] Bug fixes
+
+---
+
+#### **Ngày 55 (24/01): Production Preparation**
+
+**Toàn bộ team:**
+- [ ] Production environment setup
+- [ ] Database migration scripts preparation
+- [ ] Deployment scripts
+- [ ] Monitoring setup
+- [ ] Backup & recovery procedures
+- [ ] Documentation finalization
+
+---
+
+#### **Ngày 56 (25/01): Final Review & Deployment**
+
+**Toàn bộ team:**
+- [ ] Final code review
+- [ ] Production deployment
+- [ ] Smoke testing on production
+- [ ] Performance monitoring
+- [ ] Security monitoring
+
+---
+
+#### **Ngày 57 (26/01): OFFICIAL RELEASE 🎉**
+
+**Morning:**
+- [ ] Final system check
+- [ ] Production monitoring
+- [ ] Support team briefing
+
+**Release:**
+- [ ] Official launch announcement
+- [ ] Monitor system performance
+- [ ] Handle any issues
+- [ ] Collect user feedback
+
+**Afternoon:**
+- [ ] Post-launch review
+- [ ] Team celebration 🎉
+- [ ] Planning for next phase
+
+---
+
+## ✅ PHASE 2 - ACCEPTANCE CRITERIA
+
+### Must Have (P0)
+- [ ] **US5.2:** Voucher management system (Backend + Frontend)
+- [ ] **US6.2:** Support ticket management (Backend + Frontend)
+- [ ] **US6.3:** Forum & Study Groups (Backend + Frontend)
+- [ ] **US7.3:** Security audit & monitoring (Backend + Frontend)
+- [ ] **US7.4:** Compliance management (Backend + Frontend)
+- [ ] All features tested và working
+- [ ] Performance requirements met
+- [ ] Security requirements met
+- [ ] Production deployment successful
+
+---
+
+## 📊 PHASE 2 - FEATURE SUMMARY
+
+### New Features Added:
+1. **Voucher Management (US5.2)**
+   - Create, edit, delete vouchers
+   - Apply vouchers when purchasing
+   - Voucher usage analytics
+
+2. **Support Ticket Management (US6.2)**
+   - Create tickets (Student)
+   - Manage tickets (Admin/Support)
+   - Ticket messaging system
+   - Support analytics
+
+3. **Community Features (US6.3)**
+   - Forum system (posts, replies, likes)
+   - Study groups (create, join, manage)
+   - Community moderation
+
+4. **Security Audit (US7.3)**
+   - Security event logging
+   - Audit log viewing
+   - Login attempts tracking
+   - Security monitoring dashboard
+
+5. **Compliance Management (US7.4)**
+   - Compliance records management
+   - GDPR data privacy requests
+   - Data export/deletion
+   - Compliance verification
+
+---
+
+## 🎯 PHASE 2 - SUCCESS METRICS
+
+### Technical Metrics
+- [ ] All Phase 2 features working
+- [ ] API response time < 300ms
+- [ ] Zero critical security vulnerabilities
+- [ ] 99.9% uptime
+- [ ] All tests passing
+
+### Business Metrics
+- [ ] All 38 User Stories implemented
+- [ ] Production deployment successful
+- [ ] User feedback positive
+- [ ] System ready for scale
+
+---
+
+*(Chi tiết đã được cập nhật đầy đủ)*
 
 ---
 
@@ -3681,6 +4681,13 @@ public class ExamService : MyServiceBase, IExamService
 - [ ] Bank reconciliation (basic) (US5.1)
 - [ ] FAQ search functionality (US6.1)
 
+### Phase 2 Features (OFFICIAL - 30/12 - 26/01)
+- [ ] **US5.2:** Voucher management system (Backend + Frontend)
+- [ ] **US6.2:** Support ticket management (Backend + Frontend)
+- [ ] **US6.3:** Forum & Study Groups (Backend + Frontend)
+- [ ] **US7.3:** Security audit & monitoring (Backend + Frontend)
+- [ ] **US7.4:** Compliance management (Backend + Frontend)
+
 ### Nice to Have (P2)
 - [ ] Charts và visualizations
 - [ ] Mobile responsive (basic)
@@ -3712,10 +4719,14 @@ public class ExamService : MyServiceBase, IExamService
 - **Probability**: Medium
 - **Mitigation**: Start with mock payment, integrate real gateway in Phase 2
 
-#### Risk 2: MongoDB Setup Complexity
+#### Risk 2: Database Performance với Large Data
 - **Impact**: Medium
-- **Probability**: Low
-- **Mitigation**: Use PostgreSQL JSONB as fallback
+- **Probability**: Medium
+- **Mitigation**: 
+  - Sử dụng PostgreSQL JSONB cho flexible data
+  - Implement proper indexing
+  - Consider partitioning cho large tables
+  - Use caching (Redis) cho frequently accessed data
 
 #### Risk 3: Performance Issues
 - **Impact**: Medium
@@ -3879,7 +4890,25 @@ Lộ trình này được thiết kế để team có thể:
 
 ---
 
-*Document Version: 1.0*  
-*Last Updated: 27/11/2025*  
+*Document Version: 2.0*  
+*Last Updated: Hôm nay*  
 *Next Review: 10/12/2025*
+
+---
+
+## ✅ **CẬP NHẬT MỚI NHẤT**
+
+### **Đã bổ sung đầy đủ Phase 2 (OFFICIAL):**
+- ✅ **US5.2:** Voucher Management System (Ngày 34-35)
+- ✅ **US6.2:** Support Ticket Management (Ngày 36-37)
+- ✅ **US6.3:** Forum & Study Groups (Ngày 39-43)
+- ✅ **US7.3:** Security Audit System (Ngày 45-47)
+- ✅ **US7.4:** Compliance Management (Ngày 48-49)
+
+### **Tổng kết:**
+- **DEMO Phase:** 33/38 User Stories (86.8%)
+- **OFFICIAL Phase:** 5/38 User Stories (13.2%)
+- **Tổng cộng:** 38/38 User Stories (100%) ✅
+
+**Lộ trình đã HOÀN THIỆN và ĐỒNG NHẤT 100% với tài liệu phân tích hệ thống.**
 

@@ -2,17 +2,17 @@
 
 namespace SLK.TryEdu.ModulePartnerCore;  
  
-[Feature(Name = "ModuleCoin", TextEn = "", TextVi = "MODULE TIỀN TỆ")]
+[Feature(Name = "ModulePartner", TextEn = "", TextVi = "MODULE ĐỐI TÁC")]
 public enum PERMISSION
 {
-    [Function(TextEn = "", TextVi = "Xem danh sách tiền")]
-    COIN_VIEW,
+    [Function(TextEn = "", TextVi = "Xem danh đối tác")]
+    PARTNER_VIEW,
 
  
-    [Function(TextEn = "", TextVi = "Tạo mới/ hiệu chỉnh tiền")]
-    COIN_CREATE_UPDATE,
+    [Function(TextEn = "", TextVi = "Tạo mới/ hiệu đối tác")]
+    PARTNER_CREATE_UPDATE,
 
-    [Function(TextEn = "", TextVi = "Kích hoạt tài tiền")]
-    COIN_ACTIVE_ACCOUNT,
+    [Function(TextEn = "", TextVi = "Kích hoạt đối tác")]
+    PARTNER_ACTIVE_ACCOUNT, 
 
 }

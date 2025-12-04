@@ -35,7 +35,6 @@ if (!builder.Environment.IsDevelopment())
     //    options.Release = AutoClass.FullVersion + " " + AutoClass.BuildName;
     //});
 }
-
 var dbType = configs.GetValue<string>("AppSettings:DbType");
 switch (dbType)
 {
@@ -365,8 +364,9 @@ System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = new System.Glob
 //app.MapBlazorHub(options =>
 //{
 //    options.WebSockets.CloseTimeout = new TimeSpan(1, 1, 1);
-//options.LongPolling.PollTimeout = new TimeSpan(1, 0, 0);
+//    options.LongPolling.PollTimeout = new TimeSpan(1, 0, 0);
 //});
+
 app.MapBlazorHub();
 app.MapRazorPages();
 app.MapControllers();

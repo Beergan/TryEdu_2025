@@ -1,17 +1,18 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Crypto.Generators;
 using RestEase;
 using SLK.TryEdu.Abstract;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
 using SLK.TryEdu.Base;
-using System.Data;
-using Syncfusion.XlsIO;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
 using SLK.TryEdu.ModuleUserCore;
+using Syncfusion.XlsIO;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SLK.TryEdu.ModuleUser;
 
@@ -33,6 +34,9 @@ public class UserService : MyServiceBase, IUserService
             return ResultOf<EntityUser>.Error(_ctx.Text["You are not authorized!", "Bạn không có quyền!"]);
         try
         {
+            
+
+            Console.WriteLine("Seed 100.000 học viên hoàn tất!");
             var data = await _ctx.Repo<EntityUser>().Query(t => t.Guid == guid)
                 .SingleOrDefaultAsync();
 
@@ -51,8 +55,7 @@ public class UserService : MyServiceBase, IUserService
             return ResultsOf<EntityUser>.Error(_ctx.Text["You are not authorized!", "Bạn không có quyền!"]);
         try
         {
-            var data = await _ctx.Repo<EntityUser>().GetList();
-
+                var data = await _ctx.Repo<EntityUser>().GetList();
             return ResultsOf<EntityUser>.Ok(data);
         }
         catch (Exception ex)

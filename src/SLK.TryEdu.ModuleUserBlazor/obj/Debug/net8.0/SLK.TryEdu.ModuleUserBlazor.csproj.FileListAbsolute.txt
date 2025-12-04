@@ -66,3 +66,4 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\SLK.TryE.1A4
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\SLK.TryEdu.ModuleUserBlazor.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleUserBlazor.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\ref\SLK.TryEdu.ModuleUserBlazor.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

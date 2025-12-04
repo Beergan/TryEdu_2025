@@ -62,7 +62,7 @@ namespace SLK.TryEdu.WebHost.Areas.Student.Pages
                     if (existingUser.IsVerified == false)
                     {
                         existingUser.Email = RegisterRequest.Email.ToLower().Trim();
-                        existingUser.PasswordHash = Convert.ToBase64String(BCrypt.PasswordToByteArray(RegisterRequest.Password.ToCharArray()));
+                        existingUser.PasswordHash = BCrypt.Net.BCrypt.HashPassword(RegisterRequest.ConfirmPassword);
                         existingUser.FirstName = RegisterRequest.FirstName.Trim();
                         existingUser.LastName = RegisterRequest.LastName.Trim();
                         existingUser.Phone = RegisterRequest.Phone?.Trim();
@@ -103,7 +103,7 @@ namespace SLK.TryEdu.WebHost.Areas.Student.Pages
                 var user = new EntityUser
                 {
                     Email = RegisterRequest.Email.ToLower().Trim(),
-                    PasswordHash = Convert.ToBase64String(BCrypt.PasswordToByteArray(RegisterRequest.Password.ToCharArray())),
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(RegisterRequest.ConfirmPassword),
                     FirstName = RegisterRequest.FirstName.Trim(),
                     LastName = RegisterRequest.LastName.Trim(),
                     Phone = RegisterRequest.Phone?.Trim(),
