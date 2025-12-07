@@ -1,0 +1,3 @@
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Release\net8.0\staticwebassets.build.json

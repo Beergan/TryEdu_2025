@@ -2997,7 +2997,8 @@
           "Microsoft.AspNetCore.Components.Web": "8.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
           "SLK.TryEdu.Abstract": "1.0.0",
-          "SLK.TryEdu.ModuleUserCore": "1.0.0"
+          "SLK.TryEdu.ModuleUserCore": "1.0.0",
+          "SLK.TryEdu.SharedComponents": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SLK.TryEdu.ModuleUserBlazor.dll": {}
@@ -3017,6 +3018,19 @@
         },
         "runtime": {
           "bin/placeholder/SLK.TryEdu.ModuleUserCore.dll": {}
+        }
+      },
+      "SLK.TryEdu.SharedComponents/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.SharedComponents.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.SharedComponents.dll": {}
         }
       }
     },
@@ -5916,7 +5930,8 @@
           "Microsoft.AspNetCore.Components.Web": "8.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
           "SLK.TryEdu.Abstract": "1.0.0",
-          "SLK.TryEdu.ModuleUserCore": "1.0.0"
+          "SLK.TryEdu.ModuleUserCore": "1.0.0",
+          "SLK.TryEdu.SharedComponents": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SLK.TryEdu.ModuleUserBlazor.dll": {}
@@ -5936,6 +5951,19 @@
         },
         "runtime": {
           "bin/placeholder/SLK.TryEdu.ModuleUserCore.dll": {}
+        }
+      },
+      "SLK.TryEdu.SharedComponents/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.SharedComponents.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.SharedComponents.dll": {}
         }
       }
     }
@@ -9486,6 +9514,11 @@
       "type": "project",
       "path": "../SLK.TryEdu.ModuleUserCore/SLK.TryEdu.ModuleUserCore.csproj",
       "msbuildProject": "../SLK.TryEdu.ModuleUserCore/SLK.TryEdu.ModuleUserCore.csproj"
+    },
+    "SLK.TryEdu.SharedComponents/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.SharedComponents/SLK.TryEdu.SharedComponents.csproj",
+      "msbuildProject": "../SLK.TryEdu.SharedComponents/SLK.TryEdu.SharedComponents.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9503,7 +9536,8 @@
       "SLK.TryEdu.ModuleManagementBlazor >= 1.0.0",
       "SLK.TryEdu.ModulePartnerBlazor >= 1.0.0",
       "SLK.TryEdu.ModuleSettingBlazor >= 1.0.0",
-      "SLK.TryEdu.ModuleUserBlazor >= 1.0.0"
+      "SLK.TryEdu.ModuleUserBlazor >= 1.0.0",
+      "SLK.TryEdu.SharedComponents >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9565,6 +9599,9 @@
             },
             "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj": {
               "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj"
+            },
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj"
             }
           }
         }

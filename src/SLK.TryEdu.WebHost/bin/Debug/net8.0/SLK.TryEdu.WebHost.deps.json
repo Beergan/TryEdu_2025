@@ -4005,7 +4005,8 @@
           "Microsoft.AspNetCore.Components.Web": "8.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
           "SLK.TryEdu.Abstract": "1.0.0",
-          "SLK.TryEdu.ModuleUserCore": "1.0.0"
+          "SLK.TryEdu.ModuleUserCore": "1.0.0",
+          "SLK.TryEdu.SharedComponents": "1.0.0"
         },
         "runtime": {
           "SLK.TryEdu.ModuleUserBlazor.dll": {
@@ -4031,6 +4032,20 @@
           "SLK.TryEdu.ModuleUserCore.dll": {}
         }
       },
+      "SLK.TryEdu.SharedComponents/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10"
+        },
+        "runtime": {
+          "SLK.TryEdu.SharedComponents.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "SLK.TryEdu.SharedComponents.dll": {}
+        }
+      },
       "SLK.TryEdu.WebApp/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
@@ -4044,7 +4059,8 @@
           "SLK.TryEdu.ModuleManagementBlazor": "1.0.0",
           "SLK.TryEdu.ModulePartnerBlazor": "1.0.0",
           "SLK.TryEdu.ModuleSettingBlazor": "1.0.0",
-          "SLK.TryEdu.ModuleUserBlazor": "1.0.0"
+          "SLK.TryEdu.ModuleUserBlazor": "1.0.0",
+          "SLK.TryEdu.SharedComponents": "1.0.0"
         },
         "runtime": {
           "SLK.TryEdu.WebApp.dll": {
@@ -7602,6 +7618,11 @@
       "sha512": ""
     },
     "SLK.TryEdu.ModuleUserCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SLK.TryEdu.SharedComponents/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

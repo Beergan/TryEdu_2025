@@ -1,0 +1,157 @@
+/* Register & Login Pages - Bootstrap Optimized CSS */
+
+/* Custom animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom form styling */
+.form-control-lg {
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+    background: #f9fafb;
+}
+
+.form-control-lg:focus {
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+/* Button styling */
+.btn-primary {
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+/* Card animation */
+.card {
+    animation: slideUp 0.6s ease-out;
+}
+
+/* Password strength indicator */
+.password-strength-weak { color: #ef4444; }
+.password-strength-medium { color: #f59e0b; }
+.password-strength-strong { color: #10b981; }
+
+/* Custom spacing for form elements */
+.mb-3 .form-control-lg {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        margin: 1rem;
+        min-height: auto;
+    }
+    
+    .col-lg-6:first-child {
+        min-height: 300px;
+    }
+    
+    .p-4.p-lg-5 {
+        padding: 2rem 1.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .col-lg-6:first-child {
+        min-height: 250px;
+    }
+    
+    .p-4.p-lg-5 {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Form validation states */
+.form-control.is-valid {
+    border-color: #10b981;
+    background-color: rgba(16, 185, 129, 0.1);
+}
+
+.form-control.is-invalid {
+    border-color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Loading state for button */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn:disabled:hover {
+    transform: none;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Social login buttons */
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+/* Login specific styling */
+.form-check-input:checked {
+    background-color: #667eea;
+    border-color: #667eea;
+}
+
+/* Enhanced form focus states */
+.form-control-lg:focus {
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+/* Alert styling */
+.alert {
+    border-radius: 12px;
+    border: none;
+}
+
+.alert-success {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #065f46;
+    border-left: 4px solid #10b981;
+}
+
+.alert-danger {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #991b1b;
+    border-left: 4px solid #ef4444;
+}

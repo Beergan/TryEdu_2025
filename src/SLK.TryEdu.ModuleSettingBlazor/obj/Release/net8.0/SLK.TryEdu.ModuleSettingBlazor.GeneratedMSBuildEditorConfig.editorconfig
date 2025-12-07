@@ -1,5 +1,7 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
 build_property.ProjectTypeGuids = 
@@ -9,29 +11,29 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SLK.TryEdu.ModuleSettingBlazor
 build_property.RootNamespace = SLK.TryEdu.ModuleSettingBlazor
-build_property.ProjectDir = C:\SLK\tryedu_SLK\src\SLK.TryEdu.ModuleSettingBlazor\
+build_property.ProjectDir = C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\SLK\tryedu_SLK\src\SLK.TryEdu.ModuleSettingBlazor
+build_property.MSBuildProjectDirectory = C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/SLK/tryedu_SLK/src/SLK.TryEdu.ModuleSettingBlazor/Pages/PageCompany.razor]
+[C:/SLK/TryEdu_2025/src/SLK.TryEdu.ModuleSettingBlazor/Pages/PageCompany.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZUNvbXBhbnkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SLK/tryedu_SLK/src/SLK.TryEdu.ModuleSettingBlazor/Pages/PageJob.razor]
+[C:/SLK/TryEdu_2025/src/SLK.TryEdu.ModuleSettingBlazor/Pages/PageJob.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZUpvYi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SLK/tryedu_SLK/src/SLK.TryEdu.ModuleSettingBlazor/Pages/PageOffices.razor]
+[C:/SLK/TryEdu_2025/src/SLK.TryEdu.ModuleSettingBlazor/Pages/PageOffices.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZU9mZmljZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SLK/tryedu_SLK/src/SLK.TryEdu.ModuleSettingBlazor/_Imports.razor]
+[C:/SLK/TryEdu_2025/src/SLK.TryEdu.ModuleSettingBlazor/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

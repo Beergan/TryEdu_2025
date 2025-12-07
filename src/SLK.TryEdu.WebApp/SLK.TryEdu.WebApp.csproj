@@ -24,6 +24,7 @@
 	   <ProjectReference Include="..\SLK.TryEdu.ModuleUserBlazor\SLK.TryEdu.ModuleUserBlazor.csproj" />
 	  <ProjectReference Include="..\SLK.TryEdu.ModuleManagementBlazor\SLK.TryEdu.ModuleManagementBlazor.csproj" />
 	  <ProjectReference Include="..\SLK.TryEdu.ModuleSettingBlazor\SLK.TryEdu.ModuleSettingBlazor.csproj" />
+	  <ProjectReference Include="..\SLK.TryEdu.SharedComponents\SLK.TryEdu.SharedComponents.csproj" />
 	</ItemGroup>
 
 	<!--<ItemGroup>

@@ -1,1 +1,7 @@
 C:\SLK\tryedu_SLK\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleContentBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleContentBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleContentBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleContentBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleContentBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleContentBlazor\obj\Release\net8.0\staticwebassets.build.json

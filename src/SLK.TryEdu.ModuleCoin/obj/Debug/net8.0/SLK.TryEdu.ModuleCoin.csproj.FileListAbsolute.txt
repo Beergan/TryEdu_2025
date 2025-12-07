@@ -33,6 +33,7 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoin\obj\Debug\net8.0\staticwebassets\ms
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoin\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SLK.TryEdu.ModuleCoin.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoin\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SLK.TryEdu.ModuleCoin.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoin\obj\Debug\net8.0\staticwebassets.pack.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoin\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoin\obj\Debug\net8.0\SLK.TryE.8461459C.Up2Date
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoin\obj\Debug\net8.0\SLK.TryEdu.ModuleCoin.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoin\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleCoin.dll

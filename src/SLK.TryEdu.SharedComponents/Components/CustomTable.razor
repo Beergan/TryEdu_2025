@@ -1,0 +1,728 @@
+﻿@typeparam TItem
+@using System.Reflection
+@using System.ComponentModel.DataAnnotations
+<div class="custom-table-wrapper">
+    @if (AllowFiltering)
+    {
+        <div class="table-header">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text"
+                       class="search-input"
+                       placeholder="Tìm kiếm trong bảng..."
+                       @oninput="OnFilterTextChanged" />
+            </div>
+            <div class="header-info">
+                <span class="total-records">
+                    <i class="fas fa-database me-2"></i>
+                    Tổng: <strong>@_totalItems</strong> bản ghi
+                </span>
+            </div>
+        </div>
+    }
+    <div class="table-container">
+        <table class="modern-table">
+            <thead>
+                <tr>
+                    @foreach (var prop in _properties)
+                    {
+                        <th @onclick="() => SortByColumn(prop.Name)"
+                            class="@(AllowSorting ? "sortable" : "")">
+                            <div class="th-content">
+                                <span>@GetDisplayName(prop)</span>
+                                @if (AllowSorting && _sortColumn == prop.Name)
+                                {
+                                    <i class="fas fa-sort-@(_sortAscending ? "up" : "down") sort-icon"></i>
+                                }
+                                else if (AllowSorting)
+                                {
+                                    <i class="fas fa-sort sort-icon-inactive"></i>
+                                }
+                            </div>
+                        </th>
+                    }
+                    @if (Actions != null)
+                    {
+                        <th class="actions-column">
+                            <i class="fas fa-cog"></i>
+                        </th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @if (_pagedData != null && _pagedData.Any())
+                {
+                    @foreach (var item in _pagedData)
+                    {
+                        <tr class="data-row">
+                            @foreach (var prop in _properties)
+                            {
+                                <td>
+                                    <div class="cell-content">@FormatValue(prop.GetValue(item))</div>
+                                </td>
+                            }
+                            @if (Actions != null)
+                            {
+                                <td class="actions-cell">
+                                    @Actions(item)
+                                </td>
+                            }
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="@(_properties.Count + (Actions != null ? 1 : 0))" class="empty-state">
+                            <div class="empty-content">
+                                <i class="fas fa-inbox empty-icon"></i>
+                                <p class="empty-text">Không có dữ liệu</p>
+                                <p class="empty-subtext">Thử thay đổi bộ lọc hoặc tìm kiếm</p>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @if (AllowPaging && _totalPages > 1)
+    {
+        <div class="table-footer">
+            <div class="footer-left">
+                <div class="page-size-selector">
+                    <span class="selector-label">Hiển thị</span>
+                    <select class="page-size-select" @onchange="ChangePageSize">
+                        @foreach (var size in PageSizes)
+                        {
+                            <option value="@size" selected="@(PageSize == size)">@size</option>
+                        }
+                    </select>
+                    <span class="selector-label">mục/trang</span>
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <nav class="pagination">
+                    <button class="pagination-btn @(_currentPage == 1 ? "disabled" : "")"
+                            @onclick="() => GoToPage(1)"
+                            disabled="@(_currentPage == 1)">
+                        <i class="fas fa-angle-double-left"></i>
+                    </button>
+                    <button class="pagination-btn @(_currentPage == 1 ? "disabled" : "")"
+                            @onclick="() => GoToPage(_currentPage - 1)"
+                            disabled="@(_currentPage == 1)">
+                        <i class="fas fa-angle-left"></i>
+                    </button>
+
+                    @foreach (var pageNum in GetPageNumbers())
+                    {
+                        @if (pageNum == -1)
+                        {
+                            <span class="pagination-ellipsis">...</span>
+                        }
+                        else
+                        {
+                            <button class="pagination-btn page-number @(pageNum == _currentPage ? "active" : "")"
+                                    @onclick="() => GoToPage(pageNum)">
+                                @pageNum
+                            </button>
+                        }
+                    }
+
+                    <button class="pagination-btn @(_currentPage == _totalPages ? "disabled" : "")"
+                            @onclick="() => GoToPage(_currentPage + 1)"
+                            disabled="@(_currentPage == _totalPages)">
+                        <i class="fas fa-angle-right"></i>
+                    </button>
+                    <button class="pagination-btn @(_currentPage == _totalPages ? "disabled" : "")"
+                            @onclick="() => GoToPage(_totalPages)"
+                            disabled="@(_currentPage == _totalPages)">
+                        <i class="fas fa-angle-double-right"></i>
+                    </button>
+                </nav>
+            </div>
+
+            <div class="footer-right">
+                <span class="page-info">
+                    <strong>@(_currentPage * PageSize - PageSize + 1) - @Math.Min(_currentPage * PageSize, _totalItems)</strong>
+                    trong số <strong>@_totalItems</strong>
+                </span>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .custom-table-wrapper {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.04);
+        overflow: hidden;
+    }
+
+    /* Header Styles */
+    .table-header {
+        padding: 1.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        position: relative;
+        flex: 1;
+        max-width: 400px;
+        min-width: 250px;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #9ca3af;
+        font-size: 0.9rem;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 0.75rem 1rem 0.75rem 2.75rem;
+        border: none;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.95);
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-input:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        background: #ffffff;
+    }
+
+    .search-input::placeholder {
+        color: #9ca3af;
+    }
+
+    .header-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .total-records {
+        color: white;
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+    }
+
+    /* Table Styles */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .modern-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    .modern-table thead {
+        background: #f8fafc;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .modern-table th {
+        padding: 1rem 1.25rem;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #475569;
+        border-bottom: 2px solid #e2e8f0;
+        white-space: nowrap;
+    }
+
+    .modern-table th.sortable {
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.2s ease;
+    }
+
+    .modern-table th.sortable:hover {
+        background: #e2e8f0;
+        color: #667eea;
+    }
+
+    .th-content {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .sort-icon {
+        color: #667eea;
+        font-size: 0.75rem;
+    }
+
+    .sort-icon-inactive {
+        color: #cbd5e1;
+        font-size: 0.75rem;
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    .modern-table th.sortable:hover .sort-icon-inactive {
+        opacity: 1;
+    }
+
+    .actions-column {
+        text-align: center !important;
+        width: 100px;
+    }
+
+    .modern-table tbody tr.data-row {
+        transition: all 0.2s ease;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .modern-table tbody tr.data-row:hover {
+        background: linear-gradient(90deg, #f8fafc 0%, #ffffff 100%);
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
+        transform: translateY(-1px);
+    }
+
+    .modern-table td {
+        padding: 1rem 1.25rem;
+        color: #334155;
+        font-size: 0.9rem;
+    }
+
+    .cell-content {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .actions-cell {
+        text-align: center;
+    }
+
+    /* Empty State */
+    .empty-state {
+        padding: 4rem 2rem !important;
+        text-align: center;
+    }
+
+    .empty-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .empty-icon {
+        font-size: 3rem;
+        color: #cbd5e1;
+    }
+
+    .empty-text {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #64748b;
+        margin: 0;
+    }
+
+    .empty-subtext {
+        font-size: 0.9rem;
+        color: #94a3b8;
+        margin: 0;
+    }
+
+    /* Footer Styles */
+    .table-footer {
+        padding: 1.25rem 1.5rem;
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    /* Page Size Selector */
+    .page-size-selector {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .selector-label {
+        font-size: 0.875rem;
+        color: #64748b;
+    }
+
+    .page-size-select {
+        padding: 0.5rem 0.75rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        background: white;
+        font-size: 0.875rem;
+        color: #334155;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .page-size-select:hover {
+        border-color: #667eea;
+    }
+
+    .page-size-select:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    /* Pagination */
+    .pagination {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .pagination-btn {
+        min-width: 36px;
+        height: 36px;
+        padding: 0 0.5rem;
+        border: 1px solid #e2e8f0;
+        background: white;
+        border-radius: 6px;
+        color: #64748b;
+        font-size: 0.875rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pagination-btn:hover:not(.disabled) {
+        background: #667eea;
+        color: white;
+        border-color: #667eea;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
+    }
+
+    .pagination-btn.active {
+        background: #667eea;
+        color: white;
+        border-color: #667eea;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    }
+
+    .pagination-btn.disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+    .pagination-ellipsis {
+        padding: 0 0.5rem;
+        color: #94a3b8;
+        font-weight: 600;
+    }
+
+    .page-info {
+        font-size: 0.875rem;
+        color: #64748b;
+    }
+
+    .page-info strong {
+        color: #334155;
+        font-weight: 600;
+    }
+
+    /* Responsive Design */
+    @@media (max-width: 768px) {
+        .table-header {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .search-box {
+            max-width: 100%;
+        }
+
+        .table-footer {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1rem;
+        }
+
+        .footer-left, .footer-center, .footer-right {
+            justify-content: center;
+        }
+
+        .modern-table {
+            font-size: 0.85rem;
+        }
+
+        .modern-table th,
+        .modern-table td {
+            padding: 0.75rem;
+        }
+    }
+
+    /* Scrollbar Styling */
+    .table-container::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .table-container::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 4px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+</style>
+
+@code {
+    [Parameter] public IEnumerable<TItem> ? DataSource { get; set; }
+    [Parameter] public RenderFragment<TItem> ? Actions { get; set; }
+    [Parameter] public int PageSize { get; set; } = 50;
+    [Parameter] public int[] PageSizes { get; set; } = new[] { 10, 25, 50, 100 };
+    [Parameter] public bool AllowPaging { get; set; } = true;
+    [Parameter] public bool AllowFiltering { get; set; } = true;
+    [Parameter] public bool AllowSorting { get; set; } = true;
+    [Parameter] public string[] ? IncludeProperties { get; set; }
+    private System.Timers.Timer _debounceTimer;
+    private List<PropertyInfo> _properties = new();
+    private IEnumerable<TItem> _filteredData = new List<TItem>();
+    private IEnumerable<TItem> _pagedData = new List<TItem>();
+    private int _currentPage = 1;
+    private int _totalPages = 1;
+    private int _totalItems = 0;
+    private string FilterText { get; set; } = "";
+    private string _sortColumn = "";
+    private bool _sortAscending = true;
+
+    protected override void OnInitialized()
+    {
+        var type = typeof(TItem);
+        var allProperties = type.GetProperties().Where(p => p.CanRead && IsSimpleType(p.PropertyType));
+
+        // Nếu có IncludeProperties thì chỉ lấy những cái đó, ngược lại lấy tất cả
+        if (IncludeProperties != null && IncludeProperties.Any())
+        {
+            _properties = allProperties
+                .Where(p => IncludeProperties.Contains(p.Name))
+                .OrderBy(p => Array.IndexOf(IncludeProperties, p.Name))
+                .ToList();
+        }
+        else
+        {
+            _properties = allProperties.ToList();
+        }
+    }
+
+    protected override void OnParametersSet()
+    {
+        _filteredData = DataSource ?? new List<TItem>();
+        ApplyFilter();
+    }
+
+    private bool IsSimpleType(Type type)
+    {
+        return type.IsPrimitive
+            || type.IsEnum
+            || type == typeof(string)
+            || type == typeof(decimal)
+            || type == typeof(DateTime)
+            || type == typeof(DateTimeOffset)
+            || type == typeof(TimeSpan)
+            || type == typeof(Guid)
+            || Nullable.GetUnderlyingType(type) != null;
+    }
+
+    private string GetDisplayName(PropertyInfo prop)
+    {
+        var displayAttr = prop.GetCustomAttribute<DisplayAttribute>();
+        if (displayAttr != null && !string.IsNullOrEmpty(displayAttr.Name))
+            return displayAttr.Name;
+
+        return System.Text.RegularExpressions.Regex.Replace(prop.Name, "([a-z])([A-Z])", "$1 $2");
+    }
+
+    private string FormatValue(object? value)
+    {
+        if (value == null) return "";
+
+        if (value is DateTime dt)
+            return dt.ToString("dd/MM/yyyy");
+
+        if (value is bool b)
+            return b ? "✓" : "✗";
+
+        if (value is decimal || value is double || value is float)
+            return string.Format("{0:N0}", value);
+
+        return value.ToString() ?? "";
+    }
+    private void OnFilterTextChanged(ChangeEventArgs e)
+    {
+        FilterText = e.Value?.ToString() ?? "";
+
+        _debounceTimer?.Stop();
+        _debounceTimer?.Dispose();
+        _debounceTimer = new System.Timers.Timer(400); 
+        _debounceTimer.Elapsed += (s, args) =>
+        {
+            _debounceTimer.Stop();
+            _debounceTimer.Dispose();
+            _debounceTimer = null;
+
+            InvokeAsync(() => ApplyFilter());
+        };
+        _debounceTimer.Start();
+    }
+    private void ApplyFilter()
+    {
+        if (string.IsNullOrWhiteSpace(FilterText))
+        {
+            _filteredData = DataSource ?? new List<TItem>();
+        }
+        else
+        {
+            var searchText = FilterText.ToLower().Trim();
+            _filteredData = (DataSource ?? new List<TItem>()).Where(item =>
+            {
+                foreach (var prop in _properties)
+                {
+                    var value = prop.GetValue(item)?.ToString()?.ToLower();
+                    if (value != null && value.Contains(searchText))
+                        return true;
+                }
+                return false;
+            }).ToList();
+        }
+
+        _currentPage = 1;
+        UpdatePagination();
+    }
+
+    private void SortByColumn(string propertyName)
+    {
+        if (!AllowSorting) return;
+
+        if (_sortColumn == propertyName)
+        {
+            _sortAscending = !_sortAscending;
+        }
+        else
+        {
+            _sortColumn = propertyName;
+            _sortAscending = true;
+        }
+
+        var prop = _properties.FirstOrDefault(p => p.Name == propertyName);
+        if (prop == null) return;
+
+        _filteredData = _sortAscending
+            ? _filteredData.OrderBy(x => prop.GetValue(x)).ToList()
+            : _filteredData.OrderByDescending(x => prop.GetValue(x)).ToList();
+
+        UpdatePagination();
+    }
+
+    private void UpdatePagination()
+    {
+        _totalItems = _filteredData.Count();
+        _totalPages = _totalItems > 0 ? (int)Math.Ceiling(_totalItems / (double)PageSize) : 1;
+
+        if (_currentPage > _totalPages)
+            _currentPage = _totalPages > 0 ? _totalPages : 1;
+
+        _pagedData = _filteredData
+            .Skip((_currentPage - 1) * PageSize)
+            .Take(PageSize)
+            .ToList();
+
+        StateHasChanged();
+    }
+
+    private void GoToPage(int page)
+    {
+        if (page < 1 || page > _totalPages || page == _currentPage) return;
+        _currentPage = page;
+        UpdatePagination();
+    }
+
+    private void ChangePageSize(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var newSize))
+        {
+            PageSize = newSize;
+            _currentPage = 1;
+            UpdatePagination();
+        }
+    }
+
+    private IEnumerable<int> GetPageNumbers()
+    {
+        var pages = new List<int>();
+        var maxPagesToShow = 5;
+        var halfRange = maxPagesToShow / 2;
+
+        var start = Math.Max(1, _currentPage - halfRange);
+        var end = Math.Min(_totalPages, _currentPage + halfRange);
+
+        if (_currentPage <= halfRange)
+            end = Math.Min(_totalPages, maxPagesToShow);
+        else if (_currentPage >= _totalPages - halfRange)
+            start = Math.Max(1, _totalPages - maxPagesToShow + 1);
+
+        if (start > 1)
+        {
+            pages.Add(1);
+            if (start > 2) pages.Add(-1);
+        }
+
+        for (int i = start; i <= end; i++)
+            pages.Add(i);
+
+        if (end < _totalPages)
+        {
+            if (end < _totalPages - 1) pages.Add(-1);
+            pages.Add(_totalPages);
+        }
+
+        return pages;
+    }
+}

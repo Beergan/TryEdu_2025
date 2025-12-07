@@ -129,13 +129,6 @@ public class ServerAuthService : IAuthService
                     return new RspLogin("WRONG_USER_OR_PWD");
                 }
             }
-
-            var entityUser = await _userMgr.FindByNameAsync(request.UserName);
-            //if (entityUser.EnterpriseCodes != null && !entityUser.EnterpriseCodes.Contains(request.EnterpriseCode))
-            //{
-            //    return new RspLogin("WRONG_ENTERPRISE");
-            //}
-
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetValue<string>("JwtToken:SigningKey")));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
@@ -202,7 +195,7 @@ public class ServerAuthService : IAuthService
 
             var strToken = new JwtSecurityTokenHandler().WriteToken(token);
 
-            await _cookie.SetCookie("Auth", strToken, 1);
+            await _cookie.SetCookie("AdminAuth", strToken, 30);
             var rspLogin = new RspLogin(strToken, DateTime.Now.AddMinutes(12 * 60), "user.FirstName", "user.LastName", "user.Avatar"/*, request.EnterpriseCode*/);
             if (rspLogin.Success)
             {

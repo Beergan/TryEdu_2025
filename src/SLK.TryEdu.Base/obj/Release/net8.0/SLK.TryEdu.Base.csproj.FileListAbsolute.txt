@@ -11,3 +11,17 @@ C:\SLK\tryedu_SLK\src\SLK.TryEdu.Base\obj\Release\net8.0\SLK.TryE.D96A779B.Up2Da
 C:\SLK\tryedu_SLK\src\SLK.TryEdu.Base\obj\Release\net8.0\SLK.TryEdu.Base.dll
 C:\SLK\tryedu_SLK\src\SLK.TryEdu.Base\obj\Release\net8.0\refint\SLK.TryEdu.Base.dll
 C:\SLK\tryedu_SLK\src\SLK.TryEdu.Base\obj\Release\net8.0\ref\SLK.TryEdu.Base.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\bin\Release\net8.0\SLK.TryEdu.Base.deps.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\bin\Release\net8.0\SLK.TryEdu.Base.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\bin\Release\net8.0\SLK.TryEdu.Abstract.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\bin\Release\net8.0\SLK.TryEdu.Abstract.xml
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\obj\Release\net8.0\SLK.TryEdu.Base.csproj.AssemblyReference.cache
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\obj\Release\net8.0\SLK.TryEdu.Base.GeneratedMSBuildEditorConfig.editorconfig
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\obj\Release\net8.0\SLK.TryEdu.Base.AssemblyInfoInputs.cache
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\obj\Release\net8.0\SLK.TryEdu.Base.AssemblyInfo.cs
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\obj\Release\net8.0\SLK.TryEdu.Base.csproj.CoreCompileInputs.cache
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\obj\Release\net8.0\SLK.TryEdu.Base.sourcelink.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\obj\Release\net8.0\SLK.TryE.D96A779B.Up2Date
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\obj\Release\net8.0\SLK.TryEdu.Base.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\obj\Release\net8.0\refint\SLK.TryEdu.Base.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.Base\obj\Release\net8.0\ref\SLK.TryEdu.Base.dll

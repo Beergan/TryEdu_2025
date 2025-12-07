@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\wwwroot\\background.png",
+      "PackagePath": "staticwebassets\\background.png"
+    },
+    {
+      "Id": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\wwwroot\\exampleJsInterop.js",
+      "PackagePath": "staticwebassets\\exampleJsInterop.js"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.SLK.TryEdu.SharedComponents.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.SLK.TryEdu.SharedComponents.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.SLK.TryEdu.SharedComponents.props",
+      "PackagePath": "build\\SLK.TryEdu.SharedComponents.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SLK.TryEdu.SharedComponents.props",
+      "PackagePath": "buildMultiTargeting\\SLK.TryEdu.SharedComponents.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.SLK.TryEdu.SharedComponents.props",
+      "PackagePath": "buildTransitive\\SLK.TryEdu.SharedComponents.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

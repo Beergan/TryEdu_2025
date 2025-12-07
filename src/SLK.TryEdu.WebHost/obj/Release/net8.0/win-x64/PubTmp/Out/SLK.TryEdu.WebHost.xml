@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SLK.TryEdu.WebHost</name>
+    </assembly>
+    <members>
+        <member name="T:SLK.TryEdu.WebHost.Classes.PageRouteConfig">
+            <summary>
+            Cấu hình Page Routes cho TryEdu WebHost
+            </summary>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Classes.PageRouteConfig.ConfigurePageRoutes(Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions)">
+            <summary>
+            Cấu hình tất cả Page Routes cho Areas
+            </summary>
+            <param name="options">RazorPagesOptions</param>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Classes.PageRouteConfig.ConfigureStudentRoutes(Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions)">
+            <summary>
+            Cấu hình Student Portal Routes
+            </summary>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Classes.PageRouteConfig.ConfigureAdminRoutes(Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions)">
+            <summary>
+            Cấu hình Admin Portal Routes
+            </summary>
+            <summary>
+            Cấu hình Admin Portal Routes
+            </summary>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Classes.PageRouteConfig.ConfigureSharedRoutes(Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions)">
+            <summary>
+            Cấu hình Shared Routes
+            </summary>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Classes.PageRouteConfig.ConfigureApiRoutes(Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions)">
+            <summary>
+            Cấu hình API Routes
+            </summary>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Classes.PageRouteConfig.ConfigureFallbackRoutes(Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions)">
+            <summary>
+            Cấu hình Fallback Routes
+            </summary>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Classes.PageRouteConfig.ConfigureCustomConstraints(Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions)">
+            <summary>
+            Cấu hình Custom Route Constraints
+            </summary>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Classes.PageRouteConfig.ConfigureSeoRoutes(Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions)">
+            <summary>
+            Cấu hình SEO Friendly Routes
+            </summary>
+        </member>
+        <member name="T:SLK.TryEdu.WebHost.Classes.PageRouteExtensions">
+            <summary>
+            Extensions cho Page Route Configuration
+            </summary>
+        </member>
+        <member name="T:SLK.TryEdu.WebHost.Controllers.AuthController">
+            <summary>
+            QUẢN LÝ XÁC THỰC
+            </summary>
+        </member>
+    </members>
+</doc>

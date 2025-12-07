@@ -1,10 +1,3 @@
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.csproj.AssemblyReference.cache
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.GeneratedMSBuildEditorConfig.editorconfig
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.AssemblyInfoInputs.cache
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.AssemblyInfo.cs
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.csproj.CoreCompileInputs.cache
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.sourcelink.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\bin\Debug\net8.0\SLK.TryEdu.ModuleLearningBlazor.staticwebassets.runtime.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\bin\Debug\net8.0\SLK.TryEdu.ModuleLearningBlazor.staticwebassets.endpoints.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\bin\Debug\net8.0\SLK.TryEdu.ModuleLearning.staticwebassets.runtime.json
@@ -18,6 +11,13 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\bin\Debug\net8.0\SLK.TryEdu.Mod
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\bin\Debug\net8.0\SLK.TryEdu.ModuleLearningCore.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\bin\Debug\net8.0\SLK.TryEdu.ModuleLearningCore.xml
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\bin\Debug\net8.0\SLK.TryEdu.Abstract.xml
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.csproj.AssemblyReference.cache
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.GeneratedMSBuildEditorConfig.editorconfig
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.AssemblyInfoInputs.cache
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.AssemblyInfo.cs
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.csproj.CoreCompileInputs.cache
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.sourcelink.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
@@ -33,6 +33,7 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\staticwebasset
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SLK.TryEdu.ModuleLearning.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SLK.TryEdu.ModuleLearning.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\staticwebassets.pack.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryE.C403AA25.Up2Date
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\SLK.TryEdu.ModuleLearning.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearning\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleLearning.dll

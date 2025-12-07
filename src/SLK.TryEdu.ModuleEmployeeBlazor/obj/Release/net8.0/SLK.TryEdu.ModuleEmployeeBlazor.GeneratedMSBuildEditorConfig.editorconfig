@@ -1,5 +1,7 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
 build_property.ProjectTypeGuids = 
@@ -9,25 +11,25 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SLK.TryEdu.ModuleEmployeeBlazor
 build_property.RootNamespace = SLK.TryEdu.ModuleEmployeeBlazor
-build_property.ProjectDir = C:\SLK\tryedu_SLK\src\SLK.TryEdu.ModuleEmployeeBlazor\
+build_property.ProjectDir = C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\SLK\tryedu_SLK\src\SLK.TryEdu.ModuleEmployeeBlazor
+build_property.MSBuildProjectDirectory = C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/SLK/tryedu_SLK/src/SLK.TryEdu.ModuleEmployeeBlazor/Pages/PageEmployee.razor]
+[C:/SLK/TryEdu_2025/src/SLK.TryEdu.ModuleEmployeeBlazor/Pages/PageEmployee.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZUVtcGxveWVlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SLK/tryedu_SLK/src/SLK.TryEdu.ModuleEmployeeBlazor/Pages/PageListEmployee.razor]
+[C:/SLK/TryEdu_2025/src/SLK.TryEdu.ModuleEmployeeBlazor/Pages/PageListEmployee.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZUxpc3RFbXBsb3llZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SLK/tryedu_SLK/src/SLK.TryEdu.ModuleEmployeeBlazor/_Imports.razor]
+[C:/SLK/TryEdu_2025/src/SLK.TryEdu.ModuleEmployeeBlazor/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

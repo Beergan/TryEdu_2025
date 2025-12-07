@@ -38,6 +38,8 @@ C:\SLK\tryedu_SLK\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\SLK.TryEdu.ModuleUs
 C:\SLK\tryedu_SLK\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\ref\SLK.TryEdu.ModuleUser.dll
 C:\SLK\tryedu_SLK\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SLK\tryedu_SLK\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\swae.build.ex.cache
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.runtime.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.endpoints.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.ModuleUserBlazor.staticwebassets.runtime.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.ModuleUserBlazor.staticwebassets.endpoints.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.ModuleUser.staticwebassets.runtime.json
@@ -49,8 +51,10 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.Abstrac
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.Base.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.ModuleUserBlazor.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.ModuleUserCore.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.ModuleUserCore.xml
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.Abstract.xml
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.pdb
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\SLK.TryEdu.ModuleUser.csproj.AssemblyReference.cache
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\rpswa.dswa.cache.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\SLK.TryEdu.ModuleUser.GeneratedMSBuildEditorConfig.editorconfig
@@ -73,9 +77,9 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\staticwebassets\ms
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SLK.TryEdu.ModuleUser.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SLK.TryEdu.ModuleUser.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\staticwebassets.pack.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\SLK.TryE.09A3BAD4.Up2Date
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\SLK.TryEdu.ModuleUser.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleUser.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\SLK.TryEdu.ModuleUser.xml
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\ref\SLK.TryEdu.ModuleUser.dll
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUser\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

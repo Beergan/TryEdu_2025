@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
 using Org.BouncyCastle.Crypto.Generators;
 using RestEase;
@@ -9,6 +10,7 @@ using SLK.TryEdu.ModuleUserCore;
 using Syncfusion.XlsIO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -35,8 +37,6 @@ public class UserService : MyServiceBase, IUserService
         try
         {
             
-
-            Console.WriteLine("Seed 100.000 học viên hoàn tất!");
             var data = await _ctx.Repo<EntityUser>().Query(t => t.Guid == guid)
                 .SingleOrDefaultAsync();
 
@@ -55,8 +55,11 @@ public class UserService : MyServiceBase, IUserService
             return ResultsOf<EntityUser>.Error(_ctx.Text["You are not authorized!", "Bạn không có quyền!"]);
         try
         {
-                var data = await _ctx.Repo<EntityUser>().GetList();
-            return ResultsOf<EntityUser>.Ok(data);
+            using (var db = _ctx.ConnectDb())
+            {
+                var data = await db.Repo<EntityUser>().GetList();
+                return ResultsOf<EntityUser>.Ok(data); 
+            }
         }
         catch (Exception ex)
         {
@@ -71,11 +74,18 @@ public class UserService : MyServiceBase, IUserService
 
         try
         {
+            using var db = _ctx.ConnectDb();
+
+            var checkEmail = await db.Repo<EntityUser>().Query().FirstOrDefaultAsync(x => x.Email == info.Email && x.Id != info.Id);
+            if (checkEmail != null)
+            {
+                return Result.Error("Email! đã tồn tại");
+            }
             if (info.Id > 0)
             {
-                await _ctx.Repo<EntityUser>().Update(info);
+                await db.Repo<EntityUser>().Update(info);
 
-                var user = await _ctx.Set<SA_USER>().FirstOrDefaultAsync(x => x.GuidEmployee == info.Guid);
+                var user = await db.Repo<SA_USER>().Query().FirstOrDefaultAsync(x => x.GuidEmployee == info.Guid);
                 if (user != null)
                 {
                     user.LastName = info.LastName;
@@ -83,17 +93,27 @@ public class UserService : MyServiceBase, IUserService
                     user.Email = info.Email;
                     user.PhoneNumber = info.Phone;
 
-                    _ctx.Set<SA_USER>().Update(user);
+                   await db.Repo<SA_USER>().Update(user);
                 }
             }
             else
             {
                 if (info.Guid == Guid.Empty)
                 {
-                    await _ctx.Repo<EntityUser>().Insert(info);
+                   var newuser =  new EntityUser();
+                    newuser.Guid = Guid.NewGuid(); 
+                    newuser.Email = info.Email;
+                    newuser.FirstName = info.FirstName;
+                    newuser.LastName = info.LastName;
+                    newuser.IsActive = info.IsActive;
+                    newuser.IsVerified = info.IsVerified;
+                    newuser.PasswordHash = BCrypt.Net.BCrypt.HashPassword(info.PasswordHash);
+                    newuser.Phone = info.Phone;
+                    newuser.Address = info.Address;
+                    newuser.HBD = info.HBD;
+                    await db.Repo<EntityUser>().Insert(newuser);
                 }
             }
-
             return Result.Ok();
         }
         catch (Exception ex)

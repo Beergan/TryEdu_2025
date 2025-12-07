@@ -1,0 +1,16 @@
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\bin\Release\net8.0\SLK.TryEdu.ModuleUserCore.deps.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\bin\Release\net8.0\SLK.TryEdu.ModuleUserCore.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\bin\Release\net8.0\SLK.TryEdu.ModuleUserCore.xml
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\bin\Release\net8.0\SLK.TryEdu.Abstract.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\bin\Release\net8.0\SLK.TryEdu.Abstract.xml
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\obj\Release\net8.0\SLK.TryEdu.ModuleUserCore.csproj.AssemblyReference.cache
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\obj\Release\net8.0\SLK.TryEdu.ModuleUserCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\obj\Release\net8.0\SLK.TryEdu.ModuleUserCore.AssemblyInfoInputs.cache
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\obj\Release\net8.0\SLK.TryEdu.ModuleUserCore.AssemblyInfo.cs
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\obj\Release\net8.0\SLK.TryEdu.ModuleUserCore.csproj.CoreCompileInputs.cache
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\obj\Release\net8.0\SLK.TryEdu.ModuleUserCore.sourcelink.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\obj\Release\net8.0\SLK.TryE.397E1DE5.Up2Date
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\obj\Release\net8.0\SLK.TryEdu.ModuleUserCore.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\obj\Release\net8.0\refint\SLK.TryEdu.ModuleUserCore.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\obj\Release\net8.0\SLK.TryEdu.ModuleUserCore.xml
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserCore\obj\Release\net8.0\ref\SLK.TryEdu.ModuleUserCore.dll

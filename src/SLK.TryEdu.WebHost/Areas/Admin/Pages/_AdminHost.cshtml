@@ -8,12 +8,12 @@
 @inject IHttpContextAccessor HttpContextAccessor
 
 @{
-  
-
-    if (!Request.Cookies.ContainsKey("AdminAuth"))
+    if (User?.Identity == null || !User.Identity.IsAuthenticated || User.Identity.AuthenticationType != "AdminCookies")
     {
-      Response.Redirect("/admin/login");
-        return;
+        if (!Request.Cookies.ContainsKey("AdminAuth"))
+        {
+            Response.Redirect("/admin/login");
+        }
     }
 }
 <!DOCTYPE html>

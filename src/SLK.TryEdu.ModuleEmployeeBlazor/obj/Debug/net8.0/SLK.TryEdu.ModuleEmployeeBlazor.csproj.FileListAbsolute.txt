@@ -95,6 +95,7 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwe
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SLK.TryEdu.ModuleEmployeeBlazor.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SLK.TryEdu.ModuleEmployeeBlazor.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwebassets.pack.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\SLK.TryE.4E59F05B.Up2Date
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\SLK.TryEdu.ModuleEmployeeBlazor.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleEmployeeBlazor.dll

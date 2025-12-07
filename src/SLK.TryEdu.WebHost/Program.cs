@@ -19,6 +19,7 @@ using SLK.TryEdu.WebHost.Classes;
 using SLK.TryEdu.WebHost.Services;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using Syncfusion.Blazor;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -90,21 +91,88 @@ services.AddScoped<IOtpService,OtpService>();
 services.AddDatabaseDeveloperPageExceptionFilter();
 
 
+//builder.Services.AddAuthentication(options =>
+//{
+//    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; 
+//    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;  
+//    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;            
+//    options.DefaultSignInScheme = "AdminCookies";
+//})
+//.AddCookie("UserCookies", options =>
+//{
+//    options.LoginPath = "/login";
+//    options.LogoutPath = "/logout";
+//    options.AccessDeniedPath = "/student/access-denied";
+//    options.ExpireTimeSpan = TimeSpan.FromDays(30);
+//    options.SlidingExpiration = true;
+//    options.Cookie.Name = "UserAuth";
+//})
+//.AddCookie("AdminCookies", options =>
+//{
+//    options.LoginPath = "/admin/login";
+//    options.LogoutPath = "/admin/logout";
+//    options.AccessDeniedPath = "/admin/access-denied";
+//    options.ExpireTimeSpan = TimeSpan.FromDays(1);
+//    options.SlidingExpiration = true;
+//    options.Cookie.Name = "AdminAuth";
+//})
+//.AddJwtBearer(options =>
+//{
+//    options.SaveToken = true;
+//    options.RequireHttpsMetadata = false;
+//    options.TokenValidationParameters = new TokenValidationParameters()
+//    {
+//        ValidateIssuer = true,
+//        ValidateAudience = true,
+//        ValidAudience = builder.Configuration["JwtToken:Audience"],
+//        ValidIssuer = builder.Configuration["JwtToken:Issuer"],
+//        ClockSkew = TimeSpan.Zero,
+//        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtToken:SigningKey"]))
+//    };
+//    options.Events = new JwtBearerEvents
+//    {
+//        OnMessageReceived = context =>
+//        {
+//            if (context.Request.Cookies.ContainsKey("Auth"))
+//            {
+//                string token = context.Request.Cookies["Auth"];
+//                if (!string.IsNullOrEmpty(token))
+//                {
+//                    context.Token = token;
+//                }
+//            }
+//            return Task.CompletedTask;
+//        },
+//        OnChallenge = async (context) =>
+//        {
+//            context.HandleResponse();
+
+//            var user = context.HttpContext.User;
+//            if (!user.Identity.IsAuthenticated)
+//            {
+//                if (context.HttpContext.Request.Path.Value.StartsWith("/api"))
+//                {
+//                    context.Response.StatusCode = 200;
+//                    context.Response.ContentType = "application/json";
+//                    await context.HttpContext.Response.WriteAsync("{\"success\":false,\"message\":\"Xác thực thất bại!\"}");
+//                }
+//                else
+//                {
+//                    context.Response.Redirect("/admin/login");
+//                }
+//            }
+//        }
+//    };
+//});
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; 
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;  
-    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;            
+    // JWT Bearer làm default cho authenticate và authorize
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+
+    // admin
     options.DefaultSignInScheme = "AdminCookies";
-})
-.AddCookie("UserCookies", options =>
-{
-    options.LoginPath = "/login";
-    options.LogoutPath = "/logout";
-    options.AccessDeniedPath = "/student/access-denied";
-    options.ExpireTimeSpan = TimeSpan.FromDays(30);
-    options.SlidingExpiration = true;
-    options.Cookie.Name = "UserAuth";
 })
 .AddCookie("AdminCookies", options =>
 {
@@ -114,6 +182,21 @@ builder.Services.AddAuthentication(options =>
     options.ExpireTimeSpan = TimeSpan.FromDays(1);
     options.SlidingExpiration = true;
     options.Cookie.Name = "AdminAuth";
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.SameSite = SameSiteMode.Strict;
+})
+.AddCookie("UserCookies", options =>
+{
+    options.LoginPath = "/login";
+    options.LogoutPath = "/logout";
+    options.AccessDeniedPath = "/access-denied";
+    options.ExpireTimeSpan = TimeSpan.FromDays(30);
+    options.SlidingExpiration = true;
+    options.Cookie.Name = "UserAuth";
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.SameSite = SameSiteMode.Lax;
 })
 .AddJwtBearer(options =>
 {
@@ -123,47 +206,86 @@ builder.Services.AddAuthentication(options =>
     {
         ValidateIssuer = true,
         ValidateAudience = true,
+        ValidateLifetime = true,
         ValidAudience = builder.Configuration["JwtToken:Audience"],
         ValidIssuer = builder.Configuration["JwtToken:Issuer"],
         ClockSkew = TimeSpan.Zero,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtToken:SigningKey"]))
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(builder.Configuration["JwtToken:SigningKey"]))
     };
+
     options.Events = new JwtBearerEvents
     {
         OnMessageReceived = context =>
         {
-            if (context.Request.Cookies.ContainsKey("Auth"))
+            //MobieAPI
+            var authHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+            if (!string.IsNullOrEmpty(authHeader) && authHeader.StartsWith("Bearer "))
             {
-                string token = context.Request.Cookies["Auth"];
-                if (!string.IsNullOrEmpty(token))
-                {
-                    context.Token = token;
-                }
+                context.Token = authHeader.Substring("Bearer ".Length).Trim();
             }
+            // WEBJWT
+            else if (context.Request.Cookies.TryGetValue("Auth", out var token)
+                && !string.IsNullOrEmpty(token))
+            {
+                context.Token = token;
+            }
+            // ADMIN 
+            else if (context.Request.Cookies.TryGetValue("AdminAuth", out var adminToken)
+                && !string.IsNullOrEmpty(adminToken))
+            {
+                context.Token = adminToken;
+            }
+            // USER
+            else if (context.Request.Cookies.TryGetValue("UserAuth", out var userToken)
+                && !string.IsNullOrEmpty(userToken))
+            {
+                context.Token = userToken;
+            }
+
             return Task.CompletedTask;
         },
-        OnChallenge = async (context) =>
+
+        OnChallenge = context =>
         {
             context.HandleResponse();
 
-            var user = context.HttpContext.User;
-            if (!user.Identity.IsAuthenticated)
+            if (context.Request.Path.StartsWithSegments("/api"))
             {
-                if (context.HttpContext.Request.Path.Value.StartsWith("/api"))
+                context.Response.StatusCode = 401;
+                context.Response.ContentType = "application/json";
+                return context.Response.WriteAsJsonAsync(new
                 {
-                    context.Response.StatusCode = 200;
-                    context.Response.ContentType = "application/json";
-                    await context.HttpContext.Response.WriteAsync("{\"success\":false,\"message\":\"Xác thực thất bại!\"}");
-                }
-                else
-                {
-                    context.Response.Redirect("/admin/login");
-                }
+                    success = false,
+                    message = "Xác thực thất bại!"
+                });
             }
+            else if (context.Request.Path.StartsWithSegments("/admin"))
+            {
+                context.Response.Redirect("/admin/login");
+                return Task.CompletedTask;
+            }
+            else
+            {
+                context.Response.Redirect("/login");
+                return Task.CompletedTask;
+            }
+        },
+        OnTokenValidated = context =>
+        {
+           
+            var role = context.Principal?.FindFirst(ClaimTypes.Role)?.Value;
+            var path = context.Request.Path.Value;
+
+            if (path.StartsWith("/admin") && role != "Admin")
+            {
+                context.Fail("Không có quyền truy cập quản trị");
+            }
+
+            return Task.CompletedTask;
         }
     };
 });
-
 services.AddHttpContextAccessor();
 builder.Services
     .AddControllersWithViews()
