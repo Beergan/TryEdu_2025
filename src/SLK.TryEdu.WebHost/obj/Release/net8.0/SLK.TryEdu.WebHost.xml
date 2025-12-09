@@ -63,5 +63,36 @@
             QUẢN LÝ XÁC THỰC
             </summary>
         </member>
+        <member name="T:SLK.TryEdu.WebHost.Controllers.StudentAuthController">
+            <summary>
+            API Controller cho Student Authentication (EntityUser)
+            Chỉ xử lý authentication cho Student, không xử lý Admin/Partner
+            </summary>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Controllers.StudentAuthController.Login(SLK.TryEdu.WebHost.Models.UserLoginRequest)">
+            <summary>
+            Đăng nhập học viên (EntityUser)
+            </summary>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Controllers.StudentAuthController.Register(SLK.TryEdu.WebHost.Models.UserRegisterRequest)">
+            <summary>
+            Đăng ký học viên mới (EntityUser)
+            </summary>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Controllers.StudentAuthController.ValidateToken(System.String)">
+            <summary>
+            Validate JWT token và trả về thông tin user
+            </summary>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Controllers.StudentAuthController.GenerateJwtToken(SLK.TryEdu.ModuleUserCore.EntityUser)">
+            <summary>
+            Generate JWT token for EntityUser
+            </summary>
+        </member>
+        <member name="M:SLK.TryEdu.WebHost.Controllers.StudentAuthController.IsPasswordStrong(System.String)">
+            <summary>
+            Validate password strength
+            </summary>
+        </member>
     </members>
 </doc>

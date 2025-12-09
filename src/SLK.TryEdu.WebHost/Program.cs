@@ -170,8 +170,6 @@ builder.Services.AddAuthentication(options =>
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-
-    // admin
     options.DefaultSignInScheme = "AdminCookies";
 })
 .AddCookie("AdminCookies", options =>
@@ -224,13 +222,6 @@ builder.Services.AddAuthentication(options =>
             {
                 context.Token = authHeader.Substring("Bearer ".Length).Trim();
             }
-            // WEBJWT
-            else if (context.Request.Cookies.TryGetValue("Auth", out var token)
-                && !string.IsNullOrEmpty(token))
-            {
-                context.Token = token;
-            }
-            // ADMIN 
             else if (context.Request.Cookies.TryGetValue("AdminAuth", out var adminToken)
                 && !string.IsNullOrEmpty(adminToken))
             {

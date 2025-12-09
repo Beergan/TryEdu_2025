@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SLK.TryEdu.ModuleExamCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0315fdb19ed13967e32da47112b4872265b19f07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6817cca7a256dd4cb14951e30d03fe16237c2e3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SLK.TryEdu.ModuleExamCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SLK.TryEdu.ModuleExamCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

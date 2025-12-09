@@ -1,15 +1,21 @@
 ﻿@typeparam TItem
 @using System.Reflection
 @using System.ComponentModel.DataAnnotations
-<div class="custom-table-wrapper">
+@using Microsoft.AspNetCore.Components
+
+<CascadingValue Value="this">
+    @Columns
+</CascadingValue>
+
+<div class="custom-table-wrapper @WrapperClass">
     @if (AllowFiltering)
     {
-        <div class="table-header">
+        <div class="table-header @HeaderClass">
             <div class="search-box">
                 <i class="fas fa-search search-icon"></i>
                 <input type="text"
                        class="search-input"
-                       placeholder="Tìm kiếm trong bảng..."
+                       placeholder="@SearchPlaceholder"
                        @oninput="OnFilterTextChanged" />
             </div>
             <div class="header-info">
@@ -20,21 +26,23 @@
             </div>
         </div>
     }
-    <div class="table-container">
-        <table class="modern-table">
+
+    <div class="table-container @TableContainerClass">
+        <table class="modern-table @TableClass">
             <thead>
                 <tr>
-                    @foreach (var prop in _properties)
+                    @foreach (var column in _displayColumns)
                     {
-                        <th @onclick="() => SortByColumn(prop.Name)"
-                            class="@(AllowSorting ? "sortable" : "")">
+                        <th @onclick="() => SortByColumn(column.PropertyName)"
+                            class="@(AllowSorting && column.Sortable ? "sortable" : "") @column.HeaderClass"
+                            style="@column.HeaderStyle">
                             <div class="th-content">
-                                <span>@GetDisplayName(prop)</span>
-                                @if (AllowSorting && _sortColumn == prop.Name)
+                                <span>@column.DisplayName</span>
+                                @if (AllowSorting && column.Sortable && _sortColumn == column.PropertyName)
                                 {
                                     <i class="fas fa-sort-@(_sortAscending ? "up" : "down") sort-icon"></i>
                                 }
-                                else if (AllowSorting)
+                                else if (AllowSorting && column.Sortable)
                                 {
                                     <i class="fas fa-sort sort-icon-inactive"></i>
                                 }
@@ -43,7 +51,7 @@
                     }
                     @if (Actions != null)
                     {
-                        <th class="actions-column">
+                        <th class="actions-column @ActionsHeaderClass">
                             <i class="fas fa-cog"></i>
                         </th>
                     }
@@ -54,16 +62,25 @@
                 {
                     @foreach (var item in _pagedData)
                     {
-                        <tr class="data-row">
-                            @foreach (var prop in _properties)
+                        <tr class="data-row @RowClass">
+                            @foreach (var column in _displayColumns)
                             {
-                                <td>
-                                    <div class="cell-content">@FormatValue(prop.GetValue(item))</div>
+                                <td class="@column.CellClass" style="@column.CellStyle">
+                                    @if (column.Template != null)
+                                    {
+                                        @column.Template(item)
+                                    }
+                                    else
+                                    {
+                                        <div class="cell-content">
+                                            @FormatValue(column.Property.GetValue(item), column)
+                                        </div>
+                                    }
                                 </td>
                             }
                             @if (Actions != null)
                             {
-                                <td class="actions-cell">
+                                <td class="actions-cell @ActionsCellClass">
                                     @Actions(item)
                                 </td>
                             }
@@ -73,11 +90,11 @@
                 else
                 {
                     <tr>
-                        <td colspan="@(_properties.Count + (Actions != null ? 1 : 0))" class="empty-state">
+                        <td colspan="@(_displayColumns.Count + (Actions != null ? 1 : 0))" class="empty-state">
                             <div class="empty-content">
                                 <i class="fas fa-inbox empty-icon"></i>
-                                <p class="empty-text">Không có dữ liệu</p>
-                                <p class="empty-subtext">Thử thay đổi bộ lọc hoặc tìm kiếm</p>
+                                <p class="empty-text">@EmptyMessage</p>
+                                <p class="empty-subtext">@EmptySubMessage</p>
                             </div>
                         </td>
                     </tr>
@@ -88,7 +105,7 @@
 
     @if (AllowPaging && _totalPages > 1)
     {
-        <div class="table-footer">
+        <div class="table-footer @FooterClass">
             <div class="footer-left">
                 <div class="page-size-selector">
                     <span class="selector-label">Hiển thị</span>
@@ -145,7 +162,7 @@
 
             <div class="footer-right">
                 <span class="page-info">
-                    <strong>@(_currentPage * PageSize - PageSize + 1) - @Math.Min(_currentPage * PageSize, _totalItems)</strong>
+                    <strong>@(_currentPage* PageSize - PageSize + 1) - @Math.Min(_currentPage * PageSize, _totalItems)</strong>
                     trong số <strong>@_totalItems</strong>
                 </span>
             </div>
@@ -161,7 +178,6 @@
         overflow: hidden;
     }
 
-    /* Header Styles */
     .table-header {
         padding: 1.5rem;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -199,15 +215,15 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    .search-input:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
-        background: #ffffff;
-    }
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+            background: #ffffff;
+        }
 
-    .search-input::placeholder {
-        color: #9ca3af;
-    }
+        .search-input::placeholder {
+            color: #9ca3af;
+        }
 
     .header-info {
         display: flex;
@@ -224,7 +240,6 @@
         backdrop-filter: blur(10px);
     }
 
-    /* Table Styles */
     .table-container {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -236,35 +251,35 @@
         border-spacing: 0;
     }
 
-    .modern-table thead {
-        background: #f8fafc;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-    }
+        .modern-table thead {
+            background: #f8fafc;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
 
-    .modern-table th {
-        padding: 1rem 1.25rem;
-        text-align: left;
-        font-weight: 600;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: #475569;
-        border-bottom: 2px solid #e2e8f0;
-        white-space: nowrap;
-    }
+        .modern-table th {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #475569;
+            border-bottom: 2px solid #e2e8f0;
+            white-space: nowrap;
+        }
 
-    .modern-table th.sortable {
-        cursor: pointer;
-        user-select: none;
-        transition: all 0.2s ease;
-    }
+            .modern-table th.sortable {
+                cursor: pointer;
+                user-select: none;
+                transition: all 0.2s ease;
+            }
 
-    .modern-table th.sortable:hover {
-        background: #e2e8f0;
-        color: #667eea;
-    }
+                .modern-table th.sortable:hover {
+                    background: #e2e8f0;
+                    color: #667eea;
+                }
 
     .th-content {
         display: flex;
@@ -298,11 +313,11 @@
         border-bottom: 1px solid #f1f5f9;
     }
 
-    .modern-table tbody tr.data-row:hover {
-        background: linear-gradient(90deg, #f8fafc 0%, #ffffff 100%);
-        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
-        transform: translateY(-1px);
-    }
+        .modern-table tbody tr.data-row:hover {
+            background: linear-gradient(90deg, #f8fafc 0%, #ffffff 100%);
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
+            transform: translateY(-1px);
+        }
 
     .modern-table td {
         padding: 1rem 1.25rem;
@@ -320,7 +335,6 @@
         text-align: center;
     }
 
-    /* Empty State */
     .empty-state {
         padding: 4rem 2rem !important;
         text-align: center;
@@ -351,7 +365,6 @@
         margin: 0;
     }
 
-    /* Footer Styles */
     .table-footer {
         padding: 1.25rem 1.5rem;
         background: #f8fafc;
@@ -369,7 +382,6 @@
         gap: 0.75rem;
     }
 
-    /* Page Size Selector */
     .page-size-selector {
         display: flex;
         align-items: center;
@@ -392,17 +404,16 @@
         transition: all 0.2s ease;
     }
 
-    .page-size-select:hover {
-        border-color: #667eea;
-    }
+        .page-size-select:hover {
+            border-color: #667eea;
+        }
 
-    .page-size-select:focus {
-        outline: none;
-        border-color: #667eea;
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-    }
+        .page-size-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
 
-    /* Pagination */
     .pagination {
         display: flex;
         align-items: center;
@@ -425,26 +436,26 @@
         justify-content: center;
     }
 
-    .pagination-btn:hover:not(.disabled) {
-        background: #667eea;
-        color: white;
-        border-color: #667eea;
-        transform: translateY(-1px);
-        box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
-    }
+        .pagination-btn:hover:not(.disabled) {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
+        }
 
-    .pagination-btn.active {
-        background: #667eea;
-        color: white;
-        border-color: #667eea;
-        font-weight: 600;
-        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
-    }
+        .pagination-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
 
-    .pagination-btn.disabled {
-        opacity: 0.4;
-        cursor: not-allowed;
-    }
+        .pagination-btn.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
 
     .pagination-ellipsis {
         padding: 0 0.5rem;
@@ -457,12 +468,11 @@
         color: #64748b;
     }
 
-    .page-info strong {
-        color: #334155;
-        font-weight: 600;
-    }
+        .page-info strong {
+            color: #334155;
+            font-weight: 600;
+        }
 
-    /* Responsive Design */
     @@media (max-width: 768px) {
         .table-header {
             flex-direction: column;
@@ -487,13 +497,12 @@
             font-size: 0.85rem;
         }
 
-        .modern-table th,
-        .modern-table td {
-            padding: 0.75rem;
-        }
+            .modern-table th,
+            .modern-table td {
+                padding: 0.75rem;
+            }
     }
 
-    /* Scrollbar Styling */
     .table-container::-webkit-scrollbar {
         height: 8px;
     }
@@ -508,22 +517,47 @@
         border-radius: 4px;
     }
 
-    .table-container::-webkit-scrollbar-thumb:hover {
-        background: #94a3b8;
-    }
+        .table-container::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
 </style>
 
 @code {
-    [Parameter] public IEnumerable<TItem> ? DataSource { get; set; }
-    [Parameter] public RenderFragment<TItem> ? Actions { get; set; }
+    // Data Parameters
+    [Parameter] public IEnumerable<TItem>? DataSource { get; set; }
+    [Parameter] public RenderFragment<TItem>? Actions { get; set; }
+    [Parameter] public RenderFragment? Columns { get; set; }
+    // Pagination
     [Parameter] public int PageSize { get; set; } = 50;
     [Parameter] public int[] PageSizes { get; set; } = new[] { 10, 25, 50, 100 };
     [Parameter] public bool AllowPaging { get; set; } = true;
+
+    // Features
     [Parameter] public bool AllowFiltering { get; set; } = true;
     [Parameter] public bool AllowSorting { get; set; } = true;
-    [Parameter] public string[] ? IncludeProperties { get; set; }
+
+    // Column Configuration (Legacy support)
+    [Parameter] public string[]? IncludeProperties { get; set; }
+
+    // CSS Classes
+    [Parameter] public string WrapperClass { get; set; } = "";
+    [Parameter] public string HeaderClass { get; set; } = "";
+    [Parameter] public string TableContainerClass { get; set; } = "";
+    [Parameter] public string TableClass { get; set; } = "";
+    [Parameter] public string RowClass { get; set; } = "";
+    [Parameter] public string FooterClass { get; set; } = "";
+    [Parameter] public string ActionsHeaderClass { get; set; } = "";
+    [Parameter] public string ActionsCellClass { get; set; } = "";
+
+    // Text Customization
+    [Parameter] public string SearchPlaceholder { get; set; } = "Tìm kiếm trong bảng...";
+    [Parameter] public string EmptyMessage { get; set; } = "Không có dữ liệu";
+    [Parameter] public string EmptySubMessage { get; set; } = "Thử thay đổi bộ lọc hoặc tìm kiếm";
+
+    // Internal State
     private System.Timers.Timer _debounceTimer;
-    private List<PropertyInfo> _properties = new();
+    private List<ColumnConfig> _columnDefinitions = new();
+    private List<ColumnConfig> _displayColumns = new();
     private IEnumerable<TItem> _filteredData = new List<TItem>();
     private IEnumerable<TItem> _pagedData = new List<TItem>();
     private int _currentPage = 1;
@@ -533,29 +567,89 @@
     private string _sortColumn = "";
     private bool _sortAscending = true;
 
+    // Public API
+    public List<ColumnConfig> _Columns => _displayColumns;
+
+    public void AddColumn(ColumnConfig column)
+    {
+        _columnDefinitions.Add(column);
+    }
+
     protected override void OnInitialized()
     {
-        var type = typeof(TItem);
-        var allProperties = type.GetProperties().Where(p => p.CanRead && IsSimpleType(p.PropertyType));
-
-        // Nếu có IncludeProperties thì chỉ lấy những cái đó, ngược lại lấy tất cả
-        if (IncludeProperties != null && IncludeProperties.Any())
-        {
-            _properties = allProperties
-                .Where(p => IncludeProperties.Contains(p.Name))
-                .OrderBy(p => Array.IndexOf(IncludeProperties, p.Name))
-                .ToList();
-        }
-        else
-        {
-            _properties = allProperties.ToList();
-        }
+        // Child content sẽ được render trước, các Column sẽ tự register
     }
 
     protected override void OnParametersSet()
     {
+        BuildColumns();
         _filteredData = DataSource ?? new List<TItem>();
         ApplyFilter();
+    }
+
+    private void BuildColumns()
+    {
+        _displayColumns.Clear();
+
+        // Nếu có column definitions từ ChildContent
+        if (_columnDefinitions.Any())
+        {
+            var type = typeof(TItem);
+            foreach (var colDef in _columnDefinitions)
+            {
+                var prop = type.GetProperty(colDef.PropertyName);
+                if (prop != null)
+                {
+                    colDef.Property = prop;
+                    if (string.IsNullOrEmpty(colDef.DisplayName))
+                    {
+                        colDef.DisplayName = GetDisplayName(prop);
+                    }
+                    _displayColumns.Add(colDef);
+                }
+            }
+        }
+        // Fallback: Nếu không có column definitions, dùng IncludeProperties
+        else if (IncludeProperties != null && IncludeProperties.Any())
+        {
+            var type = typeof(TItem);
+            var allProperties = type.GetProperties().Where(p => p.CanRead && IsSimpleType(p.PropertyType));
+
+            var orderedProps = allProperties
+                .Where(p => IncludeProperties.Contains(p.Name))
+                .OrderBy(p => Array.IndexOf(IncludeProperties, p.Name))
+                .ToList();
+
+            foreach (var prop in orderedProps)
+            {
+                _displayColumns.Add(new ColumnConfig
+                {
+                    PropertyName = prop.Name,
+                    DisplayName = GetDisplayName(prop),
+                    Property = prop,
+                    Sortable = true,
+                    Visible = true
+                });
+            }
+        }
+        // Default: All properties
+        else
+        {
+            var type = typeof(TItem);
+            var allProperties = type.GetProperties().Where(p => p.CanRead && IsSimpleType(p.PropertyType));
+
+            foreach (var prop in allProperties)
+            {
+                _displayColumns.Add(new ColumnConfig
+                {
+                    PropertyName = prop.Name,
+                    DisplayName = GetDisplayName(prop),
+                    Property = prop,
+                    Sortable = true,
+                    Visible = true
+                });
+            }
+        }
     }
 
     private bool IsSimpleType(Type type)
@@ -580,9 +674,12 @@
         return System.Text.RegularExpressions.Regex.Replace(prop.Name, "([a-z])([A-Z])", "$1 $2");
     }
 
-    private string FormatValue(object? value)
+    private string FormatValue(object? value, ColumnConfig column)
     {
         if (value == null) return "";
+
+        if (column.Formatter != null)
+            return column.Formatter(value);
 
         if (value is DateTime dt)
             return dt.ToString("dd/MM/yyyy");
@@ -595,23 +692,24 @@
 
         return value.ToString() ?? "";
     }
+
     private void OnFilterTextChanged(ChangeEventArgs e)
     {
         FilterText = e.Value?.ToString() ?? "";
 
         _debounceTimer?.Stop();
         _debounceTimer?.Dispose();
-        _debounceTimer = new System.Timers.Timer(400); 
+        _debounceTimer = new System.Timers.Timer(400);
         _debounceTimer.Elapsed += (s, args) =>
         {
             _debounceTimer.Stop();
             _debounceTimer.Dispose();
             _debounceTimer = null;
-
             InvokeAsync(() => ApplyFilter());
         };
         _debounceTimer.Start();
     }
+
     private void ApplyFilter()
     {
         if (string.IsNullOrWhiteSpace(FilterText))
@@ -623,9 +721,9 @@
             var searchText = FilterText.ToLower().Trim();
             _filteredData = (DataSource ?? new List<TItem>()).Where(item =>
             {
-                foreach (var prop in _properties)
+                foreach (var column in _displayColumns.Where(c => c.Visible))
                 {
-                    var value = prop.GetValue(item)?.ToString()?.ToLower();
+                    var value = column.Property.GetValue(item)?.ToString()?.ToLower();
                     if (value != null && value.Contains(searchText))
                         return true;
                 }
@@ -639,7 +737,8 @@
 
     private void SortByColumn(string propertyName)
     {
-        if (!AllowSorting) return;
+        var column = _displayColumns.FirstOrDefault(c => c.PropertyName == propertyName);
+        if (!AllowSorting || column == null || !column.Sortable) return;
 
         if (_sortColumn == propertyName)
         {
@@ -651,12 +750,9 @@
             _sortAscending = true;
         }
 
-        var prop = _properties.FirstOrDefault(p => p.Name == propertyName);
-        if (prop == null) return;
-
         _filteredData = _sortAscending
-            ? _filteredData.OrderBy(x => prop.GetValue(x)).ToList()
-            : _filteredData.OrderByDescending(x => prop.GetValue(x)).ToList();
+            ? _filteredData.OrderBy(x => column.Property.GetValue(x)).ToList()
+            : _filteredData.OrderByDescending(x => column.Property.GetValue(x)).ToList();
 
         UpdatePagination();
     }
@@ -724,5 +820,61 @@
         }
 
         return pages;
+    }
+
+    public class ColumnConfig
+    {
+        public string PropertyName { get; set; } = "";
+        public string DisplayName { get; set; } = "";
+        public PropertyInfo Property { get; set; }
+        public bool Sortable { get; set; } = true;
+        public bool Visible { get; set; } = true;
+        public string HeaderClass { get; set; } = "";
+        public string HeaderStyle { get; set; } = "";
+        public string CellClass { get; set; } = "";
+        public string CellStyle { get; set; } = "";
+        public Func<object, string>? Formatter { get; set; }
+        public RenderFragment<TItem>? Template { get; set; }
+    }
+
+    // Nested TableColumn Component
+    public class TableColumn : ComponentBase
+    {
+        [CascadingParameter] public CustomTable<TItem> Table { get; set; }
+
+        [Parameter] public string Property { get; set; } = "";
+        [Parameter] public string Title { get; set; } = "";
+        [Parameter] public bool Sortable { get; set; } = true;
+        [Parameter] public bool Visible { get; set; } = true;
+
+        [Parameter] public string HeaderClass { get; set; } = "";
+        [Parameter] public string HeaderStyle { get; set; } = "";
+        [Parameter] public string CellClass { get; set; } = "";
+        [Parameter] public string CellStyle { get; set; } = "";
+
+        [Parameter] public Func<object, string>? Format { get; set; }
+        [Parameter] public RenderFragment<TItem>? Template { get; set; }
+
+        protected override void OnInitialized()
+        {
+            if (Table == null)
+                throw new InvalidOperationException("TableColumn must be used inside CustomTable");
+
+            var column = new ColumnConfig
+            {
+                PropertyName = Property,
+                DisplayName = Title,
+                Sortable = Sortable,
+                Visible = Visible,
+                HeaderClass = HeaderClass,
+                HeaderStyle = HeaderStyle,
+                CellClass = CellClass,
+                CellStyle = CellStyle,
+                Formatter = Format,
+                Template = Template
+            };
+
+            Table.AddColumn(column);
+        }
     }
 }

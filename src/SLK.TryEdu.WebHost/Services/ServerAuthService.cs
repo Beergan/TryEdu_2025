@@ -192,10 +192,8 @@ public class ServerAuthService : IAuthService
               listClaims.ToArray(),
               expires: DateTime.Now.AddMinutes(12 * 60),
               signingCredentials: credentials);
-
             var strToken = new JwtSecurityTokenHandler().WriteToken(token);
-
-            await _cookie.SetCookie("AdminAuth", strToken, 30);
+            await _cookie.SetCookie("AdminCookies", strToken, 30);
             var rspLogin = new RspLogin(strToken, DateTime.Now.AddMinutes(12 * 60), "user.FirstName", "user.LastName", "user.Avatar"/*, request.EnterpriseCode*/);
             if (rspLogin.Success)
             {

@@ -19,6 +19,7 @@
 @using System.IO
 @using Syncfusion.Blazor.Calendars
 
+
 <SfDialog Target="#target" MinHeight="500px" class="dialog-create-employee" IsModal="true" ShowCloseIcon="true" @bind-Visible="_modalVisible">
     <DialogTemplates>
         <Header><span class="title">@_modalTitle</span></Header>
@@ -125,27 +126,49 @@
         </div>
         <div class="app-content-body" style="overflow:auto" id="target">
             <div class="container-fluid" style="overflow:auto">
-                <CustomTable TItem="EntityUser"
-                             DataSource="@_users"
-                             IncludeProperties="@(new[] { "FullName", "Phone", "Email","Address" })"
-                             PageSize="50"
-                             AllowPaging="true"
-                             AllowFiltering="true"
-                             AllowSorting="true">
-                    <Actions>
-                        @{
-                            var user = context;
-                            <div class="btn-group btn-group-sm">
-                                <button class="btn btn-outline-primary" @onclick="() => EditUser(user.Id)">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-outline-danger" @onclick="() => DeleteUser(user.Id)">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        }
-                    </Actions>
-                </CustomTable>
+          <CustomTable TItem="EntityUser" 
+             DataSource="@_users"
+             PageSize="25"
+             TableClass="table-hover">
+                 <Columns>
+                        <TableColumn TItem="EntityUser" Property="FullName"
+                     Title="Họ và tên"
+                                     HeaderClass="text-dark"
+                     CellClass="fw-bold text-dark"
+                                     CellStyle="font-size: 1.1em;" />
+                        <TableColumn TItem="EntityUser" Property="Phone"
+                     Title="Số điện thoại"
+                     HeaderClass="text-center"
+                     CellClass="text-center text-success" />
+                        <TableColumn TItem="EntityUser" Property="Email"
+                                     Title="Email"
+                                     HeaderClass="text-dark"
+                                     CellClass="fst-italic">
+                            <Template>
+                                <a href="mailto:@context.Email" class="text-decoration-none text-primary">
+                                    @context.Email
+                                </a>
+                            </Template>
+                        </TableColumn>
+                       <TableColumn TItem="EntityUser" Property="Address"
+                     Title="Địa chỉ"
+                     HeaderClass="text-muted"
+                     CellClass="text-secondary" />
+                </Columns>
+                <Actions>
+                    @{
+                        var user = context;
+                        <div class="btn-group btn-group-sm">
+                            <button class="btn btn-outline-primary" @onclick="() => EditUser(user.Id)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-outline-danger" @onclick="() => DeleteUser(user.Id)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    }
+                </Actions>
+        </CustomTable> 
             </div>
         </div>
     }
@@ -187,7 +210,6 @@
         _modalTitle = "Thêm nhân sự mới";
         _modalVisible = true;
     }
-
     private void OnModalClosed(Object args)
     {
         _model = new EntityUser();
@@ -242,10 +264,8 @@
     {
         var item = _dataSource.Single(t => t.Id == id);
         _model = item;
-
         _modalTitle = "Hiệu chỉnh nhân sự";
         _modalVisible = true;
-
         await Task.CompletedTask;
     }
 

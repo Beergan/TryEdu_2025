@@ -1,476 +1,634 @@
 ﻿@page
 @model SLK.TryEdu.WebHost.Areas.Student.Pages.IndexModel
 @{
-    ViewData["Title"] = "Trang chủ - TryEdu AI";
+    ViewData["Title"] = "Trang chủ - TryEdu";
     Layout = "~/Pages/Shared/_StudentLayout.cshtml";
 }
 
-    <section class="hero-section">
-        <div class="particles" id="particles"></div>
-        <div class="container">
-            <div class="row align-items-center ">
-                <div class="col-lg-6 hero-content">
-                    <div class="hero-badge">
-                        <i class="fas fa-sparkles me-2"></i>Sắp Ra Mắt 2025
-                    </div>
-                    <h1 class="hero-title">
-                        AI Chấm Bài<br>
-                        <span style="background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Tự Luận Thông Minh</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        Hệ thống thi thử trực tuyến đầu tiên tại Việt Nam sử dụng AI để chấm bài tự luận tự động, chính xác và nhanh chóng như giáo viên.
-                    </p>
-                    <div class="d-flex gap-3 flex-wrap">
-                        <button class="btn btn-hero btn-hero-primary">
-                            <i class="fas fa-rocket me-2"></i>Dùng Thử Miễn Phí
-                        </button>
-                        <button class="btn btn-hero btn-hero-secondary">
-                            <i class="fas fa-play-circle me-2"></i>Xem Demo
-                        </button>
-                    </div>
-                    <div class="mt-5">
-                        <div class="row g-4">
-                            <div class="col-4">
-                                <div class="text-white">
-                                    <h3 class="fw-bold mb-0">98%</h3>
-                                    <small class="opacity-75">Độ chính xác</small>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="text-white">
-                                    <h3 class="fw-bold mb-0">&lt;3s</h3>
-                                    <small class="opacity-75">Thời gian chấm</small>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="text-white">
-                                    <h3 class="fw-bold mb-0">24/7</h3>
-                                    <small class="opacity-75">Hỗ trợ AI</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<section class="hero-section">
+    <div class="particles" id="particles"></div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles me-2"></i>Hệ Thống Thi Thử Trực Tuyến
                 </div>
-                <div class="col-lg-6">
-                    <div class="dashboard-preview">
-                        <div class="preview-card">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="me-3">
-                                    <i class="fas fa-robot fa-2x" style="color: var(--primary);"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-1 fw-bold">AI Đang Chấm Bài...</h5>
-                                    <small class="text-muted">Phân tích câu trả lời tự luận</small>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <span class="small fw-semibold">Phân tích nội dung</span>
-                                    <span class="small text-primary">95%</span>
-                                </div>
-                                <div class="loading-bar">
-                                    <div class="loading-progress" style="width: 95%;"></div>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <span class="small fw-semibold">Kiểm tra ngữ pháp</span>
-                                    <span class="small text-success">88%</span>
-                                </div>
-                                <div class="loading-bar">
-                                    <div class="loading-progress" style="width: 88%; animation-delay: 0.5s;"></div>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <span class="small fw-semibold">Đánh giá logic</span>
-                                    <span class="small text-warning">92%</span>
-                                </div>
-                                <div class="loading-bar">
-                                    <div class="loading-progress" style="width: 92%; animation-delay: 1s;"></div>
-                                </div>
-                            </div>
-                            <div class="alert alert-success mb-0">
-                                <i class="fas fa-check-circle me-2"></i>
-                                <strong>Kết quả:</strong> Điểm 9.2/10 - Bài làm xuất sắc!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Tính Năng Vượt Trội</h2>
-                <p class="section-subtitle">Giải pháp toàn diện cho học tập và thi thử trực tuyến</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s;">
-                        <div class="feature-icon">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        <h3 class="feature-title">Khóa Học Miễn Phí</h3>
-                        <p class="feature-description">
-                            Truy cập ngay lập tức các khóa học Tiếng Anh chất lượng cao hoàn toàn miễn phí. Không cần thanh toán, chỉ cần đăng ký.
-                        </p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle text-success"></i> Video HD chất lượng cao</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Tài liệu học tập đầy đủ</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Quiz sau mỗi bài học</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s;">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <h3 class="feature-title">Bài Thi Thử Chuyên Nghiệp</h3>
-                        <p class="feature-description">
-                            Mua bài thi thử IELTS, TOEIC với giá hợp lý. Chấm điểm tự động bởi AI và giáo viên chuyên nghiệp.
-                        </p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle text-success"></i> 4 kỹ năng đầy đủ</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Chấm điểm trong 3 giây</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Feedback chi tiết</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s;">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h3 class="feature-title">AI Chấm Điểm Tự Động</h3>
-                        <p class="feature-description">
-                            Công nghệ AI tiên tiến phân tích và chấm điểm bài thi Writing/Speaking với độ chính xác 98.5%.
-                        </p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle text-success"></i> Chấm tức thì</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Phân tích sâu</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Đề xuất cải thiện</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #ec4899, #db2777);">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="feature-title">Phân Tích Thông Minh</h3>
-                        <p class="feature-description">
-                            Báo cáo chi tiết về tiến độ học tập, điểm mạnh/yếu và xu hướng cải thiện qua thời gian.
-                        </p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle text-success"></i> Dashboard trực quan</li>
-                            <li><i class="fas fa-check-circle text-success"></i> So sánh với cộng đồng</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Dự đoán kết quả</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
-                            <i class="fas fa-route"></i>
-                        </div>
-                        <h3 class="feature-title">Lộ Trình Cá Nhân</h3>
-                        <p class="feature-description">
-                            AI tạo lộ trình học tập riêng biệt dựa trên năng lực và mục tiêu của từng học viên.
-                        </p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle text-success"></i> Đề xuất bài tập</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Lịch học tối ưu</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Theo dõi tiến độ</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="feature-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="feature-title">Cộng Đồng Học Tập</h3>
-                        <p class="feature-description">
-                            Tham gia cộng đồng học viên, study groups, forum thảo luận và peer review.
-                        </p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle text-success"></i> Forum thảo luận</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Study groups</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Peer review</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Platform Section -->
-    <section id="platform" class="platform-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Đa Nền Tảng</h2>
-                <p class="section-subtitle">Học mọi lúc, mọi nơi với mọi thiết bị</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="platform-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="platform-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3 class="feature-title">Web Application</h3>
-                        <p class="feature-description">
-                            Truy cập qua trình duyệt với giao diện Blazor hiện đại, mượt mà và responsive.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="platform-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="platform-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="feature-title">Mobile App</h3>
-                        <p class="feature-description">
-                            Ứng dụng Flutter native cho iOS và Android với hiệu năng vượt trội.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="platform-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="platform-icon">
-                            <i class="fas fa-cloud-download-alt"></i>
-                        </div>
-                        <h3 class="feature-title">Offline Mode</h3>
-                        <p class="feature-description">
-                            Download bài học và học offline, tự động đồng bộ khi có internet.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section id="process" class="process-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Cách Thức Hoạt Động</h2>
-                <p class="section-subtitle">Chỉ 3 bước đơn giản để bắt đầu</p>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4">
-                    <div class="process-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="process-number">1</div>
-                        <h3 class="process-title">Đăng Ký Miễn Phí</h3>
-                        <p class="process-description">
-                            Tạo tài khoản trong 30 giây. Xác thực email và bắt đầu học ngay lập tức với các khóa học miễn phí.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="process-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="process-number">2</div>
-                        <h3 class="process-title">Học &amp; Thi Thử</h3>
-                        <p class="process-description">
-                            Truy cập khóa học miễn phí hoặc mua bài thi thử. AI chấm điểm tự động và đưa ra feedback chi tiết.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="process-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="process-number">3</div>
-                        <h3 class="process-title">Theo Dõi Tiến Độ</h3>
-                        <p class="process-description">
-                            Xem báo cáo chi tiết, phân tích điểm mạnh/yếu và nhận lộ trình học tập cá nhân hóa từ AI.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Bảng Giá Linh Hoạt</h2>
-                <p class="section-subtitle">Chọn gói phù hợp với nhu cầu của bạn</p>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="pricing-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <h3 class="pricing-title">Miễn Phí</h3>
-                        <div class="pricing-price">
-                            <span class="price-amount">0₫</span>
-                            <p class="price-period">/tháng</p>
-                        </div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check-circle text-success"></i> Tất cả khóa học miễn phí</li>
-                            <li><i class="fas fa-check-circle text-success"></i> 5 bài thi thử/tháng</li>
-                            <li><i class="fas fa-check-circle text-success"></i> AI chấm tự động</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Báo cáo cơ bản</li>
-                            <li><i class="fas fa-times-circle text-muted"></i> Lộ trình cá nhân</li>
-                            <li><i class="fas fa-times-circle text-muted"></i> Trợ lý AI 24/7</li>
-                        </ul>
-                        <button class="btn btn-outline-primary w-100 rounded-pill py-3">
-                            Bắt Đầu Miễn Phí
-                        </button>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="pricing-card featured" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="pricing-badge">Phổ Biến Nhất</div>
-                        <h3 class="pricing-title">Pro</h3>
-                        <div class="pricing-price">
-                            <span class="price-amount">199K</span>
-                            <p class="price-period">/tháng</p>
-                        </div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check-circle text-success"></i> Tất cả khóa học miễn phí</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Không giới hạn bài thi</li>
-                            <li><i class="fas fa-check-circle text-success"></i> AI chấm tự động</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Báo cáo chi tiết</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Lộ trình cá nhân</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Trợ lý AI 24/7</li>
-                        </ul>
-                        <button class="btn btn-primary w-100 rounded-pill py-3">
-                            Chọn Gói Pro
-                        </button>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="pricing-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <h3 class="pricing-title">Enterprise</h3>
-                        <div class="pricing-price">
-                            <span class="price-amount" style="font-size: 2.5rem;">Liên hệ</span>
-                        </div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check-circle text-success"></i> Tất cả tính năng Pro</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Quản lý đa trường</li>
-                            <li><i class="fas fa-check-circle text-success"></i> API tích hợp</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Hỗ trợ ưu tiên</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Đào tạo miễn phí</li>
-                            <li><i class="fas fa-check-circle text-success"></i> Tùy chỉnh hệ thống</li>
-                        </ul>
-                        <button class="btn btn-outline-primary w-100 rounded-pill py-3">
-                            Liên Hệ Sales
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="features-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Học Viên Nói Gì?</h2>
-                <p class="section-subtitle">Hơn 50,000 học viên tin tưởng TryEdu AI</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; font-size: 1.8rem; font-weight: bold;">
-                                N
-                            </div>
-                            <div>
-                                <h5 class="mb-1 fw-bold">Nguyễn Văn An</h5>
-                                <small class="text-muted">Học sinh lớp 12</small>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                        </div>
-                        <p class="text-muted">
-                            "AI chấm bài tự luận chính xác đến không ngờ! Giúp mình tiết kiệm rất nhiều thời gian và biết được điểm yếu của mình để cải thiện."
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, #10b981, #059669); color: white; font-size: 1.8rem; font-weight: bold;">
-                                T
-                            </div>
-                            <div>
-                                <h5 class="mb-1 fw-bold">Trần Thị Bình</h5>
-                                <small class="text-muted">Giáo viên</small>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                        </div>
-                        <p class="text-muted">
-                            "Công cụ tuyệt vời cho giáo viên! AI không chỉ chấm điểm mà còn đưa ra nhận xét chi tiết giúp học sinh hiểu rõ sai lầm của mình."
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; font-size: 1.8rem; font-weight: bold;">
-                                L
-                            </div>
-                            <div>
-                                <h5 class="mb-1 fw-bold">Lê Minh Châu</h5>
-                                <small class="text-muted">Phụ huynh</small>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                        </div>
-                        <p class="text-muted">
-                            "Con tôi học tiến bộ rõ rệt sau khi dùng TryEdu AI. Lộ trình học cá nhân hóa rất phù hợp với năng lực của con."
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Sẵn Sàng Trải Nghiệm?</h2>
-                <p class="cta-description">
-                    Đăng ký ngay để nhận ưu đãi đặc biệt dành cho 1000 người dùng đầu tiên
+                <h1 class="hero-title">
+                    Học Tiếng Anh Miễn Phí<br>
+                    <span style="background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Thi Thử Chuyên Nghiệp</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Truy cập ngay các khóa học Tiếng Anh miễn phí. Mua bài thi thử IELTS, TOEIC bằng coin. AI chấm điểm tự động trong 3 giây với độ chính xác 98%.
                 </p>
-                <div class="d-flex gap-3 justify-content-center flex-wrap mb-4">
-                    <button class="btn btn-light-custom">
-                        <i class="fas fa-rocket me-2"></i>Dùng Thử Miễn Phí
-                    </button>
-                    <button class="btn btn-outline-light btn-lg rounded-pill px-5">
-                        <i class="fas fa-phone me-2"></i>Liên Hệ Ngay
-                    </button>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="/student/free-courses" class="btn btn-hero btn-hero-primary">
+                        <i class="fas fa-graduation-cap me-2"></i>Học Miễn Phí Ngay
+                    </a>
+                    <a href="/student/quizzes" class="btn btn-hero btn-hero-secondary">
+                        <i class="fas fa-file-alt me-2"></i>Xem Bài Thi Thử
+                    </a>
                 </div>
-                <div class="mt-4">
-                    <p class="text-white mb-0">
-                        <i class="fas fa-check-circle me-2"></i>Không cần thẻ tín dụng
-                        <span class="mx-3">•</span>
-                        <i class="fas fa-check-circle me-2"></i>Hủy bất cứ lúc nào
-                        <span class="mx-3">•</span>
-                        <i class="fas fa-check-circle me-2"></i>Hỗ trợ 24/7
+                <div class="mt-5">
+                    <div class="row g-4">
+                        <div class="col-4">
+                            <div class="text-white">
+                                <h3 class="fw-bold mb-0">@(Model.StudentModel.TotalStudents)+</h3>
+                                <small class="opacity-75">Học viên</small>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-white">
+                                <h3 class="fw-bold mb-0">@(Model.StudentModel.TotalExams)+</h3>
+                                <small class="opacity-75">Bài thi thử</small>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-white">
+                                <h3 class="fw-bold mb-0">98%</h3>
+                                <small class="opacity-75">Độ chính xác AI</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="dashboard-preview">
+                    <div class="preview-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="me-3">
+                                <i class="fas fa-robot fa-2x" style="color: var(--primary);"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1 fw-bold">AI Đang Chấm Bài...</h5>
+                                <small class="text-muted">Phân tích bài thi Writing & Speaking</small>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small fw-semibold">Phân tích nội dung</span>
+                                <span class="small text-primary">95%</span>
+                            </div>
+                            <div class="loading-bar">
+                                <div class="loading-progress" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small fw-semibold">Kiểm tra ngữ pháp</span>
+                                <span class="small text-success">88%</span>
+                            </div>
+                            <div class="loading-bar">
+                                <div class="loading-progress" style="width: 88%; animation-delay: 0.5s;"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small fw-semibold">Đánh giá logic</span>
+                                <span class="small text-warning">92%</span>
+                            </div>
+                            <div class="loading-bar">
+                                <div class="loading-progress" style="width: 92%; animation-delay: 1s;"></div>
+                            </div>
+                        </div>
+                        <div class="alert alert-success mb-0">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <strong>Kết quả:</strong> Điểm 9.2/10 - Bài làm xuất sắc!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Tính Năng Vượt Trội</h2>
+            <p class="section-subtitle">Giải pháp toàn diện cho học tập và thi thử trực tuyến</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="feature-title">Khóa Học Miễn Phí</h3>
+                    <p class="feature-description">
+                        Truy cập ngay lập tức các khóa học Tiếng Anh chất lượng cao hoàn toàn miễn phí. Không cần thanh toán, chỉ cần đăng ký tài khoản.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle text-success"></i> Video HD chất lượng cao</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Tài liệu học tập đầy đủ</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Quiz sau mỗi bài học</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Học mọi lúc, mọi nơi</li>
+                    </ul>
+                    <a href="/student/free-courses" class="btn btn-outline-primary mt-3 w-100">
+                        <i class="fas fa-arrow-right me-2"></i>Xem Khóa Học Miễn Phí
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s;">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Bài Thi Thử Có Thu Phí</h3>
+                    <p class="feature-description">
+                        Mua bài thi thử IELTS, TOEIC bằng coin với giá hợp lý. Chấm điểm tự động bởi AI và giáo viên chuyên nghiệp. Nhận kết quả ngay sau khi làm xong.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle text-success"></i> 4 kỹ năng đầy đủ (Reading, Listening, Writing, Speaking)</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Chấm điểm trong 3 giây</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Feedback chi tiết từ AI và giáo viên</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Lưu lịch sử và theo dõi tiến độ</li>
+                    </ul>
+                    <a href="/student/quizzes" class="btn btn-outline-primary mt-3 w-100">
+                        <i class="fas fa-arrow-right me-2"></i>Xem Bài Thi Thử
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card" style="opacity: 1; transform: translateY(0px); transition: 0.6s;">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="feature-title">Hệ Thống Coin</h3>
+                    <p class="feature-description">
+                        Nạp coin vào tài khoản để mua bài thi thử. Sử dụng mã giới thiệu từ trung tâm đối tác để được giảm giá. Thanh toán nhanh chóng và an toàn.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle text-success"></i> Nạp coin dễ dàng (VNPay, MoMo, Banking)</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Sử dụng mã giới thiệu để giảm giá</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Quản lý ví coin trực quan</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Lịch sử giao dịch chi tiết</li>
+                    </ul>
+                    <a href="/student/coin-wallet" class="btn btn-outline-primary mt-3 w-100">
+                        <i class="fas fa-wallet me-2"></i>Nạp Coin Ngay
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-title">AI Chấm Điểm Tự Động</h3>
+                    <p class="feature-description">
+                        Công nghệ AI tiên tiến phân tích và chấm điểm bài thi Writing/Speaking với độ chính xác 98.5%. Nhận kết quả ngay sau khi làm xong.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle text-success"></i> Chấm tức thì (< 3 giây)</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Phân tích sâu về ngữ pháp, từ vựng</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Đề xuất cải thiện cụ thể</li>
+                        <li><i class="fas fa-check-circle text-success"></i> So sánh với chuẩn IELTS/TOEIC</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Mã Giới Thiệu</h3>
+                    <p class="feature-description">
+                        Nhận mã giới thiệu từ trung tâm đối tác để được giảm giá khi nạp coin hoặc mua bài thi. Tiết kiệm chi phí và hỗ trợ trung tâm của bạn.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle text-success"></i> Giảm giá khi nạp coin</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Giảm giá khi mua bài thi</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Validate mã real-time</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Lưu lịch sử sử dụng mã</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Theo Dõi Tiến Độ</h3>
+                    <p class="feature-description">
+                        Dashboard học tập trực quan với báo cáo chi tiết về điểm số, tiến độ học tập và xu hướng cải thiện qua thời gian.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle text-success"></i> Dashboard trực quan</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Lịch sử bài thi chi tiết</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Phân tích điểm mạnh/yếu</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Dự đoán kết quả thi thật</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section id="process" class="process-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Cách Thức Hoạt Động</h2>
+            <p class="section-subtitle">Chỉ 3 bước đơn giản để bắt đầu học và thi thử</p>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <div class="process-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="process-number">1</div>
+                    <h3 class="process-title">Đăng Ký & Học Miễn Phí</h3>
+                    <p class="process-description">
+                        Tạo tài khoản trong 30 giây. Xác thực email và bắt đầu học ngay lập tức với các khóa học Tiếng Anh miễn phí. Không cần thanh toán.
+                    </p>
+                    <a href="/student/register" class="btn btn-outline-primary mt-3">
+                        <i class="fas fa-user-plus me-2"></i>Đăng Ký Ngay
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="process-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="process-number">2</div>
+                    <h3 class="process-title">Nạp Coin & Mua Bài Thi</h3>
+                    <p class="process-description">
+                        Nạp coin vào tài khoản (sử dụng mã giới thiệu để được giảm giá). Mua bài thi thử IELTS, TOEIC bằng coin. Làm bài thi và nhận kết quả AI ngay.
+                    </p>
+                    <a href="/student/coin-wallet" class="btn btn-outline-primary mt-3">
+                        <i class="fas fa-wallet me-2"></i>Nạp Coin
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="process-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="process-number">3</div>
+                    <h3 class="process-title">Nhận Kết Quả & Cải Thiện</h3>
+                    <p class="process-description">
+                        Nhận kết quả chấm điểm tự động từ AI trong 3 giây. Xem feedback chi tiết từ giáo viên. Theo dõi tiến độ và cải thiện điểm số.
+                    </p>
+                    <a href="/student/dashboard" class="btn btn-outline-primary mt-3">
+                        <i class="fas fa-chart-line me-2"></i>Xem Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Coin System Section -->
+<section id="coin-system" class="features-section" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Hệ Thống Coin - Thanh Toán Linh Hoạt</h2>
+            <p class="section-subtitle">Nạp coin một lần, sử dụng nhiều lần. Tiết kiệm với mã giới thiệu</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card text-center" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="feature-icon mx-auto mb-3" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Nạp Coin</h4>
+                    <p class="text-muted mb-3">Nạp coin vào tài khoản với nhiều mức giá linh hoạt</p>
+                    <ul class="list-unstyled text-start">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>50K, 100K, 200K, 500K, 1M VNĐ</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Tỷ lệ 1:1 (1 VNĐ = 1 Coin)</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Thanh toán: VNPay, MoMo, Banking</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card text-center" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="feature-icon mx-auto mb-3" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Mã Giới Thiệu</h4>
+                    <p class="text-muted mb-3">Sử dụng mã từ trung tâm đối tác để được giảm giá</p>
+                    <ul class="list-unstyled text-start">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Giảm giá khi nạp coin</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Giảm giá khi mua bài thi</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Validate real-time</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card text-center" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="feature-icon mx-auto mb-3" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Mua Bài Thi</h4>
+                    <p class="text-muted mb-3">Mua bài thi thử bằng coin đã nạp</p>
+                    <ul class="list-unstyled text-start">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>IELTS, TOEIC đầy đủ 4 kỹ năng</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Giá từ 100-500 coin</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Áp dụng mã giới thiệu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card text-center" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="feature-icon mx-auto mb-3" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Quản Lý Giao Dịch</h4>
+                    <p class="text-muted mb-3">Theo dõi lịch sử nạp coin và mua bài thi</p>
+                    <ul class="list-unstyled text-start">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Lịch sử giao dịch chi tiết</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Quản lý ví coin trực quan</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Email xác nhận giao dịch</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="/student/coin-wallet" class="btn btn-primary btn-lg px-5 rounded-pill">
+                <i class="fas fa-wallet me-2"></i>Nạp Coin Ngay
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section - Coin Based -->
+<section id="pricing" class="pricing-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Bảng Giá Bài Thi Thử</h2>
+            <p class="section-subtitle">Mua bài thi bằng coin - Bạn cần nạp coin vào tài khoản trước khi mua</p>
+        </div>
+        
+        <!-- Quy trình mua bài thi -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="alert alert-info d-flex align-items-center" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border: none; border-radius: 15px;">
+                    <div class="me-3">
+                        <i class="fas fa-info-circle fa-2x text-primary"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h5 class="mb-2 fw-bold">Quy trình mua bài thi:</h5>
+                        <ol class="mb-0" style="padding-left: 20px;">
+                            <li><strong>Bước 1:</strong> Nạp coin vào tài khoản (có thể dùng mã giới thiệu để được bonus)</li>
+                            <li><strong>Bước 2:</strong> Chọn bài thi muốn mua và thanh toán bằng coin đã nạp</li>
+                            <li><strong>Bước 3:</strong> Làm bài thi và nhận kết quả AI ngay lập tức</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <h3 class="pricing-title">IELTS Mock Test</h3>
+                    <div class="pricing-price">
+                        <span class="price-amount">300</span>
+                        <p class="price-period">Coin</p>
+                        <p class="text-muted small mb-0">≈ 300.000 VNĐ</p>
+                    </div>
+                    <div class="alert alert-warning mb-3" style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 10px;">
+                        <i class="fas fa-wallet me-2"></i>
+                        <small>Cần nạp tối thiểu 300 coin để mua bài thi này</small>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle text-success"></i> 4 kỹ năng đầy đủ</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Reading: 40 câu hỏi</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Listening: 40 câu hỏi</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Writing: 2 bài viết</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Speaking: 3 phần</li>
+                        <li><i class="fas fa-check-circle text-success"></i> AI chấm tự động</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Feedback giáo viên</li>
+                    </ul>
+                    <div class="d-grid gap-2">
+                        <a href="/student/coin-wallet" class="btn btn-primary w-100 rounded-pill py-3">
+                            <i class="fas fa-wallet me-2"></i>Nạp Coin Để Mua
+                        </a>
+                        <a href="/student/quizzes?type=ielts" class="btn btn-outline-secondary w-100 rounded-pill py-2">
+                            <i class="fas fa-eye me-2"></i>Xem Chi Tiết
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card featured" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="pricing-badge">Phổ Biến Nhất</div>
+                    <h3 class="pricing-title">TOEIC Mock Test</h3>
+                    <div class="pricing-price">
+                        <span class="price-amount">200</span>
+                        <p class="price-period">Coin</p>
+                        <p class="text-muted small mb-0">≈ 200.000 VNĐ</p>
+                    </div>
+                    <div class="alert alert-warning mb-3" style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 10px;">
+                        <i class="fas fa-wallet me-2"></i>
+                        <small>Cần nạp tối thiểu 200 coin để mua bài thi này</small>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle text-success"></i> 2 kỹ năng chính</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Listening: 100 câu hỏi</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Reading: 100 câu hỏi</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Thời gian: 120 phút</li>
+                        <li><i class="fas fa-check-circle text-success"></i> AI chấm tự động</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Kết quả ngay lập tức</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Phân tích chi tiết</li>
+                    </ul>
+                    <div class="d-grid gap-2">
+                        <a href="/student/coin-wallet" class="btn btn-primary w-100 rounded-pill py-3">
+                            <i class="fas fa-wallet me-2"></i>Nạp Coin Để Mua
+                        </a>
+                        <a href="/student/quizzes?type=toeic" class="btn btn-outline-light w-100 rounded-pill py-2">
+                            <i class="fas fa-eye me-2"></i>Xem Chi Tiết
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <h3 class="pricing-title">IELTS Writing Only</h3>
+                    <div class="pricing-price">
+                        <span class="price-amount">150</span>
+                        <p class="price-period">Coin</p>
+                        <p class="text-muted small mb-0">≈ 150.000 VNĐ</p>
+                    </div>
+                    <div class="alert alert-warning mb-3" style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 10px;">
+                        <i class="fas fa-wallet me-2"></i>
+                        <small>Cần nạp tối thiểu 150 coin để mua bài thi này</small>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle text-success"></i> Task 1: 150 từ</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Task 2: 250 từ</li>
+                        <li><i class="fas fa-check-circle text-success"></i> AI chấm tự động</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Feedback chi tiết</li>
+                        <li><i class="fas fa-check-circle text-success"></i> Đề xuất cải thiện</li>
+                        <li><i class="fas fa-check-circle text-success"></i> So sánh với band điểm</li>
+                    </ul>
+                    <div class="d-grid gap-2">
+                        <a href="/student/coin-wallet" class="btn btn-primary w-100 rounded-pill py-3">
+                            <i class="fas fa-wallet me-2"></i>Nạp Coin Để Mua
+                        </a>
+                        <a href="/student/quizzes?type=ielts-writing" class="btn btn-outline-secondary w-100 rounded-pill py-2">
+                            <i class="fas fa-eye me-2"></i>Xem Chi Tiết
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="text-center">
+                    <div class="alert alert-success d-inline-block" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border: none; border-radius: 15px; padding: 20px 40px;">
+                        <h5 class="mb-3">
+                            <i class="fas fa-ticket-alt me-2 text-success"></i>
+                            Tiết kiệm với mã giới thiệu
+                        </h5>
+                        <p class="mb-2">
+                            <strong>Sử dụng mã giới thiệu từ trung tâm đối tác để:</strong>
+                        </p>
+                        <ul class="list-unstyled mb-0 text-start d-inline-block">
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Nhận thêm 10% coin khi nạp</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Giảm giá khi mua bài thi</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Tiết kiệm chi phí học tập</li>
+                        </ul>
+                        <div class="mt-3">
+                            <a href="/student/coin-wallet" class="btn btn-success rounded-pill px-4">
+                                <i class="fas fa-wallet me-2"></i>Nạp Coin Ngay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Học Viên Nói Gì?</h2>
+            <p class="section-subtitle">Hơn @(Model.StudentModel.TotalStudents)+ học viên tin tưởng TryEdu</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; font-size: 1.8rem; font-weight: bold;">
+                            N
+                        </div>
+                        <div>
+                            <h5 class="mb-1 fw-bold">Nguyễn Văn An</h5>
+                            <small class="text-muted">Học sinh lớp 12</small>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="text-muted">
+                        "Khóa học miễn phí rất chất lượng! Mình học được nhiều kiến thức bổ ích. Bài thi thử được AI chấm rất nhanh và chính xác, giúp mình biết được điểm yếu để cải thiện."
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, #10b981, #059669); color: white; font-size: 1.8rem; font-weight: bold;">
+                            T
+                        </div>
+                        <div>
+                            <h5 class="mb-1 fw-bold">Trần Thị Bình</h5>
+                            <small class="text-muted">Sinh viên đại học</small>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="text-muted">
+                        "Hệ thống coin rất tiện lợi! Mình nạp một lần và mua nhiều bài thi. Mã giới thiệu từ trung tâm giúp mình tiết kiệm được khá nhiều. AI chấm bài nhanh và feedback rất chi tiết."
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: 0.6s;">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; font-size: 1.8rem; font-weight: bold;">
+                            L
+                        </div>
+                        <div>
+                            <h5 class="mb-1 fw-bold">Lê Minh Châu</h5>
+                            <small class="text-muted">Người đi làm</small>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="text-muted">
+                        "Mình rất thích tính năng AI chấm bài tự động. Kết quả có ngay sau khi làm xong, không phải chờ đợi. Dashboard theo dõi tiến độ giúp mình biết được mình đang ở đâu và cần cải thiện gì."
                     </p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2 class="cta-title">Sẵn Sàng Bắt Đầu?</h2>
+            <p class="cta-description">
+                Đăng ký ngay để học miễn phí hoặc nạp coin để mua bài thi thử. Sử dụng mã giới thiệu để được giảm giá!
+            </p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap mb-4">
+                <a href="/student/register" class="btn btn-light-custom">
+                    <i class="fas fa-user-plus me-2"></i>Đăng Ký Miễn Phí
+                </a>
+                <a href="/student/free-courses" class="btn btn-outline-light btn-lg rounded-pill px-5">
+                    <i class="fas fa-graduation-cap me-2"></i>Học Ngay
+                </a>
+                <a href="/student/coin-wallet" class="btn btn-outline-light btn-lg rounded-pill px-5">
+                    <i class="fas fa-wallet me-2"></i>Nạp Coin
+                </a>
+            </div>
+            <div class="mt-4">
+                <p class="text-white mb-0">
+                    <i class="fas fa-check-circle me-2"></i>Khóa học miễn phí 100%
+                    <span class="mx-3">•</span>
+                    <i class="fas fa-check-circle me-2"></i>Thanh toán bằng coin linh hoạt
+                    <span class="mx-3">•</span>
+                    <i class="fas fa-check-circle me-2"></i>AI chấm bài trong 3 giây
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/student.js"></script>
+    <script>
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .process-card, .pricing-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+}

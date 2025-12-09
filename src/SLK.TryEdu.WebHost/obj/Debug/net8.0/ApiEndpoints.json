@@ -1641,6 +1641,54 @@
     ]
   },
   {
+    "ContainingType": "SLK.TryEdu.WebHost.Controllers.StudentAuthController",
+    "Method": "Login",
+    "RelativePath": "api/StudentAuth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SLK.TryEdu.WebHost.Models.UserLoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SLK.TryEdu.WebHost.Controllers.StudentAuthController",
+    "Method": "Register",
+    "RelativePath": "api/StudentAuth/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SLK.TryEdu.WebHost.Models.UserRegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SLK.TryEdu.WebHost.Controllers.StudentAuthController",
+    "Method": "ValidateToken",
+    "RelativePath": "api/StudentAuth/ValidateToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SLK.TryEdu.Base.Controllers.UploadController",
     "Method": "Remove",
     "RelativePath": "api/Upload",

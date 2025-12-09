@@ -113,8 +113,10 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8">
-                <h1 class="h2 fw-bold mb-2">👋 Xin chào, Nguyễn Văn A!</h1>
-                <p class="mb-0 opacity-90">Chào mừng bạn quay lại. Hãy tiếp tục hành trình học tập của mình!</p>
+                <h1 class="h2 fw-bold mb-2">
+                    <span id="greetingText">👋 Xin chào!</span>
+                </h1>
+                <p class="mb-0 opacity-90" id="welcomeText">Chào mừng bạn quay lại. Hãy tiếp tục hành trình học tập của mình!</p>
             </div>
             <div class="col-md-4 text-md-end mt-3 mt-md-0">
                 <div class="d-inline-block text-center">
@@ -461,8 +463,42 @@
 </div>
 
 @section Scripts {
+    <script src="~/js/student-auth.js"></script>
     <script>
-        console.log('Dashboard loaded');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Kiểm tra authentication
+            if (!StudentAuthService.isAuthenticated()) {
+                window.location.href = '/student/login';
+                return;
+            }
+
+            // Lấy thông tin user từ localStorage
+            const userInfo = StudentAuthService.getUserInfo();
+            if (userInfo) {
+                // Cập nhật greeting
+                const greetingText = document.getElementById('greetingText');
+                const welcomeText = document.getElementById('welcomeText');
+                
+                if (greetingText) {
+                    greetingText.textContent = `👋 Xin chào, ${userInfo.fullName || userInfo.firstName || 'Học viên'}!`;
+                }
+                
+                if (welcomeText && userInfo.isVerified) {
+                    welcomeText.textContent = 'Chào mừng bạn quay lại. Hãy tiếp tục hành trình học tập của mình!';
+                } else if (welcomeText) {
+                    welcomeText.innerHTML = 'Chào mừng bạn! Vui lòng xác thực email để sử dụng đầy đủ tính năng. <a href="/student/verify-email" class="text-white text-decoration-underline">Xác thực ngay</a>';
+                }
+            }
+
+            // Validate token trong background
+            StudentAuthService.validateToken().then(isValid => {
+                if (!isValid) {
+                    StudentAuthService.logout();
+                }
+            });
+
+            console.log('Dashboard loaded');
+        });
     </script>
 }
 

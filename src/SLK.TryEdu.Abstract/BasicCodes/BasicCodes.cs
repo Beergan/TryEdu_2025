@@ -13,14 +13,4 @@ public static class BasicCodes
     );
 
 
-
-    public static OptionDuals<string> PetSpeciesOptions = new(
-          new OptionDual<string>("Dog", "Dog", "Chó"),
-          new OptionDual<string>("Cat", "Cat", "Mèo"),
-          new OptionDual<string>("Bird", "Bird", "Chim"),
-          new OptionDual<string>("Other", "Other", "Khác")
-      );
-
-
-
 }

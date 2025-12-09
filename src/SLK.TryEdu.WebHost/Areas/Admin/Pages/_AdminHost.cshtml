@@ -6,11 +6,10 @@
 @using Microsoft.AspNetCore.Authentication
 @using Microsoft.AspNetCore.Authentication.Cookies
 @inject IHttpContextAccessor HttpContextAccessor
-
 @{
     if (User?.Identity == null || !User.Identity.IsAuthenticated || User.Identity.AuthenticationType != "AdminCookies")
     {
-        if (!Request.Cookies.ContainsKey("AdminAuth"))
+        if (!Request.Cookies.ContainsKey("AdminCookies"))
         {
             Response.Redirect("/admin/login");
         }
@@ -22,7 +21,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>TryEdu Admin [v@(SLK.TryEdu.WebHost.AutoClass.FullVersion) @SLK.TryEdu.WebHost.AutoClass.BuildName]</title>
-
     <meta name="description" content="TryEdu Admin - Hệ thống quản lý thi thử trực tuyến" />
     <meta name="keywords" content="admin, quan ly, thi thu, truc tuyen, tryedu" />
     <meta property="og:title" content="TryEdu Admin Portal" />

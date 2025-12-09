@@ -26,6 +26,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDdXN0b21UYWJsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/SLK/TryEdu_2025/src/SLK.TryEdu.SharedComponents/Components/TableColumn.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xUYWJsZUNvbHVtbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/SLK/TryEdu_2025/src/SLK.TryEdu.SharedComponents/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

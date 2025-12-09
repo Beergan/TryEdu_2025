@@ -1841,3 +1841,4 @@ wwwroot\upload\document\20250811152756.htm
 wwwroot\upload\document\20250811152809.xlsx
 wwwroot\upload\document\20250811153544.xlsx
 wwwroot\upload\document\20250816152134.jpg
+wwwroot\js\student-auth.js

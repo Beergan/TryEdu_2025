@@ -23,10 +23,6 @@ public class LoginModel : PageModel
     public IActionResult OnGet()
     {
 
-        if (User.Identity.IsAuthenticated && User.Identity.AuthenticationType == "AdminCookies")
-        {
-            return Redirect("/admin");
-        }
         return Page();
     }
 
@@ -71,24 +67,8 @@ public class LoginModel : PageModel
             ModelState.AddModelError("error", "Tài khoản của bạn chưa được kích hoạt!");
             return Page();
         }
-
-        var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.Name, UserId),
-            new Claim(ClaimTypes.Role, "Admin"),
-            new Claim("UserId", user.Id.ToString())
-        };
-
-        var claimsIdentity = new ClaimsIdentity(claims, "AdminCookies");
-        var authProperties = new AuthenticationProperties
-        {
-            IsPersistent = true,
-            ExpiresUtc = DateTimeOffset.UtcNow.AddDays(1)
-        };
-
-        await HttpContext.SignInAsync("AdminCookies", new ClaimsPrincipal(claimsIdentity), authProperties);
         HttpContext.Response.Cookies.Delete("blazorMode");
-        HttpContext.Response.Cookies.Append("blazorMode", "server", new CookieOptions { Expires = DateTime.Now.AddDays(30) });
+        HttpContext.Response.Cookies.Append("blazorMode", "server", new CookieOptions { Expires = DateTime.Now.AddDays(30)});
         return Redirect("~/admin");
     }
 

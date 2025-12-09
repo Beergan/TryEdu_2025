@@ -1,22 +1,101 @@
 ﻿<nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <i class="fas fa-graduation-cap me-2"></i>TryEdu AI
+            <img src="/assets/images/logo-mains.png" alt="TryEdu" height="40" class="me-2" style="filter: brightness(0) invert(1);">
+            <span>TryEdu</span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item"><a class="nav-link" href="#features">Tính năng</a></li>
-                <li class="nav-item"><a class="nav-link" href="#how-it-works">Cách hoạt động</a></li>
-                <li class="nav-item"><a class="nav-link" href="#pricing">Bảng giá</a></li>
-                <li class="nav-item ms-3">
-                    <a href="/login" class="btn btn-primary rounded-pill px-4">
-                        <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+                <li class="nav-item">
+                    <a class="nav-link" href="/student/free-courses">
+                        <i class="fas fa-gift me-1"></i>Khóa Học Miễn Phí
                     </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/student/quizzes">
+                        <i class="fas fa-file-alt me-1"></i>Bài Thi Thử
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/student/coin-wallet">
+                        <i class="fas fa-coins me-1"></i>Nạp Coin
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Tính Năng</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-circle me-1"></i>
+                        <span id="userNameDisplay">Tài Khoản</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li id="authMenu" style="display: none;">
+                            <a class="dropdown-item" href="/student/dashboard">
+                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                            </a>
+                            <a class="dropdown-item" href="/student/coin-wallet">
+                                <i class="fas fa-wallet me-2"></i>Ví Coin
+                            </a>
+                            <a class="dropdown-item" href="/student/courses">
+                                <i class="fas fa-book me-2"></i>Khóa Học Của Tôi
+                            </a>
+                            <a class="dropdown-item" href="/student/quizzes">
+                                <i class="fas fa-file-alt me-2"></i>Bài Thi Của Tôi
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a class="dropdown-item" href="#" onclick="handleLogout(); return false;">
+                                <i class="fas fa-sign-out-alt me-2"></i>Đăng Xuất
+                            </a>
+                        </li>
+                        <li id="guestMenu">
+                            <a class="dropdown-item" href="/student/login">
+                                <i class="fas fa-sign-in-alt me-2"></i>Đăng Nhập
+                            </a>
+                            <a class="dropdown-item" href="/student/register">
+                                <i class="fas fa-user-plus me-2"></i>Đăng Ký
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<script src="~/js/student-auth.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Kiểm tra authentication và cập nhật menu
+        if (StudentAuthService.isAuthenticated()) {
+            const userInfo = StudentAuthService.getUserInfo();
+            if (userInfo) {
+                const userNameDisplay = document.getElementById('userNameDisplay');
+                if (userNameDisplay) {
+                    userNameDisplay.textContent = userInfo.fullName || userInfo.firstName || 'Tài Khoản';
+                }
+                
+                // Hiển thị menu đã đăng nhập
+                const authMenu = document.getElementById('authMenu');
+                const guestMenu = document.getElementById('guestMenu');
+                if (authMenu) authMenu.style.display = 'block';
+                if (guestMenu) guestMenu.style.display = 'none';
+            }
+        } else {
+            // Hiển thị menu guest
+            const authMenu = document.getElementById('authMenu');
+            const guestMenu = document.getElementById('guestMenu');
+            if (authMenu) authMenu.style.display = 'none';
+            if (guestMenu) guestMenu.style.display = 'block';
+        }
+    });
+
+    function handleLogout() {
+        if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+            StudentAuthService.logout();
+        }
+    }
+</script>

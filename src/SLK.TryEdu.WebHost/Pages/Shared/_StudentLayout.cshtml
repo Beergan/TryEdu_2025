@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@(ViewData["Title"] ?? "TryEdu AI - Hệ thống thi thử trực tuyến thông minh")</title>
+    <title>@(ViewData["Title"] ?? "TryEdu - Học Tiếng Anh Miễn Phí & Thi Thử Chuyên Nghiệp")</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="@(ViewData["Description"] ?? "TryEdu AI - Hệ thống thi thử trực tuyến tích hợp AI thông minh, chấm điểm tự động, phân tích kết quả và đề xuất lộ trình học tập cá nhân hóa cho từng học viên.")">
-    <meta name="keywords" content="@(ViewData["Keywords"] ?? "thi thử online, AI giáo dục, học tập thông minh, chấm điểm tự động, lộ trình học tập, TryEdu, giáo dục AI, thi trực tuyến, phân tích kết quả học tập")">
+    <meta name="description" content="@(ViewData["Description"] ?? "TryEdu - Hệ thống giáo dục trực tuyến B2B2C. Học Tiếng Anh miễn phí ngay lập tức. Mua bài thi thử IELTS, TOEIC bằng coin. AI chấm điểm tự động trong 3 giây với độ chính xác 98%.")">
+    <meta name="keywords" content="@(ViewData["Keywords"] ?? "học tiếng anh miễn phí, thi thử IELTS, thi thử TOEIC, nạp coin, mã giới thiệu, AI chấm bài, chấm điểm tự động, TryEdu, giáo dục trực tuyến, khóa học miễn phí, bài thi có thu phí")">
     <meta name="author" content="TryEdu AI Team">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
@@ -58,7 +58,7 @@
                 "width": 200,
                 "height": 60
             },
-            "description": "Hệ thống thi thử trực tuyến tích hợp AI thông minh, chấm điểm tự động và đề xuất lộ trình học tập cá nhân hóa.",
+            "description": "Hệ thống giáo dục trực tuyến B2B2C. Khóa học Tiếng Anh miễn phí. Bài thi thử IELTS, TOEIC có thu phí bằng coin. AI chấm điểm tự động với độ chính xác 98%.",
             "foundingDate": "2024",
             "address": {
                 "@@type": "PostalAddress",
@@ -80,48 +80,58 @@
                 "https://www.linkedin.com/company/tryeduai",
                 "https://www.youtube.com/c/tryeduai"
             ],
-            "offers": {
-                "@@type": "Offer",
-                "name": "Hệ thống thi thử AI",
-                "description": "Dịch vụ thi thử trực tuyến tích hợp AI",
-                "price": "0",
-                "priceCurrency": "VND",
-                "availability": "https://schema.org/InStock"
-            },
+            "offers": [
+                {
+                    "@@type": "Offer",
+                    "name": "Khóa học Tiếng Anh miễn phí",
+                    "description": "Truy cập ngay lập tức các khóa học Tiếng Anh chất lượng cao hoàn toàn miễn phí",
+                    "price": "0",
+                    "priceCurrency": "VND",
+                    "availability": "https://schema.org/InStock"
+                },
+                {
+                    "@@type": "Offer",
+                    "name": "Bài thi thử IELTS",
+                    "description": "Bài thi thử IELTS đầy đủ 4 kỹ năng, AI chấm điểm tự động",
+                    "price": "300",
+                    "priceCurrency": "COIN",
+                    "availability": "https://schema.org/InStock"
+                },
+                {
+                    "@@type": "Offer",
+                    "name": "Bài thi thử TOEIC",
+                    "description": "Bài thi thử TOEIC Listening & Reading, AI chấm điểm tự động",
+                    "price": "200",
+                    "priceCurrency": "COIN",
+                    "availability": "https://schema.org/InStock"
+                }
+            ],
             "hasOfferCatalog": {
                 "@@type": "OfferCatalog",
-                "name": "Danh mục môn học",
+                "name": "Danh mục khóa học và bài thi",
                 "itemListElement": [
                     {
                         "@@type": "Offer",
                         "itemOffered": {
                             "@@type": "Course",
-                            "name": "Toán học",
-                            "description": "Khóa học toán học với AI hỗ trợ"
+                            "name": "Khóa học Tiếng Anh miễn phí",
+                            "description": "Khóa học Tiếng Anh chất lượng cao, truy cập miễn phí ngay lập tức"
                         }
                     },
                     {
                         "@@type": "Offer",
                         "itemOffered": {
                             "@@type": "Course",
-                            "name": "Vật lý",
-                            "description": "Khóa học vật lý với AI phân tích"
+                            "name": "Bài thi thử IELTS",
+                            "description": "Bài thi thử IELTS đầy đủ 4 kỹ năng, mua bằng coin"
                         }
                     },
                     {
                         "@@type": "Offer",
                         "itemOffered": {
                             "@@type": "Course",
-                            "name": "Hóa học",
-                            "description": "Khóa học hóa học với AI tối ưu"
-                        }
-                    },
-                    {
-                        "@@type": "Offer",
-                        "itemOffered": {
-                            "@@type": "Course",
-                            "name": "Tiếng Anh",
-                            "description": "Khóa học tiếng Anh với AI đánh giá"
+                            "name": "Bài thi thử TOEIC",
+                            "description": "Bài thi thử TOEIC Listening & Reading, mua bằng coin"
                         }
                     }
                 ]

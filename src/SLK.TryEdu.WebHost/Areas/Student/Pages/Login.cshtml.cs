@@ -22,13 +22,18 @@ namespace SLK.TryEdu.WebHost.Areas.Student.Pages
 
         public IActionResult OnGet()
         {
-           
+            if (Request.Cookies.ContainsKey("UserAuth"))
+            {
+                return Redirect("/student/dashboard");
+            }
             return Page();
         }
 
         [BindProperty]
         public UserLoginRequest LoginRequest { get; set; }
 
+        // API endpoint này vẫn giữ lại để tương thích với form submit truyền thống
+        // Nhưng khuyến khích sử dụng JavaScript API call
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -53,18 +58,16 @@ namespace SLK.TryEdu.WebHost.Areas.Student.Pages
                     return Page();
                 }
                 
-            
-                //if (!BCrypt.Generate(LoginRequest.Password, user.PasswordHash))
-                //{
-                //    ModelState.AddModelError("error", "Mật khẩu không chính xác");
-                //    return Page();
-                //}
+                // Verify password
+                if (!BCrypt.Net.BCrypt.Verify(LoginRequest.Password, user.PasswordHash))
+                {
+                    ModelState.AddModelError("error", "Mật khẩu không chính xác");
+                    return Page();
+                }
                 
-                // Update last login
                 user.LastLogin = DateTime.UtcNow;
                 await _userRepository.Update(user);
                 
-                // Set authentication cookies
                 var claims = new List<System.Security.Claims.Claim>
                 {
                     new System.Security.Claims.Claim(System.Security.Claims.ClaimTypes.Name, user.Email),
@@ -74,14 +77,14 @@ namespace SLK.TryEdu.WebHost.Areas.Student.Pages
                     new System.Security.Claims.Claim("IsVerified", user.IsVerified.ToString())
                 };
 
-                var claimsIdentity = new System.Security.Claims.ClaimsIdentity(claims, "UserCookies");
+                var claimsIdentity = new System.Security.Claims.ClaimsIdentity(claims, "UserAuth");
                 var authProperties = new Microsoft.AspNetCore.Authentication.AuthenticationProperties
                 {
                     IsPersistent = LoginRequest.RememberMe,
                     ExpiresUtc = DateTimeOffset.UtcNow.AddDays(LoginRequest.RememberMe ? 30 : 1)
                 };
 
-                await HttpContext.SignInAsync("UserCookies", new System.Security.Claims.ClaimsPrincipal(claimsIdentity), authProperties);
+                await HttpContext.SignInAsync("UserAuth", new System.Security.Claims.ClaimsPrincipal(claimsIdentity), authProperties);
 
                 return Redirect("/student/dashboard");
             }

@@ -51,60 +51,64 @@
                                     </div>
                                 }
 
-                                <form method="post">
+                                <form id="registerForm" method="post">
                                     @Html.AntiForgeryToken()
                                     <div class="row g-3 mb-3">
                                         <div class="col-md-6">
-                                            <input asp-for="RegisterRequest.FirstName" class="form-control form-control-lg" placeholder="Họ" />
-                                            <span asp-validation-for="RegisterRequest.FirstName" class="text-danger small"></span>
+                                            <input id="firstName" name="firstName" class="form-control form-control-lg" placeholder="Họ" required />
+                                            <span id="firstNameError" class="text-danger small"></span>
                                         </div>
                                         <div class="col-md-6">
-                                            <input asp-for="RegisterRequest.LastName" class="form-control form-control-lg" placeholder="Tên" />
-                                            <span asp-validation-for="RegisterRequest.LastName" class="text-danger small"></span>
+                                            <input id="lastName" name="lastName" class="form-control form-control-lg" placeholder="Tên" required />
+                                            <span id="lastNameError" class="text-danger small"></span>
                                         </div>
                                     </div>
 
                                     <div class="mb-3">
-                                        <input asp-for="RegisterRequest.Email" type="email" class="form-control form-control-lg" placeholder="Email" />
-                                        <span asp-validation-for="RegisterRequest.Email" class="text-danger small"></span>
+                                        <input id="email" name="email" type="email" class="form-control form-control-lg" placeholder="Email" required />
+                                        <span id="emailError" class="text-danger small"></span>
                                     </div>
 
                                     <div class="mb-3">
-                                        <input asp-for="RegisterRequest.Password" type="password" class="form-control form-control-lg" placeholder="Mật khẩu" />
-                                        <span asp-validation-for="RegisterRequest.Password" class="text-danger small"></span>
+                                        <input id="password" name="password" type="password" class="form-control form-control-lg" placeholder="Mật khẩu" required />
+                                        <span id="passwordError" class="text-danger small"></span>
                                         <div class="small mt-1" id="passwordStrength"></div>
                                     </div>
 
                                     <div class="mb-3">
-                                        <input asp-for="RegisterRequest.ConfirmPassword" type="password" class="form-control form-control-lg" placeholder="Xác nhận mật khẩu" />
-                                        <span asp-validation-for="RegisterRequest.ConfirmPassword" class="text-danger small"></span>
+                                        <input id="confirmPassword" name="confirmPassword" type="password" class="form-control form-control-lg" placeholder="Xác nhận mật khẩu" required />
+                                        <span id="confirmPasswordError" class="text-danger small"></span>
                                     </div>
 
                                     <div class="mb-3">
-                                        <input asp-for="RegisterRequest.Phone" class="form-control form-control-lg" placeholder="Số điện thoại (tùy chọn)" />
-                                        <span asp-validation-for="RegisterRequest.Phone" class="text-danger small"></span>
+                                        <input id="phone" name="phone" class="form-control form-control-lg" placeholder="Số điện thoại (tùy chọn)" />
+                                        <span id="phoneError" class="text-danger small"></span>
                                     </div>
 
                                     <div class="row g-3 mb-3">
                                         <div class="col-md-6">
-                                            <input asp-for="RegisterRequest.Country" class="form-control form-control-lg" placeholder="Quốc gia (tùy chọn)" />
+                                            <input id="country" name="country" class="form-control form-control-lg" placeholder="Quốc gia (tùy chọn)" />
                                         </div>
                                         <div class="col-md-6">
-                                            <input asp-for="RegisterRequest.City" class="form-control form-control-lg" placeholder="Thành phố (tùy chọn)" />
+                                            <input id="city" name="city" class="form-control form-control-lg" placeholder="Thành phố (tùy chọn)" />
                                         </div>
                                     </div>
 
                                     <div class="form-check mb-3">
-                                        <input asp-for="RegisterRequest.AgreeToTerms" class="form-check-input" type="checkbox" />
-                                        <label asp-for="RegisterRequest.AgreeToTerms" class="form-check-label small">
+                                        <input id="agreeToTerms" name="agreeToTerms" class="form-check-input" type="checkbox" required />
+                                        <label for="agreeToTerms" class="form-check-label small">
                                             Tôi đồng ý với <a href="/terms" target="_blank" class="text-decoration-none">điều khoản sử dụng</a> và <a href="/privacy" target="_blank" class="text-decoration-none">chính sách bảo mật</a>
                                         </label>
+                                        <span id="agreeToTermsError" class="text-danger small"></span>
                                     </div>
 
-                                    <div class="text-danger small mb-3">@Html.ValidationMessage("error")</div>
+                                    <div id="errorMessage" class="text-danger small mb-3"></div>
+                                    <div id="successMessage" class="text-success small mb-3"></div>
 
-                                    <button type="submit" class="btn btn-primary btn-lg w-100 mb-3" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">
-                                        <i class="fas fa-user-plus me-2"></i> Đăng ký tài khoản
+                                    <button type="submit" id="registerBtn" class="btn btn-primary btn-lg w-100 mb-3" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">
+                                        <i class="fas fa-user-plus me-2"></i> 
+                                        <span id="registerBtnText">Đăng ký tài khoản</span>
+                                        <span id="registerBtnSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
                                     </button>
                                 </form>
                                 <div class="text-center">
@@ -120,5 +124,164 @@
 </div>
 
 @section Scripts {
+    <script src="~/js/student-auth.js"></script>
     <script src="~/js/register.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const registerForm = document.getElementById('registerForm');
+            const registerBtn = document.getElementById('registerBtn');
+            const registerBtnText = document.getElementById('registerBtnText');
+            const registerBtnSpinner = document.getElementById('registerBtnSpinner');
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const passwordStrength = document.getElementById('passwordStrength');
+
+            // Kiểm tra nếu đã đăng nhập, redirect về dashboard
+            if (StudentAuthService.isAuthenticated()) {
+                window.location.href = '/student/dashboard';
+                return;
+            }
+
+            // Password strength checker
+            passwordInput.addEventListener('input', function() {
+                const password = this.value;
+                let strength = '';
+                let strengthClass = '';
+
+                if (password.length === 0) {
+                    passwordStrength.textContent = '';
+                    return;
+                }
+
+                if (password.length < 6) {
+                    strength = 'Mật khẩu quá ngắn (tối thiểu 6 ký tự)';
+                    strengthClass = 'text-danger';
+                } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password)) {
+                    strength = 'Mật khẩu phải có chữ hoa, chữ thường và số';
+                    strengthClass = 'text-warning';
+                } else {
+                    strength = 'Mật khẩu mạnh ✓';
+                    strengthClass = 'text-success';
+                }
+
+                passwordStrength.textContent = strength;
+                passwordStrength.className = 'small mt-1 ' + strengthClass;
+            });
+
+            // Confirm password match
+            confirmPasswordInput.addEventListener('input', function() {
+                const password = passwordInput.value;
+                const confirmPassword = this.value;
+                const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+                if (confirmPassword && password !== confirmPassword) {
+                    confirmPasswordError.textContent = 'Mật khẩu xác nhận không khớp';
+                } else {
+                    confirmPasswordError.textContent = '';
+                }
+            });
+
+            registerForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Clear previous errors
+                errorMessage.textContent = '';
+                successMessage.textContent = '';
+                document.querySelectorAll('.text-danger.small').forEach(el => {
+                    if (el.id && el.id.endsWith('Error')) {
+                        el.textContent = '';
+                    }
+                });
+
+                // Get form values
+                const firstName = document.getElementById('firstName').value.trim();
+                const lastName = document.getElementById('lastName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+                const phone = document.getElementById('phone').value.trim();
+                const country = document.getElementById('country').value.trim();
+                const city = document.getElementById('city').value.trim();
+                const agreeToTerms = document.getElementById('agreeToTerms').checked;
+
+                // Validation
+                if (!firstName) {
+                    document.getElementById('firstNameError').textContent = 'Họ là bắt buộc';
+                    return;
+                }
+
+                if (!lastName) {
+                    document.getElementById('lastNameError').textContent = 'Tên là bắt buộc';
+                    return;
+                }
+
+                if (!email) {
+                    document.getElementById('emailError').textContent = 'Email là bắt buộc';
+                    return;
+                }
+
+                if (!password) {
+                    document.getElementById('passwordError').textContent = 'Mật khẩu là bắt buộc';
+                    return;
+                }
+
+                if (password !== confirmPassword) {
+                    document.getElementById('confirmPasswordError').textContent = 'Mật khẩu xác nhận không khớp';
+                    return;
+                }
+
+                if (!agreeToTerms) {
+                    document.getElementById('agreeToTermsError').textContent = 'Vui lòng đồng ý với điều khoản sử dụng';
+                    return;
+                }
+
+                // Disable button and show spinner
+                registerBtn.disabled = true;
+                registerBtnText.textContent = 'Đang xử lý...';
+                registerBtnSpinner.classList.remove('d-none');
+
+                try {
+                    const registerData = {
+                        firstName: firstName,
+                        lastName: lastName,
+                        email: email,
+                        password: password,
+                        confirmPassword: confirmPassword,
+                        phone: phone || null,
+                        country: country || null,
+                        city: city || null,
+                        agreeToTerms: agreeToTerms
+                    };
+
+                    const result = await StudentAuthService.register(registerData);
+
+                    if (result.success) {
+                        successMessage.textContent = result.message || 'Đăng ký thành công!';
+                        // Redirect to dashboard after 1 second
+                        setTimeout(() => {
+                            window.location.href = '/student/dashboard';
+                        }, 1000);
+                    } else {
+                        errorMessage.textContent = result.message || 'Đăng ký thất bại. Vui lòng thử lại.';
+                        if (result.errors && result.errors.length > 0) {
+                            result.errors.forEach(error => {
+                                errorMessage.textContent += ' ' + error;
+                            });
+                        }
+                        registerBtn.disabled = false;
+                        registerBtnText.textContent = 'Đăng ký tài khoản';
+                        registerBtnSpinner.classList.add('d-none');
+                    }
+                } catch (error) {
+                    console.error('Register error:', error);
+                    errorMessage.textContent = 'Đã có lỗi xảy ra. Vui lòng thử lại.';
+                    registerBtn.disabled = false;
+                    registerBtnText.textContent = 'Đăng ký tài khoản';
+                    registerBtnSpinner.classList.add('d-none');
+                }
+            });
+        });
+    </script>
 }
