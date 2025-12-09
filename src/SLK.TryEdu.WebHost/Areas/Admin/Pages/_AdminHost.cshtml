@@ -9,7 +9,7 @@
 @{
     if (User?.Identity == null || !User.Identity.IsAuthenticated || User.Identity.AuthenticationType != "AdminCookies")
     {
-        if (!Request.Cookies.ContainsKey("AdminCookies"))
+        if (!Request.Cookies.ContainsKey("AdminAuth"))
         {
             Response.Redirect("/admin/login");
         }

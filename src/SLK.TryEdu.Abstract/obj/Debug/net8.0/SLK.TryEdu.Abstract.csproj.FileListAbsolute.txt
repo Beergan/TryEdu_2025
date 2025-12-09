@@ -36,3 +36,16 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\SLK.TryEdu.Abstract.
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\refint\SLK.TryEdu.Abstract.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\SLK.TryEdu.Abstract.xml
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\ref\SLK.TryEdu.Abstract.dll
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\bin\Debug\net8.0\SLK.TryEdu.Abstract.deps.json
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\bin\Debug\net8.0\SLK.TryEdu.Abstract.dll
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\bin\Debug\net8.0\SLK.TryEdu.Abstract.xml
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\SLK.TryEdu.Abstract.csproj.AssemblyReference.cache
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\SLK.TryEdu.Abstract.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\SLK.TryEdu.Abstract.AssemblyInfoInputs.cache
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\SLK.TryEdu.Abstract.AssemblyInfo.cs
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\SLK.TryEdu.Abstract.csproj.CoreCompileInputs.cache
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\SLK.TryEdu.Abstract.sourcelink.json
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\SLK.TryEdu.Abstract.dll
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\refint\SLK.TryEdu.Abstract.dll
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\SLK.TryEdu.Abstract.xml
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.Abstract\obj\Debug\net8.0\ref\SLK.TryEdu.Abstract.dll

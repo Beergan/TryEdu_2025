@@ -7,7 +7,7 @@
 @{
 
 
-    if (Request.Cookies.ContainsKey("AdminCookies"))
+    if (Request.Cookies.ContainsKey("AdminAuth"))
     {
         Response.Redirect("/admin");
         return;

@@ -170,9 +170,9 @@ builder.Services.AddAuthentication(options =>
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultSignInScheme = "AdminCookies";
+    options.DefaultSignInScheme = "AdminAuth";
 })
-.AddCookie("AdminCookies", options =>
+.AddCookie("AdminAuth", options =>
 {
     options.LoginPath = "/admin/login";
     options.LogoutPath = "/admin/logout";
