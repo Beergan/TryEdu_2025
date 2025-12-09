@@ -149,3 +149,8 @@ D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazo
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json

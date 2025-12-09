@@ -170,3 +170,13 @@ D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Debug\net8.0\staticwebassets.build.json
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Debug\net8.0\staticwebassets.build.json
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\staticwebassets.build.json

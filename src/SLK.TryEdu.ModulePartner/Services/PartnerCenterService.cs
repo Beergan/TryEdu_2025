@@ -1,17 +1,18 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using RestEase;
 using SLK.TryEdu.Abstract;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
 using SLK.TryEdu.Base;
-using System.Data;
-using Syncfusion.XlsIO;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
 using SLK.TryEdu.ModulePartnerCore;
+using Syncfusion.XlsIO;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SLK.TryEdu.ModulePartner; 
 
@@ -28,18 +29,59 @@ public class PartnerCenterService : MyServiceBase, IPartnerCenterService
         //_ternantId = _ctx.TernantId;
     }
    
-    Task<ResultOf<EntityPartnerCenter>> IPartnerCenterService.Get(Guid guid)
+     Task<ResultOf<EntityPartnerCenter>> IPartnerCenterService.Get(Guid guid)
     {
         throw new NotImplementedException();
     }
 
-    Task<ResultsOf<EntityPartnerCenter>> IPartnerCenterService.GetList()
+    public async  Task<ResultsOf<EntityPartnerCenter>> GetList()
     {
-        throw new NotImplementedException();
+        if (!_ctx.CheckPermission(PERMISSION.PARTNER_VIEW))
+            return ResultsOf<EntityPartnerCenter>.Error(_ctx.Text["You are not authorized!", "Bạn không có quyền!"]);
+        try
+        {
+            using (var db = _ctx.ConnectDb())
+            {
+                var data = await db.Repo<EntityPartnerCenter>().GetList();
+                return ResultsOf<EntityPartnerCenter>.Ok(data);
+            }
+        }
+        catch (Exception ex)
+        {
+            _log.LogError(ex.Message);
+            return ResultsOf<EntityPartnerCenter>.Error("Đã có lỗi xảy ra!");
+        }
     }
 
-    public Task<Result> Save([Body] EntityPartnerCenter info)
+    public async Task<Result> Save([Body] EntityPartnerCenter info)
     {
-        throw new NotImplementedException();
+        if (!_ctx.CheckPermission(PERMISSION.PARTNER_CREATE_UPDATE))
+            return Result.Error(_ctx.Text["You are not authorized!", "Bạn không có quyền!"]);
+        try
+        {
+            using var db = _ctx.ConnectDb();
+            var checkEmail = await db.Repo<EntityPartnerCenter>().Query().FirstOrDefaultAsync(x => x.Email == info.Email && x.Id != info.Id);
+            if (checkEmail != null)
+            {
+                return Result.Error("Email! đã tồn tại");
+            }
+            if (info.Id > 0)
+            {
+                await db.Repo<EntityPartnerCenter>().Update(info);
+            }
+            else
+            {
+                if (info.Guid == Guid.Empty)
+                {
+                    await db.Repo<EntityPartnerCenter>().Insert(info);
+                }
+            }
+            return Result.Ok();
+        }
+        catch (Exception ex)
+        {
+            _log.LogError(ex, _ctx.Summary);
+            return Result.Error("Đã có lỗi xảy ra!");
+        }
     }
 }

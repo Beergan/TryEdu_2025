@@ -1257,6 +1257,26 @@
     ]
   },
   {
+    "ContainingType": "SLK.TryEdu.ModulePartner.PartnerCenterService",
+    "Method": "GetList",
+    "RelativePath": "api/PartnerCenter/GetList",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "SLK.TryEdu.Abstract.ResultsOf\u00601[[SLK.TryEdu.ModulePartnerCore.EntityPartnerCenter, SLK.TryEdu.ModulePartnerCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "SLK.TryEdu.Base.MyServiceBase",
     "Method": "GetlistCustomer",
     "RelativePath": "api/PartnerCenter/GetlistCustomer",

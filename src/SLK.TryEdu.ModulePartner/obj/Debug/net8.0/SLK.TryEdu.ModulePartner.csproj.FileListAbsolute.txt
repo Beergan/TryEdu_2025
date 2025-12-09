@@ -80,3 +80,7 @@ D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\D
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Debug\net8.0\refint\SLK.TryEdu.ModulePartner.dll
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Debug\net8.0\SLK.TryEdu.ModulePartner.xml
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Debug\net8.0\ref\SLK.TryEdu.ModulePartner.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.runtime.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.endpoints.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.pdb

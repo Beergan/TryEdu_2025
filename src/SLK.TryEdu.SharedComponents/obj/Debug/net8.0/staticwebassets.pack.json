@@ -1,11 +1,11 @@
 {
   "Files": [
     {
-      "Id": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\wwwroot\\background.png",
+      "Id": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\wwwroot\\background.png",
       "PackagePath": "staticwebassets\\background.png"
     },
     {
-      "Id": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\wwwroot\\exampleJsInterop.js",
+      "Id": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\wwwroot\\exampleJsInterop.js",
       "PackagePath": "staticwebassets\\exampleJsInterop.js"
     },
     {

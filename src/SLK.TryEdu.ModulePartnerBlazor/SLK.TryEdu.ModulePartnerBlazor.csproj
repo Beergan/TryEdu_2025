@@ -15,5 +15,6 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\SLK.TryEdu.Abstract\SLK.TryEdu.Abstract.csproj" />
 	  <ProjectReference Include="..\SLK.TryEdu.ModulePartnerCore\SLK.TryEdu.ModulePartnerCore.csproj" />
+	  <ProjectReference Include="..\SLK.TryEdu.SharedComponents\SLK.TryEdu.SharedComponents.csproj" />
 	</ItemGroup>
 </Project>

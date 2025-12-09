@@ -164,3 +164,8 @@ D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazo
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwebassets.build.json
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwebassets.build.json
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Debug\net8.0\staticwebassets.build.json

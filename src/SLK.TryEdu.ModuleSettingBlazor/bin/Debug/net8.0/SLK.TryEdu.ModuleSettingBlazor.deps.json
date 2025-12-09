@@ -11,7 +11,8 @@
           "Microsoft.AspNetCore.Components.Web": "8.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
           "SLK.TryEdu.Abstract": "1.0.0",
-          "SLK.TryEdu.ModuleSettingCore": "1.0.0"
+          "SLK.TryEdu.ModuleSettingCore": "1.0.0",
+          "SLK.TryEdu.SharedComponents": "1.0.0"
         },
         "runtime": {
           "SLK.TryEdu.ModuleSettingBlazor.dll": {}
@@ -1677,6 +1678,17 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "SLK.TryEdu.SharedComponents/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10"
+        },
+        "runtime": {
+          "SLK.TryEdu.SharedComponents.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -2511,6 +2523,11 @@
       "sha512": ""
     },
     "SLK.TryEdu.ModuleSettingCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SLK.TryEdu.SharedComponents/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -135,3 +135,7 @@ D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Debug\net8.0\SLK.TryEdu.ModuleSettingBlazor.dll
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleSettingBlazor.dll
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Debug\net8.0\ref\SLK.TryEdu.ModuleSettingBlazor.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.runtime.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.endpoints.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.pdb

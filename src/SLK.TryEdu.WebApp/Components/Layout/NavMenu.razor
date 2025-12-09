@@ -1,34 +1,91 @@
 ﻿<div class="custom-nav-menu">
     <div class="nav-header">
-        <h2>HỆ THỐNG THI THỬ</h2>
-        <div class="subtitle">TryEdu - Quản lý thi thử trực tuyến</div>
+        <h2>TRYEDU B2B2C</h2>
+        <div class="subtitle">Hệ thống giáo dục trực tuyến</div>
         <div class="education-badge">
             <MudIcon Icon="@Icons.Material.Filled.School" />
-            EXAM SYSTEM
+            ADMIN PORTAL
         </div>
     </div>
 
     <MudNavMenu>
-        @* HỌC VIÊN *@
-        <MudNavGroup Title="Học viên" Expanded="false" Icon="@Icons.Material.Filled.People">
+        @* DASHBOARD *@
+        <MudNavLink Href="/admin" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Dashboard">
+            <MudText Typo="Typo.body1">Tổng quan</MudText>
+        </MudNavLink>
+
+        @* QUẢN LÝ HỌC VIÊN *@
+        <MudNavGroup Title="Quản lý học viên" Expanded="false" Icon="@Icons.Material.Filled.People">
             <MudNavLink Href="admin/user/list" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">
                 Danh sách học viên
             </MudNavLink>
-            <MudNavLink Href="admin/student/registrations" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.AppRegistration">
-                Danh sách đăng ký thi
+            <MudNavLink Href="admin/user/registrations" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.AppRegistration">
+                Đăng ký thi
             </MudNavLink>
-            <MudNavLink Href="admin/student/exam-results" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Assignment">
+            <MudNavLink Href="admin/user/exam-results" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Assignment">
                 Kết quả thi
             </MudNavLink>
-            <MudNavLink Href="admin/student/exam-history" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.History">
+            <MudNavLink Href="admin/user/exam-history" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.History">
                 Lịch sử thi
             </MudNavLink>
-            <MudNavLink Href="admin/student/schedule" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Event">
-                Lịch thi
+            <MudNavLink Href="admin/user/coin-transactions" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.AccountBalanceWallet">
+                Giao dịch coin
             </MudNavLink>
         </MudNavGroup>
-        @* QUẢN LÝ THI THỬ *@
-        <MudNavGroup Title="Quản lý thi thử" Expanded="false" Icon="@Icons.Material.Filled.Quiz">
+
+        @* QUẢN LÝ ĐỐI TÁC *@
+        <MudNavGroup Title="Quản lý đối tác" Expanded="false" Icon="@Icons.Material.Filled.Business">
+            <MudNavLink Href="admin/PartnerCenter/list" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.BusinessCenter">
+                Danh sách trung tâm
+            </MudNavLink>
+            <MudNavLink Href="admin/PartnerCenter/registrations" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.AppRegistration">
+                Đăng ký đối tác
+            </MudNavLink>
+            <MudNavLink Href="admin/PartnerCenter/tiers" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Star">
+                Phân cấp đối tác
+            </MudNavLink>
+            <MudNavLink Href="admin/PartnerCenter/verification" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Verified">
+                Xác thực đối tác
+            </MudNavLink>
+        </MudNavGroup>
+
+        @* QUẢN LÝ COIN & MÃ GIỚI THIỆU *@
+        <MudNavGroup Title="Coin & Mã giới thiệu" Expanded="false" Icon="@Icons.Material.Filled.AccountBalanceWallet">
+            <MudNavLink Href="admin/coin/transactions" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Payment">
+                Giao dịch coin
+            </MudNavLink>
+            <MudNavLink Href="admin/coin/referral-codes" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Redeem">
+                Mã giới thiệu
+            </MudNavLink>
+            <MudNavLink Href="admin/coin/referral-usage" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.History">
+                Lịch sử sử dụng mã
+            </MudNavLink>
+            <MudNavLink Href="admin/coin/commission" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.AttachMoney">
+                Hoa hồng đối tác
+            </MudNavLink>
+            <MudNavLink Href="admin/coin/commission-history" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Timeline">
+                Lịch sử hoa hồng
+            </MudNavLink>
+        </MudNavGroup>
+
+        @* QUẢN LÝ KHÓA HỌC *@
+        <MudNavGroup Title="Quản lý khóa học" Expanded="false" Icon="@Icons.Material.Filled.Book">
+            <MudNavLink Href="admin/course/free-courses" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.CardGiftcard">
+                Khóa học miễn phí
+            </MudNavLink>
+            <MudNavLink Href="admin/course/paid-courses" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.ShoppingCart">
+                Khóa học có thu phí
+            </MudNavLink>
+            <MudNavLink Href="admin/course/categories" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Category">
+                Danh mục khóa học
+            </MudNavLink>
+            <MudNavLink Href="admin/course/enrollments" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.School">
+                Đăng ký khóa học
+            </MudNavLink>
+        </MudNavGroup>
+
+        @* QUẢN LÝ BÀI THI *@
+        <MudNavGroup Title="Quản lý bài thi" Expanded="false" Icon="@Icons.Material.Filled.Quiz">
             <MudNavLink Href="admin/exam/categories" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Category">
                 Danh mục đề thi
             </MudNavLink>
@@ -38,10 +95,39 @@
             <MudNavLink Href="admin/exam/tests" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Assignment">
                 Danh sách đề thi
             </MudNavLink>
+            <MudNavLink Href="admin/exam/pricing" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.MonetizationOn">
+                Giá bài thi
+            </MudNavLink>
             <MudNavLink Href="admin/exam/schedule" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Schedule">
                 Lịch thi
             </MudNavLink>
         </MudNavGroup>
+
+        @* BÁO CÁO & THỐNG KÊ *@
+        <MudNavGroup Title="Báo cáo & Thống kê" Expanded="false" Icon="@Icons.Material.Filled.Analytics">
+            <MudNavLink Href="admin/reports/dashboard" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Dashboard">
+                Dashboard tổng quan
+            </MudNavLink>
+            <MudNavLink Href="admin/reports/exam-results" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.TrendingUp">
+                Báo cáo kết quả thi
+            </MudNavLink>
+            <MudNavLink Href="admin/reports/students" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.PeopleAlt">
+                Thống kê học viên
+            </MudNavLink>
+            <MudNavLink Href="admin/reports/partners" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Business">
+                Thống kê đối tác
+            </MudNavLink>
+            <MudNavLink Href="admin/reports/coin" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.AccountBalanceWallet">
+                Thống kê coin
+            </MudNavLink>
+            <MudNavLink Href="admin/reports/commission" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.AttachMoney">
+                Báo cáo hoa hồng
+            </MudNavLink>
+            <MudNavLink Href="admin/reports/revenue" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.TrendingUp">
+                Báo cáo doanh thu
+            </MudNavLink>
+        </MudNavGroup>
+
         @* QUẢN LÝ HỆ THỐNG *@
         <MudNavGroup Title="Quản lý hệ thống" Expanded="false" Icon="@Icons.Material.Filled.Settings">
             <MudNavLink Href="admin/category/subjects" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Book">
@@ -53,35 +139,24 @@
             <MudNavLink Href="admin/category/departments" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.School">
                 Khoa/Bộ môn
             </MudNavLink>
+            <MudNavLink Href="admin/system/config" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Settings">
+                Cấu hình hệ thống
+            </MudNavLink>
         </MudNavGroup>
+
         @* QUẢN TRỊ *@
         <MudNavGroup Title="Quản trị" Expanded="false" Icon="@Icons.Material.Filled.Security">
-            <MudNavLink Href="/admin/employee/list" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.People">
-                Tài khoản
-            </MudNavLink>
             <MudNavLink Href="/admin/management/account" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.AccountBox">
-                Tài khoản
+                Tài khoản Admin
+            </MudNavLink>
+            <MudNavLink Href="/admin/employee/list" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.People">
+                Nhân viên
             </MudNavLink>
             <MudNavLink Href="admin/management/permission-group" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Lock">
                 Nhóm phân quyền
             </MudNavLink>
             <MudNavLink Href="/admin/audit-log" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.FactCheck">
                 Logs hệ thống
-            </MudNavLink>
-        </MudNavGroup>
-        @* BÁO CÁO & THỐNG KÊ *@
-        <MudNavGroup Title="Báo cáo & Thống kê" Expanded="false" Icon="@Icons.Material.Filled.Analytics">
-            <MudNavLink Href="admin/reports/exam-results" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.TrendingUp">
-                Báo cáo kết quả thi
-            </MudNavLink>
-            <MudNavLink Href="admin/reports/students" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.PeopleAlt">
-                Thống kê học viên
-            </MudNavLink>
-            <MudNavLink Href="admin/reports/exams" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.PieChart">
-                Thống kê đề thi
-            </MudNavLink>
-            <MudNavLink Href="admin/reports/performance" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Assessment">
-                Đánh giá hiệu suất
             </MudNavLink>
         </MudNavGroup>
     </MudNavMenu>

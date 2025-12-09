@@ -49,12 +49,6 @@
                     </ol>
                 </div>
                 <div class="col-md-4 col-lg-3 d-none d-md-block">
-                    <div class="input-group">
-                        <input type="text" class="form-control" style="height: 31px;" placeholder="@Text["Search...", "Tìm kiếm..."]" @bind="_filterSearch" @bind:event="oninput" @onkeyup="OnChange" />
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-white" style="height: 31px;" id="basic-addon2"><i class="fas fa-search"></i></span>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-12 col-md-8 col-lg-9 text-right">
                     <div class="btn-group pr-0">
@@ -65,13 +59,53 @@
         </div>
         <div class="app-content-body" style="overflow:auto" id="target">
             <div class="container-fluid" style="overflow:auto">
-                <SfGrid AllowTextWrap="true" ID="Grid" @ref="_grid" EnableHover="true" AllowResizing="true" DataSource="@_displaySource" AllowPaging="true" AllowFiltering="true" AllowSorting="true"
-                EnableAdaptiveUI="false" AllowExcelExport="true" AllowPdfExport="true" ShowColumnChooser="true" EnableVirtualization="false" Height="100%">
-                    <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>                
-                    <GridTextWrapSettings WrapMode="WrapMode.Content"></GridTextWrapSettings>
-                    <GridPageSettings PageSize="50"></GridPageSettings>
-                    
-                </SfGrid>
+ <CustomTable TItem="EntityPartnerCenter" 
+                             DataSource="@_partner"
+             PageSize="25"
+             TableClass="table-hover">
+                 <Columns>
+                        <TableColumn TItem="EntityPartnerCenter" Property="CetnterCode"
+                                     Title="Mã"
+                                     HeaderClass="text-dark"
+                                     CellClass="fw-bold text-dark" />
+                        <TableColumn TItem="EntityPartnerCenter" Property="CenterName"
+                                     Title="Tên đối tác"
+                                     HeaderClass="text-dark"
+                                     CellClass="fw-bold text-dark"
+                                     />
+                        <TableColumn TItem="EntityPartnerCenter" Property="FullName"
+                     Title="Họ và tên"
+                                     HeaderClass="text-dark"
+                     CellClass="fw-bold text-dark"
+                                      />
+                        <TableColumn TItem="EntityPartnerCenter" Property="Phone"
+                     Title="Số điện thoại"
+                     HeaderClass="text-center"
+                     CellClass="text-center text-success" />
+                        <TableColumn TItem="EntityPartnerCenter" Property="Email"
+                                     Title="Email"
+                                     HeaderClass="text-dark"
+                                     CellClass="fst-italic">
+                        </TableColumn>
+                       <TableColumn TItem="EntityPartnerCenter" Property="Address"
+                     Title="Địa chỉ"
+                     HeaderClass="text-muted"
+                     CellClass="text-secondary" />
+                </Columns>
+                <Actions>
+                    @{
+                        var user = context;
+                        <div class="btn-group btn-group-sm">
+                            <button class="btn btn-outline-primary" @onclick="() => EditUser(user.Id)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-outline-danger" @onclick="() => DeleteUser(user.Id)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    }
+                </Actions>
+        </CustomTable> 
             </div>
         </div>
     }
@@ -81,7 +115,7 @@
     #region vavariables
     [Parameter]
     public string str { get; set; }
-    private SfGrid<EntityPartnerCenter> _grid;
+    private List<EntityPartnerCenter> _partner = new();
     private IEnumerable<EntityPartnerCenter> _dataSource = new List<EntityPartnerCenter>();
     private List<EntityPartnerCenter> _displaySource = new();
     private List<OptionItem<Guid>> _optOffices = new();
@@ -162,23 +196,23 @@
         StateHasChanged();
     }
 
-    private async void Modify(int id)
+    private async void EditUser(int id)
     {
         var item = _dataSource.Single(t => t.Id == id);
         _model = item;
-
         _modalTitle = "Hiệu chỉnh nhân sự";
         _modalVisible = true;
-
         await Task.CompletedTask;
     }
 
-    private void SelectedTask(MenuEventArgs e)
+    private void DeleteUser(int id)
     {
-        string text = e.Item.Text.ToLower();
-        int id = Convert.ToInt32(e.Item.Id);
-        if (text == "sửa")
-            Modify(id);
+        var user = _partner.FirstOrDefault(u => u.Id == id);
+        if (user != null)
+        {
+            _partner.Remove(user);
+            StateHasChanged();
+        }
     }
     #endregion
 }

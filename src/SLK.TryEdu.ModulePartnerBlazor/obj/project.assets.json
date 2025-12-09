@@ -2647,6 +2647,19 @@
         "runtime": {
           "bin/placeholder/SLK.TryEdu.ModulePartnerCore.dll": {}
         }
+      },
+      "SLK.TryEdu.SharedComponents/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.10"
+        },
+        "compile": {
+          "bin/placeholder/SLK.TryEdu.SharedComponents.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SLK.TryEdu.SharedComponents.dll": {}
+        }
       }
     }
   },
@@ -5879,6 +5892,11 @@
       "type": "project",
       "path": "../SLK.TryEdu.ModulePartnerCore/SLK.TryEdu.ModulePartnerCore.csproj",
       "msbuildProject": "../SLK.TryEdu.ModulePartnerCore/SLK.TryEdu.ModulePartnerCore.csproj"
+    },
+    "SLK.TryEdu.SharedComponents/1.0.0": {
+      "type": "project",
+      "path": "../SLK.TryEdu.SharedComponents/SLK.TryEdu.SharedComponents.csproj",
+      "msbuildProject": "../SLK.TryEdu.SharedComponents/SLK.TryEdu.SharedComponents.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5886,27 +5904,28 @@
       "Microsoft.AspNetCore.Components.Web >= 8.0.10",
       "Microsoft.AspNetCore.Components.WebAssembly >= 8.0.10",
       "SLK.TryEdu.Abstract >= 1.0.0",
-      "SLK.TryEdu.ModulePartnerCore >= 1.0.0"
+      "SLK.TryEdu.ModulePartnerCore >= 1.0.0",
+      "SLK.TryEdu.SharedComponents >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\dh519\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj",
+      "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj",
       "projectName": "SLK.TryEdu.ModulePartnerBlazor",
-      "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\obj\\",
+      "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj",
+      "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
+      "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5915,17 +5934,21 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-              "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
             },
-            "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj": {
-              "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj"
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj"
+            },
+            "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj": {
+              "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj"
             }
           }
         }
