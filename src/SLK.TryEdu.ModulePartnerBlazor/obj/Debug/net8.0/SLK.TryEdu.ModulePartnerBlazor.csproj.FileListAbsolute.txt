@@ -72,3 +72,7 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartnerBlazor\bin\Debug\net8.0\SLK.TryEd
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartnerBlazor\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.endpoints.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartnerBlazor\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartnerBlazor\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.pdb
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModulePartnerBlazor\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.runtime.json
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModulePartnerBlazor\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.endpoints.json
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModulePartnerBlazor\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.dll
+D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModulePartnerBlazor\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.pdb

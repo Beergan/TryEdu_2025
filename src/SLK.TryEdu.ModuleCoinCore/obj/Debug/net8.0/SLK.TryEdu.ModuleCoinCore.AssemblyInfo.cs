@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SLK.TryEdu.ModuleCoinCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce5d683263e4e8cbb15e2e2e51ff7a69b48ea956")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a47f69ee83284aacafef9ac3d4e51b7820f89bd9")]
 [assembly: System.Reflection.AssemblyProductAttribute("SLK.TryEdu.ModuleCoinCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SLK.TryEdu.ModuleCoinCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

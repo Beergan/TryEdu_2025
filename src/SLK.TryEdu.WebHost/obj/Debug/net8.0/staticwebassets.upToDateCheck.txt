@@ -1799,11 +1799,10 @@ wwwroot\assets\videos\poster.jpg
 wwwroot\bootstrap\bootstrap.min.css
 wwwroot\bootstrap\bootstrap.min.css.map
 wwwroot\css\register.css
-wwwroot\css\student.css
+wwwroot\js\register.js
 wwwroot\favicon.png
 wwwroot\icon-512.png
-wwwroot\js\register.js
-wwwroot\js\student-auth.js
+wwwroot\css\student.css
 wwwroot\js\student.js
 wwwroot\upload\avatar\female-00.jpeg
 wwwroot\upload\avatar\female-01.jpeg

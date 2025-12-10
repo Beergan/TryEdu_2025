@@ -65,37 +65,3 @@
         </div>
     </div>
 </nav>
-
-<script src="~/js/student-auth.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Kiểm tra authentication và cập nhật menu
-        if (StudentAuthService.isAuthenticated()) {
-            const userInfo = StudentAuthService.getUserInfo();
-            if (userInfo) {
-                const userNameDisplay = document.getElementById('userNameDisplay');
-                if (userNameDisplay) {
-                    userNameDisplay.textContent = userInfo.fullName || userInfo.firstName || 'Tài Khoản';
-                }
-                
-                // Hiển thị menu đã đăng nhập
-                const authMenu = document.getElementById('authMenu');
-                const guestMenu = document.getElementById('guestMenu');
-                if (authMenu) authMenu.style.display = 'block';
-                if (guestMenu) guestMenu.style.display = 'none';
-            }
-        } else {
-            // Hiển thị menu guest
-            const authMenu = document.getElementById('authMenu');
-            const guestMenu = document.getElementById('guestMenu');
-            if (authMenu) authMenu.style.display = 'none';
-            if (guestMenu) guestMenu.style.display = 'block';
-        }
-    });
-
-    function handleLogout() {
-        if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
-            StudentAuthService.logout();
-        }
-    }
-</script>

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj": {}
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj": {}
   },
   "projects": {
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj",
         "projectName": "SLK.TryEdu.Abstract",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -312,20 +311,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj",
         "projectName": "SLK.TryEdu.Base",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -334,15 +333,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               }
             }
           }
@@ -435,20 +433,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj",
         "projectName": "SLK.TryEdu.Db",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Db\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Db\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -457,18 +455,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
               }
             }
           }
@@ -532,20 +529,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj",
         "projectName": "SLK.TryEdu.ModuleCoinBlazor",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -554,18 +551,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj"
               }
             }
           }
@@ -615,20 +611,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj",
         "projectName": "SLK.TryEdu.ModuleCoinCore",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -637,15 +633,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               }
             }
           }
@@ -685,20 +680,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\SLK.TryEdu.ModuleCoin.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\SLK.TryEdu.ModuleCoin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\SLK.TryEdu.ModuleCoin.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\SLK.TryEdu.ModuleCoin.csproj",
         "projectName": "SLK.TryEdu.ModuleCoin",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\SLK.TryEdu.ModuleCoin.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\SLK.TryEdu.ModuleCoin.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -707,21 +702,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinCore\\SLK.TryEdu.ModuleCoinCore.csproj"
               }
             }
           }
@@ -770,20 +764,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj",
         "projectName": "SLK.TryEdu.ModuleContentBlazor",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -792,18 +786,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj"
               }
             }
           }
@@ -853,20 +846,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj",
         "projectName": "SLK.TryEdu.ModuleContentCore",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -875,15 +868,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               }
             }
           }
@@ -923,20 +915,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\SLK.TryEdu.ModuleContent.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\SLK.TryEdu.ModuleContent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\SLK.TryEdu.ModuleContent.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\SLK.TryEdu.ModuleContent.csproj",
         "projectName": "SLK.TryEdu.ModuleContent",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\SLK.TryEdu.ModuleContent.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\SLK.TryEdu.ModuleContent.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -945,21 +937,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentCore\\SLK.TryEdu.ModuleContentCore.csproj"
               }
             }
           }
@@ -1008,20 +999,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj",
         "projectName": "SLK.TryEdu.ModuleEmployeeBlazor",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1030,18 +1021,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj"
               }
             }
           }
@@ -1091,20 +1081,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj",
         "projectName": "SLK.TryEdu.ModuleEmployeeCore",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1113,15 +1103,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               }
             }
           }
@@ -1161,20 +1150,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj",
         "projectName": "SLK.TryEdu.ModuleEmployee",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1183,21 +1172,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeCore\\SLK.TryEdu.ModuleEmployeeCore.csproj"
               }
             }
           }
@@ -1246,20 +1234,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj",
         "projectName": "SLK.TryEdu.ModuleExamBlazor",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1268,18 +1256,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj"
               }
             }
           }
@@ -1329,20 +1316,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj",
         "projectName": "SLK.TryEdu.ModuleExamCore",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1351,15 +1338,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               }
             }
           }
@@ -1399,20 +1385,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj",
         "projectName": "SLK.TryEdu.ModuleExam",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1421,21 +1407,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamCore\\SLK.TryEdu.ModuleExamCore.csproj"
               }
             }
           }
@@ -1484,20 +1469,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj",
         "projectName": "SLK.TryEdu.ModuleLearningBlazor",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1506,18 +1491,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj"
               }
             }
           }
@@ -1567,20 +1551,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj",
         "projectName": "SLK.TryEdu.ModuleLearningCore",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1589,15 +1573,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               }
             }
           }
@@ -1637,20 +1620,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\SLK.TryEdu.ModuleLearning.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\SLK.TryEdu.ModuleLearning.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\SLK.TryEdu.ModuleLearning.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\SLK.TryEdu.ModuleLearning.csproj",
         "projectName": "SLK.TryEdu.ModuleLearning",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\SLK.TryEdu.ModuleLearning.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\SLK.TryEdu.ModuleLearning.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1659,21 +1642,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningCore\\SLK.TryEdu.ModuleLearningCore.csproj"
               }
             }
           }
@@ -1722,20 +1704,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj",
         "projectName": "SLK.TryEdu.ModuleManagementBlazor",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1744,18 +1726,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj"
               }
             }
           }
@@ -1805,20 +1786,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj",
         "projectName": "SLK.TryEdu.ModuleManagementCore",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1827,15 +1808,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               }
             }
           }
@@ -1875,20 +1855,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj",
         "projectName": "SLK.TryEdu.ModuleManagement",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1897,21 +1877,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementCore\\SLK.TryEdu.ModuleManagementCore.csproj"
               }
             }
           }
@@ -1960,20 +1939,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj",
         "projectName": "SLK.TryEdu.ModulePartnerBlazor",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1982,21 +1961,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj"
               }
             }
           }
@@ -2046,20 +2024,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj",
         "projectName": "SLK.TryEdu.ModulePartnerCore",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -2068,15 +2046,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               }
             }
           }
@@ -2116,20 +2093,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj",
         "projectName": "SLK.TryEdu.ModulePartner",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -2138,21 +2115,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj"
               }
             }
           }
@@ -2201,20 +2177,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj",
         "projectName": "SLK.TryEdu.ModuleSettingBlazor",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -2223,21 +2199,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj"
               }
             }
           }
@@ -2287,20 +2262,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj",
         "projectName": "SLK.TryEdu.ModuleSettingCore",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -2309,15 +2284,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               }
             }
           }
@@ -2357,20 +2331,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj",
         "projectName": "SLK.TryEdu.ModuleSetting",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -2379,21 +2353,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingCore\\SLK.TryEdu.ModuleSettingCore.csproj"
               }
             }
           }
@@ -2442,20 +2415,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj",
         "projectName": "SLK.TryEdu.ModuleUserBlazor",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -2464,21 +2437,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj"
               }
             }
           }
@@ -2528,20 +2500,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj",
         "projectName": "SLK.TryEdu.ModuleUserCore",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -2550,15 +2522,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               }
             }
           }
@@ -2598,20 +2569,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj",
         "projectName": "SLK.TryEdu.ModuleUser",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -2620,21 +2591,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserCore\\SLK.TryEdu.ModuleUserCore.csproj"
               }
             }
           }
@@ -2687,20 +2657,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj",
         "projectName": "SLK.TryEdu.SharedComponents",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -2709,7 +2679,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -2759,20 +2728,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj",
         "projectName": "SLK.TryEdu.WebApp",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -2781,42 +2750,41 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoinBlazor\\SLK.TryEdu.ModuleCoinBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContentBlazor\\SLK.TryEdu.ModuleContentBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployeeBlazor\\SLK.TryEdu.ModuleEmployeeBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearningBlazor\\SLK.TryEdu.ModuleLearningBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagementBlazor\\SLK.TryEdu.ModuleManagementBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.SharedComponents\\SLK.TryEdu.SharedComponents.csproj"
               }
             }
           }
@@ -2873,6 +2841,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -2887,20 +2861,20 @@
         }
       }
     },
-    "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj": {
+    "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
+        "projectUniqueName": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
         "projectName": "SLK.TryEdu.WebHost",
-        "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
-        "packagesPath": "C:\\Users\\dh519\\.nuget\\packages\\",
-        "outputPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\obj\\",
+        "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dh519\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -2909,51 +2883,50 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Abstract\\SLK.TryEdu.Abstract.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Db\\SLK.TryEdu.Db.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\SLK.TryEdu.ModuleCoin.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\SLK.TryEdu.ModuleCoin.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\SLK.TryEdu.ModuleCoin.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleCoin\\SLK.TryEdu.ModuleCoin.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\SLK.TryEdu.ModuleContent.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\SLK.TryEdu.ModuleContent.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\SLK.TryEdu.ModuleContent.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleContent\\SLK.TryEdu.ModuleContent.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleEmployee\\SLK.TryEdu.ModuleEmployee.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\SLK.TryEdu.ModuleLearning.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\SLK.TryEdu.ModuleLearning.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\SLK.TryEdu.ModuleLearning.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleLearning\\SLK.TryEdu.ModuleLearning.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleManagement\\SLK.TryEdu.ModuleManagement.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSetting\\SLK.TryEdu.ModuleSetting.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj"
               },
-              "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj": {
-                "projectPath": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj"
+              "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj": {
+                "projectPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj"
               }
             }
           }

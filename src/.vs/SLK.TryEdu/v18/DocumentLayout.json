@@ -1,150 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\SLK\\TryEdu_2025\\src\\",
+  "WorkspaceRootPath": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34002C53-DD59-C882-9EE4-E2F0C66AFA9A}|SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.modulepartner\\services\\partnercenterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34002C53-DD59-C882-9EE4-E2F0C66AFA9A}|SLK.TryEdu.ModulePartner\\SLK.TryEdu.ModulePartner.csproj|solutionrelative:slk.tryedu.modulepartner\\services\\partnercenterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A832C1D-B5CA-DD4C-B68B-47D9F0822291}|SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.moduleuser\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A832C1D-B5CA-DD4C-B68B-47D9F0822291}|SLK.TryEdu.ModuleUser\\SLK.TryEdu.ModuleUser.csproj|solutionrelative:slk.tryedu.moduleuser\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE1F9B4D-4C13-7557-BE2D-3DE7671FE77E}|SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.modulepartnerblazor\\pages\\pagelistpartnercenter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AE1F9B4D-4C13-7557-BE2D-3DE7671FE77E}|SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj|solutionrelative:slk.tryedu.modulepartnerblazor\\pages\\pagelistpartnercenter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A276D9D-D69A-D14C-886A-1640768E20F0}|SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.moduleuserblazor\\pages\\pagelistuser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A276D9D-D69A-D14C-886A-1640768E20F0}|SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj|solutionrelative:slk.tryedu.moduleuserblazor\\pages\\pagelistuser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{306C464F-65EE-2FFB-39A1-67654F5E510D}|SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webapp\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{306C464F-65EE-2FFB-39A1-67654F5E510D}|SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj|solutionrelative:slk.tryedu.webapp\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E58C4E-E30C-7787-53D6-52F405D78E27}|SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.modulepartnercore\\entities\\entitypartnercenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E58C4E-E30C-7787-53D6-52F405D78E27}|SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj|solutionrelative:slk.tryedu.modulepartnercore\\entities\\entitypartnercenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E58C4E-E30C-7787-53D6-52F405D78E27}|SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.modulepartnercore\\entities\\entityreferralcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E58C4E-E30C-7787-53D6-52F405D78E27}|SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj|solutionrelative:slk.tryedu.modulepartnercore\\entities\\entityreferralcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69E58C4E-E30C-7787-53D6-52F405D78E27}|SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.modulepartnercore\\entities\\entitycommissiontransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69E58C4E-E30C-7787-53D6-52F405D78E27}|SLK.TryEdu.ModulePartnerCore\\SLK.TryEdu.ModulePartnerCore.csproj|solutionrelative:slk.tryedu.modulepartnercore\\entities\\entitycommissiontransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE1F9B4D-4C13-7557-BE2D-3DE7671FE77E}|SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.modulepartnerblazor\\classes\\moduleblazorregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE1F9B4D-4C13-7557-BE2D-3DE7671FE77E}|SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj|solutionrelative:slk.tryedu.modulepartnerblazor\\classes\\moduleblazorregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE1F9B4D-4C13-7557-BE2D-3DE7671FE77E}|SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.modulepartnerblazor\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AE1F9B4D-4C13-7557-BE2D-3DE7671FE77E}|SLK.TryEdu.ModulePartnerBlazor\\SLK.TryEdu.ModulePartnerBlazor.csproj|solutionrelative:slk.tryedu.modulepartnerblazor\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{756EA879-42D5-3FAE-7329-654F9B1D9445}|SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.modulesettingblazor\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{756EA879-42D5-3FAE-7329-654F9B1D9445}|SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj|solutionrelative:slk.tryedu.modulesettingblazor\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A276D9D-D69A-D14C-886A-1640768E20F0}|SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.moduleuserblazor\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3A276D9D-D69A-D14C-886A-1640768E20F0}|SLK.TryEdu.ModuleUserBlazor\\SLK.TryEdu.ModuleUserBlazor.csproj|solutionrelative:slk.tryedu.moduleuserblazor\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{756EA879-42D5-3FAE-7329-654F9B1D9445}|SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.modulesettingblazor\\pages\\pagejob.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{756EA879-42D5-3FAE-7329-654F9B1D9445}|SLK.TryEdu.ModuleSettingBlazor\\SLK.TryEdu.ModuleSettingBlazor.csproj|solutionrelative:slk.tryedu.modulesettingblazor\\pages\\pagejob.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\student\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|d:\\kienvip\\laptrinh\\ltweb\\thuctap\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\student\\pages\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\student\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|d:\\kienvip\\laptrinh\\ltweb\\thuctap\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\verifyemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\student\\pages\\verifyemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\student\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|d:\\kienvip\\laptrinh\\ltweb\\thuctap\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\student\\pages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\dashboard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\student\\pages\\dashboard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|d:\\kienvip\\laptrinh\\ltweb\\thuctap\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\student\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\courses.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\student\\pages\\courses.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE9997CF-E787-9727-D037-063842E7237D}|SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj|d:\\kienvip\\laptrinh\\ltweb\\thuctap\\tryedu_2025\\src\\slk.tryedu.base\\services\\mailsettingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE9997CF-E787-9727-D037-063842E7237D}|SLK.TryEdu.Base\\SLK.TryEdu.Base.csproj|solutionrelative:slk.tryedu.base\\services\\mailsettingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\classes\\pagerouteconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\classes\\pagerouteconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|d:\\kienvip\\laptrinh\\ltweb\\thuctap\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\verifyemail.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\student\\pages\\verifyemail.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\pages\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\pages\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{895B55F3-460C-8DFD-9147-45263B8721AC}|SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.moduleexamblazor\\pages\\pagelistexamtemplate.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{895B55F3-460C-8DFD-9147-45263B8721AC}|SLK.TryEdu.ModuleExamBlazor\\SLK.TryEdu.ModuleExamBlazor.csproj|solutionrelative:slk.tryedu.moduleexamblazor\\pages\\pagelistexamtemplate.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D093443-51B1-B381-62F5-EA53F13A6225}|SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.moduleexam\\slk.tryedu.moduleexam.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{0D093443-51B1-B381-62F5-EA53F13A6225}|SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj|solutionrelative:slk.tryedu.moduleexam\\slk.tryedu.moduleexam.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\services\\serverauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\services\\serverauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\admin\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\admin\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\admin\\pages\\forgotpassword.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\admin\\pages\\forgotpassword.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\admin\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\admin\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{306C464F-65EE-2FFB-39A1-67654F5E510D}|SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webapp\\services\\wasmauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{306C464F-65EE-2FFB-39A1-67654F5E510D}|SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj|solutionrelative:slk.tryedu.webapp\\services\\wasmauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\admin\\pages\\_adminhost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\admin\\pages\\_adminhost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{306C464F-65EE-2FFB-39A1-67654F5E510D}|SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webapp\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{306C464F-65EE-2FFB-39A1-67654F5E510D}|SLK.TryEdu.WebApp\\SLK.TryEdu.WebApp.csproj|solutionrelative:slk.tryedu.webapp\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\slk.tryedu.webhost.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\slk.tryedu.webhost.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\autoversion.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\autoversion.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|c:\\slk\\tryedu_2025\\src\\slk.tryedu.webhost\\areas\\student\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\areas\\student\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|d:\\kienvip\\laptrinh\\ltweb\\thuctap\\tryedu_2025\\src\\slk.tryedu.webhost\\wwwroot\\js\\register.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{7C759477-F4C0-365D-EB3D-220A2F02CE01}|SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj|solutionrelative:slk.tryedu.webhost\\wwwroot\\js\\register.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -154,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -170,451 +54,94 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Dashboard.cshtml",
+              "ToolTip": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Dashboard.cshtml",
+              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Dashboard.cshtml",
+              "ViewState": "AgIAABMBAAAAAAAAAAAwwCQBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-10T06:19:59.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebApp\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "SLK.TryEdu.WebApp\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAADgAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T10:17:25.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EntityCommissionTransaction.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\Entities\\EntityCommissionTransaction.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModulePartnerCore\\Entities\\EntityCommissionTransaction.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\Entities\\EntityCommissionTransaction.cs",
-              "RelativeToolTip": "SLK.TryEdu.ModulePartnerCore\\Entities\\EntityCommissionTransaction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "MailSettingsService.cs",
+              "DocumentMoniker": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\Services\\MailSettingsService.cs",
+              "RelativeDocumentMoniker": "SLK.TryEdu.Base\\Services\\MailSettingsService.cs",
+              "ToolTip": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.Base\\Services\\MailSettingsService.cs",
+              "RelativeToolTip": "SLK.TryEdu.Base\\Services\\MailSettingsService.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAIAwwBoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T09:48:06.569Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ModuleBlazorRegister.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\Classes\\ModuleBlazorRegister.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModulePartnerBlazor\\Classes\\ModuleBlazorRegister.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\Classes\\ModuleBlazorRegister.cs",
-              "RelativeToolTip": "SLK.TryEdu.ModulePartnerBlazor\\Classes\\ModuleBlazorRegister.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T09:47:55.343Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\_Imports.razor",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModulePartnerBlazor\\_Imports.razor",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\_Imports.razor",
-              "RelativeToolTip": "SLK.TryEdu.ModulePartnerBlazor\\_Imports.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T09:47:06.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\_Imports.razor",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModuleUserBlazor\\_Imports.razor",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\_Imports.razor",
-              "RelativeToolTip": "SLK.TryEdu.ModuleUserBlazor\\_Imports.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T09:46:03.561Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\_Imports.razor",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModuleSettingBlazor\\_Imports.razor",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\_Imports.razor",
-              "RelativeToolTip": "SLK.TryEdu.ModuleSettingBlazor\\_Imports.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T09:45:53.606Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "PageJob.razor",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\Pages\\PageJob.razor",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModuleSettingBlazor\\Pages\\PageJob.razor",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleSettingBlazor\\Pages\\PageJob.razor",
-              "RelativeToolTip": "SLK.TryEdu.ModuleSettingBlazor\\Pages\\PageJob.razor",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T09:41:58.415Z",
+              "WhenOpened": "2025-12-10T04:56:53.909Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PageListUser.razor",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\Pages\\PageListUser.razor",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModuleUserBlazor\\Pages\\PageListUser.razor",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUserBlazor\\Pages\\PageListUser.razor",
-              "RelativeToolTip": "SLK.TryEdu.ModuleUserBlazor\\Pages\\PageListUser.razor",
-              "ViewState": "AgIAAL4AAAAAAAAAAADgv90AAAA3AAAAAAAAAA==",
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Register.cshtml",
+              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Register.cshtml",
+              "ToolTip": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Register.cshtml",
+              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Register.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADUAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T09:40:49.485Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PageListPartnerCenter.razor",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\Pages\\PageListPartnerCenter.razor",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModulePartnerBlazor\\Pages\\PageListPartnerCenter.razor",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerBlazor\\Pages\\PageListPartnerCenter.razor",
-              "RelativeToolTip": "SLK.TryEdu.ModulePartnerBlazor\\Pages\\PageListPartnerCenter.razor",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAAAJ4AAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T09:37:39.652Z",
+              "WhenOpened": "2025-12-10T04:50:35.395Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "EntityPartnerCenter.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\Entities\\EntityPartnerCenter.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModulePartnerCore\\Entities\\EntityPartnerCenter.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\Entities\\EntityPartnerCenter.cs",
-              "RelativeToolTip": "SLK.TryEdu.ModulePartnerCore\\Entities\\EntityPartnerCenter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBMAAAAdAAAAAAAAAA==",
+              "Title": "VerifyEmail.cshtml.cs",
+              "DocumentMoniker": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\VerifyEmail.cshtml.cs",
+              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\VerifyEmail.cshtml.cs",
+              "ToolTip": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\VerifyEmail.cshtml.cs",
+              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\VerifyEmail.cshtml.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAIAwwCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T09:17:17.343Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EntityReferralCode.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\Entities\\EntityReferralCode.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModulePartnerCore\\Entities\\EntityReferralCode.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartnerCore\\Entities\\EntityReferralCode.cs",
-              "RelativeToolTip": "SLK.TryEdu.ModulePartnerCore\\Entities\\EntityReferralCode.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T09:20:16.282Z",
+              "WhenOpened": "2025-12-10T04:36:10.906Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModuleUser\\Services\\UserService.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleUser\\Services\\UserService.cs",
-              "RelativeToolTip": "SLK.TryEdu.ModuleUser\\Services\\UserService.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAjwDMAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T09:09:37.726Z",
+              "Title": "VerifyEmail.cshtml",
+              "DocumentMoniker": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\VerifyEmail.cshtml",
+              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\VerifyEmail.cshtml",
+              "ToolTip": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\VerifyEmail.cshtml",
+              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\VerifyEmail.cshtml",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwEUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-10T04:35:12Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PartnerCenterService.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\Services\\PartnerCenterService.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModulePartner\\Services\\PartnerCenterService.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModulePartner\\Services\\PartnerCenterService.cs",
-              "RelativeToolTip": "SLK.TryEdu.ModulePartner\\Services\\PartnerCenterService.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAlwCIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T08:13:48.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Register.cshtml",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Register.cshtml",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Register.cshtml",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T08:02:15.484Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "register.cshtml.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\register.cshtml.cs",
+              "DocumentMoniker": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\register.cshtml.cs",
               "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\register.cshtml.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\register.cshtml.cs",
+              "ToolTip": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\register.cshtml.cs",
               "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\register.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAowFYAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T08:02:14.75Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Courses.cshtml.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Courses.cshtml.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Courses.cshtml.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Courses.cshtml.cs",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Courses.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T07:59:52.077Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Dashboard.cshtml.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Dashboard.cshtml.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Dashboard.cshtml.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Dashboard.cshtml.cs",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Dashboard.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T07:59:50.364Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Dashboard.cshtml",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Dashboard.cshtml",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Dashboard.cshtml",
-              "ViewState": "AgIAAMsBAAAAAAAAAADgv88BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T07:59:49.658Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "_Header.cshtml",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Pages\\Shared\\_Header.cshtml",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Pages\\Shared\\_Header.cshtml",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Pages\\Shared\\_Header.cshtml",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Pages\\Shared\\_Header.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAADkAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T07:53:31.223Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Login.cshtml",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Login.cshtml",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Login.cshtml",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T07:52:29.184Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Login.cshtml.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Login.cshtml.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Login.cshtml.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Login.cshtml.cs",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Login.cshtml.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAkwFgAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T07:52:27.504Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "PageRouteConfig.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Classes\\PageRouteConfig.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Classes\\PageRouteConfig.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Classes\\PageRouteConfig.cs",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Classes\\PageRouteConfig.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAQwDIAAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T07:51:59.71Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "PageListExamTemplate.razor",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\Pages\\PageListExamTemplate.razor",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModuleExamBlazor\\Pages\\PageListExamTemplate.razor",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExamBlazor\\Pages\\PageListExamTemplate.razor",
-              "RelativeToolTip": "SLK.TryEdu.ModuleExamBlazor\\Pages\\PageListExamTemplate.razor",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T07:51:46.152Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "SLK.TryEdu.ModuleExam.csproj",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj",
-              "RelativeDocumentMoniker": "SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj",
-              "RelativeToolTip": "SLK.TryEdu.ModuleExam\\SLK.TryEdu.ModuleExam.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-09T07:51:10.127Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "ForgotPassword.cshtml.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\ForgotPassword.cshtml.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\ForgotPassword.cshtml.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\ForgotPassword.cshtml.cs",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\ForgotPassword.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T07:49:13.25Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "App.razor",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\App.razor",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebApp\\App.razor",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\App.razor",
-              "RelativeToolTip": "SLK.TryEdu.WebApp\\App.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T07:45:03.39Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "_AdminHost.cshtml",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\_AdminHost.cshtml",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\_AdminHost.cshtml",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\_AdminHost.cshtml",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\_AdminHost.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T07:44:38.91Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ServerAuthService.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Services\\ServerAuthService.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Services\\ServerAuthService.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Services\\ServerAuthService.cs",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Services\\ServerAuthService.cs",
-              "ViewState": "AgIAALQAAAAAAAAAAADgv8YAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T07:42:27.723Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "WasmAuthService.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\Services\\WasmAuthService.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebApp\\Services\\WasmAuthService.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebApp\\Services\\WasmAuthService.cs",
-              "RelativeToolTip": "SLK.TryEdu.WebApp\\Services\\WasmAuthService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAADgvxIAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T07:39:00.22Z",
+              "WhenOpened": "2025-12-10T04:30:26.572Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Program.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Program.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Program.cs",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Program.cs",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAAALUAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T07:39:00.24Z",
+              "DocumentIndex": 6,
+              "Title": "register.js",
+              "DocumentMoniker": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\wwwroot\\js\\register.js",
+              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\wwwroot\\js\\register.js",
+              "ToolTip": "D:\\Kienvip\\LapTrinh\\LTWeb\\ThucTap\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\wwwroot\\js\\register.js",
+              "RelativeToolTip": "SLK.TryEdu.WebHost\\wwwroot\\js\\register.js",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-10T04:24:16.91Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Login.cshtml.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\Login.cshtml.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\Login.cshtml.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\Login.cshtml.cs",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\Login.cshtml.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAswDgAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T07:42:15.966Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\Login.cshtml",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\Login.cshtml",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\Login.cshtml",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Admin\\Pages\\Login.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-09T07:41:22.374Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "AutoVersion.tt",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\AutoVersion.tt",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\AutoVersion.tt",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\AutoVersion.tt",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\AutoVersion.tt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-12-09T07:37:30.07Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\appsettings.json",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\appsettings.json",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\appsettings.json",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-09T07:36:56.825Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "SLK.TryEdu.WebHost.csproj",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\SLK.TryEdu.WebHost.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-09T07:36:53.06Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Index.cshtml.cs",
-              "ToolTip": "C:\\SLK\\TryEdu_2025\\src\\SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Index.cshtml.cs",
-              "RelativeToolTip": "SLK.TryEdu.WebHost\\Areas\\Student\\Pages\\Index.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T04:17:57.27Z"
             }
           ]
         }
