@@ -8,7 +8,7 @@
 <div class="min-vh-100 d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px 0;">
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-10 col-xl-8">
+            <div class="col-12 col-lg-10 col-xl-8" style="margin-top: 85px;">
                 <div class="card shadow-lg border-0" style="border-radius: 20px; overflow: hidden; min-height: 600px;">
                     <div class="row g-0 h-100">
                         <!-- Left Side - Image/Illustration -->
@@ -117,79 +117,3 @@
         </div>
     </div>
 </div>
-
-@section Scripts {
-    <script src="~/js/student-auth.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginForm = document.getElementById('loginForm');
-            const loginBtn = document.getElementById('loginBtn');
-            const loginBtnText = document.getElementById('loginBtnText');
-            const loginBtnSpinner = document.getElementById('loginBtnSpinner');
-            const errorMessage = document.getElementById('errorMessage');
-            const successMessage = document.getElementById('successMessage');
-            const emailError = document.getElementById('emailError');
-            const passwordError = document.getElementById('passwordError');
-
-            // Kiểm tra nếu đã đăng nhập, redirect về dashboard
-            if (StudentAuthService.isAuthenticated()) {
-                window.location.href = '/student/dashboard';
-                return;
-            }
-
-            loginForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                // Clear previous errors
-                errorMessage.textContent = '';
-                successMessage.textContent = '';
-                emailError.textContent = '';
-                passwordError.textContent = '';
-
-                // Get form values
-                const email = document.getElementById('email').value.trim();
-                const password = document.getElementById('password').value;
-                const rememberMe = document.getElementById('rememberMe').checked;
-
-                // Validation
-                if (!email) {
-                    emailError.textContent = 'Email là bắt buộc';
-                    return;
-                }
-
-                if (!password) {
-                    passwordError.textContent = 'Mật khẩu là bắt buộc';
-                    return;
-                }
-
-                // Disable button and show spinner
-                loginBtn.disabled = true;
-                loginBtnText.textContent = 'Đang xử lý...';
-                loginBtnSpinner.classList.remove('d-none');
-
-                try {
-                    const result = await StudentAuthService.login(email, password, rememberMe);
-
-                    if (result.success) {
-                        successMessage.textContent = result.message || 'Đăng nhập thành công!';
-                        // Redirect to dashboard after 1 second
-                        setTimeout(() => {
-                            window.location.href = '/student/dashboard';
-                        }, 1000);
-                    } else {
-                        errorMessage.textContent = result.message || 'Đăng nhập thất bại. Vui lòng thử lại.';
-                        loginBtn.disabled = false;
-                        loginBtnText.textContent = 'Đăng nhập';
-                        loginBtnSpinner.classList.add('d-none');
-                    }
-                } catch (error) {
-                    console.error('Login error:', error);
-                    errorMessage.textContent = 'Đã có lỗi xảy ra. Vui lòng thử lại.';
-                    loginBtn.disabled = false;
-                    loginBtnText.textContent = 'Đăng nhập';
-                    loginBtnSpinner.classList.add('d-none');
-                }
-            });
-        });
-    </script>
-}

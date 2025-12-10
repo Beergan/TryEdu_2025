@@ -10,7 +10,7 @@
 <div class="min-vh-100 d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px 0;">
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-10 col-xl-8">
+            <div class="col-12 col-lg-10 col-xl-8" style="margin-top: 85px;">
                 <div class="card shadow-lg border-0" style="border-radius: 20px; overflow: hidden; min-height: 600px;">
                     <div class="row g-0 h-100">
                         <div class="col-lg-6 d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative;">
@@ -55,28 +55,28 @@
                                     @Html.AntiForgeryToken()
                                     <div class="row g-3 mb-3">
                                         <div class="col-md-6">
-                                            <input id="firstName" name="firstName" class="form-control form-control-lg" placeholder="Họ" required />
+                                            <input id="firstName" name="firstName" class="form-control form-control-lg" placeholder="Họ" />
                                             <span id="firstNameError" class="text-danger small"></span>
                                         </div>
                                         <div class="col-md-6">
-                                            <input id="lastName" name="lastName" class="form-control form-control-lg" placeholder="Tên" required />
+                                            <input id="lastName" name="lastName" class="form-control form-control-lg" placeholder="Tên" />
                                             <span id="lastNameError" class="text-danger small"></span>
                                         </div>
                                     </div>
 
                                     <div class="mb-3">
-                                        <input id="email" name="email" type="email" class="form-control form-control-lg" placeholder="Email" required />
+                                        <input id="email" name="email" type="email" class="form-control form-control-lg" placeholder="Email" />
                                         <span id="emailError" class="text-danger small"></span>
                                     </div>
 
                                     <div class="mb-3">
-                                        <input id="password" name="password" type="password" class="form-control form-control-lg" placeholder="Mật khẩu" required />
+                                        <input id="password" name="password" type="password" class="form-control form-control-lg" placeholder="Mật khẩu" />
                                         <span id="passwordError" class="text-danger small"></span>
                                         <div class="small mt-1" id="passwordStrength"></div>
                                     </div>
 
                                     <div class="mb-3">
-                                        <input id="confirmPassword" name="confirmPassword" type="password" class="form-control form-control-lg" placeholder="Xác nhận mật khẩu" required />
+                                        <input id="confirmPassword" name="confirmPassword" type="password" class="form-control form-control-lg" placeholder="Xác nhận mật khẩu" />
                                         <span id="confirmPasswordError" class="text-danger small"></span>
                                     </div>
 
@@ -95,7 +95,7 @@
                                     </div>
 
                                     <div class="form-check mb-3">
-                                        <input id="agreeToTerms" name="agreeToTerms" class="form-check-input" type="checkbox" required />
+                                        <input id="agreeToTerms" name="agreeToTerms" class="form-check-input" type="checkbox" />
                                         <label for="agreeToTerms" class="form-check-label small">
                                             Tôi đồng ý với <a href="/terms" target="_blank" class="text-decoration-none">điều khoản sử dụng</a> và <a href="/privacy" target="_blank" class="text-decoration-none">chính sách bảo mật</a>
                                         </label>
@@ -124,164 +124,5 @@
 </div>
 
 @section Scripts {
-    <script src="~/js/student-auth.js"></script>
-    <script src="~/js/register.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const registerForm = document.getElementById('registerForm');
-            const registerBtn = document.getElementById('registerBtn');
-            const registerBtnText = document.getElementById('registerBtnText');
-            const registerBtnSpinner = document.getElementById('registerBtnSpinner');
-            const errorMessage = document.getElementById('errorMessage');
-            const successMessage = document.getElementById('successMessage');
-            const passwordInput = document.getElementById('password');
-            const confirmPasswordInput = document.getElementById('confirmPassword');
-            const passwordStrength = document.getElementById('passwordStrength');
-
-            // Kiểm tra nếu đã đăng nhập, redirect về dashboard
-            if (StudentAuthService.isAuthenticated()) {
-                window.location.href = '/student/dashboard';
-                return;
-            }
-
-            // Password strength checker
-            passwordInput.addEventListener('input', function() {
-                const password = this.value;
-                let strength = '';
-                let strengthClass = '';
-
-                if (password.length === 0) {
-                    passwordStrength.textContent = '';
-                    return;
-                }
-
-                if (password.length < 6) {
-                    strength = 'Mật khẩu quá ngắn (tối thiểu 6 ký tự)';
-                    strengthClass = 'text-danger';
-                } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password)) {
-                    strength = 'Mật khẩu phải có chữ hoa, chữ thường và số';
-                    strengthClass = 'text-warning';
-                } else {
-                    strength = 'Mật khẩu mạnh ✓';
-                    strengthClass = 'text-success';
-                }
-
-                passwordStrength.textContent = strength;
-                passwordStrength.className = 'small mt-1 ' + strengthClass;
-            });
-
-            // Confirm password match
-            confirmPasswordInput.addEventListener('input', function() {
-                const password = passwordInput.value;
-                const confirmPassword = this.value;
-                const confirmPasswordError = document.getElementById('confirmPasswordError');
-
-                if (confirmPassword && password !== confirmPassword) {
-                    confirmPasswordError.textContent = 'Mật khẩu xác nhận không khớp';
-                } else {
-                    confirmPasswordError.textContent = '';
-                }
-            });
-
-            registerForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                // Clear previous errors
-                errorMessage.textContent = '';
-                successMessage.textContent = '';
-                document.querySelectorAll('.text-danger.small').forEach(el => {
-                    if (el.id && el.id.endsWith('Error')) {
-                        el.textContent = '';
-                    }
-                });
-
-                // Get form values
-                const firstName = document.getElementById('firstName').value.trim();
-                const lastName = document.getElementById('lastName').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const password = passwordInput.value;
-                const confirmPassword = confirmPasswordInput.value;
-                const phone = document.getElementById('phone').value.trim();
-                const country = document.getElementById('country').value.trim();
-                const city = document.getElementById('city').value.trim();
-                const agreeToTerms = document.getElementById('agreeToTerms').checked;
-
-                // Validation
-                if (!firstName) {
-                    document.getElementById('firstNameError').textContent = 'Họ là bắt buộc';
-                    return;
-                }
-
-                if (!lastName) {
-                    document.getElementById('lastNameError').textContent = 'Tên là bắt buộc';
-                    return;
-                }
-
-                if (!email) {
-                    document.getElementById('emailError').textContent = 'Email là bắt buộc';
-                    return;
-                }
-
-                if (!password) {
-                    document.getElementById('passwordError').textContent = 'Mật khẩu là bắt buộc';
-                    return;
-                }
-
-                if (password !== confirmPassword) {
-                    document.getElementById('confirmPasswordError').textContent = 'Mật khẩu xác nhận không khớp';
-                    return;
-                }
-
-                if (!agreeToTerms) {
-                    document.getElementById('agreeToTermsError').textContent = 'Vui lòng đồng ý với điều khoản sử dụng';
-                    return;
-                }
-
-                // Disable button and show spinner
-                registerBtn.disabled = true;
-                registerBtnText.textContent = 'Đang xử lý...';
-                registerBtnSpinner.classList.remove('d-none');
-
-                try {
-                    const registerData = {
-                        firstName: firstName,
-                        lastName: lastName,
-                        email: email,
-                        password: password,
-                        confirmPassword: confirmPassword,
-                        phone: phone || null,
-                        country: country || null,
-                        city: city || null,
-                        agreeToTerms: agreeToTerms
-                    };
-
-                    const result = await StudentAuthService.register(registerData);
-
-                    if (result.success) {
-                        successMessage.textContent = result.message || 'Đăng ký thành công!';
-                        // Redirect to dashboard after 1 second
-                        setTimeout(() => {
-                            window.location.href = '/student/dashboard';
-                        }, 1000);
-                    } else {
-                        errorMessage.textContent = result.message || 'Đăng ký thất bại. Vui lòng thử lại.';
-                        if (result.errors && result.errors.length > 0) {
-                            result.errors.forEach(error => {
-                                errorMessage.textContent += ' ' + error;
-                            });
-                        }
-                        registerBtn.disabled = false;
-                        registerBtnText.textContent = 'Đăng ký tài khoản';
-                        registerBtnSpinner.classList.add('d-none');
-                    }
-                } catch (error) {
-                    console.error('Register error:', error);
-                    errorMessage.textContent = 'Đã có lỗi xảy ra. Vui lòng thử lại.';
-                    registerBtn.disabled = false;
-                    registerBtnText.textContent = 'Đăng ký tài khoản';
-                    registerBtnSpinner.classList.add('d-none');
-                }
-            });
-        });
-    </script>
+	<script src="~/js/register.js"></script>
 }
