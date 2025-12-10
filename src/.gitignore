@@ -1,0 +1,88 @@
+# =========================================
+# ASP.NET / Blazor / .NET
+# =========================================
+
+# Build Folders
+bin/
+obj/
+out/
+publish/
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+*.lib
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+
+# Rider / JetBrains IDE
+.idea/
+*.sln.iml
+
+# Visual Studio Code
+.vscode/
+
+# npm / node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Logs
+*.log
+logs/
+*.trace
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.bak
+*.orig
+*.rej
+
+# =========================================
+# Blazor / Frontend
+# =========================================
+wwwroot/_framework/
+wwwroot/css/*.min.css
+wwwroot/js/*.min.js
+wwwroot/lib/
+dist/
+
+# =========================================
+# PostgreSQL / Database
+# =========================================
+# PostgreSQL local files
+*.sql
+*.backup
+*.dump
+
+# Database folders (if any local folder is used)
+data/
+pgdata/
+*.db
+*.sqlite
+*.mdf
+*.ldf
+
+# =========================================
+# ASP.NET config secrets
+# =========================================
+appsettings.*.json
+appsettings.Local.json
+secrets.json
+*.env
+
+# =========================================
+# Others
+# =========================================
+*.DS_Store
+Thumbs.db
