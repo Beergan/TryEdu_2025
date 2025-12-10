@@ -82,7 +82,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         const target = document.querySelector(href);
 
-        if (!target) return; 
+        if (!target) return;
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',

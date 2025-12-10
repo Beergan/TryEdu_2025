@@ -9,99 +9,99 @@ using SLK.TryEdu.WebHost.Services;
 
 namespace SLK.TryEdu.WebHost.Areas.Student.Pages
 {
-	public class RegisterModel : PageModel
-	{
-		private readonly IRepository<EntityUser> _userRepository;
-		private readonly ITextTranslator _textTranslator;
-		private readonly IOtpService _otpService;
-		private readonly IMailSettingService _svcMailSettings;
+    public class RegisterModel : PageModel
+    {
+        private readonly IRepository<EntityUser> _userRepository;
+        private readonly ITextTranslator _textTranslator;
+        private readonly IOtpService _otpService;
+        private readonly IMailSettingService _svcMailSettings;
 
-		public RegisterModel(IRepository<EntityUser> userRepository, ITextTranslator textTranslator, IOtpService otpService, IMailSettingService svcMailSettings)
-		{
-			_userRepository = userRepository;
-			_textTranslator = textTranslator;
-			_otpService = otpService;
-			_svcMailSettings = svcMailSettings;
-		}
+        public RegisterModel(IRepository<EntityUser> userRepository, ITextTranslator textTranslator, IOtpService otpService, IMailSettingService svcMailSettings)
+        {
+            _userRepository = userRepository;
+            _textTranslator = textTranslator;
+            _otpService = otpService;
+            _svcMailSettings = svcMailSettings;
+        }
 
-		public IActionResult OnGet()
-		{
-			if (Request.Cookies.ContainsKey("UserAuth"))
-			{
-				return Redirect("/dashboard");
-			}
-			return Page();
-		}
+        public IActionResult OnGet()
+        {
+            if (Request.Cookies.ContainsKey("UserAuth"))
+            {
+                return Redirect("/dashboard");
+            }
+            return Page();
+        }
 
-		[BindProperty]
-		public UserRegisterRequest RegisterRequest { get; set; }
+        [BindProperty]
+        public UserRegisterRequest RegisterRequest { get; set; }
 
-		public async Task<IActionResult> OnPostAsync()
-		{
-			try
-			{
-				var email = RegisterRequest.Email;
+        public async Task<IActionResult> OnPostAsync()
+        {
+            try
+            {
+                var email = RegisterRequest.Email;
 
-				var existingUser = await _userRepository.GetOne(u => u.Email == RegisterRequest.Email);
-				if (existingUser != null)
-				{
-					if (existingUser.IsVerified == false)
-					{
-						existingUser.Email = RegisterRequest.Email.ToLower().Trim();
-						existingUser.PasswordHash = BCrypt.Net.BCrypt.HashPassword(RegisterRequest.ConfirmPassword);
-						existingUser.FirstName = RegisterRequest.FirstName.Trim();
-						existingUser.LastName = RegisterRequest.LastName.Trim();
-						existingUser.Phone = RegisterRequest.Phone?.Trim();
-						existingUser.Country = RegisterRequest.Country?.Trim();
-						existingUser.City = RegisterRequest.City?.Trim();
-						existingUser.IsVerified = false;
-						await _userRepository.Update(existingUser);
-						var otpexistingUser = _otpService.GenerateOtp(existingUser.Email);
-						await SendVerificationEmail(existingUser, otpexistingUser);
-						TempData["SuccessMessage"] = $"Đăng ký thành công! Mã xác thực đã được gửi đến email {_otpService.MaskEmail(existingUser.Email)}";
-						TempData["UserEmail"] = existingUser.Email;
-						TempData.Keep("UserEmail");
+                var existingUser = await _userRepository.GetOne(u => u.Email == RegisterRequest.Email);
+                if (existingUser != null)
+                {
+                    if (existingUser.IsVerified == false)
+                    {
+                        existingUser.Email = RegisterRequest.Email.ToLower().Trim();
+                        existingUser.PasswordHash = BCrypt.Net.BCrypt.HashPassword(RegisterRequest.ConfirmPassword);
+                        existingUser.FirstName = RegisterRequest.FirstName.Trim();
+                        existingUser.LastName = RegisterRequest.LastName.Trim();
+                        existingUser.Phone = RegisterRequest.Phone?.Trim();
+                        existingUser.Country = RegisterRequest.Country?.Trim();
+                        existingUser.City = RegisterRequest.City?.Trim();
+                        existingUser.IsVerified = false;
+                        await _userRepository.Update(existingUser);
+                        var otpexistingUser = _otpService.GenerateOtp(existingUser.Email);
+                        await SendVerificationEmail(existingUser, otpexistingUser);
+                        TempData["SuccessMessage"] = $"Đăng ký thành công! Mã xác thực đã được gửi đến email {_otpService.MaskEmail(existingUser.Email)}";
+                        TempData["UserEmail"] = existingUser.Email;
+                        TempData.Keep("UserEmail");
 
-						return Redirect("VerifyEmail");
-					}
-					else
-					{
-						return Redirect("Dashboard");
-					}
-				}
+                        return Redirect("VerifyEmail");
+                    }
+                    else
+                    {
+                        return Redirect("Dashboard");
+                    }
+                }
 
-				var user = new EntityUser
-				{
-					Email = RegisterRequest.Email.ToLower().Trim(),
-					PasswordHash = BCrypt.Net.BCrypt.HashPassword(RegisterRequest.ConfirmPassword),
-					FirstName = RegisterRequest.FirstName.Trim(),
-					LastName = RegisterRequest.LastName.Trim(),
-					Phone = RegisterRequest.Phone?.Trim(),
-					Country = RegisterRequest.Country?.Trim(),
-					City = RegisterRequest.City?.Trim(),
-					IsActive = true,
-					IsVerified = false,
-				};
+                var user = new EntityUser
+                {
+                    Email = RegisterRequest.Email.ToLower().Trim(),
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(RegisterRequest.ConfirmPassword),
+                    FirstName = RegisterRequest.FirstName.Trim(),
+                    LastName = RegisterRequest.LastName.Trim(),
+                    Phone = RegisterRequest.Phone?.Trim(),
+                    Country = RegisterRequest.Country?.Trim(),
+                    City = RegisterRequest.City?.Trim(),
+                    IsActive = true,
+                    IsVerified = false,
+                };
 
-				await _userRepository.Insert(user);
-				var otp = _otpService.GenerateOtp(user.Email);
-				await SendVerificationEmail(user, otp);
+                await _userRepository.Insert(user);
+                var otp = _otpService.GenerateOtp(user.Email);
+                await SendVerificationEmail(user, otp);
 
-				TempData.Keep("UserEmail");
+                TempData.Keep("UserEmail");
 
-				return Redirect("VerifyEmail");
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.Message);
-				return Page();
-			}
-		}
-		private async Task SendVerificationEmail(EntityUser user, string otp)
-		{
-			string subject = $"Xác thực tài khoản TryEdu - Mã OTP";
+                return Redirect("VerifyEmail");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return Page();
+            }
+        }
+        private async Task SendVerificationEmail(EntityUser user, string otp)
+        {
+            string subject = $"Xác thực tài khoản TryEdu - Mã OTP";
 
-			string content = $@"
+            string content = $@"
 			<!DOCTYPE html>
 			<html lang='vi'>
 			<head>
@@ -192,51 +192,51 @@ namespace SLK.TryEdu.WebHost.Areas.Student.Pages
 			</body>
 			</html>";
 
-			var mailRequest = new MailRequest()
-			{
-				Subject = subject,
-				ToEmail = user.Email,
-				Content = content,
-				Attachments = new()
-			};
+            var mailRequest = new MailRequest()
+            {
+                Subject = subject,
+                ToEmail = user.Email,
+                Content = content,
+                Attachments = new()
+            };
 
-			_ = Task.Run(async () =>
-			{
-				try
-				{
-					await _svcMailSettings.SendMail(mailRequest);
-				}
-				catch (Exception ex)
-				{
-					Console.WriteLine($"Error sending verification email: {ex.Message}");
-				}
-			});
-			await Task.CompletedTask;
-		}
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    await _svcMailSettings.SendMail(mailRequest);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error sending verification email: {ex.Message}");
+                }
+            });
+            await Task.CompletedTask;
+        }
 
-		public async Task<IActionResult> OnGetCheckEmailAsync(string email)
-		{
-			if (string.IsNullOrEmpty(email))
-			{
-				return new JsonResult(new { exists = false, message = "" });
-			}
+        public async Task<IActionResult> OnGetCheckEmailAsync(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return new JsonResult(new { exists = false, message = "" });
+            }
 
-			try
-			{
-				var user = await _userRepository.GetOne(u => u.Email == email.ToLower().Trim());
-				if (user != null)
-				{
-					return new JsonResult(new { exists = true, message = "Email đã được sử dụng" });
-				}
-				else
-				{
-					return new JsonResult(new { exists = false, message = "Email có thể sử dụng" });
-				}
-			}
-			catch (Exception ex)
-			{
-				return new JsonResult(new { exists = false, message = $"Lỗi kiểm tra: {ex.Message}" });
-			}
-		}
-	}
+            try
+            {
+                var user = await _userRepository.GetOne(u => u.Email == email.ToLower().Trim());
+                if (user != null)
+                {
+                    return new JsonResult(new { exists = true, message = "Email đã được sử dụng" });
+                }
+                else
+                {
+                    return new JsonResult(new { exists = false, message = "Email có thể sử dụng" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return new JsonResult(new { exists = false, message = $"Lỗi kiểm tra: {ex.Message}" });
+            }
+        }
+    }
 }

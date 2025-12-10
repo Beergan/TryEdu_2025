@@ -76,7 +76,7 @@ const StudentAuthService = {
                     return true;
                 }
             }
-            
+
             // Token không hợp lệ, xóa khỏi localStorage
             this.clearAuth();
             return false;
@@ -188,7 +188,7 @@ const StudentAuthService = {
 };
 
 // Auto-validate token khi trang load (nếu có token)
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     if (StudentAuthService.isAuthenticated()) {
         // Validate token trong background
         StudentAuthService.validateToken().then(isValid => {

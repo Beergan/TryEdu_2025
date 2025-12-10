@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SLK.TryEdu.WebHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b75e0ca60782b4f1ef9700cb13b43e9e6bfb820b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2154efd465b27a82be17b3e58c174d503e51b2bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("SLK.TryEdu.WebHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SLK.TryEdu.WebHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
