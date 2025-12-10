@@ -37,7 +37,6 @@ public class MyServiceBase : IServiceBase
             return ResultsOf<T>.Error($"Đã có lỗi xảy ra: {ex.Message}");
         }
     }
-
     /// <summary>
     /// Xóa cache của entity sau khi có thay đổi (Insert/Update/Delete)
     /// </summary>
@@ -45,12 +44,10 @@ public class MyServiceBase : IServiceBase
     {
         try
         {
-            // IMyContext có method Cache, không phải IDbContext
             _ctx.Cache<T>().ClearCache();
         }
         catch
         {
-            // Ignore cache clear errors
         }
     }
 

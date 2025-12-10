@@ -166,13 +166,10 @@ const StudentAuthService = {
         }
     },
 
-    // Đăng xuất
     logout() {
         this.clearAuth();
         window.location.href = '/student/login';
     },
-
-    // Lấy Authorization header cho API calls
     getAuthHeader() {
         const token = this.getToken();
         if (token) {
@@ -186,8 +183,6 @@ const StudentAuthService = {
         };
     }
 };
-
-// Auto-validate token khi trang load (nếu có token)
 document.addEventListener('DOMContentLoaded', function () {
     if (StudentAuthService.isAuthenticated()) {
         // Validate token trong background

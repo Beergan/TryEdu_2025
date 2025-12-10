@@ -26,7 +26,74 @@
         <Content>
             <EditForm id="editForm" Model="@_model" OnValidSubmit="@OnFormSubmit">
                 <DataAnnotationsValidator />
-                
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <label for="name" class="col-md-12 col-form-label">Mã trung tâm</label>
+                            <div class="col-md-12">
+                                <SfTextBox Placeholder="Tên" @bind-Value="_model.CetnterCode" />
+                                <CustomValidationMessage style="color: red;" For="@(() => _model.CetnterCode)" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-3 mt-xl-0 mt-md-0">
+                        <div class="row">
+                            <label for="name" class="col-md-12 col-form-label">Tên trung tâm</label>
+                            <div class="col-md-12">
+                                <SfTextBox Placeholder="Tên trung tâm" @bind-Value="_model.CenterName" />
+                                <CustomValidationMessage style="color: red;" For="@(() => _model.CenterName)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <label for="name" class="col-md-12 col-form-label">Email</label>
+                            <div class="col-md-12">
+                                <SfTextBox @bind-Value="_model.Email" />
+                                <CustomValidationMessage style="color: red;" For="@(() => _model.Email)" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-0 mt-xl-0">
+                        <div class="row">
+                            <label for="name" class="col-md-12 col-form-label">Điện thoại</label>
+                            <div class="col-md-12">
+                                <SfTextBox Placeholder="Điện thoại" @bind-Value="_model.Phone" />
+                                <CustomValidationMessage style="color: red;" For="@(() => _model.Phone)" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-0 mt-xl-0">
+                        <div class="row">
+                            <label for="name" class="col-md-12 col-form-label">Logo</label>
+                            <div class="col-md-12">
+                                <ImageUploadComponent @bind-Value="_model.LogoUrl"
+                                                      MaxFileSizeInBytes="@(3 * 1024 * 1024)" />
+                                <CustomValidationMessage style="color: red;" For="@(() => _model.LogoUrl)" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-0 mt-xl-0">
+                        <div class="row">
+                            <label for="name" class="col-md-12 col-form-label">Giấy phép kinh doanh</label>
+                            <div class="col-md-12">
+                                <SfTextBox Placeholder="Giấy phép kinh doanh" @bind-Value="_model.LicenseUrl" />
+                                <CustomValidationMessage style="color: red;" For="@(() => _model.LicenseUrl)" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-0 mt-xl-0">
+                        <div class="row">
+                            <label for="name" class="col-md-12 col-form-label">Địa chỉ</label>
+                            <div class="col-md-12">
+                                <SfTextBox Placeholder="Địa chỉ" @bind-Value="_model.Address" />
+                                <CustomValidationMessage style="color: red;" For="@(() => _model.Address)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </EditForm>
         </Content>
     </DialogTemplates>
@@ -52,14 +119,14 @@
                 </div>
                 <div class="col-12 col-md-8 col-lg-9 text-right">
                     <div class="btn-group pr-0">
-                        <button class="btn btn-light float-right newplus mr-2" @onclick="NewUser_Click"><span class="fas fa-plus"></span> @Text["User","Học viên"]</button>
+                        <button class="btn btn-light float-right newplus mr-2" @onclick="NewUser_Click"><span class="fas fa-plus"></span> @Text["Partner","Đối tác"]</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="app-content-body" style="overflow:auto" id="target">
             <div class="container-fluid" style="overflow:auto">
- <CustomTable TItem="EntityPartnerCenter" 
+        <CustomTable TItem="EntityPartnerCenter" 
                              DataSource="@_partner"
              PageSize="25"
              TableClass="table-hover">
@@ -73,11 +140,6 @@
                                      HeaderClass="text-dark"
                                      CellClass="fw-bold text-dark"
                                      />
-                        <TableColumn TItem="EntityPartnerCenter" Property="FullName"
-                     Title="Họ và tên"
-                                     HeaderClass="text-dark"
-                     CellClass="fw-bold text-dark"
-                                      />
                         <TableColumn TItem="EntityPartnerCenter" Property="Phone"
                      Title="Số điện thoại"
                      HeaderClass="text-center"
@@ -167,7 +229,7 @@
         _dataSource = rsp.Items;
 
         _displaySource = _dataSource.OrderByDescending(x => x.Id).ToList();
-
+        _partner = _displaySource;
         await swal.Close();
         StateHasChanged();
     }

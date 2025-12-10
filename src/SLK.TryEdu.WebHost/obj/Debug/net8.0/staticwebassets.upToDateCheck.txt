@@ -35,12 +35,12 @@ wwwroot\upload\avatar\female-03.jpeg
 wwwroot\upload\avatar\female-02.jpeg
 wwwroot\upload\avatar\female-01.jpeg
 wwwroot\upload\avatar\female-00.jpeg
-wwwroot\js\student.js
-wwwroot\js\student-auth.js
+wwwroot\css\student.css
+wwwroot\js\otp_verify.js
 wwwroot\js\register.js
 wwwroot\icon-512.png
 wwwroot\favicon.png
-wwwroot\css\student.css
+wwwroot\js\student.js
 wwwroot\css\register.css
 wwwroot\bootstrap\bootstrap.min.css.map
 wwwroot\bootstrap\bootstrap.min.css
@@ -1842,3 +1842,4 @@ wwwroot\assets\bootstrap\4.5.3\css\bootstrap-grid.css.map
 wwwroot\assets\bootstrap\4.5.3\css\bootstrap-grid.css
 wwwroot\assets\app.js
 wwwroot\assets\app.css
+wwwroot\js\student-auth.js

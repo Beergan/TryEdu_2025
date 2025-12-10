@@ -1,0 +1,436 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+<div class="image-upload-wrapper">
+    @if (string.IsNullOrEmpty(ImageBase64) && !showCropper)
+    {
+        <label for="@InputId" class="upload-area">
+            <InputFile OnChange="HandleFileSelected"
+                       accept="image/*"
+                       class="d-none"
+                       id="@InputId" />
+
+            <div class="upload-content text-center">
+                <div class="upload-icon mb-3">
+                    <i class="fas fa-cloud-upload-alt fa-3x text-primary"></i>
+                </div>
+                <h5 class="mb-2">Tải ảnh lên</h5>
+                <p class="text-muted mb-2">Nhấp vào đây để chọn ảnh</p>
+                <small class="text-muted">
+                    Hỗ trợ: JPG, PNG, GIF (Tối đa @(MaxFileSizeInBytes / 1024 / 1024)MB)
+                </small>
+            </div>
+        </label>
+    }
+    else if (showCropper)
+    {
+        <div class="crop-container">
+            <div class="crop-header mb-3">
+                <h6 class="mb-0">Cắt và điều chỉnh ảnh</h6>
+            </div>
+
+            <div class="crop-canvas-wrapper">
+                <canvas @ref="canvasRef" class="crop-canvas" id="@canvasId"></canvas>
+                <div class="crop-overlay">
+                    <div class="crop-box" style="@GetCropBoxStyle()"></div>
+                </div>
+            </div>
+
+            <div class="crop-controls mt-3">
+                <div class="row g-2 mb-3">
+                    <div class="col-6">
+                        <label class="form-label small">Kích thước X</label>
+                        <input type="range" class="form-range" min="50" max="@canvasWidth"
+                               @bind="cropWidth" @bind:event="oninput" />
+                        <small class="text-muted">@cropWidth px</small>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label small">Kích thước Y</label>
+                        <input type="range" class="form-range" min="50" max="@canvasHeight"
+                               @bind="cropHeight" @bind:event="oninput" />
+                        <small class="text-muted">@cropHeight px</small>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label small">Vị trí X</label>
+                        <input type="range" class="form-range" min="0" max="@(canvasWidth - cropWidth)"
+                               @bind="cropX" @bind:event="oninput" />
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label small">Vị trí Y</label>
+                        <input type="range" class="form-range" min="0" max="@(canvasHeight - cropHeight)"
+                               @bind="cropY" @bind:event="oninput" />
+                    </div>
+                </div>
+
+                <div class="d-flex gap-2 justify-content-end">
+                    <button type="button" class="btn btn-secondary" @onclick="CancelCrop">
+                        <i class="fas fa-times"></i> Hủy
+                    </button>
+                    <button type="button" class="btn btn-primary" @onclick="ApplyCrop">
+                        <i class="fas fa-check"></i> Áp dụng
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="image-preview-container">
+            <div class="image-wrapper">
+                <img src="@ImageBase64" alt="Preview" class="preview-image" />
+                <div class="image-overlay">
+                    <label for="@InputId" class="btn btn-light btn-sm me-2" title="Thay đổi">
+                        <i class="fas fa-edit"></i> Thay đổi
+                    </label>
+                    <button type="button" class="btn btn-danger btn-sm" @onclick="ClearImage" title="Xóa">
+                        <i class="fas fa-trash"></i> Xóa
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <InputFile OnChange="HandleFileSelected"
+                   accept="image/*"
+                   class="d-none"
+                   id="@InputId" />
+    }
+
+    @if (!string.IsNullOrEmpty(ErrorMessage))
+    {
+        <div class="alert alert-danger mt-3 mb-0" role="alert">
+            <i class="fas fa-exclamation-circle me-2"></i>@ErrorMessage
+        </div>
+    }
+</div>
+
+<style>
+    .image-upload-wrapper {
+        width: 100%;
+    }
+
+    .upload-area {
+        border: 2px dashed #dee2e6;
+        border-radius: 8px;
+        padding: 40px 20px;
+        background-color: #f8f9fa;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+
+        .upload-area:hover {
+            border-color: #0d6efd;
+            background-color: #e7f1ff;
+        }
+
+    .upload-content {
+        pointer-events: none;
+    }
+
+    .upload-icon i {
+        transition: transform 0.3s ease;
+    }
+
+    .upload-area:hover .upload-icon i {
+        transform: translateY(-5px);
+    }
+
+    .crop-container {
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .crop-header {
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: 10px;
+    }
+
+    .crop-canvas-wrapper {
+        position: relative;
+        max-width: 100%;
+        margin: 0 auto;
+        background: #f8f9fa;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .crop-canvas {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .crop-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+    }
+
+    .crop-box {
+        position: absolute;
+        border: 2px solid #0d6efd;
+        background: rgba(13, 110, 253, 0.1);
+        box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
+    }
+
+    .crop-controls {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    .image-preview-container {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .image-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .preview-image {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: contain;
+        display: block;
+        background-color: #f8f9fa;
+    }
+
+    .image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-wrapper:hover .image-overlay {
+        opacity: 1;
+    }
+
+    .image-overlay .btn {
+        font-size: 0.875rem;
+        padding: 6px 12px;
+    }
+
+    .image-overlay label {
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+
+    @@media (max-width: 576px) {
+        .upload-area {
+            padding: 30px 15px;
+            min-height: 180px;
+        }
+
+        .image-overlay {
+            opacity: 1;
+            background: rgba(0,0,0,0.6);
+        }
+    }
+</style>
+
+<script>
+    window.imageUploadHelper = {
+        drawImage: function (canvasId, imageDataUrl) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return { width: 0, height: 0 };
+
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+
+            return new Promise((resolve) => {
+                img.onload = function () {
+                    const maxWidth = 600;
+                    const maxHeight = 500;
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > maxWidth) {
+                        height = (height * maxWidth) / width;
+                        width = maxWidth;
+                    }
+
+                    if (height > maxHeight) {
+                        width = (width * maxHeight) / height;
+                        height = maxHeight;
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    resolve({ width: width, height: height });
+                };
+
+                img.src = imageDataUrl;
+            });
+        },
+
+        cropImage: function (canvasId, x, y, width, height) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return null;
+
+            const ctx = canvas.getContext('2d');
+            const tempCanvas = document.createElement('canvas');
+            tempCanvas.width = width;
+            tempCanvas.height = height;
+            const tempCtx = tempCanvas.getContext('2d');
+
+            const imageData = ctx.getImageData(x, y, width, height);
+            tempCtx.putImageData(imageData, 0, 0);
+
+            return tempCanvas.toDataURL('image/png');
+        }
+    };
+</script>
+
+@code {
+    [Parameter]
+    public string? Value { get; set; }
+
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
+
+    [Parameter]
+    public long MaxFileSizeInBytes { get; set; } = 5 * 1024 * 1024;
+
+    [Parameter]
+    public bool EnableCrop { get; set; } = true;
+
+    [Parameter]
+    public string InputId { get; set; } = $"imageUpload_{Guid.NewGuid():N}";
+
+    private string? ErrorMessage { get; set; }
+    private string? ImageBase64 => Value;
+    private ElementReference canvasRef;
+    private string canvasId = $"canvas_{Guid.NewGuid():N}";
+
+    private bool showCropper = false;
+    private string? tempImageData;
+    private int canvasWidth = 500;
+    private int canvasHeight = 400;
+    private int cropX = 50;
+    private int cropY = 50;
+    private int cropWidth = 300;
+    private int cropHeight = 300;
+
+    private string GetCropBoxStyle()
+    {
+        return $"left: {cropX}px; top: {cropY}px; width: {cropWidth}px; height: {cropHeight}px;";
+    }
+
+    private async Task HandleFileSelected(InputFileChangeEventArgs e)
+    {
+        ErrorMessage = null;
+        var file = e.File;
+
+        if (file == null) return;
+
+        if (!file.ContentType.StartsWith("image/"))
+        {
+            ErrorMessage = "Vui lòng chọn file hình ảnh hợp lệ.";
+            return;
+        }
+
+        if (file.Size > MaxFileSizeInBytes)
+        {
+            ErrorMessage = $"Kích thước file vượt quá giới hạn {MaxFileSizeInBytes / 1024 / 1024}MB.";
+            return;
+        }
+
+        try
+        {
+            using var stream = file.OpenReadStream(MaxFileSizeInBytes);
+            using var memoryStream = new MemoryStream();
+            await stream.CopyToAsync(memoryStream);
+
+            var bytes = memoryStream.ToArray();
+            tempImageData = $"data:{file.ContentType};base64,{Convert.ToBase64String(bytes)}";
+
+            if (EnableCrop)
+            {
+                showCropper = true;
+                StateHasChanged();
+                await Task.Delay(100);
+
+                var dimensions = await JSRuntime.InvokeAsync<System.Text.Json.JsonElement>(
+                    "imageUploadHelper.drawImage", canvasId, tempImageData);
+
+                canvasWidth = dimensions.GetProperty("width").GetInt32();
+                canvasHeight = dimensions.GetProperty("height").GetInt32();
+
+                // Reset crop area to center
+                cropWidth = Math.Min(300, canvasWidth - 100);
+                cropHeight = Math.Min(300, canvasHeight - 100);
+                cropX = (canvasWidth - cropWidth) / 2;
+                cropY = (canvasHeight - cropHeight) / 2;
+
+                StateHasChanged();
+            }
+            else
+            {
+                Value = tempImageData;
+                await ValueChanged.InvokeAsync(tempImageData);
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Lỗi khi tải ảnh: {ex.Message}";
+        }
+    }
+
+    private async Task ApplyCrop()
+    {
+        try
+        {
+            var croppedImage = await JSRuntime.InvokeAsync<string>(
+                "imageUploadHelper.cropImage", canvasId, cropX, cropY, cropWidth, cropHeight);
+
+            Value = croppedImage;
+            await ValueChanged.InvokeAsync(croppedImage);
+            showCropper = false;
+            tempImageData = null;
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Lỗi khi cắt ảnh: {ex.Message}";
+        }
+    }
+
+    private void CancelCrop()
+    {
+        showCropper = false;
+        tempImageData = null;
+    }
+
+    private async Task ClearImage()
+    {
+        Value = null;
+        await ValueChanged.InvokeAsync(null);
+        ErrorMessage = null;
+    }
+}
