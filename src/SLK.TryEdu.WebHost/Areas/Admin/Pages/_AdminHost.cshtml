@@ -7,12 +7,10 @@
 @using Microsoft.AspNetCore.Authentication.Cookies
 @inject IHttpContextAccessor HttpContextAccessor
 @{
-    if (User?.Identity == null || !User.Identity.IsAuthenticated || User.Identity.AuthenticationType != "AdminCookies")
+    if (!User.Identity.IsAuthenticated)
     {
-        if (!Request.Cookies.ContainsKey("AdminAuth"))
-        {
-            Response.Redirect("/admin/login");
-        }
+        Response.Redirect("/admin/login");
+        return;
     }
 }
 <!DOCTYPE html>

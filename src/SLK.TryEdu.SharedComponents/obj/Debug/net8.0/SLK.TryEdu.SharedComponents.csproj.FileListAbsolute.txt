@@ -25,7 +25,6 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\staticwebass
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SLK.TryEdu.SharedComponents.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SLK.TryEdu.SharedComponents.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\staticwebassets.pack.json
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\SLK.TryEdu.SharedComponents.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\refint\SLK.TryEdu.SharedComponents.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Debug\net8.0\SLK.TryEdu.SharedComponents.pdb

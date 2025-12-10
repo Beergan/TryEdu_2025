@@ -3995,7 +3995,8 @@
           "Microsoft.AspNetCore.Components.Web": "8.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
           "SLK.TryEdu.Abstract": "1.0.0",
-          "SLK.TryEdu.ModulePartnerCore": "1.0.0"
+          "SLK.TryEdu.ModulePartnerCore": "1.0.0",
+          "SLK.TryEdu.SharedComponents": "1.0.0"
         },
         "compile": {
           "SLK.TryEdu.ModulePartnerBlazor.dll": {}
@@ -4025,7 +4026,8 @@
           "Microsoft.AspNetCore.Components.Web": "8.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
           "SLK.TryEdu.Abstract": "1.0.0",
-          "SLK.TryEdu.ModuleSettingCore": "1.0.0"
+          "SLK.TryEdu.ModuleSettingCore": "1.0.0",
+          "SLK.TryEdu.SharedComponents": "1.0.0"
         },
         "compile": {
           "SLK.TryEdu.ModuleSettingBlazor.dll": {}
@@ -7106,7 +7108,8 @@
           "Microsoft.AspNetCore.Components.Web": "8.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
           "SLK.TryEdu.Abstract": "1.0.0",
-          "SLK.TryEdu.ModulePartnerCore": "1.0.0"
+          "SLK.TryEdu.ModulePartnerCore": "1.0.0",
+          "SLK.TryEdu.SharedComponents": "1.0.0"
         },
         "runtime": {
           "SLK.TryEdu.ModulePartnerBlazor.dll": {
@@ -7145,7 +7148,8 @@
           "Microsoft.AspNetCore.Components.Web": "8.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.10",
           "SLK.TryEdu.Abstract": "1.0.0",
-          "SLK.TryEdu.ModuleSettingCore": "1.0.0"
+          "SLK.TryEdu.ModuleSettingCore": "1.0.0",
+          "SLK.TryEdu.SharedComponents": "1.0.0"
         },
         "runtime": {
           "SLK.TryEdu.ModuleSettingBlazor.dll": {

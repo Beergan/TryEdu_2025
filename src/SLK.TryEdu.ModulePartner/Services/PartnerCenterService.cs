@@ -40,11 +40,7 @@ public class PartnerCenterService : MyServiceBase, IPartnerCenterService
             return ResultsOf<EntityPartnerCenter>.Error(_ctx.Text["You are not authorized!", "Bạn không có quyền!"]);
         try
         {
-            using (var db = _ctx.ConnectDb())
-            {
-                var data = await db.Repo<EntityPartnerCenter>().GetList();
-                return ResultsOf<EntityPartnerCenter>.Ok(data);
-            }
+            return await GetListWithCache<EntityPartnerCenter>();
         }
         catch (Exception ex)
         {

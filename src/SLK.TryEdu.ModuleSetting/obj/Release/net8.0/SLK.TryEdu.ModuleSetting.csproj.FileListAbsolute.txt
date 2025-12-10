@@ -78,3 +78,7 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSetting\obj\Release\net8.0\SLK.TryEdu.Mo
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSetting\obj\Release\net8.0\refint\SLK.TryEdu.ModuleSetting.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSetting\obj\Release\net8.0\SLK.TryEdu.ModuleSetting.xml
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSetting\obj\Release\net8.0\ref\SLK.TryEdu.ModuleSetting.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSetting\bin\Release\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.runtime.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSetting\bin\Release\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.endpoints.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSetting\bin\Release\net8.0\SLK.TryEdu.SharedComponents.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSetting\bin\Release\net8.0\SLK.TryEdu.SharedComponents.pdb

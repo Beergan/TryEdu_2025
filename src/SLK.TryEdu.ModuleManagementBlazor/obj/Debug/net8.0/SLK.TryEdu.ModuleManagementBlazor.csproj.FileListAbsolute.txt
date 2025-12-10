@@ -96,7 +96,6 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Debug\net8.0\static
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SLK.TryEdu.ModuleManagementBlazor.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SLK.TryEdu.ModuleManagementBlazor.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Debug\net8.0\staticwebassets.pack.json
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Debug\net8.0\SLK.TryE.8AE36879.Up2Date
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Debug\net8.0\SLK.TryEdu.ModuleManagementBlazor.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleManagementBlazor.dll
@@ -136,3 +135,4 @@ D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBla
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Debug\net8.0\SLK.TryEdu.ModuleManagementBlazor.dll
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleManagementBlazor.dll
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Debug\net8.0\ref\SLK.TryEdu.ModuleManagementBlazor.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -48,3 +48,13 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Release\net8.0\staticweba
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Release\net8.0\staticwebassets.build.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Release\net8.0\staticwebassets.build.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleContentBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployeeBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleExamBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartnerBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleManagementBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleSettingBlazor\obj\Release\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.SharedComponents\obj\Release\net8.0\staticwebassets.build.json

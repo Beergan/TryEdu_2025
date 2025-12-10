@@ -1359,7 +1359,6 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\net8.0\staticwebassets.build
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\net8.0\staticwebassets.development.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\net8.0\swae.build.ex.cache
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\net8.0\SLK.TryE.81713895.Up2Date
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\net8.0\SLK.TryEdu.WebHost.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\net8.0\refint\SLK.TryEdu.WebHost.dll
@@ -2077,3 +2076,4 @@ D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\n
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\net8.0\SLK.TryEdu.WebHost.pdb
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\net8.0\SLK.TryEdu.WebHost.genruntimeconfig.cache
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\net8.0\ref\SLK.TryEdu.WebHost.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebHost\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

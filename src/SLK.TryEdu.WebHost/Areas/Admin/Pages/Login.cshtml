@@ -6,8 +6,7 @@
 @using SLK.TryEdu.WebHost.Areas.Admin.Pages
 @{
 
-
-    if (Request.Cookies.ContainsKey("AdminAuth"))
+    if (User.Identity?.IsAuthenticated == true)
     {
         Response.Redirect("/admin");
         return;

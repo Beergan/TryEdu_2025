@@ -39,3 +39,7 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Release\net8.0\SLK.TryEdu.Mo
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Release\net8.0\refint\SLK.TryEdu.ModulePartner.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Release\net8.0\SLK.TryEdu.ModulePartner.xml
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Release\net8.0\ref\SLK.TryEdu.ModulePartner.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\bin\Release\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.runtime.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\bin\Release\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.endpoints.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\bin\Release\net8.0\SLK.TryEdu.SharedComponents.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\bin\Release\net8.0\SLK.TryEdu.SharedComponents.pdb

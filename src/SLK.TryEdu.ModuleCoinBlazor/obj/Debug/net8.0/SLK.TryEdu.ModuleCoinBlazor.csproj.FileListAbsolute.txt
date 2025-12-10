@@ -28,7 +28,6 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Debug\net8.0\staticwebass
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SLK.TryEdu.ModuleCoinBlazor.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SLK.TryEdu.ModuleCoinBlazor.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Debug\net8.0\staticwebassets.pack.json
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Debug\net8.0\SLK.TryE.0F477B1D.Up2Date
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Debug\net8.0\SLK.TryEdu.ModuleCoinBlazor.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleCoinBlazor.dll
@@ -68,3 +67,4 @@ D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\ob
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Debug\net8.0\SLK.TryEdu.ModuleCoinBlazor.dll
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleCoinBlazor.dll
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Debug\net8.0\ref\SLK.TryEdu.ModuleCoinBlazor.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleCoinBlazor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

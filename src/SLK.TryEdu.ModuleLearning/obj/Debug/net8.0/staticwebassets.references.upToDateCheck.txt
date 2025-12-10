@@ -154,3 +154,15 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwe
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleLearningBlazor\obj\Debug\net8.0\staticwebassets.build.json

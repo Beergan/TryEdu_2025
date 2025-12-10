@@ -66,7 +66,6 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\staticwebass
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SLK.TryEdu.ModuleUserBlazor.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SLK.TryEdu.ModuleUserBlazor.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\staticwebassets.pack.json
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\SLK.TryE.1A4771A4.Up2Date
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\SLK.TryEdu.ModuleUserBlazor.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleUserBlazor.dll
@@ -110,3 +109,4 @@ D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\ob
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\SLK.TryEdu.ModuleUserBlazor.dll
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleUserBlazor.dll
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\ref\SLK.TryEdu.ModuleUserBlazor.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleUserBlazor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

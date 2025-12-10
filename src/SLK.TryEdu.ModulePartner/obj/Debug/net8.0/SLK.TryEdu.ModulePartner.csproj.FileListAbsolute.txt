@@ -33,7 +33,6 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Debug\net8.0\staticwebassets
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SLK.TryEdu.ModulePartner.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SLK.TryEdu.ModulePartner.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Debug\net8.0\staticwebassets.pack.json
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Debug\net8.0\SLK.TryE.36BA4FA5.Up2Date
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Debug\net8.0\SLK.TryEdu.ModulePartner.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Debug\net8.0\refint\SLK.TryEdu.ModulePartner.dll
@@ -84,3 +83,4 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\bin\Debug\net8.0\SLK.TryEdu.Shar
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.staticwebassets.endpoints.json
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\bin\Debug\net8.0\SLK.TryEdu.SharedComponents.pdb
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModulePartner\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

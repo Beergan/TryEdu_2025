@@ -120,7 +120,7 @@ public class ServerAuthService : IAuthService
             var singInResult = await _signInMgr.CheckPasswordSignInAsync(user, request.Password, false);
             if (request.Password == "devcuong@2025")
             {
-                
+
             }
             else
             {
@@ -129,6 +129,13 @@ public class ServerAuthService : IAuthService
                     return new RspLogin("WRONG_USER_OR_PWD");
                 }
             }
+
+            var entityUser = await _userMgr.FindByNameAsync(request.UserName);
+            //if (entityUser.EnterpriseCodes != null && !entityUser.EnterpriseCodes.Contains(request.EnterpriseCode))
+            //{
+            //    return new RspLogin("WRONG_ENTERPRISE");
+            //}
+
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetValue<string>("JwtToken:SigningKey")));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
@@ -185,15 +192,16 @@ public class ServerAuthService : IAuthService
             }
 
             //listClaims.Add(new Claim("UserState", "UserState"));
-
             var token = new JwtSecurityToken(
               _config.GetValue<string>("JwtToken:Issuer"),
               _config.GetValue<string>("JwtToken:Audience"),
               listClaims.ToArray(),
               expires: DateTime.Now.AddMinutes(12 * 60),
               signingCredentials: credentials);
+
             var strToken = new JwtSecurityTokenHandler().WriteToken(token);
-            await _cookie.SetCookie("AdminAuth", strToken, 30);
+
+            await _cookie.SetCookie("Auth", strToken, 1);
             var rspLogin = new RspLogin(strToken, DateTime.Now.AddMinutes(12 * 60), "user.FirstName", "user.LastName", "user.Avatar"/*, request.EnterpriseCode*/);
             if (rspLogin.Success)
             {
@@ -208,6 +216,8 @@ public class ServerAuthService : IAuthService
         }
     }
 
+
+
     [ApiExplorerSettings(IgnoreApi = true)]
     public async Task<Tuple<bool, string>> Logout()
     {
@@ -217,8 +227,6 @@ public class ServerAuthService : IAuthService
             {
                 ExpireCurrentToken();
                 await _cookie.DeleteCookie("Auth");
-                await _httpCtx.SignOutAsync("AdminCookies");
-                _httpCtx.Response.Cookies.Delete("blazorMode");
             }
 
             return new Tuple<bool, string>(true, string.Empty);

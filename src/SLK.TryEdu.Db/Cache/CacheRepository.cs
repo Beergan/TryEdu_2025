@@ -25,7 +25,6 @@ public class CacheRepository<T> : BaseRepository<T>, ICacheRepository<T> where T
             cachedList = await base.Query().ToListAsync();
             _cacheService(cacheMode).Set(cacheKey, cachedList);
         }
-
         return cachedList;
     }
     public async Task<T> InsertWithCache(T entity)
@@ -53,5 +52,10 @@ public class CacheRepository<T> : BaseRepository<T>, ICacheRepository<T> where T
         _cacheService(cacheMode).Remove(cacheKey);
         var cachedList = await base.Query().ToListAsync();
         _cacheService(cacheMode).Set(cacheKey, cachedList);
+    }
+
+    public void ClearCache()
+    {
+        _cacheService(cacheMode).Remove(cacheKey);
     }
 }

@@ -36,10 +36,8 @@ public class UserService : MyServiceBase, IUserService
             return ResultOf<EntityUser>.Error(_ctx.Text["You are not authorized!", "Bạn không có quyền!"]);
         try
         {
-            
             var data = await _ctx.Repo<EntityUser>().Query(t => t.Guid == guid)
                 .SingleOrDefaultAsync();
-
             return ResultOf<EntityUser>.Ok(data);
         }
         catch (Exception ex)
@@ -53,19 +51,7 @@ public class UserService : MyServiceBase, IUserService
     {
         if (!_ctx.CheckPermission(PERMISSION.USER_VIEW))
             return ResultsOf<EntityUser>.Error(_ctx.Text["You are not authorized!", "Bạn không có quyền!"]);
-        try
-        {
-            using (var db = _ctx.ConnectDb())
-            {
-                var data = await db.Repo<EntityUser>().GetList();
-                return ResultsOf<EntityUser>.Ok(data); 
-            }
-        }
-        catch (Exception ex)
-        {
-            _log.LogError(ex.Message);
-            return ResultsOf<EntityUser>.Error("Đã có lỗi xảy ra!");
-        }
+        return await GetListWithCache<EntityUser>();
     }
     public async Task<Result> Save([Body] EntityUser info)
     {
@@ -114,6 +100,9 @@ public class UserService : MyServiceBase, IUserService
                     await db.Repo<EntityUser>().Insert(newuser);
                 }
             }
+            
+            // Xóa cache sau khi có thay đổi để đảm bảo data mới nhất
+            ClearCache<EntityUser>();
             return Result.Ok();
         }
         catch (Exception ex)

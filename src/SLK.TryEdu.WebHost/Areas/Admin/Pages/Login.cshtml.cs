@@ -67,6 +67,7 @@ public class LoginModel : PageModel
             ModelState.AddModelError("error", "Tài khoản của bạn chưa được kích hoạt!");
             return Page();
         }
+
         HttpContext.Response.Cookies.Delete("blazorMode");
         HttpContext.Response.Cookies.Append("blazorMode", "server", new CookieOptions { Expires = DateTime.Now.AddDays(30)});
         return Redirect("~/admin");

@@ -15,4 +15,6 @@ public interface ICacheRepository<T> : IRepository<T> where T : class
     Task RemoveWithCache(T entity);
 
     Task RefreshCache();
+
+    void ClearCache();
 }

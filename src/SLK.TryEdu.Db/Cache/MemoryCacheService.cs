@@ -26,13 +26,13 @@ public class MemoryCacheService : ICacheService
     }
     public bool TryGet<T>(string cacheKey, out T value)
     {
-        _memoryCache.TryGetValue(cacheKey, out value);
-        if (value == null) return false;
-        else return true;
+        return _memoryCache.TryGetValue(cacheKey, out value);
     }
 
     public T Set<T>(string cacheKey, T value)
     {
+        // Remove entry cũ trước để đảm bảo không có duplicate và update expiration
+        _memoryCache.Remove(cacheKey);
         return _memoryCache.Set(cacheKey, value, _cacheOptions);
     }
 

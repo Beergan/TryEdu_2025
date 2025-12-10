@@ -112,7 +112,6 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\Debug\net8.0\staticwebasset
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SLK.TryEdu.ModuleEmployee.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SLK.TryEdu.ModuleEmployee.props
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\Debug\net8.0\staticwebassets.pack.json
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\Debug\net8.0\SLK.TryE.8CDBFA8A.Up2Date
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\Debug\net8.0\SLK.TryEdu.ModuleEmployee.dll
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleEmployee.dll
@@ -159,3 +158,4 @@ D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\Debug\net8.0\refint\SLK.TryEdu.ModuleEmployee.dll
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\Debug\net8.0\SLK.TryEdu.ModuleEmployee.xml
 D:\Kienvip\LapTrinh\LTWeb\ThucTap\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\Debug\net8.0\ref\SLK.TryEdu.ModuleEmployee.dll
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.ModuleEmployee\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
