@@ -4813,9 +4813,9 @@ C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\qufih01zn4-
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\gazy1gluqn-{0}-j0021dyg3e-j0021dyg3e.gz
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\11emtc7hah-{0}-o6i43jy8gi-o6i43jy8gi.gz
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\jh9v3gqmzh-{0}-9xn3qfzunc-9xn3qfzunc.gz
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\mnf4g7tiwm-{0}-xxhcndq8nf-xxhcndq8nf.gz
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\9uch0vgh0b-{0}-sed0samgod-sed0samgod.gz
 C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\wa5lvhap0m-{0}-ujyx19qn68-ujyx19qn68.gz
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\u8n4prrwwq-{0}-l0s2oovtea-l0s2oovtea.gz
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\p80bcwf8n6-{0}-esnxtetl41-esnxtetl41.gz
-C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\o4i0776q9e-{0}-q1zl0wxs0v-q1zl0wxs0v.gz
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\mnf4g7tiwm-{0}-2d71yoort7-2d71yoort7.gz
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\u8n4prrwwq-{0}-7r743l50wo-7r743l50wo.gz
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\p80bcwf8n6-{0}-z9qfy0a09k-z9qfy0a09k.gz
+C:\SLK\TryEdu_2025\src\SLK.TryEdu.WebApp\obj\Debug\net8.0\compressed\o4i0776q9e-{0}-z5njpauxgc-z5njpauxgc.gz

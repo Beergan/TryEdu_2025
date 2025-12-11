@@ -52,7 +52,6 @@ namespace SLK.TryEdu.WebHost.Areas.Student.Pages
                 if (string.IsNullOrEmpty(email))
                 {
                     TempData["ErrorMessage"] = "Email không hợp lệ";
-                    return RedirectToPage("/Register");
                 }
 
                 // Verify OTP
@@ -74,7 +73,6 @@ namespace SLK.TryEdu.WebHost.Areas.Student.Pages
 
                 // Remove OTP
                 _otpService.RemoveOtp(email);
-
                 TempData["SuccessMessage"] = "Xác thực email thành công! Bạn có thể đăng nhập ngay.";
                 return RedirectToPage("/Login");
             }

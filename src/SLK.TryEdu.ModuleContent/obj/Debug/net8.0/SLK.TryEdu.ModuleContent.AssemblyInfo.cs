@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SLK.TryEdu.ModuleContent")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d7a0dc690e98f5334e7322d52d10089bcad55ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c100f8f5f6cfa9427aaa9f067fe44201343a8e36")]
 [assembly: System.Reflection.AssemblyProductAttribute("SLK.TryEdu.ModuleContent")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SLK.TryEdu.ModuleContent")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

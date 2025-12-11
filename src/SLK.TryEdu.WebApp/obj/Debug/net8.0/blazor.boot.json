@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "SLK.TryEdu.WebApp",
   "resources": {
-    "hash": "sha256-zFWelFhXZegqtwbJrcNOdB6ZT2BVDdJC6pWZT8Fddz4=",
+    "hash": "sha256-6jzuervyFm4M6Hwo9nVQ6WMX6zXUXy5173q1ox6DUow=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-vtotCeXt2UD6oc459laJT32vBgigZ+eLoUmdeFkvYDk="
     },
@@ -320,14 +320,14 @@
       "SLK.TryEdu.ModulePartnerCore.wasm": "sha256-3IqJ/GAz70WzkBWdgpzDE1bipiJVk3qODMOx3zX7dGw=",
       "SLK.TryEdu.ModuleSettingBlazor.wasm": "sha256-I75h/rCTaoSUlKr4SS4XuEHxeQj6FQMXNwXv3XtYI7g=",
       "SLK.TryEdu.ModuleSettingCore.wasm": "sha256-F/ovio+AVV0BL1lDtjoUf7uyTHBLFWZvHvzWuEM7cTY=",
-      "SLK.TryEdu.ModuleUserBlazor.wasm": "sha256-K68CUswopAKBMaVQ7lzDvQ8arkaK3sN8/C2IH2X3Z8w=",
+      "SLK.TryEdu.ModuleUserBlazor.wasm": "sha256-eiL1dY08GfKi3/3pGE5BdQQKdC2/tuXf9qStknKECTI=",
       "SLK.TryEdu.ModuleUserCore.wasm": "sha256-k4GkDnJe9Ft+bip0DfKUyHUPpFH8jS4QMh2f4LXU8qo=",
       "SLK.TryEdu.SharedComponents.wasm": "sha256-5KdTs7XqelhRwsxk179e0Ftdq6FosPskC+tzMz7mVpI=",
-      "SLK.TryEdu.WebApp.wasm": "sha256-q13Rm9SbAjj9GPoJc0cUIFLpiXBKz2i0NRKaCGoTshs="
+      "SLK.TryEdu.WebApp.wasm": "sha256-Q6ca3iq9lSB/5Q7GrqEwR9k48StBuOnEGchbVHoLU9c="
     },
     "pdb": {
       "SLK.TryEdu.SharedComponents.pdb": "sha256-KvKmU7zu1UtM80KM9/1zP1GC+/ZJZT7ddmhBNWgFWTo=",
-      "SLK.TryEdu.WebApp.pdb": "sha256-rjtMQEXFMAIhSsLuZfJco3sLsLRvLfobKVQTl2wqfdo="
+      "SLK.TryEdu.WebApp.pdb": "sha256-OcudgqiB2qTYaoRYxMEpW8oC/QqWIvv1p5Cv4I/bCyw="
     }
   },
   "cacheBootResources": true,
